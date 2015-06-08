@@ -2,28 +2,27 @@ using System;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace io.swagger.Model {
+namespace IO.Swagger.Model {
+  [DataContract]
   public class UserTokenFailedResponse {
     
-
     /* Status code */
-    
+    [DataMember(Name="code", EmitDefaultValue=false)]
     public int? Code { get; set; }
 
     
-
     /* Message */
-    
+    [DataMember(Name="message", EmitDefaultValue=false)]
     public string Message { get; set; }
 
     
-
     
+    [DataMember(Name="success", EmitDefaultValue=false)]
     public bool? Success { get; set; }
 
     
-
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class UserTokenFailedResponse {\n");

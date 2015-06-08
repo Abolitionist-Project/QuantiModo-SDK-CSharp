@@ -2,53 +2,47 @@ using System;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace io.swagger.Model {
+namespace IO.Swagger.Model {
+  [DataContract]
   public class User {
     
-
     /* User id */
-    
+    [DataMember(Name="id", EmitDefaultValue=false)]
     public int? Id { get; set; }
 
     
-
     /* Wordpress user id */
-    
+    [DataMember(Name="wpId", EmitDefaultValue=false)]
     public int? WpId { get; set; }
 
     
-
     /* User display name */
-    
+    [DataMember(Name="displayName", EmitDefaultValue=false)]
     public string DisplayName { get; set; }
 
     
-
     /* User login name */
-    
+    [DataMember(Name="loginName", EmitDefaultValue=false)]
     public string LoginName { get; set; }
 
     
-
     /* User email */
-    
+    [DataMember(Name="email", EmitDefaultValue=false)]
     public string Email { get; set; }
 
     
-
     /* User token */
-    
+    [DataMember(Name="token", EmitDefaultValue=false)]
     public string Token { get; set; }
 
     
-
     /* Is user administrator */
-    
+    [DataMember(Name="administrator", EmitDefaultValue=false)]
     public bool? Administrator { get; set; }
 
     
-
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class User {\n");

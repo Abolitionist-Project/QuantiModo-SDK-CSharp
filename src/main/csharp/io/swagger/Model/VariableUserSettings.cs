@@ -2,71 +2,62 @@ using System;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace io.swagger.Model {
+namespace IO.Swagger.Model {
+  [DataContract]
   public class VariableUserSettings {
     
-
     /* User ID */
-    
+    [DataMember(Name="user", EmitDefaultValue=false)]
     public int? User { get; set; }
 
     
-
     /* Variable DISPLAY name */
-    
+    [DataMember(Name="variable", EmitDefaultValue=false)]
     public string Variable { get; set; }
 
     
-
     /* Estimated duration of time following the onset delay in which a stimulus produces a perceivable effect */
-    
+    [DataMember(Name="durationOfAction", EmitDefaultValue=false)]
     public int? DurationOfAction { get; set; }
 
     
-
     /* fillingValue */
-    
+    [DataMember(Name="fillingValue", EmitDefaultValue=false)]
     public int? FillingValue { get; set; }
 
     
-
     /* joinWith */
-    
+    [DataMember(Name="joinWith", EmitDefaultValue=false)]
     public string JoinWith { get; set; }
 
     
-
     /* maximumValue */
-    
+    [DataMember(Name="maximumValue", EmitDefaultValue=false)]
     public float? MaximumValue { get; set; }
 
     
-
     /* minimumValue */
-    
+    [DataMember(Name="minimumValue", EmitDefaultValue=false)]
     public float? MinimumValue { get; set; }
 
     
-
     /* name */
-    
+    [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-
     /* onsetDelay */
-    
+    [DataMember(Name="onsetDelay", EmitDefaultValue=false)]
     public int? OnsetDelay { get; set; }
 
     
-
     /* unit */
-    
+    [DataMember(Name="unit", EmitDefaultValue=false)]
     public string Unit { get; set; }
 
     
-
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class VariableUserSettings {\n");

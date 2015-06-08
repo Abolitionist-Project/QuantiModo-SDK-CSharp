@@ -1,86 +1,79 @@
 using System;
 using System.Collections.Generic;
-using io.swagger.client;
-using io.swagger.Model;
+using RestSharp;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
 
-namespace io.swagger.Api {
+namespace IO.Swagger.Api {
   
   public class OrganizationsApi {
     string basePath;
-    private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();
+    protected RestClient restClient;
 
     public OrganizationsApi(String basePath = "https://localhost/api")
     {
       this.basePath = basePath;
+      this.restClient = new RestClient(basePath);
     }
 
-    public ApiInvoker getInvoker() {
-      return apiInvoker;
-    }
-
-    // Sets the endpoint base url for the services being accessed
-    public void setBasePath(string basePath) {
+    /// <summary>
+    /// Sets the endpoint base url for the services being accessed
+    /// </summary>
+    /// <param name="basePath"> Base URL
+    /// <returns></returns>
+    public void SetBasePath(string basePath) {
       this.basePath = basePath;
     }
 
-    // Gets the endpoint base url for the services being accessed
-    public String getBasePath() {
-      return basePath;
+    /// <summary>
+    /// Gets the endpoint base url for the services being accessed
+    /// <returns>Base URL</returns>
+    /// </summary>
+    public String GetBasePath() {
+      return this.basePath;
     }
 
     
-
+    
     /// <summary>
     /// Get user tokens for existing users, create new users Get user tokens for existing users, create new users
     /// </summary>
     /// <param name="OrganizationId">Organization ID</param>
-     /// <param name="Body">Provides organization token and user ID</param>
-    
-    /// <returns></returns>
-    public UserTokenSuccessfulResponse  v1OrganizationsOrganizationIdUsersPost (int? OrganizationId, UserTokenRequest Body) {
-      // create path and map variables
-      var path = "/v1/organizations/{organizationId}/users".Replace("{format}","json").Replace("{" + "organizationId" + "}", apiInvoker.ParameterToString(OrganizationId));
+    /// <param name="Body">Provides organization token and user ID</param>
+    /// <returns>UserTokenSuccessfulResponse</returns>
+    public UserTokenSuccessfulResponse V1OrganizationsOrganizationIdUsersPost (int? OrganizationId, UserTokenRequest Body) {
 
-      // query params
-      var queryParams = new Dictionary<String, String>();
-      var headerParams = new Dictionary<String, String>();
-      var formParams = new Dictionary<String, object>();
+      var _request = new RestRequest("/v1/organizations/{organizationId}/users", Method.POST);
 
       
-
+      // verify the required parameter 'OrganizationId' is set
+      if (OrganizationId == null) throw new ApiException(400, "Missing required parameter 'OrganizationId' when calling V1OrganizationsOrganizationIdUsersPost");
+      
+      // verify the required parameter 'Body' is set
+      if (Body == null) throw new ApiException(400, "Missing required parameter 'Body' when calling V1OrganizationsOrganizationIdUsersPost");
       
 
-      
-
-      
-
-      try {
-        if (typeof(UserTokenSuccessfulResponse) == typeof(byte[])) {
-          
-          var response = apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-          return ((object)response) as UserTokenSuccessfulResponse;
-          
-          
-        } else {
-          
-          var response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, Body, headerParams, formParams);
-          if (response != null){
-             return (UserTokenSuccessfulResponse) ApiInvoker.deserialize(response, typeof(UserTokenSuccessfulResponse));
-          }
-          else {
-            return null;
-          }
-          
-          
-        }
-      } catch (ApiException ex) {
-        if(ex.ErrorCode == 404) {
-          return null;
-        }
-        else {
-          throw ex;
-        }
+      // add default header, if any
+      foreach(KeyValuePair<string, string> defaultHeader in ApiInvoker.GetDefaultHeader())
+      {
+        _request.AddHeader(defaultHeader.Key, defaultHeader.Value);
       }
+
+      _request.AddUrlSegment("format", "json"); // set format to json by default
+      _request.AddUrlSegment("organizationId", ApiInvoker.ParameterToString(OrganizationId)); // path (url segment) parameter
+      
+      
+      
+      
+      _request.AddParameter("application/json", ApiInvoker.Serialize(Body), ParameterType.RequestBody); // http body (model) parameter
+      
+
+      // make the HTTP request
+      IRestResponse response = restClient.Execute(_request);
+      if (((int)response.StatusCode) >= 400) {
+        throw new ApiException ((int)response.StatusCode, "Error calling V1OrganizationsOrganizationIdUsersPost: " + response.Content);
+      }
+      return (UserTokenSuccessfulResponse) ApiInvoker.Deserialize(response.Content, typeof(UserTokenSuccessfulResponse));
     }
     
   }

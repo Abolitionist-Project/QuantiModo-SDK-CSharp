@@ -2,23 +2,22 @@ using System;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace io.swagger.Model {
+namespace IO.Swagger.Model {
+  [DataContract]
   public class ConversionStep {
     
-
     /*  */
-    
+    [DataMember(Name="operation", EmitDefaultValue=false)]
     public string Operation { get; set; }
 
     
-
     /*  */
-    
+    [DataMember(Name="value", EmitDefaultValue=false)]
     public double? Value { get; set; }
 
     
-
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class ConversionStep {\n");

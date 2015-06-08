@@ -1,201 +1,109 @@
 using System;
 using System.Collections.Generic;
-using io.swagger.client;
-using io.swagger.Model;
+using RestSharp;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
 
-namespace io.swagger.Api {
+namespace IO.Swagger.Api {
   
   public class UnitsApi {
     string basePath;
-    private readonly ApiInvoker apiInvoker = ApiInvoker.GetInstance();
+    protected RestClient restClient;
 
     public UnitsApi(String basePath = "https://localhost/api")
     {
       this.basePath = basePath;
+      this.restClient = new RestClient(basePath);
     }
 
-    public ApiInvoker getInvoker() {
-      return apiInvoker;
-    }
-
-    // Sets the endpoint base url for the services being accessed
-    public void setBasePath(string basePath) {
+    /// <summary>
+    /// Sets the endpoint base url for the services being accessed
+    /// </summary>
+    /// <param name="basePath"> Base URL
+    /// <returns></returns>
+    public void SetBasePath(string basePath) {
       this.basePath = basePath;
     }
 
-    // Gets the endpoint base url for the services being accessed
-    public String getBasePath() {
-      return basePath;
-    }
-
-    
-
     /// <summary>
-    /// Get unit categories 
+    /// Gets the endpoint base url for the services being accessed
+    /// <returns>Base URL</returns>
     /// </summary>
+    public String GetBasePath() {
+      return this.basePath;
+    }
+
     
+    
+    /// <summary>
+    /// Get unit categories Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
+    /// </summary>
     /// <returns></returns>
-    public void  unitCategoriesGet () {
-      // create path and map variables
-      var path = "/unitCategories".Replace("{format}","json");
+    public void UnitCategoriesGet () {
 
-      // query params
-      var queryParams = new Dictionary<String, String>();
-      var headerParams = new Dictionary<String, String>();
-      var formParams = new Dictionary<String, object>();
+      var _request = new RestRequest("/unitCategories", Method.GET);
 
       
 
-      
-
-      
-
-      
-
-      try {
-        if (typeof(void) == typeof(byte[])) {
-          
-          
-          apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-          return;
-          
-        } else {
-          
-          
-          apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-          return;
-          
-        }
-      } catch (ApiException ex) {
-        if(ex.ErrorCode == 404) {
-          return ;
-        }
-        else {
-          throw ex;
-        }
+      // add default header, if any
+      foreach(KeyValuePair<string, string> defaultHeader in ApiInvoker.GetDefaultHeader())
+      {
+        _request.AddHeader(defaultHeader.Key, defaultHeader.Value);
       }
+
+      _request.AddUrlSegment("format", "json"); // set format to json by default
+      
+      
+      
+      
+      
+
+      // make the HTTP request
+      IRestResponse response = restClient.Execute(_request);
+      if (((int)response.StatusCode) >= 400) {
+        throw new ApiException ((int)response.StatusCode, "Error calling UnitCategoriesGet: " + response.Content);
+      }
+      
+      return;
     }
     
-
+    
     /// <summary>
     /// Get all available units Get all available units
     /// </summary>
     /// <param name="UnitName">Unit name</param>
-     /// <param name="AbbreviatedUnitName">Unit abbreviation</param>
-     /// <param name="CategoryName">Unit category</param>
-    
+    /// <param name="AbbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param>
+    /// <param name="CategoryName">Restrict the results to a specific unit category by providing the unit category name.</param>
     /// <returns></returns>
-    public void  unitsGet (string UnitName, string AbbreviatedUnitName, string CategoryName) {
-      // create path and map variables
-      var path = "/units".Replace("{format}","json");
+    public void UnitsGet (string UnitName, string AbbreviatedUnitName, string CategoryName) {
 
-      // query params
-      var queryParams = new Dictionary<String, String>();
-      var headerParams = new Dictionary<String, String>();
-      var formParams = new Dictionary<String, object>();
+      var _request = new RestRequest("/units", Method.GET);
 
       
 
-      if (UnitName != null){
-        queryParams.Add("unitName", apiInvoker.ParameterToString(UnitName));
+      // add default header, if any
+      foreach(KeyValuePair<string, string> defaultHeader in ApiInvoker.GetDefaultHeader())
+      {
+        _request.AddHeader(defaultHeader.Key, defaultHeader.Value);
       }
-      if (AbbreviatedUnitName != null){
-        queryParams.Add("abbreviatedUnitName", apiInvoker.ParameterToString(AbbreviatedUnitName));
-      }
-      if (CategoryName != null){
-        queryParams.Add("categoryName", apiInvoker.ParameterToString(CategoryName));
-      }
+
+      _request.AddUrlSegment("format", "json"); // set format to json by default
+      
+       if (UnitName != null) _request.AddParameter("unitName", ApiInvoker.ParameterToString(UnitName)); // query parameter
+       if (AbbreviatedUnitName != null) _request.AddParameter("abbreviatedUnitName", ApiInvoker.ParameterToString(AbbreviatedUnitName)); // query parameter
+       if (CategoryName != null) _request.AddParameter("categoryName", ApiInvoker.ParameterToString(CategoryName)); // query parameter
+      
+      
+      
       
 
-      
-
-      
-
-      try {
-        if (typeof(void) == typeof(byte[])) {
-          
-          
-          apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-          return;
-          
-        } else {
-          
-          
-          apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-          return;
-          
-        }
-      } catch (ApiException ex) {
-        if(ex.ErrorCode == 404) {
-          return ;
-        }
-        else {
-          throw ex;
-        }
-      }
-    }
-    
-
-    /// <summary>
-    /// Get all available units for variable Get all available units for variable
-    /// </summary>
-    /// <param name="Variable">Variable name</param>
-     /// <param name="UnitName">Unit name</param>
-     /// <param name="CabbreviatedUnitName">Unit abbreviation</param>
-     /// <param name="CategoryName">Unit category</param>
-    
-    /// <returns></returns>
-    public void  unitsVariableGet (string Variable, string UnitName, string CabbreviatedUnitName, string CategoryName) {
-      // create path and map variables
-      var path = "/unitsVariable".Replace("{format}","json");
-
-      // query params
-      var queryParams = new Dictionary<String, String>();
-      var headerParams = new Dictionary<String, String>();
-      var formParams = new Dictionary<String, object>();
-
-      
-
-      if (Variable != null){
-        queryParams.Add("variable", apiInvoker.ParameterToString(Variable));
-      }
-      if (UnitName != null){
-        queryParams.Add("unitName", apiInvoker.ParameterToString(UnitName));
-      }
-      if (CabbreviatedUnitName != null){
-        queryParams.Add("cabbreviatedUnitName", apiInvoker.ParameterToString(CabbreviatedUnitName));
-      }
-      if (CategoryName != null){
-        queryParams.Add("categoryName", apiInvoker.ParameterToString(CategoryName));
+      // make the HTTP request
+      IRestResponse response = restClient.Execute(_request);
+      if (((int)response.StatusCode) >= 400) {
+        throw new ApiException ((int)response.StatusCode, "Error calling UnitsGet: " + response.Content);
       }
       
-
-      
-
-      
-
-      try {
-        if (typeof(void) == typeof(byte[])) {
-          
-          
-          apiInvoker.invokeBinaryAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-          return;
-          
-        } else {
-          
-          
-          apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams);
-          return;
-          
-        }
-      } catch (ApiException ex) {
-        if(ex.ErrorCode == 404) {
-          return ;
-        }
-        else {
-          throw ex;
-        }
-      }
+      return;
     }
     
   }

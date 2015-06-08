@@ -6,32 +6,25 @@ using System.Runtime.Serialization;
 
 namespace IO.Swagger.Model {
   [DataContract]
-  public class UserTokenSuccessfulResponse {
+  public class JsonErrorResponse {
     
-    /* Status code */
-    [DataMember(Name="code", EmitDefaultValue=false)]
-    public int? Code { get; set; }
+    /* Status: \"ok\" or \"error\" */
+    [DataMember(Name="status", EmitDefaultValue=false)]
+    public string Status { get; set; }
 
     
-    /* Message */
+    /* Error message */
     [DataMember(Name="message", EmitDefaultValue=false)]
     public string Message { get; set; }
 
     
-    
-    [DataMember(Name="user", EmitDefaultValue=false)]
-    public UserTokenSuccessfulResponseInnerUserField User { get; set; }
-
-    
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class UserTokenSuccessfulResponse {\n");
+      sb.Append("class JsonErrorResponse {\n");
       
-      sb.Append("  Code: ").Append(Code).Append("\n");
+      sb.Append("  Status: ").Append(Status).Append("\n");
       
       sb.Append("  Message: ").Append(Message).Append("\n");
-      
-      sb.Append("  User: ").Append(User).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

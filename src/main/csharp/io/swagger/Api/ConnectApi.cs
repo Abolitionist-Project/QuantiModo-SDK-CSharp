@@ -6,11 +6,11 @@ using IO.Swagger.Model;
 
 namespace IO.Swagger.Api {
   
-  public class UserApi {
+  public class ConnectApi {
     string basePath;
     protected RestClient restClient;
 
-    public UserApi(String basePath = "https://localhost/api")
+    public ConnectApi(String basePath = "https://localhost/api")
     {
       this.basePath = basePath;
       this.restClient = new RestClient(basePath);
@@ -36,13 +36,17 @@ namespace IO.Swagger.Api {
     
     
     /// <summary>
-    /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
+    /// Get embeddable connect javascript Get embeddable connect javascript
     /// </summary>
+    /// <param name="T">User token</param>
     /// <returns></returns>
-    public void UserMeGet () {
+    public void V1ConnectJsGet (string T) {
 
-      var _request = new RestRequest("/user/me", Method.GET);
+      var _request = new RestRequest("/v1/connect.js", Method.GET);
 
+      
+      // verify the required parameter 'T' is set
+      if (T == null) throw new ApiException(400, "Missing required parameter 'T' when calling V1ConnectJsGet");
       
 
       // add default header, if any
@@ -53,6 +57,7 @@ namespace IO.Swagger.Api {
 
       _request.AddUrlSegment("format", "json"); // set format to json by default
       
+       if (T != null) _request.AddParameter("t", ApiInvoker.ParameterToString(T)); // query parameter
       
       
       
@@ -61,7 +66,7 @@ namespace IO.Swagger.Api {
       // make the HTTP request
       IRestResponse response = restClient.Execute(_request);
       if (((int)response.StatusCode) >= 400) {
-        throw new ApiException ((int)response.StatusCode, "Error calling UserMeGet: " + response.Content);
+        throw new ApiException ((int)response.StatusCode, "Error calling V1ConnectJsGet: " + response.Content);
       }
       
       return;
@@ -69,21 +74,17 @@ namespace IO.Swagger.Api {
     
     
     /// <summary>
-    /// Get user tokens for existing users, create new users Get user tokens for existing users, create new users
+    /// Mobile connect page Mobile connect page
     /// </summary>
-    /// <param name="OrganizationId">Organization ID</param>
-    /// <param name="Body">Provides organization token and user ID</param>
-    /// <returns>UserTokenSuccessfulResponse</returns>
-    public UserTokenSuccessfulResponse V1OrganizationsOrganizationIdUsersPost (int? OrganizationId, UserTokenRequest Body) {
+    /// <param name="T">User token</param>
+    /// <returns></returns>
+    public void V1ConnectMobileGet (string T) {
 
-      var _request = new RestRequest("/v1/organizations/{organizationId}/users", Method.POST);
+      var _request = new RestRequest("/v1/connect/mobile", Method.GET);
 
       
-      // verify the required parameter 'OrganizationId' is set
-      if (OrganizationId == null) throw new ApiException(400, "Missing required parameter 'OrganizationId' when calling V1OrganizationsOrganizationIdUsersPost");
-      
-      // verify the required parameter 'Body' is set
-      if (Body == null) throw new ApiException(400, "Missing required parameter 'Body' when calling V1OrganizationsOrganizationIdUsersPost");
+      // verify the required parameter 'T' is set
+      if (T == null) throw new ApiException(400, "Missing required parameter 'T' when calling V1ConnectMobileGet");
       
 
       // add default header, if any
@@ -93,20 +94,20 @@ namespace IO.Swagger.Api {
       }
 
       _request.AddUrlSegment("format", "json"); // set format to json by default
-      _request.AddUrlSegment("organizationId", ApiInvoker.ParameterToString(OrganizationId)); // path (url segment) parameter
+      
+       if (T != null) _request.AddParameter("t", ApiInvoker.ParameterToString(T)); // query parameter
       
       
       
-      
-      _request.AddParameter("application/json", ApiInvoker.Serialize(Body), ParameterType.RequestBody); // http body (model) parameter
       
 
       // make the HTTP request
       IRestResponse response = restClient.Execute(_request);
       if (((int)response.StatusCode) >= 400) {
-        throw new ApiException ((int)response.StatusCode, "Error calling V1OrganizationsOrganizationIdUsersPost: " + response.Content);
+        throw new ApiException ((int)response.StatusCode, "Error calling V1ConnectMobileGet: " + response.Content);
       }
-      return (UserTokenSuccessfulResponse) ApiInvoker.Deserialize(response.Content, typeof(UserTokenSuccessfulResponse));
+      
+      return;
     }
     
   }

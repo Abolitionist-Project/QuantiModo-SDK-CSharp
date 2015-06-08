@@ -2,65 +2,57 @@ using System;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace io.swagger.Model {
+namespace IO.Swagger.Model {
+  [DataContract]
   public class Variable {
     
-
     /* User-defined variable display name. */
-    
+    [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-
     /* Name used when the variable was originally created in the `variables` table. */
-    
+    [DataMember(Name="originalName", EmitDefaultValue=false)]
     public string OriginalName { get; set; }
 
     
-
     /* Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc. */
-    
+    [DataMember(Name="category", EmitDefaultValue=false)]
     public string Category { get; set; }
 
     
-
     /* Abbreviated name of the default unit for the variable */
-    
+    [DataMember(Name="unit", EmitDefaultValue=false)]
     public string Unit { get; set; }
 
     
-
     /* Comma-separated list of source names to limit variables to those sources */
-    
+    [DataMember(Name="sources", EmitDefaultValue=false)]
     public string Sources { get; set; }
 
     
-
     /* Minimum reasonable value for this variable (uses default unit) */
-    
+    [DataMember(Name="minimumValue", EmitDefaultValue=false)]
     public double? MinimumValue { get; set; }
 
     
-
     /* Maximum reasonable value for this variable (uses default unit) */
-    
+    [DataMember(Name="maximumValue", EmitDefaultValue=false)]
     public double? MaximumValue { get; set; }
 
     
-
     /* How to aggregate measurements over time. */
-    
+    [DataMember(Name="combinationOperation", EmitDefaultValue=false)]
     public string CombinationOperation { get; set; }
 
     
-
     /* Value for replacing null measurements */
-    
+    [DataMember(Name="fillingValue", EmitDefaultValue=false)]
     public double? FillingValue { get; set; }
 
     
-
     public override string ToString()  {
       var sb = new StringBuilder();
       sb.Append("class Variable {\n");

@@ -11,36 +11,31 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class Unit {
+  public class VariableNew {
     
-    /* Unit name */
+    /* User-defined variable display name. */
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-    /* Unit abbreviation */
-    [DataMember(Name="abbreviatedName", EmitDefaultValue=false)]
-    public string AbbreviatedName { get; set; }
-
-    
-    /* Unit category */
+    /* Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc. */
     [DataMember(Name="category", EmitDefaultValue=false)]
     public string Category { get; set; }
 
     
-    /* Unit minimum value */
-    [DataMember(Name="minimum", EmitDefaultValue=false)]
-    public double? Minimum { get; set; }
+    /* Abbreviated name of the default unit for the variable */
+    [DataMember(Name="unit", EmitDefaultValue=false)]
+    public string Unit { get; set; }
 
     
-    /* Unit maximum value */
-    [DataMember(Name="maximum", EmitDefaultValue=false)]
-    public double? Maximum { get; set; }
+    /* How to aggregate measurements over time. */
+    [DataMember(Name="combinationOperation", EmitDefaultValue=false)]
+    public string CombinationOperation { get; set; }
 
     
-    /* Conversion steps list */
-    [DataMember(Name="conversionSteps", EmitDefaultValue=false)]
-    public List<ConversionStep> ConversionSteps { get; set; }
+    /* Parent */
+    [DataMember(Name="parent", EmitDefaultValue=false)]
+    public string Parent { get; set; }
 
     
 
@@ -50,19 +45,17 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class Unit {\n");
+      sb.Append("class VariableNew {\n");
       
       sb.Append("  Name: ").Append(Name).Append("\n");
       
-      sb.Append("  AbbreviatedName: ").Append(AbbreviatedName).Append("\n");
-      
       sb.Append("  Category: ").Append(Category).Append("\n");
       
-      sb.Append("  Minimum: ").Append(Minimum).Append("\n");
+      sb.Append("  Unit: ").Append(Unit).Append("\n");
       
-      sb.Append("  Maximum: ").Append(Maximum).Append("\n");
+      sb.Append("  CombinationOperation: ").Append(CombinationOperation).Append("\n");
       
-      sb.Append("  ConversionSteps: ").Append(ConversionSteps).Append("\n");
+      sb.Append("  Parent: ").Append(Parent).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

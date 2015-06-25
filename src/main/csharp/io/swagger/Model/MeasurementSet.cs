@@ -11,36 +11,36 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class Unit {
+  public class MeasurementSet {
     
-    /* Unit name */
+    /* Array of timestamps, values, and optional notes */
+    [DataMember(Name="measurements", EmitDefaultValue=false)]
+    public List<ValueObject> Measurements { get; set; }
+
+    
+    /* ORIGINAL name of the variable for which we are creating the measurement records */
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-    /* Unit abbreviation */
-    [DataMember(Name="abbreviatedName", EmitDefaultValue=false)]
-    public string AbbreviatedName { get; set; }
+    /* Name of the application or device used to record the measurement values */
+    [DataMember(Name="source", EmitDefaultValue=false)]
+    public string Source { get; set; }
 
     
-    /* Unit category */
+    /* Variable category name */
     [DataMember(Name="category", EmitDefaultValue=false)]
     public string Category { get; set; }
 
     
-    /* Unit minimum value */
-    [DataMember(Name="minimum", EmitDefaultValue=false)]
-    public double? Minimum { get; set; }
+    /* Way to aggregate measurements over time. Options are \"MEAN\" or \"SUM\" */
+    [DataMember(Name="combinationOperation", EmitDefaultValue=false)]
+    public string CombinationOperation { get; set; }
 
     
-    /* Unit maximum value */
-    [DataMember(Name="maximum", EmitDefaultValue=false)]
-    public double? Maximum { get; set; }
-
-    
-    /* Conversion steps list */
-    [DataMember(Name="conversionSteps", EmitDefaultValue=false)]
-    public List<ConversionStep> ConversionSteps { get; set; }
+    /* Unit of measurement */
+    [DataMember(Name="unit", EmitDefaultValue=false)]
+    public string Unit { get; set; }
 
     
 
@@ -50,19 +50,19 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class Unit {\n");
+      sb.Append("class MeasurementSet {\n");
+      
+      sb.Append("  Measurements: ").Append(Measurements).Append("\n");
       
       sb.Append("  Name: ").Append(Name).Append("\n");
       
-      sb.Append("  AbbreviatedName: ").Append(AbbreviatedName).Append("\n");
+      sb.Append("  Source: ").Append(Source).Append("\n");
       
       sb.Append("  Category: ").Append(Category).Append("\n");
       
-      sb.Append("  Minimum: ").Append(Minimum).Append("\n");
+      sb.Append("  CombinationOperation: ").Append(CombinationOperation).Append("\n");
       
-      sb.Append("  Maximum: ").Append(Maximum).Append("\n");
-      
-      sb.Append("  ConversionSteps: ").Append(ConversionSteps).Append("\n");
+      sb.Append("  Unit: ").Append(Unit).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

@@ -8,20 +8,10 @@ using Newtonsoft.Json;
 namespace IO.Swagger.Model {
 
   /// <summary>
-  /// 
+  /// New variables
   /// </summary>
   [DataContract]
-  public class ConversionStep {
-    
-    /* ADD or MULTIPLY */
-    [DataMember(Name="operation", EmitDefaultValue=false)]
-    public string Operation { get; set; }
-
-    
-    /* This specifies the order of conversion steps starting with 0 */
-    [DataMember(Name="value", EmitDefaultValue=false)]
-    public double? Value { get; set; }
-
+  public class VariablesNew {
     
 
     /// <summary>
@@ -30,11 +20,7 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class ConversionStep {\n");
-      
-      sb.Append("  Operation: ").Append(Operation).Append("\n");
-      
-      sb.Append("  Value: ").Append(Value).Append("\n");
+      sb.Append("class VariablesNew {\n");
       
       sb.Append("}\n");
       return sb.ToString();

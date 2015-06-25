@@ -11,16 +11,21 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class ConversionStep {
+  public class ValueObject {
     
-    /* ADD or MULTIPLY */
-    [DataMember(Name="operation", EmitDefaultValue=false)]
-    public string Operation { get; set; }
+    /* Timestamp for the measurement event in epoch time (unixtime) */
+    [DataMember(Name="timestamp", EmitDefaultValue=false)]
+    public long? Timestamp { get; set; }
 
     
-    /* This specifies the order of conversion steps starting with 0 */
+    /* Measurement value */
     [DataMember(Name="value", EmitDefaultValue=false)]
     public double? Value { get; set; }
+
+    
+    /* Optional note to include with the measurement */
+    [DataMember(Name="note", EmitDefaultValue=false)]
+    public string Note { get; set; }
 
     
 
@@ -30,11 +35,13 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class ConversionStep {\n");
+      sb.Append("class ValueObject {\n");
       
-      sb.Append("  Operation: ").Append(Operation).Append("\n");
+      sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
       
       sb.Append("  Value: ").Append(Value).Append("\n");
+      
+      sb.Append("  Note: ").Append(Note).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

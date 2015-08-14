@@ -13,17 +13,26 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class ValueObject {
     
-    /* Timestamp for the measurement event in epoch time (unixtime) */
+    /// <summary>
+    /// Timestamp for the measurement event in epoch time (unixtime)
+    /// </summary>
+    /// <value>Timestamp for the measurement event in epoch time (unixtime)</value>
     [DataMember(Name="timestamp", EmitDefaultValue=false)]
     public long? Timestamp { get; set; }
 
     
-    /* Measurement value */
+    /// <summary>
+    /// Measurement value
+    /// </summary>
+    /// <value>Measurement value</value>
     [DataMember(Name="value", EmitDefaultValue=false)]
     public double? Value { get; set; }
 
     
-    /* Optional note to include with the measurement */
+    /// <summary>
+    /// Optional note to include with the measurement
+    /// </summary>
+    /// <value>Optional note to include with the measurement</value>
     [DataMember(Name="note", EmitDefaultValue=false)]
     public string Note { get; set; }
 
@@ -56,6 +65,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

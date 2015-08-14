@@ -13,7 +13,10 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class MeasurementSource {
     
-    /* Name of the application or device. */
+    /// <summary>
+    /// Name of the application or device.
+    /// </summary>
+    /// <value>Name of the application or device.</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
@@ -42,6 +45,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

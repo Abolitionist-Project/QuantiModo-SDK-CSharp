@@ -13,32 +13,50 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class Unit {
     
-    /* Unit name */
+    /// <summary>
+    /// Unit name
+    /// </summary>
+    /// <value>Unit name</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-    /* Unit abbreviation */
+    /// <summary>
+    /// Unit abbreviation
+    /// </summary>
+    /// <value>Unit abbreviation</value>
     [DataMember(Name="abbreviatedName", EmitDefaultValue=false)]
     public string AbbreviatedName { get; set; }
 
     
-    /* Unit category */
+    /// <summary>
+    /// Unit category
+    /// </summary>
+    /// <value>Unit category</value>
     [DataMember(Name="category", EmitDefaultValue=false)]
     public string Category { get; set; }
 
     
-    /* Unit minimum value */
+    /// <summary>
+    /// Unit minimum value
+    /// </summary>
+    /// <value>Unit minimum value</value>
     [DataMember(Name="minimum", EmitDefaultValue=false)]
     public double? Minimum { get; set; }
 
     
-    /* Unit maximum value */
+    /// <summary>
+    /// Unit maximum value
+    /// </summary>
+    /// <value>Unit maximum value</value>
     [DataMember(Name="maximum", EmitDefaultValue=false)]
     public double? Maximum { get; set; }
 
     
-    /* Conversion steps list */
+    /// <summary>
+    /// Conversion steps list
+    /// </summary>
+    /// <value>Conversion steps list</value>
     [DataMember(Name="conversionSteps", EmitDefaultValue=false)]
     public List<ConversionStep> ConversionSteps { get; set; }
 
@@ -77,6 +95,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

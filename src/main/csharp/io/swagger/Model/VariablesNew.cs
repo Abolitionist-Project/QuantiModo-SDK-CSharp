@@ -11,7 +11,7 @@ namespace IO.Swagger.Model {
   /// New variables
   /// </summary>
   [DataContract]
-  public class VariablesNew {
+  public class VariablesNew : List<VariableNew> {
     
 
     /// <summary>
@@ -30,11 +30,9 @@ namespace IO.Swagger.Model {
     /// Get the JSON string presentation of the object
     /// </summary>
     /// <returns>JSON string presentation of the object</returns>
-    public string ToJson() {
+    public  new string ToJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
     }
 
 }
-  
-  
 }

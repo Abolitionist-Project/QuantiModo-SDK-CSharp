@@ -13,32 +13,50 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class MeasurementSet {
     
-    /* Array of timestamps, values, and optional notes */
+    /// <summary>
+    /// Array of timestamps, values, and optional notes
+    /// </summary>
+    /// <value>Array of timestamps, values, and optional notes</value>
     [DataMember(Name="measurements", EmitDefaultValue=false)]
     public List<ValueObject> Measurements { get; set; }
 
     
-    /* ORIGINAL name of the variable for which we are creating the measurement records */
+    /// <summary>
+    /// ORIGINAL name of the variable for which we are creating the measurement records
+    /// </summary>
+    /// <value>ORIGINAL name of the variable for which we are creating the measurement records</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-    /* Name of the application or device used to record the measurement values */
+    /// <summary>
+    /// Name of the application or device used to record the measurement values
+    /// </summary>
+    /// <value>Name of the application or device used to record the measurement values</value>
     [DataMember(Name="source", EmitDefaultValue=false)]
     public string Source { get; set; }
 
     
-    /* Variable category name */
+    /// <summary>
+    /// Variable category name
+    /// </summary>
+    /// <value>Variable category name</value>
     [DataMember(Name="category", EmitDefaultValue=false)]
     public string Category { get; set; }
 
     
-    /* Way to aggregate measurements over time. Options are \"MEAN\" or \"SUM\" */
+    /// <summary>
+    /// Way to aggregate measurements over time. Options are \"MEAN\" or \"SUM\"
+    /// </summary>
+    /// <value>Way to aggregate measurements over time. Options are \"MEAN\" or \"SUM\"</value>
     [DataMember(Name="combinationOperation", EmitDefaultValue=false)]
     public string CombinationOperation { get; set; }
 
     
-    /* Unit of measurement */
+    /// <summary>
+    /// Unit of measurement
+    /// </summary>
+    /// <value>Unit of measurement</value>
     [DataMember(Name="unit", EmitDefaultValue=false)]
     public string Unit { get; set; }
 
@@ -77,6 +95,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

@@ -13,37 +13,58 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class Measurement {
     
-    /* ORIGINAL Name of the variable for which we are creating the measurement records */
+    /// <summary>
+    /// ORIGINAL Name of the variable for which we are creating the measurement records
+    /// </summary>
+    /// <value>ORIGINAL Name of the variable for which we are creating the measurement records</value>
     [DataMember(Name="variable", EmitDefaultValue=false)]
     public string Variable { get; set; }
 
     
-    /* Application or device used to record the measurement values */
+    /// <summary>
+    /// Application or device used to record the measurement values
+    /// </summary>
+    /// <value>Application or device used to record the measurement values</value>
     [DataMember(Name="source", EmitDefaultValue=false)]
     public string Source { get; set; }
 
     
-    /* Timestamp for the measurement event in epoch time */
+    /// <summary>
+    /// Timestamp for the measurement event in epoch time
+    /// </summary>
+    /// <value>Timestamp for the measurement event in epoch time</value>
     [DataMember(Name="timestamp", EmitDefaultValue=false)]
     public long? Timestamp { get; set; }
 
     
-    /* Converted measurement value in requested unit */
+    /// <summary>
+    /// Converted measurement value in requested unit
+    /// </summary>
+    /// <value>Converted measurement value in requested unit</value>
     [DataMember(Name="value", EmitDefaultValue=false)]
     public double? Value { get; set; }
 
     
-    /* Unit of measurement as requested in GET request */
+    /// <summary>
+    /// Unit of measurement as requested in GET request
+    /// </summary>
+    /// <value>Unit of measurement as requested in GET request</value>
     [DataMember(Name="unit", EmitDefaultValue=false)]
     public string Unit { get; set; }
 
     
-    /* Measurement value in the unit as orignally submitted */
+    /// <summary>
+    /// Measurement value in the unit as orignally submitted
+    /// </summary>
+    /// <value>Measurement value in the unit as orignally submitted</value>
     [DataMember(Name="storedValue", EmitDefaultValue=false)]
     public double? StoredValue { get; set; }
 
     
-    /* Unit of measurement as originally submitted */
+    /// <summary>
+    /// Unit of measurement as originally submitted
+    /// </summary>
+    /// <value>Unit of measurement as originally submitted</value>
     [DataMember(Name="storedUnit", EmitDefaultValue=false)]
     public string StoredUnit { get; set; }
 
@@ -84,6 +105,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

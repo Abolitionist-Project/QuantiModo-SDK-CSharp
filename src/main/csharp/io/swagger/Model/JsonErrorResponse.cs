@@ -13,12 +13,18 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class JsonErrorResponse {
     
-    /* Status: \"ok\" or \"error\" */
+    /// <summary>
+    /// Status: \"ok\" or \"error\"
+    /// </summary>
+    /// <value>Status: \"ok\" or \"error\"</value>
     [DataMember(Name="status", EmitDefaultValue=false)]
     public string Status { get; set; }
 
     
-    /* Error message */
+    /// <summary>
+    /// Error message
+    /// </summary>
+    /// <value>Error message</value>
     [DataMember(Name="message", EmitDefaultValue=false)]
     public string Message { get; set; }
 
@@ -49,6 +55,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

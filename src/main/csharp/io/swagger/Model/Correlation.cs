@@ -13,67 +13,106 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class Correlation {
     
-    /* Pearson correlation coefficient between cause and effect measurements */
+    /// <summary>
+    /// Pearson correlation coefficient between cause and effect measurements
+    /// </summary>
+    /// <value>Pearson correlation coefficient between cause and effect measurements</value>
     [DataMember(Name="correlationCoefficient", EmitDefaultValue=false)]
     public double? CorrelationCoefficient { get; set; }
 
     
-    /* ORIGINAL variable name of the cause variable for which the user desires correlations. */
+    /// <summary>
+    /// ORIGINAL variable name of the cause variable for which the user desires correlations.
+    /// </summary>
+    /// <value>ORIGINAL variable name of the cause variable for which the user desires correlations.</value>
     [DataMember(Name="cause", EmitDefaultValue=false)]
     public string Cause { get; set; }
 
     
-    /* ORIGINAL variable name of the effect variable for which the user desires correlations. */
+    /// <summary>
+    /// ORIGINAL variable name of the effect variable for which the user desires correlations.
+    /// </summary>
+    /// <value>ORIGINAL variable name of the effect variable for which the user desires correlations.</value>
     [DataMember(Name="effect", EmitDefaultValue=false)]
     public string Effect { get; set; }
 
     
-    /* User estimated or default time after cause measurement before a perceivable effect is observed */
+    /// <summary>
+    /// User estimated or default time after cause measurement before a perceivable effect is observed
+    /// </summary>
+    /// <value>User estimated or default time after cause measurement before a perceivable effect is observed</value>
     [DataMember(Name="onsetDelay", EmitDefaultValue=false)]
     public double? OnsetDelay { get; set; }
 
     
-    /* Time over which the cause is expected to produce a perceivable effect following the onset delay */
+    /// <summary>
+    /// Time over which the cause is expected to produce a perceivable effect following the onset delay
+    /// </summary>
+    /// <value>Time over which the cause is expected to produce a perceivable effect following the onset delay</value>
     [DataMember(Name="durationOfAction", EmitDefaultValue=false)]
     public double? DurationOfAction { get; set; }
 
     
-    /* Number of points that went into the correlation calculation */
+    /// <summary>
+    /// Number of points that went into the correlation calculation
+    /// </summary>
+    /// <value>Number of points that went into the correlation calculation</value>
     [DataMember(Name="numberOfPairs", EmitDefaultValue=false)]
     public double? NumberOfPairs { get; set; }
 
     
-    /* Magnitude of the effects of a cause indicating whether it's practically meaningful. */
+    /// <summary>
+    /// Magnitude of the effects of a cause indicating whether it's practically meaningful.
+    /// </summary>
+    /// <value>Magnitude of the effects of a cause indicating whether it's practically meaningful.</value>
     [DataMember(Name="effectSize", EmitDefaultValue=false)]
     public string EffectSize { get; set; }
 
     
-    /* A function of the effect size and sample size */
+    /// <summary>
+    /// A function of the effect size and sample size
+    /// </summary>
+    /// <value>A function of the effect size and sample size</value>
     [DataMember(Name="statisticalSignificance", EmitDefaultValue=false)]
     public string StatisticalSignificance { get; set; }
 
     
-    /* Time at which correlation was calculated */
+    /// <summary>
+    /// Time at which correlation was calculated
+    /// </summary>
+    /// <value>Time at which correlation was calculated</value>
     [DataMember(Name="timestamp", EmitDefaultValue=false)]
     public double? Timestamp { get; set; }
 
     
-    /* Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation. */
+    /// <summary>
+    /// Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation.
+    /// </summary>
+    /// <value>Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation.</value>
     [DataMember(Name="reverseCorrelation", EmitDefaultValue=false)]
     public double? ReverseCorrelation { get; set; }
 
     
-    /*  */
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <value></value>
     [DataMember(Name="causalityFactor", EmitDefaultValue=false)]
     public double? CausalityFactor { get; set; }
 
     
-    /* Variable category of the cause variable. */
+    /// <summary>
+    /// Variable category of the cause variable.
+    /// </summary>
+    /// <value>Variable category of the cause variable.</value>
     [DataMember(Name="causeCategory", EmitDefaultValue=false)]
     public string CauseCategory { get; set; }
 
     
-    /* Variable category of the effect variable. */
+    /// <summary>
+    /// Variable category of the effect variable.
+    /// </summary>
+    /// <value>Variable category of the effect variable.</value>
     [DataMember(Name="effectCategory", EmitDefaultValue=false)]
     public string EffectCategory { get; set; }
 
@@ -126,6 +165,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

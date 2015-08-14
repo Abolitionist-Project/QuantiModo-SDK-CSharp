@@ -11,14 +11,29 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class UserTokenRequestInnerUserField {
+  public class CommonResponse {
     
     /// <summary>
-    /// WordPress user ID
+    /// Status code
     /// </summary>
-    /// <value>WordPress user ID</value>
-    [DataMember(Name="_id", EmitDefaultValue=false)]
-    public int? Id { get; set; }
+    /// <value>Status code</value>
+    [DataMember(Name="status", EmitDefaultValue=false)]
+    public int? Status { get; set; }
+
+    
+    /// <summary>
+    /// Message
+    /// </summary>
+    /// <value>Message</value>
+    [DataMember(Name="message", EmitDefaultValue=false)]
+    public string Message { get; set; }
+
+    
+    /// <summary>
+    /// Gets or Sets Success
+    /// </summary>
+    [DataMember(Name="success", EmitDefaultValue=false)]
+    public bool? Success { get; set; }
 
     
 
@@ -28,9 +43,13 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class UserTokenRequestInnerUserField {\n");
+      sb.Append("class CommonResponse {\n");
       
-      sb.Append("  Id: ").Append(Id).Append("\n");
+      sb.Append("  Status: ").Append(Status).Append("\n");
+      
+      sb.Append("  Message: ").Append(Message).Append("\n");
+      
+      sb.Append("  Success: ").Append(Success).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

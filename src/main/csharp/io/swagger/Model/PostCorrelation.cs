@@ -13,22 +13,34 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class PostCorrelation {
     
-    /* Cause variable name */
+    /// <summary>
+    /// Cause variable name
+    /// </summary>
+    /// <value>Cause variable name</value>
     [DataMember(Name="cause", EmitDefaultValue=false)]
     public string Cause { get; set; }
 
     
-    /* Effect variable name */
+    /// <summary>
+    /// Effect variable name
+    /// </summary>
+    /// <value>Effect variable name</value>
     [DataMember(Name="effect", EmitDefaultValue=false)]
     public string Effect { get; set; }
 
     
-    /* Correlation value */
+    /// <summary>
+    /// Correlation value
+    /// </summary>
+    /// <value>Correlation value</value>
     [DataMember(Name="correlation", EmitDefaultValue=false)]
     public double? Correlation { get; set; }
 
     
-    /* Vote: 0 or 1 */
+    /// <summary>
+    /// Vote: 0 or 1
+    /// </summary>
+    /// <value>Vote: 0 or 1</value>
     [DataMember(Name="vote", EmitDefaultValue=false)]
     public int? Vote { get; set; }
 
@@ -63,6 +75,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

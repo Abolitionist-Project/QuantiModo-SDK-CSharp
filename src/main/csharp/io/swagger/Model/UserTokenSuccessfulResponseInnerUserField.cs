@@ -13,12 +13,18 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class UserTokenSuccessfulResponseInnerUserField {
     
-    /* WordPress user ID */
+    /// <summary>
+    /// WordPress user ID
+    /// </summary>
+    /// <value>WordPress user ID</value>
     [DataMember(Name="_id", EmitDefaultValue=false)]
     public int? Id { get; set; }
 
     
-    /* User token */
+    /// <summary>
+    /// User token
+    /// </summary>
+    /// <value>User token</value>
     [DataMember(Name="access_token", EmitDefaultValue=false)]
     public string AccessToken { get; set; }
 
@@ -49,6 +55,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

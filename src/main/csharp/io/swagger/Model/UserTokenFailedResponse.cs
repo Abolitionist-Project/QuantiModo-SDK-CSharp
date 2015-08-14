@@ -13,17 +13,25 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class UserTokenFailedResponse {
     
-    /* Status code */
+    /// <summary>
+    /// Status code
+    /// </summary>
+    /// <value>Status code</value>
     [DataMember(Name="code", EmitDefaultValue=false)]
     public int? Code { get; set; }
 
     
-    /* Message */
+    /// <summary>
+    /// Message
+    /// </summary>
+    /// <value>Message</value>
     [DataMember(Name="message", EmitDefaultValue=false)]
     public string Message { get; set; }
 
     
-    
+    /// <summary>
+    /// Gets or Sets Success
+    /// </summary>
     [DataMember(Name="success", EmitDefaultValue=false)]
     public bool? Success { get; set; }
 
@@ -56,6 +64,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

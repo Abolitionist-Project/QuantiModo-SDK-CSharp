@@ -13,52 +13,82 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class VariableUserSettings {
     
-    /* User ID */
+    /// <summary>
+    /// User ID
+    /// </summary>
+    /// <value>User ID</value>
     [DataMember(Name="user", EmitDefaultValue=false)]
     public int? User { get; set; }
 
     
-    /* Variable DISPLAY name */
+    /// <summary>
+    /// Variable DISPLAY name
+    /// </summary>
+    /// <value>Variable DISPLAY name</value>
     [DataMember(Name="variable", EmitDefaultValue=false)]
     public string Variable { get; set; }
 
     
-    /* Estimated duration of time following the onset delay in which a stimulus produces a perceivable effect */
+    /// <summary>
+    /// Estimated duration of time following the onset delay in which a stimulus produces a perceivable effect
+    /// </summary>
+    /// <value>Estimated duration of time following the onset delay in which a stimulus produces a perceivable effect</value>
     [DataMember(Name="durationOfAction", EmitDefaultValue=false)]
     public int? DurationOfAction { get; set; }
 
     
-    /* fillingValue */
+    /// <summary>
+    /// fillingValue
+    /// </summary>
+    /// <value>fillingValue</value>
     [DataMember(Name="fillingValue", EmitDefaultValue=false)]
     public int? FillingValue { get; set; }
 
     
-    /* joinWith */
+    /// <summary>
+    /// joinWith
+    /// </summary>
+    /// <value>joinWith</value>
     [DataMember(Name="joinWith", EmitDefaultValue=false)]
     public string JoinWith { get; set; }
 
     
-    /* maximumValue */
+    /// <summary>
+    /// maximumValue
+    /// </summary>
+    /// <value>maximumValue</value>
     [DataMember(Name="maximumValue", EmitDefaultValue=false)]
     public float? MaximumValue { get; set; }
 
     
-    /* minimumValue */
+    /// <summary>
+    /// minimumValue
+    /// </summary>
+    /// <value>minimumValue</value>
     [DataMember(Name="minimumValue", EmitDefaultValue=false)]
     public float? MinimumValue { get; set; }
 
     
-    /* name */
+    /// <summary>
+    /// name
+    /// </summary>
+    /// <value>name</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-    /* onsetDelay */
+    /// <summary>
+    /// onsetDelay
+    /// </summary>
+    /// <value>onsetDelay</value>
     [DataMember(Name="onsetDelay", EmitDefaultValue=false)]
     public int? OnsetDelay { get; set; }
 
     
-    /* unit */
+    /// <summary>
+    /// unit
+    /// </summary>
+    /// <value>unit</value>
     [DataMember(Name="unit", EmitDefaultValue=false)]
     public string Unit { get; set; }
 
@@ -105,6 +135,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

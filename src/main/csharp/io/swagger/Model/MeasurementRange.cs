@@ -13,12 +13,18 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class MeasurementRange {
     
-    /* The timestamp of the earliest measurement for a user. */
+    /// <summary>
+    /// The timestamp of the earliest measurement for a user.
+    /// </summary>
+    /// <value>The timestamp of the earliest measurement for a user.</value>
     [DataMember(Name="lowerLimit", EmitDefaultValue=false)]
     public int? LowerLimit { get; set; }
 
     
-    /* The timestamp of the most recent measurement for a user. */
+    /// <summary>
+    /// The timestamp of the most recent measurement for a user.
+    /// </summary>
+    /// <value>The timestamp of the most recent measurement for a user.</value>
     [DataMember(Name="upperLimit", EmitDefaultValue=false)]
     public int? UpperLimit { get; set; }
 
@@ -49,6 +55,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

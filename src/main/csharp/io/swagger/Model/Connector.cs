@@ -13,52 +13,82 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class Connector {
     
-    /* Connector ID number */
+    /// <summary>
+    /// Connector ID number
+    /// </summary>
+    /// <value>Connector ID number</value>
     [DataMember(Name="id", EmitDefaultValue=false)]
     public int? Id { get; set; }
 
     
-    /* Connector lowercase system name */
+    /// <summary>
+    /// Connector lowercase system name
+    /// </summary>
+    /// <value>Connector lowercase system name</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-    /* Connector pretty display name */
+    /// <summary>
+    /// Connector pretty display name
+    /// </summary>
+    /// <value>Connector pretty display name</value>
     [DataMember(Name="displayName", EmitDefaultValue=false)]
     public string DisplayName { get; set; }
 
     
-    /* URL to the image of the connector logo */
+    /// <summary>
+    /// URL to the image of the connector logo
+    /// </summary>
+    /// <value>URL to the image of the connector logo</value>
     [DataMember(Name="image", EmitDefaultValue=false)]
     public string Image { get; set; }
 
     
-    /* URL to a site where one can get this device or application */
+    /// <summary>
+    /// URL to a site where one can get this device or application
+    /// </summary>
+    /// <value>URL to a site where one can get this device or application</value>
     [DataMember(Name="getItUrl", EmitDefaultValue=false)]
     public string GetItUrl { get; set; }
 
     
-    /* True if the authenticated user has this connector enabled */
+    /// <summary>
+    /// True if the authenticated user has this connector enabled
+    /// </summary>
+    /// <value>True if the authenticated user has this connector enabled</value>
     [DataMember(Name="connected", EmitDefaultValue=false)]
     public string Connected { get; set; }
 
     
-    /* URL and parameters used when connecting to a service */
+    /// <summary>
+    /// URL and parameters used when connecting to a service
+    /// </summary>
+    /// <value>URL and parameters used when connecting to a service</value>
     [DataMember(Name="connectInstructions", EmitDefaultValue=false)]
     public string ConnectInstructions { get; set; }
 
     
-    /* Epoch timestamp of last sync */
+    /// <summary>
+    /// Epoch timestamp of last sync
+    /// </summary>
+    /// <value>Epoch timestamp of last sync</value>
     [DataMember(Name="lastUpdate", EmitDefaultValue=false)]
     public int? LastUpdate { get; set; }
 
     
-    /* Number of measurements obtained during latest update */
+    /// <summary>
+    /// Number of measurements obtained during latest update
+    /// </summary>
+    /// <value>Number of measurements obtained during latest update</value>
     [DataMember(Name="latestData", EmitDefaultValue=false)]
     public int? LatestData { get; set; }
 
     
-    /* True if user has no measurements for this connector */
+    /// <summary>
+    /// True if user has no measurements for this connector
+    /// </summary>
+    /// <value>True if user has no measurements for this connector</value>
     [DataMember(Name="noDataYet", EmitDefaultValue=false)]
     public bool? NoDataYet { get; set; }
 
@@ -105,6 +135,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

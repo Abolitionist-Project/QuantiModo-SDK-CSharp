@@ -13,37 +13,58 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class User {
     
-    /* User id */
+    /// <summary>
+    /// User id
+    /// </summary>
+    /// <value>User id</value>
     [DataMember(Name="id", EmitDefaultValue=false)]
     public int? Id { get; set; }
 
     
-    /* Wordpress user id */
+    /// <summary>
+    /// Wordpress user id
+    /// </summary>
+    /// <value>Wordpress user id</value>
     [DataMember(Name="wpId", EmitDefaultValue=false)]
     public int? WpId { get; set; }
 
     
-    /* User display name */
+    /// <summary>
+    /// User display name
+    /// </summary>
+    /// <value>User display name</value>
     [DataMember(Name="displayName", EmitDefaultValue=false)]
     public string DisplayName { get; set; }
 
     
-    /* User login name */
+    /// <summary>
+    /// User login name
+    /// </summary>
+    /// <value>User login name</value>
     [DataMember(Name="loginName", EmitDefaultValue=false)]
     public string LoginName { get; set; }
 
     
-    /* User email */
+    /// <summary>
+    /// User email
+    /// </summary>
+    /// <value>User email</value>
     [DataMember(Name="email", EmitDefaultValue=false)]
     public string Email { get; set; }
 
     
-    /* User token */
+    /// <summary>
+    /// User token
+    /// </summary>
+    /// <value>User token</value>
     [DataMember(Name="token", EmitDefaultValue=false)]
     public string Token { get; set; }
 
     
-    /* Is user administrator */
+    /// <summary>
+    /// Is user administrator
+    /// </summary>
+    /// <value>Is user administrator</value>
     [DataMember(Name="administrator", EmitDefaultValue=false)]
     public bool? Administrator { get; set; }
 
@@ -84,6 +105,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

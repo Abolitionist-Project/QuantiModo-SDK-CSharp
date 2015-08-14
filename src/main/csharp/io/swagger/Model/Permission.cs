@@ -13,37 +13,58 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class Permission {
     
-    /* Grant permission to target user or public so they may access measurements within the given parameters. TODO: Rename target to something more intuitive. */
+    /// <summary>
+    /// Grant permission to target user or public so they may access measurements within the given parameters. TODO: Rename target to something more intuitive.
+    /// </summary>
+    /// <value>Grant permission to target user or public so they may access measurements within the given parameters. TODO: Rename target to something more intuitive.</value>
     [DataMember(Name="target", EmitDefaultValue=false)]
     public int? Target { get; set; }
 
     
-    /* ORIGINAL Variable name */
+    /// <summary>
+    /// ORIGINAL Variable name
+    /// </summary>
+    /// <value>ORIGINAL Variable name</value>
     [DataMember(Name="variableName", EmitDefaultValue=false)]
     public string VariableName { get; set; }
 
     
-    /* Earliest time when measurements will be accessible in epoch seconds */
+    /// <summary>
+    /// Earliest time when measurements will be accessible in epoch seconds
+    /// </summary>
+    /// <value>Earliest time when measurements will be accessible in epoch seconds</value>
     [DataMember(Name="min_timestamp", EmitDefaultValue=false)]
     public int? MinTimestamp { get; set; }
 
     
-    /* Latest time when measurements will be accessible in epoch seconds */
+    /// <summary>
+    /// Latest time when measurements will be accessible in epoch seconds
+    /// </summary>
+    /// <value>Latest time when measurements will be accessible in epoch seconds</value>
     [DataMember(Name="max_timestamp", EmitDefaultValue=false)]
     public int? MaxTimestamp { get; set; }
 
     
-    /* Earliest time of day when measurements will be accessible in epoch seconds */
+    /// <summary>
+    /// Earliest time of day when measurements will be accessible in epoch seconds
+    /// </summary>
+    /// <value>Earliest time of day when measurements will be accessible in epoch seconds</value>
     [DataMember(Name="min_time_of_day", EmitDefaultValue=false)]
     public int? MinTimeOfDay { get; set; }
 
     
-    /* Latest time of day when measurements will be accessible in epoch seconds */
+    /// <summary>
+    /// Latest time of day when measurements will be accessible in epoch seconds
+    /// </summary>
+    /// <value>Latest time of day when measurements will be accessible in epoch seconds</value>
     [DataMember(Name="max_time_of_day", EmitDefaultValue=false)]
     public int? MaxTimeOfDay { get; set; }
 
     
-    /* Maybe specifies if only weekday measurements should be accessible */
+    /// <summary>
+    /// Maybe specifies if only weekday measurements should be accessible
+    /// </summary>
+    /// <value>Maybe specifies if only weekday measurements should be accessible</value>
     [DataMember(Name="week", EmitDefaultValue=false)]
     public string Week { get; set; }
 
@@ -84,6 +105,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

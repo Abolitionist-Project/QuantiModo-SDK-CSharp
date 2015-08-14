@@ -13,27 +13,42 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class VariableNew {
     
-    /* User-defined variable display name. */
+    /// <summary>
+    /// User-defined variable display name.
+    /// </summary>
+    /// <value>User-defined variable display name.</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
-    /* Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc. */
+    /// <summary>
+    /// Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc.
+    /// </summary>
+    /// <value>Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc.</value>
     [DataMember(Name="category", EmitDefaultValue=false)]
     public string Category { get; set; }
 
     
-    /* Abbreviated name of the default unit for the variable */
+    /// <summary>
+    /// Abbreviated name of the default unit for the variable
+    /// </summary>
+    /// <value>Abbreviated name of the default unit for the variable</value>
     [DataMember(Name="unit", EmitDefaultValue=false)]
     public string Unit { get; set; }
 
     
-    /* How to aggregate measurements over time. */
+    /// <summary>
+    /// How to aggregate measurements over time.
+    /// </summary>
+    /// <value>How to aggregate measurements over time.</value>
     [DataMember(Name="combinationOperation", EmitDefaultValue=false)]
     public string CombinationOperation { get; set; }
 
     
-    /* Parent */
+    /// <summary>
+    /// Parent
+    /// </summary>
+    /// <value>Parent</value>
     [DataMember(Name="parent", EmitDefaultValue=false)]
     public string Parent { get; set; }
 
@@ -70,6 +85,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

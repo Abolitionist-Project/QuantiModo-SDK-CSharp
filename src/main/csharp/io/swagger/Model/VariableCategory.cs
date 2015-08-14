@@ -13,7 +13,10 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class VariableCategory {
     
-    /* Category name */
+    /// <summary>
+    /// Category name
+    /// </summary>
+    /// <value>Category name</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
@@ -42,6 +45,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

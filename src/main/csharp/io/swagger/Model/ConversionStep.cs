@@ -13,12 +13,18 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class ConversionStep {
     
-    /* ADD or MULTIPLY */
+    /// <summary>
+    /// ADD or MULTIPLY
+    /// </summary>
+    /// <value>ADD or MULTIPLY</value>
     [DataMember(Name="operation", EmitDefaultValue=false)]
     public string Operation { get; set; }
 
     
-    /* This specifies the order of conversion steps starting with 0 */
+    /// <summary>
+    /// This specifies the order of conversion steps starting with 0
+    /// </summary>
+    /// <value>This specifies the order of conversion steps starting with 0</value>
     [DataMember(Name="value", EmitDefaultValue=false)]
     public double? Value { get; set; }
 
@@ -49,6 +55,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

@@ -13,12 +13,17 @@ namespace IO.Swagger.Model {
   [DataContract]
   public class UserTokenRequest {
     
-    
+    /// <summary>
+    /// Gets or Sets User
+    /// </summary>
     [DataMember(Name="user", EmitDefaultValue=false)]
     public UserTokenRequestInnerUserField User { get; set; }
 
     
-    /* Organization Access token */
+    /// <summary>
+    /// Organization Access token
+    /// </summary>
+    /// <value>Organization Access token</value>
     [DataMember(Name="organization_access_token", EmitDefaultValue=false)]
     public string OrganizationAccessToken { get; set; }
 
@@ -49,6 +54,4 @@ namespace IO.Swagger.Model {
     }
 
 }
-  
-  
 }

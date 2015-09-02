@@ -81,8 +81,8 @@ namespace IO.Swagger.Model {
     /// Number of measurements obtained during latest update
     /// </summary>
     /// <value>Number of measurements obtained during latest update</value>
-    [DataMember(Name="latestData", EmitDefaultValue=false)]
-    public int? LatestData { get; set; }
+    [DataMember(Name="totalMeasurementsInLastUpdate", EmitDefaultValue=false)]
+    public int? TotalMeasurementsInLastUpdate { get; set; }
 
     
     /// <summary>
@@ -118,7 +118,7 @@ namespace IO.Swagger.Model {
       
       sb.Append("  LastUpdate: ").Append(LastUpdate).Append("\n");
       
-      sb.Append("  LatestData: ").Append(LatestData).Append("\n");
+      sb.Append("  TotalMeasurementsInLastUpdate: ").Append(TotalMeasurementsInLastUpdate).Append("\n");
       
       sb.Append("  NoDataYet: ").Append(NoDataYet).Append("\n");
       

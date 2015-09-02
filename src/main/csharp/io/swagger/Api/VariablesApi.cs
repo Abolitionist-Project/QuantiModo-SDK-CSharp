@@ -44,7 +44,7 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<Variable> PublicVariablesGetAsync ();
         
         /// <summary>
-        /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.
+        /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="search">Search query can be some fraction of a variable name.</param>
         /// <param name="effectOrCause">Allows us to specify which column in the `correlations` table will be searched. Choices are effect or cause.</param>
@@ -55,7 +55,7 @@ namespace IO.Swagger.Api
         Variable PublicVariablesSearchSearchGet (string search, string effectOrCause, int? limit, int? offset, int? sort);
   
         /// <summary>
-        /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.
+        /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="search">Search query can be some fraction of a variable name.</param>
         /// <param name="effectOrCause">Allows us to specify which column in the `correlations` table will be searched. Choices are effect or cause.</param>
@@ -64,6 +64,20 @@ namespace IO.Swagger.Api
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
         System.Threading.Tasks.Task<Variable> PublicVariablesSearchSearchGetAsync (string search, string effectOrCause, int? limit, int? offset, int? sort);
+        
+        /// <summary>
+        /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
+        /// </summary>
+        /// <param name="sharingData">Variable user settings data</param>
+        /// <returns></returns>
+        void V1UserVariablesPost (UserVariables sharingData);
+  
+        /// <summary>
+        /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
+        /// </summary>
+        /// <param name="sharingData">Variable user settings data</param>
+        /// <returns></returns>
+        System.Threading.Tasks.Task V1UserVariablesPostAsync (UserVariables sharingData);
         
         /// <summary>
         /// Variable categories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
@@ -76,20 +90,6 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <returns>List<VariableCategory></returns>
         System.Threading.Tasks.Task<List<VariableCategory>> VariableCategoriesGetAsync ();
-        
-        /// <summary>
-        /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
-        /// </summary>
-        /// <param name="sharingData">Variable user settings data</param>
-        /// <returns></returns>
-        void VariableUserSettingsPost (VariableUserSettings sharingData);
-  
-        /// <summary>
-        /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
-        /// </summary>
-        /// <param name="sharingData">Variable user settings data</param>
-        /// <returns></returns>
-        System.Threading.Tasks.Task VariableUserSettingsPostAsync (VariableUserSettings sharingData);
         
         /// <summary>
         /// Get variables by the category name Get variables by the category name. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;name&lt;/b&gt; - Original name of the variable (supports exact name match only)&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - Filter by the last time any of the properties of the variable were changed. Uses UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;li&gt;&lt;b&gt;source&lt;/b&gt; - The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here&lt;/li&gt;&lt;li&gt;&lt;b&gt;latestMeasurementTime&lt;/b&gt; - Filter variables based on the last time a measurement for them was created or updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;li&gt;&lt;b&gt;numberOfMeasurements&lt;/b&gt; - Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastSource&lt;/b&gt; - Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
@@ -403,7 +403,7 @@ namespace IO.Swagger.Api
         }
         
         /// <summary>
-        /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.
+        /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="search">Search query can be some fraction of a variable name.</param> 
         /// <param name="effectOrCause">Allows us to specify which column in the `correlations` table will be searched. Choices are effect or cause.</param> 
@@ -454,7 +454,7 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.
+        /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="search">Search query can be some fraction of a variable name.</param>
         /// <param name="effectOrCause">Allows us to specify which column in the `correlations` table will be searched. Choices are effect or cause.</param>
@@ -498,6 +498,89 @@ namespace IO.Swagger.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling PublicVariablesSearchSearchGet: " + response.Content, response.Content);
 
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
+        }
+        
+        /// <summary>
+        /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
+        /// </summary>
+        /// <param name="sharingData">Variable user settings data</param> 
+        /// <returns></returns>            
+        public void V1UserVariablesPost (UserVariables sharingData)
+        {
+            
+            // verify the required parameter 'sharingData' is set
+            if (sharingData == null) throw new ApiException(400, "Missing required parameter 'sharingData' when calling V1UserVariablesPost");
+            
+    
+            var path = "/v1/userVariables";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+
+            pathParams.Add("format", "json");
+            
+            
+            
+            
+            postBody = ApiClient.Serialize(sharingData); // http body (model) parameter
+            
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UserVariablesPost: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UserVariablesPost: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return;
+        }
+    
+        /// <summary>
+        /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
+        /// </summary>
+        /// <param name="sharingData">Variable user settings data</param>
+        /// <returns></returns>
+        public async System.Threading.Tasks.Task V1UserVariablesPostAsync (UserVariables sharingData)
+        {
+            // verify the required parameter 'sharingData' is set
+            if (sharingData == null) throw new ApiException(400, "Missing required parameter 'sharingData' when calling V1UserVariablesPost");
+            
+    
+            var path = "/v1/userVariables";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+            pathParams.Add("format", "json");
+            
+            
+            
+            
+            postBody = ApiClient.Serialize(sharingData); // http body (model) parameter
+            
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UserVariablesPost: " + response.Content, response.Content);
+
+            
+            return;
         }
         
         /// <summary>
@@ -571,89 +654,6 @@ namespace IO.Swagger.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
 
             return (List<VariableCategory>) ApiClient.Deserialize(response.Content, typeof(List<VariableCategory>), response.Headers);
-        }
-        
-        /// <summary>
-        /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
-        /// </summary>
-        /// <param name="sharingData">Variable user settings data</param> 
-        /// <returns></returns>            
-        public void VariableUserSettingsPost (VariableUserSettings sharingData)
-        {
-            
-            // verify the required parameter 'sharingData' is set
-            if (sharingData == null) throw new ApiException(400, "Missing required parameter 'sharingData' when calling VariableUserSettingsPost");
-            
-    
-            var path = "/variableUserSettings";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-
-            pathParams.Add("format", "json");
-            
-            
-            
-            
-            postBody = ApiClient.Serialize(sharingData); // http body (model) parameter
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSettingsPost: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSettingsPost: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return;
-        }
-    
-        /// <summary>
-        /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
-        /// </summary>
-        /// <param name="sharingData">Variable user settings data</param>
-        /// <returns></returns>
-        public async System.Threading.Tasks.Task VariableUserSettingsPostAsync (VariableUserSettings sharingData)
-        {
-            // verify the required parameter 'sharingData' is set
-            if (sharingData == null) throw new ApiException(400, "Missing required parameter 'sharingData' when calling VariableUserSettingsPost");
-            
-    
-            var path = "/variableUserSettings";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-            pathParams.Add("format", "json");
-            
-            
-            
-            
-            postBody = ApiClient.Serialize(sharingData); // http body (model) parameter
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSettingsPost: " + response.Content, response.Content);
-
-            
-            return;
         }
         
         /// <summary>

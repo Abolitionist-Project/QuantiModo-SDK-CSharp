@@ -65,8 +65,8 @@ namespace IO.Swagger.Model {
     /// Unit of measurement as originally submitted
     /// </summary>
     /// <value>Unit of measurement as originally submitted</value>
-    [DataMember(Name="storedUnit", EmitDefaultValue=false)]
-    public string StoredUnit { get; set; }
+    [DataMember(Name="storedAbbreviatedUnitName", EmitDefaultValue=false)]
+    public string StoredAbbreviatedUnitName { get; set; }
 
     
 
@@ -90,7 +90,7 @@ namespace IO.Swagger.Model {
       
       sb.Append("  StoredValue: ").Append(StoredValue).Append("\n");
       
-      sb.Append("  StoredUnit: ").Append(StoredUnit).Append("\n");
+      sb.Append("  StoredAbbreviatedUnitName: ").Append(StoredAbbreviatedUnitName).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

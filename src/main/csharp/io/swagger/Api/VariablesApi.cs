@@ -12,36 +12,16 @@ namespace IO.Swagger.Api
     {
         
         /// <summary>
-        /// Store or Update a Correlation Store or Update a Correlation
-        /// </summary>
-        /// <param name="cause"></param>
-        /// <param name="effect"></param>
-        /// <param name="correlationcoefficient"></param>
-        /// <param name="vote"></param>
-        /// <returns></returns>
-        void CorrelationsPost (string cause, string effect, string correlationcoefficient, string vote);
-  
-        /// <summary>
-        /// Store or Update a Correlation Store or Update a Correlation
-        /// </summary>
-        /// <param name="cause"></param>
-        /// <param name="effect"></param>
-        /// <param name="correlationcoefficient"></param>
-        /// <param name="vote"></param>
-        /// <returns></returns>
-        System.Threading.Tasks.Task CorrelationsPostAsync (string cause, string effect, string correlationcoefficient, string vote);
-        
-        /// <summary>
         /// Get public variables This endpoint retrieves an array of all public variables. Public variables are things like foods, medications, symptoms, conditions, and anything not unique to a particular user. For instance, a telephone number or name would not be a public variable.
         /// </summary>
         /// <returns>Variable</returns>
-        Variable PublicVariablesGet ();
+        Variable V1PublicVariablesGet ();
   
         /// <summary>
         /// Get public variables This endpoint retrieves an array of all public variables. Public variables are things like foods, medications, symptoms, conditions, and anything not unique to a particular user. For instance, a telephone number or name would not be a public variable.
         /// </summary>
         /// <returns>Variable</returns>
-        System.Threading.Tasks.Task<Variable> PublicVariablesGetAsync ();
+        System.Threading.Tasks.Task<Variable> V1PublicVariablesGetAsync ();
         
         /// <summary>
         /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
@@ -52,7 +32,7 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        Variable PublicVariablesSearchSearchGet (string search, string effectOrCause, int? limit, int? offset, int? sort);
+        Variable V1PublicVariablesSearchSearchGet (string search, string effectOrCause, int? limit, int? offset, int? sort);
   
         /// <summary>
         /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
@@ -63,7 +43,7 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        System.Threading.Tasks.Task<Variable> PublicVariablesSearchSearchGetAsync (string search, string effectOrCause, int? limit, int? offset, int? sort);
+        System.Threading.Tasks.Task<Variable> V1PublicVariablesSearchSearchGetAsync (string search, string effectOrCause, int? limit, int? offset, int? sort);
         
         /// <summary>
         /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
@@ -83,13 +63,13 @@ namespace IO.Swagger.Api
         /// Variable categories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
         /// </summary>
         /// <returns>List<VariableCategory></returns>
-        List<VariableCategory> VariableCategoriesGet ();
+        List<VariableCategory> V1VariableCategoriesGet ();
   
         /// <summary>
         /// Variable categories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
         /// </summary>
         /// <returns>List<VariableCategory></returns>
-        System.Threading.Tasks.Task<List<VariableCategory>> VariableCategoriesGetAsync ();
+        System.Threading.Tasks.Task<List<VariableCategory>> V1VariableCategoriesGetAsync ();
         
         /// <summary>
         /// Get variables by the category name Get variables by the category name. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;name&lt;/b&gt; - Original name of the variable (supports exact name match only)&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - Filter by the last time any of the properties of the variable were changed. Uses UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;li&gt;&lt;b&gt;source&lt;/b&gt; - The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here&lt;/li&gt;&lt;li&gt;&lt;b&gt;latestMeasurementTime&lt;/b&gt; - Filter variables based on the last time a measurement for them was created or updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;li&gt;&lt;b&gt;numberOfMeasurements&lt;/b&gt; - Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastSource&lt;/b&gt; - Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
@@ -100,7 +80,7 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        Variable VariablesGet (int? userId, string category, int? limit, int? offset, int? sort);
+        Variable V1VariablesGet (int? userId, string category, int? limit, int? offset, int? sort);
   
         /// <summary>
         /// Get variables by the category name Get variables by the category name. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;name&lt;/b&gt; - Original name of the variable (supports exact name match only)&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - Filter by the last time any of the properties of the variable were changed. Uses UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;li&gt;&lt;b&gt;source&lt;/b&gt; - The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here&lt;/li&gt;&lt;li&gt;&lt;b&gt;latestMeasurementTime&lt;/b&gt; - Filter variables based on the last time a measurement for them was created or updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;li&gt;&lt;b&gt;numberOfMeasurements&lt;/b&gt; - Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastSource&lt;/b&gt; - Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
@@ -111,21 +91,21 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        System.Threading.Tasks.Task<Variable> VariablesGetAsync (int? userId, string category, int? limit, int? offset, int? sort);
+        System.Threading.Tasks.Task<Variable> V1VariablesGetAsync (int? userId, string category, int? limit, int? offset, int? sort);
         
         /// <summary>
         /// Create Variables Allows the client to create a new variable in the `variables` table.
         /// </summary>
         /// <param name="variableName">Original name for the variable.</param>
         /// <returns></returns>
-        void VariablesPost (VariablesNew variableName);
+        void V1VariablesPost (VariablesNew variableName);
   
         /// <summary>
         /// Create Variables Allows the client to create a new variable in the `variables` table.
         /// </summary>
         /// <param name="variableName">Original name for the variable.</param>
         /// <returns></returns>
-        System.Threading.Tasks.Task VariablesPostAsync (VariablesNew variableName);
+        System.Threading.Tasks.Task V1VariablesPostAsync (VariablesNew variableName);
         
         /// <summary>
         /// Get variables by search query Get variables containing the search characters for which the currently logged in user has measurements. Used to provide auto-complete function in variable search boxes.
@@ -136,7 +116,7 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <returns>List<Variable></returns>
-        List<Variable> VariablesSearchSearchGet (string search, string categoryName, string source, int? limit, int? offset);
+        List<Variable> V1VariablesSearchSearchGet (string search, string categoryName, string source, int? limit, int? offset);
   
         /// <summary>
         /// Get variables by search query Get variables containing the search characters for which the currently logged in user has measurements. Used to provide auto-complete function in variable search boxes.
@@ -147,21 +127,21 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <returns>List<Variable></returns>
-        System.Threading.Tasks.Task<List<Variable>> VariablesSearchSearchGetAsync (string search, string categoryName, string source, int? limit, int? offset);
+        System.Threading.Tasks.Task<List<Variable>> V1VariablesSearchSearchGetAsync (string search, string categoryName, string source, int? limit, int? offset);
         
         /// <summary>
         /// Get info about a variable Get all of the settings and information about a variable by its name. If the logged in user has modified the settings for the variable, these will be provided instead of the default settings for that variable.
         /// </summary>
         /// <param name="variableName">Variable name</param>
         /// <returns>Variable</returns>
-        Variable VariablesVariableNameGet (string variableName);
+        Variable V1VariablesVariableNameGet (string variableName);
   
         /// <summary>
         /// Get info about a variable Get all of the settings and information about a variable by its name. If the logged in user has modified the settings for the variable, these will be provided instead of the default settings for that variable.
         /// </summary>
         /// <param name="variableName">Variable name</param>
         /// <returns>Variable</returns>
-        System.Threading.Tasks.Task<Variable> VariablesVariableNameGetAsync (string variableName);
+        System.Threading.Tasks.Task<Variable> V1VariablesVariableNameGetAsync (string variableName);
         
     }
   
@@ -205,9 +185,8 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
-        /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public String GetBasePath()
         {
             return this.ApiClient.BasePath;
         }
@@ -220,124 +199,14 @@ namespace IO.Swagger.Api
     
         
         /// <summary>
-        /// Store or Update a Correlation Store or Update a Correlation
-        /// </summary>
-        /// <param name="cause"></param> 
-        /// <param name="effect"></param> 
-        /// <param name="correlationcoefficient"></param> 
-        /// <param name="vote"></param> 
-        /// <returns></returns>            
-        public void CorrelationsPost (string cause, string effect, string correlationcoefficient, string vote)
-        {
-            
-            // verify the required parameter 'cause' is set
-            if (cause == null) throw new ApiException(400, "Missing required parameter 'cause' when calling CorrelationsPost");
-            
-            // verify the required parameter 'effect' is set
-            if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling CorrelationsPost");
-            
-            // verify the required parameter 'correlationcoefficient' is set
-            if (correlationcoefficient == null) throw new ApiException(400, "Missing required parameter 'correlationcoefficient' when calling CorrelationsPost");
-            
-            // verify the required parameter 'vote' is set
-            if (vote == null) throw new ApiException(400, "Missing required parameter 'vote' when calling CorrelationsPost");
-            
-    
-            var path = "/correlations";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-
-            pathParams.Add("format", "json");
-            
-            if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
-            if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
-            if (correlationcoefficient != null) queryParams.Add("correlationcoefficient", ApiClient.ParameterToString(correlationcoefficient)); // query parameter
-            if (vote != null) queryParams.Add("vote", ApiClient.ParameterToString(vote)); // query parameter
-            
-            
-            
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling CorrelationsPost: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling CorrelationsPost: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return;
-        }
-    
-        /// <summary>
-        /// Store or Update a Correlation Store or Update a Correlation
-        /// </summary>
-        /// <param name="cause"></param>
-        /// <param name="effect"></param>
-        /// <param name="correlationcoefficient"></param>
-        /// <param name="vote"></param>
-        /// <returns></returns>
-        public async System.Threading.Tasks.Task CorrelationsPostAsync (string cause, string effect, string correlationcoefficient, string vote)
-        {
-            // verify the required parameter 'cause' is set
-            if (cause == null) throw new ApiException(400, "Missing required parameter 'cause' when calling CorrelationsPost");
-            // verify the required parameter 'effect' is set
-            if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling CorrelationsPost");
-            // verify the required parameter 'correlationcoefficient' is set
-            if (correlationcoefficient == null) throw new ApiException(400, "Missing required parameter 'correlationcoefficient' when calling CorrelationsPost");
-            // verify the required parameter 'vote' is set
-            if (vote == null) throw new ApiException(400, "Missing required parameter 'vote' when calling CorrelationsPost");
-            
-    
-            var path = "/correlations";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-            pathParams.Add("format", "json");
-            
-            if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
-            if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
-            if (correlationcoefficient != null) queryParams.Add("correlationcoefficient", ApiClient.ParameterToString(correlationcoefficient)); // query parameter
-            if (vote != null) queryParams.Add("vote", ApiClient.ParameterToString(vote)); // query parameter
-            
-            
-            
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling CorrelationsPost: " + response.Content, response.Content);
-
-            
-            return;
-        }
-        
-        /// <summary>
         /// Get public variables This endpoint retrieves an array of all public variables. Public variables are things like foods, medications, symptoms, conditions, and anything not unique to a particular user. For instance, a telephone number or name would not be a public variable.
         /// </summary>
         /// <returns>Variable</returns>            
-        public Variable PublicVariablesGet ()
+        public Variable V1PublicVariablesGet ()
         {
             
     
-            var path = "/public/variables";
+            var path = "/v1/public/variables";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -360,9 +229,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicVariablesGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicVariablesGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicVariablesGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicVariablesGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
         }
@@ -371,11 +240,11 @@ namespace IO.Swagger.Api
         /// Get public variables This endpoint retrieves an array of all public variables. Public variables are things like foods, medications, symptoms, conditions, and anything not unique to a particular user. For instance, a telephone number or name would not be a public variable.
         /// </summary>
         /// <returns>Variable</returns>
-        public async System.Threading.Tasks.Task<Variable> PublicVariablesGetAsync ()
+        public async System.Threading.Tasks.Task<Variable> V1PublicVariablesGetAsync ()
         {
             
     
-            var path = "/public/variables";
+            var path = "/v1/public/variables";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -397,7 +266,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicVariablesGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicVariablesGet: " + response.Content, response.Content);
 
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
         }
@@ -411,14 +280,14 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
         /// <returns>Variable</returns>            
-        public Variable PublicVariablesSearchSearchGet (string search, string effectOrCause, int? limit, int? offset, int? sort)
+        public Variable V1PublicVariablesSearchSearchGet (string search, string effectOrCause, int? limit, int? offset, int? sort)
         {
             
             // verify the required parameter 'search' is set
-            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling PublicVariablesSearchSearchGet");
+            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling V1PublicVariablesSearchSearchGet");
             
     
-            var path = "/public/variables/search/{search}";
+            var path = "/v1/public/variables/search/{search}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -446,9 +315,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicVariablesSearchSearchGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicVariablesSearchSearchGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicVariablesSearchSearchGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicVariablesSearchSearchGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
         }
@@ -462,13 +331,13 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        public async System.Threading.Tasks.Task<Variable> PublicVariablesSearchSearchGetAsync (string search, string effectOrCause, int? limit, int? offset, int? sort)
+        public async System.Threading.Tasks.Task<Variable> V1PublicVariablesSearchSearchGetAsync (string search, string effectOrCause, int? limit, int? offset, int? sort)
         {
             // verify the required parameter 'search' is set
-            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling PublicVariablesSearchSearchGet");
+            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling V1PublicVariablesSearchSearchGet");
             
     
-            var path = "/public/variables/search/{search}";
+            var path = "/v1/public/variables/search/{search}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -495,7 +364,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicVariablesSearchSearchGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicVariablesSearchSearchGet: " + response.Content, response.Content);
 
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
         }
@@ -587,11 +456,11 @@ namespace IO.Swagger.Api
         /// Variable categories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
         /// </summary>
         /// <returns>List<VariableCategory></returns>            
-        public List<VariableCategory> VariableCategoriesGet ()
+        public List<VariableCategory> V1VariableCategoriesGet ()
         {
             
     
-            var path = "/variableCategories";
+            var path = "/v1/variableCategories";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -614,9 +483,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariableCategoriesGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariableCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<VariableCategory>) ApiClient.Deserialize(response.Content, typeof(List<VariableCategory>), response.Headers);
         }
@@ -625,11 +494,11 @@ namespace IO.Swagger.Api
         /// Variable categories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
         /// </summary>
         /// <returns>List<VariableCategory></returns>
-        public async System.Threading.Tasks.Task<List<VariableCategory>> VariableCategoriesGetAsync ()
+        public async System.Threading.Tasks.Task<List<VariableCategory>> V1VariableCategoriesGetAsync ()
         {
             
     
-            var path = "/variableCategories";
+            var path = "/v1/variableCategories";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -651,7 +520,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariableCategoriesGet: " + response.Content, response.Content);
 
             return (List<VariableCategory>) ApiClient.Deserialize(response.Content, typeof(List<VariableCategory>), response.Headers);
         }
@@ -665,11 +534,11 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
         /// <returns>Variable</returns>            
-        public Variable VariablesGet (int? userId, string category, int? limit, int? offset, int? sort)
+        public Variable V1VariablesGet (int? userId, string category, int? limit, int? offset, int? sort)
         {
             
     
-            var path = "/variables";
+            var path = "/v1/variables";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -697,9 +566,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
         }
@@ -713,11 +582,11 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        public async System.Threading.Tasks.Task<Variable> VariablesGetAsync (int? userId, string category, int? limit, int? offset, int? sort)
+        public async System.Threading.Tasks.Task<Variable> V1VariablesGetAsync (int? userId, string category, int? limit, int? offset, int? sort)
         {
             
     
-            var path = "/variables";
+            var path = "/v1/variables";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -744,7 +613,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesGet: " + response.Content, response.Content);
 
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
         }
@@ -754,14 +623,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="variableName">Original name for the variable.</param> 
         /// <returns></returns>            
-        public void VariablesPost (VariablesNew variableName)
+        public void V1VariablesPost (VariablesNew variableName)
         {
             
             // verify the required parameter 'variableName' is set
-            if (variableName == null) throw new ApiException(400, "Missing required parameter 'variableName' when calling VariablesPost");
+            if (variableName == null) throw new ApiException(400, "Missing required parameter 'variableName' when calling V1VariablesPost");
             
     
-            var path = "/variables";
+            var path = "/v1/variables";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -785,9 +654,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesPost: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesPost: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesPost: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesPost: " + response.ErrorMessage, response.ErrorMessage);
     
             return;
         }
@@ -797,13 +666,13 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="variableName">Original name for the variable.</param>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task VariablesPostAsync (VariablesNew variableName)
+        public async System.Threading.Tasks.Task V1VariablesPostAsync (VariablesNew variableName)
         {
             // verify the required parameter 'variableName' is set
-            if (variableName == null) throw new ApiException(400, "Missing required parameter 'variableName' when calling VariablesPost");
+            if (variableName == null) throw new ApiException(400, "Missing required parameter 'variableName' when calling V1VariablesPost");
             
     
-            var path = "/variables";
+            var path = "/v1/variables";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -826,7 +695,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesPost: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesPost: " + response.Content, response.Content);
 
             
             return;
@@ -841,14 +710,14 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param> 
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <returns>List<Variable></returns>            
-        public List<Variable> VariablesSearchSearchGet (string search, string categoryName, string source, int? limit, int? offset)
+        public List<Variable> V1VariablesSearchSearchGet (string search, string categoryName, string source, int? limit, int? offset)
         {
             
             // verify the required parameter 'search' is set
-            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling VariablesSearchSearchGet");
+            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling V1VariablesSearchSearchGet");
             
     
-            var path = "/variables/search/{search}";
+            var path = "/v1/variables/search/{search}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -876,9 +745,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesSearchSearchGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesSearchSearchGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesSearchSearchGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesSearchSearchGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<Variable>) ApiClient.Deserialize(response.Content, typeof(List<Variable>), response.Headers);
         }
@@ -892,13 +761,13 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <returns>List<Variable></returns>
-        public async System.Threading.Tasks.Task<List<Variable>> VariablesSearchSearchGetAsync (string search, string categoryName, string source, int? limit, int? offset)
+        public async System.Threading.Tasks.Task<List<Variable>> V1VariablesSearchSearchGetAsync (string search, string categoryName, string source, int? limit, int? offset)
         {
             // verify the required parameter 'search' is set
-            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling VariablesSearchSearchGet");
+            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling V1VariablesSearchSearchGet");
             
     
-            var path = "/variables/search/{search}";
+            var path = "/v1/variables/search/{search}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -925,7 +794,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesSearchSearchGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesSearchSearchGet: " + response.Content, response.Content);
 
             return (List<Variable>) ApiClient.Deserialize(response.Content, typeof(List<Variable>), response.Headers);
         }
@@ -935,14 +804,14 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="variableName">Variable name</param> 
         /// <returns>Variable</returns>            
-        public Variable VariablesVariableNameGet (string variableName)
+        public Variable V1VariablesVariableNameGet (string variableName)
         {
             
             // verify the required parameter 'variableName' is set
-            if (variableName == null) throw new ApiException(400, "Missing required parameter 'variableName' when calling VariablesVariableNameGet");
+            if (variableName == null) throw new ApiException(400, "Missing required parameter 'variableName' when calling V1VariablesVariableNameGet");
             
     
-            var path = "/variables/{variableName}";
+            var path = "/v1/variables/{variableName}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -966,9 +835,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesVariableNameGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesVariableNameGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesVariableNameGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesVariableNameGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
         }
@@ -978,13 +847,13 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="variableName">Variable name</param>
         /// <returns>Variable</returns>
-        public async System.Threading.Tasks.Task<Variable> VariablesVariableNameGetAsync (string variableName)
+        public async System.Threading.Tasks.Task<Variable> V1VariablesVariableNameGetAsync (string variableName)
         {
             // verify the required parameter 'variableName' is set
-            if (variableName == null) throw new ApiException(400, "Missing required parameter 'variableName' when calling VariablesVariableNameGet");
+            if (variableName == null) throw new ApiException(400, "Missing required parameter 'variableName' when calling V1VariablesVariableNameGet");
             
     
-            var path = "/variables/{variableName}";
+            var path = "/v1/variables/{variableName}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -1007,7 +876,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariablesVariableNameGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1VariablesVariableNameGet: " + response.Content, response.Content);
 
             return (Variable) ApiClient.Deserialize(response.Content, typeof(Variable), response.Headers);
         }

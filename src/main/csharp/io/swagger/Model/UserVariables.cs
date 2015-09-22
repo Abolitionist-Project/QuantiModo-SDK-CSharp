@@ -54,19 +54,19 @@ namespace IO.Swagger.Model {
 
     
     /// <summary>
-    /// maximumValue
+    /// maximumAllowedValue
     /// </summary>
-    /// <value>maximumValue</value>
-    [DataMember(Name="maximumValue", EmitDefaultValue=false)]
-    public float? MaximumValue { get; set; }
+    /// <value>maximumAllowedValue</value>
+    [DataMember(Name="maximumAllowedValue", EmitDefaultValue=false)]
+    public float? MaximumAllowedValue { get; set; }
 
     
     /// <summary>
-    /// minimumValue
+    /// minimumAllowedValue
     /// </summary>
-    /// <value>minimumValue</value>
-    [DataMember(Name="minimumValue", EmitDefaultValue=false)]
-    public float? MinimumValue { get; set; }
+    /// <value>minimumAllowedValue</value>
+    [DataMember(Name="minimumAllowedValue", EmitDefaultValue=false)]
+    public float? MinimumAllowedValue { get; set; }
 
     
     /// <summary>
@@ -112,9 +112,9 @@ namespace IO.Swagger.Model {
       
       sb.Append("  JoinWith: ").Append(JoinWith).Append("\n");
       
-      sb.Append("  MaximumValue: ").Append(MaximumValue).Append("\n");
+      sb.Append("  MaximumAllowedValue: ").Append(MaximumAllowedValue).Append("\n");
       
-      sb.Append("  MinimumValue: ").Append(MinimumValue).Append("\n");
+      sb.Append("  MinimumAllowedValue: ").Append(MinimumAllowedValue).Append("\n");
       
       sb.Append("  Name: ").Append(Name).Append("\n");
       

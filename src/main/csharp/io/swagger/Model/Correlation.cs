@@ -30,11 +30,27 @@ namespace IO.Swagger.Model {
 
     
     /// <summary>
+    /// original name of the cause.
+    /// </summary>
+    /// <value>original name of the cause.</value>
+    [DataMember(Name="originalCause", EmitDefaultValue=false)]
+    public string OriginalCause { get; set; }
+
+    
+    /// <summary>
     /// ORIGINAL variable name of the effect variable for which the user desires correlations.
     /// </summary>
     /// <value>ORIGINAL variable name of the effect variable for which the user desires correlations.</value>
     [DataMember(Name="effect", EmitDefaultValue=false)]
     public string Effect { get; set; }
+
+    
+    /// <summary>
+    /// effect variable original name.
+    /// </summary>
+    /// <value>effect variable original name.</value>
+    [DataMember(Name="originalEffect", EmitDefaultValue=false)]
+    public string OriginalEffect { get; set; }
 
     
     /// <summary>
@@ -117,6 +133,62 @@ namespace IO.Swagger.Model {
     public string EffectCategory { get; set; }
 
     
+    /// <summary>
+    /// cause value that predicts an above average effect value (in default unit for cause variable)
+    /// </summary>
+    /// <value>cause value that predicts an above average effect value (in default unit for cause variable)</value>
+    [DataMember(Name="valuePredictingHighOutcome", EmitDefaultValue=false)]
+    public double? ValuePredictingHighOutcome { get; set; }
+
+    
+    /// <summary>
+    /// cause value that predicts a below average effect value (in default unit for cause variable)
+    /// </summary>
+    /// <value>cause value that predicts a below average effect value (in default unit for cause variable)</value>
+    [DataMember(Name="valuePredictingLowOutcome", EmitDefaultValue=false)]
+    public double? ValuePredictingLowOutcome { get; set; }
+
+    
+    /// <summary>
+    /// Optimal Pearson Product
+    /// </summary>
+    /// <value>Optimal Pearson Product</value>
+    [DataMember(Name="optimalPearsonProduct", EmitDefaultValue=false)]
+    public double? OptimalPearsonProduct { get; set; }
+
+    
+    /// <summary>
+    /// Average Vote
+    /// </summary>
+    /// <value>Average Vote</value>
+    [DataMember(Name="averageVote", EmitDefaultValue=false)]
+    public double? AverageVote { get; set; }
+
+    
+    /// <summary>
+    /// User Vote
+    /// </summary>
+    /// <value>User Vote</value>
+    [DataMember(Name="userVote", EmitDefaultValue=false)]
+    public double? UserVote { get; set; }
+
+    
+    /// <summary>
+    /// Unit of Cause
+    /// </summary>
+    /// <value>Unit of Cause</value>
+    [DataMember(Name="causeUnit", EmitDefaultValue=false)]
+    public string CauseUnit { get; set; }
+
+    
+    /// <summary>
+    /// Unit Id of Cause
+    /// </summary>
+    /// <value>Unit Id of Cause</value>
+    [DataMember(Name="causeUnitId", EmitDefaultValue=false)]
+    public int? CauseUnitId { get; set; }
+
+    
 
     /// <summary>
     /// Get the string presentation of the object
@@ -130,7 +202,11 @@ namespace IO.Swagger.Model {
       
       sb.Append("  Cause: ").Append(Cause).Append("\n");
       
+      sb.Append("  OriginalCause: ").Append(OriginalCause).Append("\n");
+      
       sb.Append("  Effect: ").Append(Effect).Append("\n");
+      
+      sb.Append("  OriginalEffect: ").Append(OriginalEffect).Append("\n");
       
       sb.Append("  OnsetDelay: ").Append(OnsetDelay).Append("\n");
       
@@ -151,6 +227,20 @@ namespace IO.Swagger.Model {
       sb.Append("  CauseCategory: ").Append(CauseCategory).Append("\n");
       
       sb.Append("  EffectCategory: ").Append(EffectCategory).Append("\n");
+      
+      sb.Append("  ValuePredictingHighOutcome: ").Append(ValuePredictingHighOutcome).Append("\n");
+      
+      sb.Append("  ValuePredictingLowOutcome: ").Append(ValuePredictingLowOutcome).Append("\n");
+      
+      sb.Append("  OptimalPearsonProduct: ").Append(OptimalPearsonProduct).Append("\n");
+      
+      sb.Append("  AverageVote: ").Append(AverageVote).Append("\n");
+      
+      sb.Append("  UserVote: ").Append(UserVote).Append("\n");
+      
+      sb.Append("  CauseUnit: ").Append(CauseUnit).Append("\n");
+      
+      sb.Append("  CauseUnitId: ").Append(CauseUnitId).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

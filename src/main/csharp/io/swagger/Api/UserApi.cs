@@ -12,18 +12,6 @@ namespace IO.Swagger.Api
     {
         
         /// <summary>
-        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
-        /// </summary>
-        /// <returns>User</returns>
-        User UserMeGet ();
-  
-        /// <summary>
-        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
-        /// </summary>
-        /// <returns>User</returns>
-        System.Threading.Tasks.Task<User> UserMeGetAsync ();
-        
-        /// <summary>
         /// Get user tokens for existing users, create new users Get user tokens for existing users, create new users
         /// </summary>
         /// <param name="organizationId">Organization ID</param>
@@ -38,6 +26,18 @@ namespace IO.Swagger.Api
         /// <param name="body">Provides organization token and user ID</param>
         /// <returns>UserTokenSuccessfulResponse</returns>
         System.Threading.Tasks.Task<UserTokenSuccessfulResponse> V1OrganizationsOrganizationIdUsersPostAsync (int? organizationId, UserTokenRequest body);
+        
+        /// <summary>
+        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
+        /// </summary>
+        /// <returns>User</returns>
+        User V1UserMeGet ();
+  
+        /// <summary>
+        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
+        /// </summary>
+        /// <returns>User</returns>
+        System.Threading.Tasks.Task<User> V1UserMeGetAsync ();
         
     }
   
@@ -81,9 +81,8 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
-        /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public String GetBasePath()
         {
             return this.ApiClient.BasePath;
         }
@@ -94,79 +93,6 @@ namespace IO.Swagger.Api
         /// <value>An instance of the ApiClient</param>
         public ApiClient ApiClient {get; set;}
     
-        
-        /// <summary>
-        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
-        /// </summary>
-        /// <returns>User</returns>            
-        public User UserMeGet ()
-        {
-            
-    
-            var path = "/user/me";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-
-            pathParams.Add("format", "json");
-            
-            
-            
-            
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UserMeGet: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UserMeGet: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (User) ApiClient.Deserialize(response.Content, typeof(User), response.Headers);
-        }
-    
-        /// <summary>
-        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
-        /// </summary>
-        /// <returns>User</returns>
-        public async System.Threading.Tasks.Task<User> UserMeGetAsync ()
-        {
-            
-    
-            var path = "/user/me";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-            pathParams.Add("format", "json");
-            
-            
-            
-            
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UserMeGet: " + response.Content, response.Content);
-
-            return (User) ApiClient.Deserialize(response.Content, typeof(User), response.Headers);
-        }
         
         /// <summary>
         /// Get user tokens for existing users, create new users Get user tokens for existing users, create new users
@@ -257,6 +183,79 @@ namespace IO.Swagger.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling V1OrganizationsOrganizationIdUsersPost: " + response.Content, response.Content);
 
             return (UserTokenSuccessfulResponse) ApiClient.Deserialize(response.Content, typeof(UserTokenSuccessfulResponse), response.Headers);
+        }
+        
+        /// <summary>
+        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
+        /// </summary>
+        /// <returns>User</returns>            
+        public User V1UserMeGet ()
+        {
+            
+    
+            var path = "/v1/user/me";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+
+            pathParams.Add("format", "json");
+            
+            
+            
+            
+            
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UserMeGet: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UserMeGet: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (User) ApiClient.Deserialize(response.Content, typeof(User), response.Headers);
+        }
+    
+        /// <summary>
+        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
+        /// </summary>
+        /// <returns>User</returns>
+        public async System.Threading.Tasks.Task<User> V1UserMeGetAsync ()
+        {
+            
+    
+            var path = "/v1/user/me";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+            pathParams.Add("format", "json");
+            
+            
+            
+            
+            
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UserMeGet: " + response.Content, response.Content);
+
+            return (User) ApiClient.Deserialize(response.Content, typeof(User), response.Headers);
         }
         
     }

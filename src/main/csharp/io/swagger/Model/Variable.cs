@@ -49,8 +49,16 @@ namespace IO.Swagger.Model {
     /// Abbreviated name of the default unit for the variable
     /// </summary>
     /// <value>Abbreviated name of the default unit for the variable</value>
-    [DataMember(Name="unit", EmitDefaultValue=false)]
-    public string Unit { get; set; }
+    [DataMember(Name="abbreviatedUnitName", EmitDefaultValue=false)]
+    public string AbbreviatedUnitName { get; set; }
+
+    
+    /// <summary>
+    /// Id of the default unit for the variable
+    /// </summary>
+    /// <value>Id of the default unit for the variable</value>
+    [DataMember(Name="abbreviatedUnitId", EmitDefaultValue=false)]
+    public int? AbbreviatedUnitId { get; set; }
 
     
     /// <summary>
@@ -210,7 +218,7 @@ namespace IO.Swagger.Model {
     /// </summary>
     /// <value>Last unit</value>
     [DataMember(Name="lastUnit", EmitDefaultValue=false)]
-    public int? LastUnit { get; set; }
+    public string LastUnit { get; set; }
 
     
     /// <summary>
@@ -234,7 +242,7 @@ namespace IO.Swagger.Model {
     /// </summary>
     /// <value>Most common unit</value>
     [DataMember(Name="mostCommonUnit", EmitDefaultValue=false)]
-    public int? MostCommonUnit { get; set; }
+    public string MostCommonUnit { get; set; }
 
     
     /// <summary>
@@ -262,7 +270,9 @@ namespace IO.Swagger.Model {
       
       sb.Append("  Category: ").Append(Category).Append("\n");
       
-      sb.Append("  Unit: ").Append(Unit).Append("\n");
+      sb.Append("  AbbreviatedUnitName: ").Append(AbbreviatedUnitName).Append("\n");
+      
+      sb.Append("  AbbreviatedUnitId: ").Append(AbbreviatedUnitId).Append("\n");
       
       sb.Append("  Sources: ").Append(Sources).Append("\n");
       

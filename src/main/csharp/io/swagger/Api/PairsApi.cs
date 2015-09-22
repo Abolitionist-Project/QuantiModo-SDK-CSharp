@@ -28,7 +28,7 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Pairs></returns>
-        List<Pairs> PairsGet (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort);
+        List<Pairs> V1PairsGet (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort);
   
         /// <summary>
         /// Get pairs Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.
@@ -47,7 +47,7 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Pairs></returns>
-        System.Threading.Tasks.Task<List<Pairs>> PairsGetAsync (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort);
+        System.Threading.Tasks.Task<List<Pairs>> V1PairsGetAsync (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort);
         
     }
   
@@ -91,9 +91,8 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
-        /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public String GetBasePath()
         {
             return this.ApiClient.BasePath;
         }
@@ -122,17 +121,17 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
         /// <returns>List<Pairs></returns>            
-        public List<Pairs> PairsGet (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort)
+        public List<Pairs> V1PairsGet (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort)
         {
             
             // verify the required parameter 'cause' is set
-            if (cause == null) throw new ApiException(400, "Missing required parameter 'cause' when calling PairsGet");
+            if (cause == null) throw new ApiException(400, "Missing required parameter 'cause' when calling V1PairsGet");
             
             // verify the required parameter 'effect' is set
-            if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling PairsGet");
+            if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling V1PairsGet");
             
     
-            var path = "/pairs";
+            var path = "/v1/pairs";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -168,9 +167,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling PairsGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PairsGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling PairsGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PairsGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<Pairs>) ApiClient.Deserialize(response.Content, typeof(List<Pairs>), response.Headers);
         }
@@ -192,15 +191,15 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Pairs></returns>
-        public async System.Threading.Tasks.Task<List<Pairs>> PairsGetAsync (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort)
+        public async System.Threading.Tasks.Task<List<Pairs>> V1PairsGetAsync (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort)
         {
             // verify the required parameter 'cause' is set
-            if (cause == null) throw new ApiException(400, "Missing required parameter 'cause' when calling PairsGet");
+            if (cause == null) throw new ApiException(400, "Missing required parameter 'cause' when calling V1PairsGet");
             // verify the required parameter 'effect' is set
-            if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling PairsGet");
+            if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling V1PairsGet");
             
     
-            var path = "/pairs";
+            var path = "/v1/pairs";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -235,7 +234,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling PairsGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PairsGet: " + response.Content, response.Content);
 
             return (List<Pairs>) ApiClient.Deserialize(response.Content, typeof(List<Pairs>), response.Headers);
         }

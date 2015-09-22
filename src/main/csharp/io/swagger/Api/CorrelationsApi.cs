@@ -20,7 +20,7 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Correlation></returns>
-        List<Correlation> CorrelationsGet (string effect, string cause, int? limit, int? offset, int? sort);
+        List<Correlation> V1CorrelationsGet (string effect, string cause, int? limit, int? offset, int? sort);
   
         /// <summary>
         /// Get correlations Get correlations.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;correlationCoefficient&lt;/b&gt; - Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action&lt;/li&gt;&lt;li&gt;&lt;b&gt;onsetDelay&lt;/b&gt; - The number of seconds which pass following a cause measurement before an effect would likely be observed.&lt;/li&gt;&lt;li&gt;&lt;b&gt;durationOfAction&lt;/b&gt; - The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
@@ -31,40 +31,24 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Correlation></returns>
-        System.Threading.Tasks.Task<List<Correlation>> CorrelationsGetAsync (string effect, string cause, int? limit, int? offset, int? sort);
+        System.Threading.Tasks.Task<List<Correlation>> V1CorrelationsGetAsync (string effect, string cause, int? limit, int? offset, int? sort);
         
         /// <summary>
-        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
-        /// </summary>
-        /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
-        /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
-        /// <returns>List<Correlation></returns>
-        List<Correlation> PublicCorrelationsSearchSearchGet (string search, string effectOrCause);
-  
-        /// <summary>
-        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
-        /// </summary>
-        /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
-        /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
-        /// <returns>List<Correlation></returns>
-        System.Threading.Tasks.Task<List<Correlation>> PublicCorrelationsSearchSearchGetAsync (string search, string effectOrCause);
-        
-        /// <summary>
-        /// Add correlation or/and vote for it Add correlation or/and vote for it
+        /// Store or Update a Correlation Add correlation
         /// </summary>
         /// <param name="body">Provides correlation data</param>
         /// <returns></returns>
         void V1CorrelationsPost (PostCorrelation body);
   
         /// <summary>
-        /// Add correlation or/and vote for it Add correlation or/and vote for it
+        /// Store or Update a Correlation Add correlation
         /// </summary>
         /// <param name="body">Provides correlation data</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1CorrelationsPostAsync (PostCorrelation body);
         
         /// <summary>
-        /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// Search user correlations for a given cause Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
         /// </summary>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="userId">User id</param>
@@ -75,7 +59,7 @@ namespace IO.Swagger.Api
         List<Correlation> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameCausesGet (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic);
   
         /// <summary>
-        /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// Search user correlations for a given cause Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
         /// </summary>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="userId">User id</param>
@@ -106,6 +90,22 @@ namespace IO.Swagger.Api
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param>
         /// <returns>List<CommonResponse></returns>
         System.Threading.Tasks.Task<List<CommonResponse>> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameEffectsGetAsync (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic);
+        
+        /// <summary>
+        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
+        /// </summary>
+        /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
+        /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
+        /// <returns>List<Correlation></returns>
+        List<Correlation> V1PublicCorrelationsSearchSearchGet (string search, string effectOrCause);
+  
+        /// <summary>
+        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
+        /// </summary>
+        /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
+        /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
+        /// <returns>List<Correlation></returns>
+        System.Threading.Tasks.Task<List<Correlation>> V1PublicCorrelationsSearchSearchGetAsync (string search, string effectOrCause);
         
         /// <summary>
         /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect
@@ -168,18 +168,20 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
+        /// <param name="correlation">Correlation value</param>
         /// <param name="vote">Vote: 0 (for implausible) or 1 (for plausible)</param>
         /// <returns>CommonResponse</returns>
-        CommonResponse V1VotesPost (string cause, string effect, bool? vote);
+        CommonResponse V1VotesPost (string cause, string effect, double? correlation, bool? vote);
   
         /// <summary>
         /// Post or update vote This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </summary>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
+        /// <param name="correlation">Correlation value</param>
         /// <param name="vote">Vote: 0 (for implausible) or 1 (for plausible)</param>
         /// <returns>CommonResponse</returns>
-        System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, bool? vote);
+        System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, double? correlation, bool? vote);
         
         /// <summary>
         /// Delete vote Delete previously posted vote
@@ -239,9 +241,8 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
-        /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public String GetBasePath()
         {
             return this.ApiClient.BasePath;
         }
@@ -262,11 +263,11 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
         /// <returns>List<Correlation></returns>            
-        public List<Correlation> CorrelationsGet (string effect, string cause, int? limit, int? offset, int? sort)
+        public List<Correlation> V1CorrelationsGet (string effect, string cause, int? limit, int? offset, int? sort)
         {
             
     
-            var path = "/correlations";
+            var path = "/v1/correlations";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -294,9 +295,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling CorrelationsGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1CorrelationsGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling CorrelationsGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1CorrelationsGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<Correlation>) ApiClient.Deserialize(response.Content, typeof(List<Correlation>), response.Headers);
         }
@@ -310,11 +311,11 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Correlation></returns>
-        public async System.Threading.Tasks.Task<List<Correlation>> CorrelationsGetAsync (string effect, string cause, int? limit, int? offset, int? sort)
+        public async System.Threading.Tasks.Task<List<Correlation>> V1CorrelationsGetAsync (string effect, string cause, int? limit, int? offset, int? sort)
         {
             
     
-            var path = "/correlations";
+            var path = "/v1/correlations";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -341,104 +342,13 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling CorrelationsGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1CorrelationsGet: " + response.Content, response.Content);
 
             return (List<Correlation>) ApiClient.Deserialize(response.Content, typeof(List<Correlation>), response.Headers);
         }
         
         /// <summary>
-        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
-        /// </summary>
-        /// <param name="search">Name of the variable that you want to know the causes or effects of.</param> 
-        /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param> 
-        /// <returns>List<Correlation></returns>            
-        public List<Correlation> PublicCorrelationsSearchSearchGet (string search, string effectOrCause)
-        {
-            
-            // verify the required parameter 'search' is set
-            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling PublicCorrelationsSearchSearchGet");
-            
-            // verify the required parameter 'effectOrCause' is set
-            if (effectOrCause == null) throw new ApiException(400, "Missing required parameter 'effectOrCause' when calling PublicCorrelationsSearchSearchGet");
-            
-    
-            var path = "/public/correlations/search/{search}";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-
-            pathParams.Add("format", "json");
-            if (search != null) pathParams.Add("search", ApiClient.ParameterToString(search)); // path parameter
-            
-            if (effectOrCause != null) queryParams.Add("effectOrCause", ApiClient.ParameterToString(effectOrCause)); // query parameter
-            
-            
-            
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-    
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicCorrelationsSearchSearchGet: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicCorrelationsSearchSearchGet: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return (List<Correlation>) ApiClient.Deserialize(response.Content, typeof(List<Correlation>), response.Headers);
-        }
-    
-        /// <summary>
-        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
-        /// </summary>
-        /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
-        /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
-        /// <returns>List<Correlation></returns>
-        public async System.Threading.Tasks.Task<List<Correlation>> PublicCorrelationsSearchSearchGetAsync (string search, string effectOrCause)
-        {
-            // verify the required parameter 'search' is set
-            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling PublicCorrelationsSearchSearchGet");
-            // verify the required parameter 'effectOrCause' is set
-            if (effectOrCause == null) throw new ApiException(400, "Missing required parameter 'effectOrCause' when calling PublicCorrelationsSearchSearchGet");
-            
-    
-            var path = "/public/correlations/search/{search}";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-    
-            pathParams.Add("format", "json");
-            if (search != null) pathParams.Add("search", ApiClient.ParameterToString(search)); // path parameter
-            
-            if (effectOrCause != null) queryParams.Add("effectOrCause", ApiClient.ParameterToString(effectOrCause)); // query parameter
-            
-            
-            
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] { "oauth2" };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling PublicCorrelationsSearchSearchGet: " + response.Content, response.Content);
-
-            return (List<Correlation>) ApiClient.Deserialize(response.Content, typeof(List<Correlation>), response.Headers);
-        }
-        
-        /// <summary>
-        /// Add correlation or/and vote for it Add correlation or/and vote for it
+        /// Store or Update a Correlation Add correlation
         /// </summary>
         /// <param name="body">Provides correlation data</param> 
         /// <returns></returns>            
@@ -481,7 +391,7 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Add correlation or/and vote for it Add correlation or/and vote for it
+        /// Store or Update a Correlation Add correlation
         /// </summary>
         /// <param name="body">Provides correlation data</param>
         /// <returns></returns>
@@ -521,7 +431,7 @@ namespace IO.Swagger.Api
         }
         
         /// <summary>
-        /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// Search user correlations for a given cause Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
         /// </summary>
         /// <param name="organizationId">Organization ID</param> 
         /// <param name="userId">User id</param> 
@@ -581,7 +491,7 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// Search user correlations for a given cause Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
         /// </summary>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="userId">User id</param>
@@ -744,6 +654,97 @@ namespace IO.Swagger.Api
                 throw new ApiException ((int)response.StatusCode, "Error calling V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameEffectsGet: " + response.Content, response.Content);
 
             return (List<CommonResponse>) ApiClient.Deserialize(response.Content, typeof(List<CommonResponse>), response.Headers);
+        }
+        
+        /// <summary>
+        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
+        /// </summary>
+        /// <param name="search">Name of the variable that you want to know the causes or effects of.</param> 
+        /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param> 
+        /// <returns>List<Correlation></returns>            
+        public List<Correlation> V1PublicCorrelationsSearchSearchGet (string search, string effectOrCause)
+        {
+            
+            // verify the required parameter 'search' is set
+            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling V1PublicCorrelationsSearchSearchGet");
+            
+            // verify the required parameter 'effectOrCause' is set
+            if (effectOrCause == null) throw new ApiException(400, "Missing required parameter 'effectOrCause' when calling V1PublicCorrelationsSearchSearchGet");
+            
+    
+            var path = "/v1/public/correlations/search/{search}";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+
+            pathParams.Add("format", "json");
+            if (search != null) pathParams.Add("search", ApiClient.ParameterToString(search)); // path parameter
+            
+            if (effectOrCause != null) queryParams.Add("effectOrCause", ApiClient.ParameterToString(effectOrCause)); // query parameter
+            
+            
+            
+            
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+    
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicCorrelationsSearchSearchGet: " + response.Content, response.Content);
+            else if (((int)response.StatusCode) == 0)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicCorrelationsSearchSearchGet: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return (List<Correlation>) ApiClient.Deserialize(response.Content, typeof(List<Correlation>), response.Headers);
+        }
+    
+        /// <summary>
+        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
+        /// </summary>
+        /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
+        /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
+        /// <returns>List<Correlation></returns>
+        public async System.Threading.Tasks.Task<List<Correlation>> V1PublicCorrelationsSearchSearchGetAsync (string search, string effectOrCause)
+        {
+            // verify the required parameter 'search' is set
+            if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling V1PublicCorrelationsSearchSearchGet");
+            // verify the required parameter 'effectOrCause' is set
+            if (effectOrCause == null) throw new ApiException(400, "Missing required parameter 'effectOrCause' when calling V1PublicCorrelationsSearchSearchGet");
+            
+    
+            var path = "/v1/public/correlations/search/{search}";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>();
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            String postBody = null;
+    
+            pathParams.Add("format", "json");
+            if (search != null) pathParams.Add("search", ApiClient.ParameterToString(search)); // path parameter
+            
+            if (effectOrCause != null) queryParams.Add("effectOrCause", ApiClient.ParameterToString(effectOrCause)); // query parameter
+            
+            
+            
+            
+    
+            // authentication setting, if any
+            String[] authSettings = new String[] { "oauth2" };
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            if (((int)response.StatusCode) >= 400)
+                throw new ApiException ((int)response.StatusCode, "Error calling V1PublicCorrelationsSearchSearchGet: " + response.Content, response.Content);
+
+            return (List<Correlation>) ApiClient.Deserialize(response.Content, typeof(List<Correlation>), response.Headers);
         }
         
         /// <summary>
@@ -1079,9 +1080,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="cause">Cause variable name</param> 
         /// <param name="effect">Effect variable name</param> 
+        /// <param name="correlation">Correlation value</param> 
         /// <param name="vote">Vote: 0 (for implausible) or 1 (for plausible)</param> 
         /// <returns>CommonResponse</returns>            
-        public CommonResponse V1VotesPost (string cause, string effect, bool? vote)
+        public CommonResponse V1VotesPost (string cause, string effect, double? correlation, bool? vote)
         {
             
             // verify the required parameter 'cause' is set
@@ -1089,6 +1091,9 @@ namespace IO.Swagger.Api
             
             // verify the required parameter 'effect' is set
             if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling V1VotesPost");
+            
+            // verify the required parameter 'correlation' is set
+            if (correlation == null) throw new ApiException(400, "Missing required parameter 'correlation' when calling V1VotesPost");
             
     
             var path = "/v1/votes";
@@ -1104,6 +1109,7 @@ namespace IO.Swagger.Api
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
             if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
+            if (correlation != null) queryParams.Add("correlation", ApiClient.ParameterToString(correlation)); // query parameter
             if (vote != null) queryParams.Add("vote", ApiClient.ParameterToString(vote)); // query parameter
             
             
@@ -1129,14 +1135,17 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
+        /// <param name="correlation">Correlation value</param>
         /// <param name="vote">Vote: 0 (for implausible) or 1 (for plausible)</param>
         /// <returns>CommonResponse</returns>
-        public async System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, bool? vote)
+        public async System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, double? correlation, bool? vote)
         {
             // verify the required parameter 'cause' is set
             if (cause == null) throw new ApiException(400, "Missing required parameter 'cause' when calling V1VotesPost");
             // verify the required parameter 'effect' is set
             if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling V1VotesPost");
+            // verify the required parameter 'correlation' is set
+            if (correlation == null) throw new ApiException(400, "Missing required parameter 'correlation' when calling V1VotesPost");
             
     
             var path = "/v1/votes";
@@ -1152,6 +1161,7 @@ namespace IO.Swagger.Api
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
             if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
+            if (correlation != null) queryParams.Add("correlation", ApiClient.ParameterToString(correlation)); // query parameter
             if (vote != null) queryParams.Add("vote", ApiClient.ParameterToString(vote)); // query parameter
             
             

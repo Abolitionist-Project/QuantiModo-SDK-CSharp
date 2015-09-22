@@ -16,18 +16,20 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
+        /// <param name="correlation">Correlation value</param>
         /// <param name="vote">Vote: 0 (for implausible) or 1 (for plausible)</param>
         /// <returns>CommonResponse</returns>
-        CommonResponse V1VotesPost (string cause, string effect, bool? vote);
+        CommonResponse V1VotesPost (string cause, string effect, double? correlation, bool? vote);
   
         /// <summary>
         /// Post or update vote This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </summary>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
+        /// <param name="correlation">Correlation value</param>
         /// <param name="vote">Vote: 0 (for implausible) or 1 (for plausible)</param>
         /// <returns>CommonResponse</returns>
-        System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, bool? vote);
+        System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, double? correlation, bool? vote);
         
         /// <summary>
         /// Delete vote Delete previously posted vote
@@ -87,9 +89,8 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
-        /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public String GetBasePath()
         {
             return this.ApiClient.BasePath;
         }
@@ -106,9 +107,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="cause">Cause variable name</param> 
         /// <param name="effect">Effect variable name</param> 
+        /// <param name="correlation">Correlation value</param> 
         /// <param name="vote">Vote: 0 (for implausible) or 1 (for plausible)</param> 
         /// <returns>CommonResponse</returns>            
-        public CommonResponse V1VotesPost (string cause, string effect, bool? vote)
+        public CommonResponse V1VotesPost (string cause, string effect, double? correlation, bool? vote)
         {
             
             // verify the required parameter 'cause' is set
@@ -116,6 +118,9 @@ namespace IO.Swagger.Api
             
             // verify the required parameter 'effect' is set
             if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling V1VotesPost");
+            
+            // verify the required parameter 'correlation' is set
+            if (correlation == null) throw new ApiException(400, "Missing required parameter 'correlation' when calling V1VotesPost");
             
     
             var path = "/v1/votes";
@@ -131,6 +136,7 @@ namespace IO.Swagger.Api
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
             if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
+            if (correlation != null) queryParams.Add("correlation", ApiClient.ParameterToString(correlation)); // query parameter
             if (vote != null) queryParams.Add("vote", ApiClient.ParameterToString(vote)); // query parameter
             
             
@@ -156,14 +162,17 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
+        /// <param name="correlation">Correlation value</param>
         /// <param name="vote">Vote: 0 (for implausible) or 1 (for plausible)</param>
         /// <returns>CommonResponse</returns>
-        public async System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, bool? vote)
+        public async System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, double? correlation, bool? vote)
         {
             // verify the required parameter 'cause' is set
             if (cause == null) throw new ApiException(400, "Missing required parameter 'cause' when calling V1VotesPost");
             // verify the required parameter 'effect' is set
             if (effect == null) throw new ApiException(400, "Missing required parameter 'effect' when calling V1VotesPost");
+            // verify the required parameter 'correlation' is set
+            if (correlation == null) throw new ApiException(400, "Missing required parameter 'correlation' when calling V1VotesPost");
             
     
             var path = "/v1/votes";
@@ -179,6 +188,7 @@ namespace IO.Swagger.Api
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
             if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
+            if (correlation != null) queryParams.Add("correlation", ApiClient.ParameterToString(correlation)); // query parameter
             if (vote != null) queryParams.Add("vote", ApiClient.ParameterToString(vote)); // query parameter
             
             

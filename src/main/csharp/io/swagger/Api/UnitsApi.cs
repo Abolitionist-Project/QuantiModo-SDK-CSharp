@@ -15,13 +15,13 @@ namespace IO.Swagger.Api
         /// Get unit categories Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
         /// </summary>
         /// <returns>UnitCategory</returns>
-        UnitCategory UnitCategoriesGet ();
+        UnitCategory V1UnitCategoriesGet ();
   
         /// <summary>
         /// Get unit categories Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
         /// </summary>
         /// <returns>UnitCategory</returns>
-        System.Threading.Tasks.Task<UnitCategory> UnitCategoriesGetAsync ();
+        System.Threading.Tasks.Task<UnitCategory> V1UnitCategoriesGetAsync ();
         
         /// <summary>
         /// Get all available units Get all available units
@@ -30,7 +30,7 @@ namespace IO.Swagger.Api
         /// <param name="abbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param>
         /// <param name="categoryName">Restrict the results to a specific unit category by providing the unit category name.</param>
         /// <returns>List<Unit></returns>
-        List<Unit> UnitsGet (string unitName, string abbreviatedUnitName, string categoryName);
+        List<Unit> V1UnitsGet (string unitName, string abbreviatedUnitName, string categoryName);
   
         /// <summary>
         /// Get all available units Get all available units
@@ -39,7 +39,7 @@ namespace IO.Swagger.Api
         /// <param name="abbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param>
         /// <param name="categoryName">Restrict the results to a specific unit category by providing the unit category name.</param>
         /// <returns>List<Unit></returns>
-        System.Threading.Tasks.Task<List<Unit>> UnitsGetAsync (string unitName, string abbreviatedUnitName, string categoryName);
+        System.Threading.Tasks.Task<List<Unit>> V1UnitsGetAsync (string unitName, string abbreviatedUnitName, string categoryName);
         
         /// <summary>
         /// Units for Variable Get a list of all possible units to use for a given variable
@@ -49,7 +49,7 @@ namespace IO.Swagger.Api
         /// <param name="categoryName">Name of the category you want units for</param>
         /// <param name="variable">Name of the variable you want units for</param>
         /// <returns>List<Unit></returns>
-        List<Unit> UnitsVariableGet (string unitName, string abbreviatedUnitName, string categoryName, string variable);
+        List<Unit> V1UnitsVariableGet (string unitName, string abbreviatedUnitName, string categoryName, string variable);
   
         /// <summary>
         /// Units for Variable Get a list of all possible units to use for a given variable
@@ -59,7 +59,7 @@ namespace IO.Swagger.Api
         /// <param name="categoryName">Name of the category you want units for</param>
         /// <param name="variable">Name of the variable you want units for</param>
         /// <returns>List<Unit></returns>
-        System.Threading.Tasks.Task<List<Unit>> UnitsVariableGetAsync (string unitName, string abbreviatedUnitName, string categoryName, string variable);
+        System.Threading.Tasks.Task<List<Unit>> V1UnitsVariableGetAsync (string unitName, string abbreviatedUnitName, string categoryName, string variable);
         
     }
   
@@ -103,9 +103,8 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
-        /// <param name="basePath">The base path</param>
         /// <value>The base path</value>
-        public String GetBasePath(String basePath)
+        public String GetBasePath()
         {
             return this.ApiClient.BasePath;
         }
@@ -121,11 +120,11 @@ namespace IO.Swagger.Api
         /// Get unit categories Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
         /// </summary>
         /// <returns>UnitCategory</returns>            
-        public UnitCategory UnitCategoriesGet ()
+        public UnitCategory V1UnitCategoriesGet ()
         {
             
     
-            var path = "/unitCategories";
+            var path = "/v1/unitCategories";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -148,9 +147,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitCategoriesGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitCategoriesGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (UnitCategory) ApiClient.Deserialize(response.Content, typeof(UnitCategory), response.Headers);
         }
@@ -159,11 +158,11 @@ namespace IO.Swagger.Api
         /// Get unit categories Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
         /// </summary>
         /// <returns>UnitCategory</returns>
-        public async System.Threading.Tasks.Task<UnitCategory> UnitCategoriesGetAsync ()
+        public async System.Threading.Tasks.Task<UnitCategory> V1UnitCategoriesGetAsync ()
         {
             
     
-            var path = "/unitCategories";
+            var path = "/v1/unitCategories";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -185,7 +184,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitCategoriesGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitCategoriesGet: " + response.Content, response.Content);
 
             return (UnitCategory) ApiClient.Deserialize(response.Content, typeof(UnitCategory), response.Headers);
         }
@@ -197,11 +196,11 @@ namespace IO.Swagger.Api
         /// <param name="abbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param> 
         /// <param name="categoryName">Restrict the results to a specific unit category by providing the unit category name.</param> 
         /// <returns>List<Unit></returns>            
-        public List<Unit> UnitsGet (string unitName, string abbreviatedUnitName, string categoryName)
+        public List<Unit> V1UnitsGet (string unitName, string abbreviatedUnitName, string categoryName)
         {
             
     
-            var path = "/units";
+            var path = "/v1/units";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -227,9 +226,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitsGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitsGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitsGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitsGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<Unit>) ApiClient.Deserialize(response.Content, typeof(List<Unit>), response.Headers);
         }
@@ -241,11 +240,11 @@ namespace IO.Swagger.Api
         /// <param name="abbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param>
         /// <param name="categoryName">Restrict the results to a specific unit category by providing the unit category name.</param>
         /// <returns>List<Unit></returns>
-        public async System.Threading.Tasks.Task<List<Unit>> UnitsGetAsync (string unitName, string abbreviatedUnitName, string categoryName)
+        public async System.Threading.Tasks.Task<List<Unit>> V1UnitsGetAsync (string unitName, string abbreviatedUnitName, string categoryName)
         {
             
     
-            var path = "/units";
+            var path = "/v1/units";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -270,7 +269,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitsGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitsGet: " + response.Content, response.Content);
 
             return (List<Unit>) ApiClient.Deserialize(response.Content, typeof(List<Unit>), response.Headers);
         }
@@ -283,11 +282,11 @@ namespace IO.Swagger.Api
         /// <param name="categoryName">Name of the category you want units for</param> 
         /// <param name="variable">Name of the variable you want units for</param> 
         /// <returns>List<Unit></returns>            
-        public List<Unit> UnitsVariableGet (string unitName, string abbreviatedUnitName, string categoryName, string variable)
+        public List<Unit> V1UnitsVariableGet (string unitName, string abbreviatedUnitName, string categoryName, string variable)
         {
             
     
-            var path = "/unitsVariable";
+            var path = "/v1/unitsVariable";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -314,9 +313,9 @@ namespace IO.Swagger.Api
             IRestResponse response = (IRestResponse) ApiClient.CallApi(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
     
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitsVariableGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitsVariableGet: " + response.Content, response.Content);
             else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitsVariableGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitsVariableGet: " + response.ErrorMessage, response.ErrorMessage);
     
             return (List<Unit>) ApiClient.Deserialize(response.Content, typeof(List<Unit>), response.Headers);
         }
@@ -329,11 +328,11 @@ namespace IO.Swagger.Api
         /// <param name="categoryName">Name of the category you want units for</param>
         /// <param name="variable">Name of the variable you want units for</param>
         /// <returns>List<Unit></returns>
-        public async System.Threading.Tasks.Task<List<Unit>> UnitsVariableGetAsync (string unitName, string abbreviatedUnitName, string categoryName, string variable)
+        public async System.Threading.Tasks.Task<List<Unit>> V1UnitsVariableGetAsync (string unitName, string abbreviatedUnitName, string categoryName, string variable)
         {
             
     
-            var path = "/unitsVariable";
+            var path = "/v1/unitsVariable";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -359,7 +358,7 @@ namespace IO.Swagger.Api
             // make the HTTP request
             IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
             if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling UnitsVariableGet: " + response.Content, response.Content);
+                throw new ApiException ((int)response.StatusCode, "Error calling V1UnitsVariableGet: " + response.Content, response.Content);
 
             return (List<Unit>) ApiClient.Deserialize(response.Content, typeof(List<Unit>), response.Headers);
         }

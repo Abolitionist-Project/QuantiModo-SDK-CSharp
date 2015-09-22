@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -49,6 +50,16 @@ namespace IO.Swagger.Client
         {
             get { return _defaultHeaderMap; }
         }
+
+        /// <summary>
+        /// Gets the status code of the previous request
+        /// </summary>
+        public int StatusCode { get; private set; }
+
+        /// <summary>
+        /// Gets the response headers of the previous request
+        /// </summary>
+        public Dictionary<String, String> ResponseHeaders { get; private set; } 
     
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
@@ -110,7 +121,10 @@ namespace IO.Swagger.Client
         {
             var request = PrepareRequest(
                 path, method, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            return (Object)RestClient.Execute(request);
+            var response = RestClient.Execute(request);
+            StatusCode = (int) response.StatusCode;
+            ResponseHeaders = response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString());
+            return (Object) response;
         }
 
         /// <summary>
@@ -133,7 +147,10 @@ namespace IO.Swagger.Client
         {
             var request = PrepareRequest(
                 path, method, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            return (Object) await RestClient.ExecuteTaskAsync(request);
+            var response = await RestClient.ExecuteTaskAsync(request);
+            StatusCode = (int)response.StatusCode;
+            ResponseHeaders = response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString());
+            return (Object)response;
         }
     
         /// <summary>
@@ -154,7 +171,7 @@ namespace IO.Swagger.Client
         /// <returns>Escaped string.</returns>
         public string EscapeString(string str)
         {
-            return RestSharp.Contrib.HttpUtility.UrlEncode(str);
+            return RestSharp.Extensions.StringExtensions.UrlEncode(str);
         }
     
         /// <summary>
@@ -173,7 +190,7 @@ namespace IO.Swagger.Client
     
         /// <summary>
         /// If parameter is DateTime, output in ISO8601 format.
-        /// If parameter is a list of string, join the list with ",".
+        /// If parameter is a list, join the list with ",".
         /// Otherwise just return the string.
         /// </summary>
         /// <param name="obj">The parameter (header, path, query, form).</param>
@@ -182,8 +199,14 @@ namespace IO.Swagger.Client
         {
             if (obj is DateTime)
                 return ((DateTime)obj).ToString ("u");
-            else if (obj is List<string>)
-                return String.Join(",", obj as List<string>);
+            else if (obj is IList) {
+                string flattenString = "";
+                string separator = ",";
+                foreach (var param in (IList)obj) {
+                    flattenString += param.ToString() + separator;
+                }
+                return flattenString.Remove(flattenString.Length - 1);;
+            }
             else
                 return Convert.ToString (obj);
         }

@@ -27,23 +27,21 @@ namespace IO.Swagger.Api
         /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="search">Search query can be some fraction of a variable name.</param>
-        /// <param name="effectOrCause">Allows us to specify which column in the `correlations` table will be searched. Choices are effect or cause.</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        Variable V1PublicVariablesSearchSearchGet (string search, string effectOrCause, int? limit, int? offset, int? sort);
+        Variable V1PublicVariablesSearchSearchGet (string search, int? limit, int? offset, int? sort);
   
         /// <summary>
         /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="search">Search query can be some fraction of a variable name.</param>
-        /// <param name="effectOrCause">Allows us to specify which column in the `correlations` table will be searched. Choices are effect or cause.</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        System.Threading.Tasks.Task<Variable> V1PublicVariablesSearchSearchGetAsync (string search, string effectOrCause, int? limit, int? offset, int? sort);
+        System.Threading.Tasks.Task<Variable> V1PublicVariablesSearchSearchGetAsync (string search, int? limit, int? offset, int? sort);
         
         /// <summary>
         /// Update User Settings for a Variable Users can change things like the display name for a variable. They can also change the parameters used in analysis of that variable such as the expected duration of action for a variable to have an effect, the estimated delay before the onset of action. In order to filter out erroneous data, they are able to set the maximum and minimum reasonable daily values for a variable.
@@ -76,22 +74,34 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="userId">User id</param>
         /// <param name="category">Filter data by category</param>
+        /// <param name="name">Original name of the variable (supports exact name match only)</param>
+        /// <param name="lastUpdated">Filter by the last time any of the properties of the variable were changed. Uses UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="source">The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here</param>
+        /// <param name="latestMeasurementTime">Filter variables based on the last time a measurement for them was created or updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="numberOfMeasurements">Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.</param>
+        /// <param name="lastSource">Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        Variable V1VariablesGet (int? userId, string category, int? limit, int? offset, int? sort);
+        Variable V1VariablesGet (int? userId, string category, string name, string lastUpdated, string source, string latestMeasurementTime, string numberOfMeasurements, string lastSource, int? limit, int? offset, int? sort);
   
         /// <summary>
         /// Get variables by the category name Get variables by the category name. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;name&lt;/b&gt; - Original name of the variable (supports exact name match only)&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - Filter by the last time any of the properties of the variable were changed. Uses UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;li&gt;&lt;b&gt;source&lt;/b&gt; - The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here&lt;/li&gt;&lt;li&gt;&lt;b&gt;latestMeasurementTime&lt;/b&gt; - Filter variables based on the last time a measurement for them was created or updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;li&gt;&lt;b&gt;numberOfMeasurements&lt;/b&gt; - Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastSource&lt;/b&gt; - Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="userId">User id</param>
         /// <param name="category">Filter data by category</param>
+        /// <param name="name">Original name of the variable (supports exact name match only)</param>
+        /// <param name="lastUpdated">Filter by the last time any of the properties of the variable were changed. Uses UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="source">The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here</param>
+        /// <param name="latestMeasurementTime">Filter variables based on the last time a measurement for them was created or updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="numberOfMeasurements">Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.</param>
+        /// <param name="lastSource">Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        System.Threading.Tasks.Task<Variable> V1VariablesGetAsync (int? userId, string category, int? limit, int? offset, int? sort);
+        System.Threading.Tasks.Task<Variable> V1VariablesGetAsync (int? userId, string category, string name, string lastUpdated, string source, string latestMeasurementTime, string numberOfMeasurements, string lastSource, int? limit, int? offset, int? sort);
         
         /// <summary>
         /// Create Variables Allows the client to create a new variable in the `variables` table.
@@ -275,12 +285,11 @@ namespace IO.Swagger.Api
         /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="search">Search query can be some fraction of a variable name.</param> 
-        /// <param name="effectOrCause">Allows us to specify which column in the `correlations` table will be searched. Choices are effect or cause.</param> 
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param> 
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
         /// <returns>Variable</returns>            
-        public Variable V1PublicVariablesSearchSearchGet (string search, string effectOrCause, int? limit, int? offset, int? sort)
+        public Variable V1PublicVariablesSearchSearchGet (string search, int? limit, int? offset, int? sort)
         {
             
             // verify the required parameter 'search' is set
@@ -299,7 +308,6 @@ namespace IO.Swagger.Api
             pathParams.Add("format", "json");
             if (search != null) pathParams.Add("search", ApiClient.ParameterToString(search)); // path parameter
             
-            if (effectOrCause != null) queryParams.Add("effectOrCause", ApiClient.ParameterToString(effectOrCause)); // query parameter
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
             if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
@@ -326,12 +334,11 @@ namespace IO.Swagger.Api
         /// Get top 5 PUBLIC variables with the most correlations Get top 5 PUBLIC variables with the most correlations containing the entered search characters. For example, search for &#39;mood&#39; as an effect. Since &#39;Overall Mood&#39; has a lot of correlations with other variables, it should be in the autocomplete list.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;category&lt;/b&gt; - Category of Variable&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="search">Search query can be some fraction of a variable name.</param>
-        /// <param name="effectOrCause">Allows us to specify which column in the `correlations` table will be searched. Choices are effect or cause.</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        public async System.Threading.Tasks.Task<Variable> V1PublicVariablesSearchSearchGetAsync (string search, string effectOrCause, int? limit, int? offset, int? sort)
+        public async System.Threading.Tasks.Task<Variable> V1PublicVariablesSearchSearchGetAsync (string search, int? limit, int? offset, int? sort)
         {
             // verify the required parameter 'search' is set
             if (search == null) throw new ApiException(400, "Missing required parameter 'search' when calling V1PublicVariablesSearchSearchGet");
@@ -349,7 +356,6 @@ namespace IO.Swagger.Api
             pathParams.Add("format", "json");
             if (search != null) pathParams.Add("search", ApiClient.ParameterToString(search)); // path parameter
             
-            if (effectOrCause != null) queryParams.Add("effectOrCause", ApiClient.ParameterToString(effectOrCause)); // query parameter
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
             if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
@@ -530,11 +536,17 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="userId">User id</param> 
         /// <param name="category">Filter data by category</param> 
+        /// <param name="name">Original name of the variable (supports exact name match only)</param> 
+        /// <param name="lastUpdated">Filter by the last time any of the properties of the variable were changed. Uses UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param> 
+        /// <param name="source">The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here</param> 
+        /// <param name="latestMeasurementTime">Filter variables based on the last time a measurement for them was created or updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param> 
+        /// <param name="numberOfMeasurements">Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.</param> 
+        /// <param name="lastSource">Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)</param> 
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param> 
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
         /// <returns>Variable</returns>            
-        public Variable V1VariablesGet (int? userId, string category, int? limit, int? offset, int? sort)
+        public Variable V1VariablesGet (int? userId, string category, string name, string lastUpdated, string source, string latestMeasurementTime, string numberOfMeasurements, string lastSource, int? limit, int? offset, int? sort)
         {
             
     
@@ -551,6 +563,12 @@ namespace IO.Swagger.Api
             
             if (userId != null) queryParams.Add("userId", ApiClient.ParameterToString(userId)); // query parameter
             if (category != null) queryParams.Add("category", ApiClient.ParameterToString(category)); // query parameter
+            if (name != null) queryParams.Add("name", ApiClient.ParameterToString(name)); // query parameter
+            if (lastUpdated != null) queryParams.Add("lastUpdated", ApiClient.ParameterToString(lastUpdated)); // query parameter
+            if (source != null) queryParams.Add("source", ApiClient.ParameterToString(source)); // query parameter
+            if (latestMeasurementTime != null) queryParams.Add("latestMeasurementTime", ApiClient.ParameterToString(latestMeasurementTime)); // query parameter
+            if (numberOfMeasurements != null) queryParams.Add("numberOfMeasurements", ApiClient.ParameterToString(numberOfMeasurements)); // query parameter
+            if (lastSource != null) queryParams.Add("lastSource", ApiClient.ParameterToString(lastSource)); // query parameter
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
             if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
@@ -578,11 +596,17 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="userId">User id</param>
         /// <param name="category">Filter data by category</param>
+        /// <param name="name">Original name of the variable (supports exact name match only)</param>
+        /// <param name="lastUpdated">Filter by the last time any of the properties of the variable were changed. Uses UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="source">The name of the data source that created the variable (supports exact name match only). So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here</param>
+        /// <param name="latestMeasurementTime">Filter variables based on the last time a measurement for them was created or updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="numberOfMeasurements">Filter variables by the total number of measurements that they have. This could be used of you want to filter or sort by popularity.</param>
+        /// <param name="lastSource">Limit variables to those which measurements were last submitted by a specific source. So if you have a client application and you only want variables that were last updated by your app, you can include the name of your app here. (supports exact name match only)</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Variable</returns>
-        public async System.Threading.Tasks.Task<Variable> V1VariablesGetAsync (int? userId, string category, int? limit, int? offset, int? sort)
+        public async System.Threading.Tasks.Task<Variable> V1VariablesGetAsync (int? userId, string category, string name, string lastUpdated, string source, string latestMeasurementTime, string numberOfMeasurements, string lastSource, int? limit, int? offset, int? sort)
         {
             
     
@@ -599,6 +623,12 @@ namespace IO.Swagger.Api
             
             if (userId != null) queryParams.Add("userId", ApiClient.ParameterToString(userId)); // query parameter
             if (category != null) queryParams.Add("category", ApiClient.ParameterToString(category)); // query parameter
+            if (name != null) queryParams.Add("name", ApiClient.ParameterToString(name)); // query parameter
+            if (lastUpdated != null) queryParams.Add("lastUpdated", ApiClient.ParameterToString(lastUpdated)); // query parameter
+            if (source != null) queryParams.Add("source", ApiClient.ParameterToString(source)); // query parameter
+            if (latestMeasurementTime != null) queryParams.Add("latestMeasurementTime", ApiClient.ParameterToString(latestMeasurementTime)); // query parameter
+            if (numberOfMeasurements != null) queryParams.Add("numberOfMeasurements", ApiClient.ParameterToString(numberOfMeasurements)); // query parameter
+            if (lastSource != null) queryParams.Add("lastSource", ApiClient.ParameterToString(lastSource)); // query parameter
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
             if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter

@@ -41,7 +41,10 @@ namespace IO.Swagger.Api
         /// Get measurements for this user Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="variableName">Name of the variable you want measurements for</param>
-        /// <param name="unit">The unit your want the measurements in</param>
+        /// <param name="source">Name of the source you want measurements for (supports exact name match only)</param>
+        /// <param name="value">Value of measurement</param>
+        /// <param name="lastUpdated">The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="unit">The unit you want the measurements in</param>
         /// <param name="startTime">The lower limit of measurements returned (Epoch)</param>
         /// <param name="endTime">The upper limit of measurements returned (Epoch)</param>
         /// <param name="groupingWidth">The time (in seconds) over which measurements are grouped together</param>
@@ -50,13 +53,16 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Measurement</returns>
-        Measurement V1MeasurementsGet (string variableName, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort);
+        Measurement V1MeasurementsGet (string variableName, string source, string value, string lastUpdated, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort);
   
         /// <summary>
         /// Get measurements for this user Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="variableName">Name of the variable you want measurements for</param>
-        /// <param name="unit">The unit your want the measurements in</param>
+        /// <param name="source">Name of the source you want measurements for (supports exact name match only)</param>
+        /// <param name="value">Value of measurement</param>
+        /// <param name="lastUpdated">The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="unit">The unit you want the measurements in</param>
         /// <param name="startTime">The lower limit of measurements returned (Epoch)</param>
         /// <param name="endTime">The upper limit of measurements returned (Epoch)</param>
         /// <param name="groupingWidth">The time (in seconds) over which measurements are grouped together</param>
@@ -65,17 +71,17 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Measurement</returns>
-        System.Threading.Tasks.Task<Measurement> V1MeasurementsGetAsync (string variableName, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort);
+        System.Threading.Tasks.Task<Measurement> V1MeasurementsGetAsync (string variableName, string source, string value, string lastUpdated, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort);
         
         /// <summary>
-        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;timestamp\&quot;:1406419860,\&quot;value\&quot;:\&quot;1\&quot;,\&quot;note\&quot;:\&quot;I am a note about back pain.\&quot;},{\&quot;timestamp\&quot;:1406519865,\&quot;value\&quot;:\&quot;3\&quot;,\&quot;note\&quot;:\&quot;I am another note about back pain.\&quot;}],\&quot;name\&quot;:\&quot;Back Pain\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
+        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;startTime\&quot;:1439389320,\&quot;value\&quot;:\&quot;3\&quot;}],\&quot;name\&quot;:\&quot;Acne (out of 5)\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
         /// </summary>
         /// <param name="measurements">An array of measurements you want to insert.</param>
         /// <returns></returns>
         void V1MeasurementsPost (MeasurementSet measurements);
   
         /// <summary>
-        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;timestamp\&quot;:1406419860,\&quot;value\&quot;:\&quot;1\&quot;,\&quot;note\&quot;:\&quot;I am a note about back pain.\&quot;},{\&quot;timestamp\&quot;:1406519865,\&quot;value\&quot;:\&quot;3\&quot;,\&quot;note\&quot;:\&quot;I am another note about back pain.\&quot;}],\&quot;name\&quot;:\&quot;Back Pain\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
+        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;startTime\&quot;:1439389320,\&quot;value\&quot;:\&quot;3\&quot;}],\&quot;name\&quot;:\&quot;Acne (out of 5)\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
         /// </summary>
         /// <param name="measurements">An array of measurements you want to insert.</param>
         /// <returns></returns>
@@ -342,7 +348,10 @@ namespace IO.Swagger.Api
         /// Get measurements for this user Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="variableName">Name of the variable you want measurements for</param> 
-        /// <param name="unit">The unit your want the measurements in</param> 
+        /// <param name="source">Name of the source you want measurements for (supports exact name match only)</param> 
+        /// <param name="value">Value of measurement</param> 
+        /// <param name="lastUpdated">The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param> 
+        /// <param name="unit">The unit you want the measurements in</param> 
         /// <param name="startTime">The lower limit of measurements returned (Epoch)</param> 
         /// <param name="endTime">The upper limit of measurements returned (Epoch)</param> 
         /// <param name="groupingWidth">The time (in seconds) over which measurements are grouped together</param> 
@@ -351,7 +360,7 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
         /// <returns>Measurement</returns>            
-        public Measurement V1MeasurementsGet (string variableName, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort)
+        public Measurement V1MeasurementsGet (string variableName, string source, string value, string lastUpdated, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort)
         {
             
     
@@ -367,6 +376,9 @@ namespace IO.Swagger.Api
             pathParams.Add("format", "json");
             
             if (variableName != null) queryParams.Add("variableName", ApiClient.ParameterToString(variableName)); // query parameter
+            if (source != null) queryParams.Add("source", ApiClient.ParameterToString(source)); // query parameter
+            if (value != null) queryParams.Add("value", ApiClient.ParameterToString(value)); // query parameter
+            if (lastUpdated != null) queryParams.Add("lastUpdated", ApiClient.ParameterToString(lastUpdated)); // query parameter
             if (unit != null) queryParams.Add("unit", ApiClient.ParameterToString(unit)); // query parameter
             if (startTime != null) queryParams.Add("startTime", ApiClient.ParameterToString(startTime)); // query parameter
             if (endTime != null) queryParams.Add("endTime", ApiClient.ParameterToString(endTime)); // query parameter
@@ -398,7 +410,10 @@ namespace IO.Swagger.Api
         /// Get measurements for this user Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="variableName">Name of the variable you want measurements for</param>
-        /// <param name="unit">The unit your want the measurements in</param>
+        /// <param name="source">Name of the source you want measurements for (supports exact name match only)</param>
+        /// <param name="value">Value of measurement</param>
+        /// <param name="lastUpdated">The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
+        /// <param name="unit">The unit you want the measurements in</param>
         /// <param name="startTime">The lower limit of measurements returned (Epoch)</param>
         /// <param name="endTime">The upper limit of measurements returned (Epoch)</param>
         /// <param name="groupingWidth">The time (in seconds) over which measurements are grouped together</param>
@@ -407,7 +422,7 @@ namespace IO.Swagger.Api
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>Measurement</returns>
-        public async System.Threading.Tasks.Task<Measurement> V1MeasurementsGetAsync (string variableName, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort)
+        public async System.Threading.Tasks.Task<Measurement> V1MeasurementsGetAsync (string variableName, string source, string value, string lastUpdated, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort)
         {
             
     
@@ -423,6 +438,9 @@ namespace IO.Swagger.Api
             pathParams.Add("format", "json");
             
             if (variableName != null) queryParams.Add("variableName", ApiClient.ParameterToString(variableName)); // query parameter
+            if (source != null) queryParams.Add("source", ApiClient.ParameterToString(source)); // query parameter
+            if (value != null) queryParams.Add("value", ApiClient.ParameterToString(value)); // query parameter
+            if (lastUpdated != null) queryParams.Add("lastUpdated", ApiClient.ParameterToString(lastUpdated)); // query parameter
             if (unit != null) queryParams.Add("unit", ApiClient.ParameterToString(unit)); // query parameter
             if (startTime != null) queryParams.Add("startTime", ApiClient.ParameterToString(startTime)); // query parameter
             if (endTime != null) queryParams.Add("endTime", ApiClient.ParameterToString(endTime)); // query parameter
@@ -448,7 +466,7 @@ namespace IO.Swagger.Api
         }
         
         /// <summary>
-        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;timestamp\&quot;:1406419860,\&quot;value\&quot;:\&quot;1\&quot;,\&quot;note\&quot;:\&quot;I am a note about back pain.\&quot;},{\&quot;timestamp\&quot;:1406519865,\&quot;value\&quot;:\&quot;3\&quot;,\&quot;note\&quot;:\&quot;I am another note about back pain.\&quot;}],\&quot;name\&quot;:\&quot;Back Pain\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
+        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;startTime\&quot;:1439389320,\&quot;value\&quot;:\&quot;3\&quot;}],\&quot;name\&quot;:\&quot;Acne (out of 5)\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
         /// </summary>
         /// <param name="measurements">An array of measurements you want to insert.</param> 
         /// <returns></returns>            
@@ -491,7 +509,7 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;timestamp\&quot;:1406419860,\&quot;value\&quot;:\&quot;1\&quot;,\&quot;note\&quot;:\&quot;I am a note about back pain.\&quot;},{\&quot;timestamp\&quot;:1406519865,\&quot;value\&quot;:\&quot;3\&quot;,\&quot;note\&quot;:\&quot;I am another note about back pain.\&quot;}],\&quot;name\&quot;:\&quot;Back Pain\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
+        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;startTime\&quot;:1439389320,\&quot;value\&quot;:\&quot;3\&quot;}],\&quot;name\&quot;:\&quot;Acne (out of 5)\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
         /// </summary>
         /// <param name="measurements">An array of measurements you want to insert.</param>
         /// <returns></returns>

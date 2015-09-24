@@ -16,22 +16,30 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="effect">ORIGINAL variable name of the effect variable for which the user desires correlations</param>
         /// <param name="cause">ORIGINAL variable name of the cause variable for which the user desires correlations</param>
+        /// <param name="correlationCoefficient">Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action</param>
+        /// <param name="onsetDelay">The number of seconds which pass following a cause measurement before an effect would likely be observed.</param>
+        /// <param name="durationOfAction">The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.</param>
+        /// <param name="lastUpdated">The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Correlation></returns>
-        List<Correlation> V1CorrelationsGet (string effect, string cause, int? limit, int? offset, int? sort);
+        List<Correlation> V1CorrelationsGet (string effect, string cause, string correlationCoefficient, string onsetDelay, string durationOfAction, string lastUpdated, int? limit, int? offset, int? sort);
   
         /// <summary>
         /// Get correlations Get correlations.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;correlationCoefficient&lt;/b&gt; - Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action&lt;/li&gt;&lt;li&gt;&lt;b&gt;onsetDelay&lt;/b&gt; - The number of seconds which pass following a cause measurement before an effect would likely be observed.&lt;/li&gt;&lt;li&gt;&lt;b&gt;durationOfAction&lt;/b&gt; - The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
         /// </summary>
         /// <param name="effect">ORIGINAL variable name of the effect variable for which the user desires correlations</param>
         /// <param name="cause">ORIGINAL variable name of the cause variable for which the user desires correlations</param>
+        /// <param name="correlationCoefficient">Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action</param>
+        /// <param name="onsetDelay">The number of seconds which pass following a cause measurement before an effect would likely be observed.</param>
+        /// <param name="durationOfAction">The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.</param>
+        /// <param name="lastUpdated">The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Correlation></returns>
-        System.Threading.Tasks.Task<List<Correlation>> V1CorrelationsGetAsync (string effect, string cause, int? limit, int? offset, int? sort);
+        System.Threading.Tasks.Task<List<Correlation>> V1CorrelationsGetAsync (string effect, string cause, string correlationCoefficient, string onsetDelay, string durationOfAction, string lastUpdated, int? limit, int? offset, int? sort);
         
         /// <summary>
         /// Store or Update a Correlation Add correlation
@@ -259,11 +267,15 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="effect">ORIGINAL variable name of the effect variable for which the user desires correlations</param> 
         /// <param name="cause">ORIGINAL variable name of the cause variable for which the user desires correlations</param> 
+        /// <param name="correlationCoefficient">Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action</param> 
+        /// <param name="onsetDelay">The number of seconds which pass following a cause measurement before an effect would likely be observed.</param> 
+        /// <param name="durationOfAction">The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.</param> 
+        /// <param name="lastUpdated">The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param> 
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param> 
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
         /// <returns>List<Correlation></returns>            
-        public List<Correlation> V1CorrelationsGet (string effect, string cause, int? limit, int? offset, int? sort)
+        public List<Correlation> V1CorrelationsGet (string effect, string cause, string correlationCoefficient, string onsetDelay, string durationOfAction, string lastUpdated, int? limit, int? offset, int? sort)
         {
             
     
@@ -280,6 +292,10 @@ namespace IO.Swagger.Api
             
             if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
+            if (correlationCoefficient != null) queryParams.Add("correlationCoefficient", ApiClient.ParameterToString(correlationCoefficient)); // query parameter
+            if (onsetDelay != null) queryParams.Add("onsetDelay", ApiClient.ParameterToString(onsetDelay)); // query parameter
+            if (durationOfAction != null) queryParams.Add("durationOfAction", ApiClient.ParameterToString(durationOfAction)); // query parameter
+            if (lastUpdated != null) queryParams.Add("lastUpdated", ApiClient.ParameterToString(lastUpdated)); // query parameter
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
             if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
@@ -307,11 +323,15 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="effect">ORIGINAL variable name of the effect variable for which the user desires correlations</param>
         /// <param name="cause">ORIGINAL variable name of the cause variable for which the user desires correlations</param>
+        /// <param name="correlationCoefficient">Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action</param>
+        /// <param name="onsetDelay">The number of seconds which pass following a cause measurement before an effect would likely be observed.</param>
+        /// <param name="durationOfAction">The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.</param>
+        /// <param name="lastUpdated">The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
         /// <returns>List<Correlation></returns>
-        public async System.Threading.Tasks.Task<List<Correlation>> V1CorrelationsGetAsync (string effect, string cause, int? limit, int? offset, int? sort)
+        public async System.Threading.Tasks.Task<List<Correlation>> V1CorrelationsGetAsync (string effect, string cause, string correlationCoefficient, string onsetDelay, string durationOfAction, string lastUpdated, int? limit, int? offset, int? sort)
         {
             
     
@@ -328,6 +348,10 @@ namespace IO.Swagger.Api
             
             if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
+            if (correlationCoefficient != null) queryParams.Add("correlationCoefficient", ApiClient.ParameterToString(correlationCoefficient)); // query parameter
+            if (onsetDelay != null) queryParams.Add("onsetDelay", ApiClient.ParameterToString(onsetDelay)); // query parameter
+            if (durationOfAction != null) queryParams.Add("durationOfAction", ApiClient.ParameterToString(durationOfAction)); // query parameter
+            if (lastUpdated != null) queryParams.Add("lastUpdated", ApiClient.ParameterToString(lastUpdated)); // query parameter
             if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
             if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
             if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter

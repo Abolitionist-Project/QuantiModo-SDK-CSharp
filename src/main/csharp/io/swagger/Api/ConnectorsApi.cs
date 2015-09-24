@@ -12,18 +12,20 @@ namespace IO.Swagger.Api
     {
         
         /// <summary>
-        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.
+        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n\n    if using the MoodiModo Clones, Use `qmSetupOnIonic` function after connecting `connect.js`.
         /// </summary>
-        /// <param name="t">User token</param>
+        /// <param name="access token">User&#39;s access token</param>
+        /// <param name="mashape key">Mashape API key</param>
         /// <returns></returns>
-        void V1ConnectJsGet (string t);
+        void V1ConnectJsGet (string access token, string mashape key);
   
         /// <summary>
-        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.
+        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n\n    if using the MoodiModo Clones, Use `qmSetupOnIonic` function after connecting `connect.js`.
         /// </summary>
-        /// <param name="t">User token</param>
+        /// <param name="access token">User&#39;s access token</param>
+        /// <param name="mashape key">Mashape API key</param>
         /// <returns></returns>
-        System.Threading.Tasks.Task V1ConnectJsGetAsync (string t);
+        System.Threading.Tasks.Task V1ConnectJsGetAsync (string access token, string mashape key);
         
         /// <summary>
         /// Mobile connect page Mobile connect page
@@ -209,12 +211,16 @@ namespace IO.Swagger.Api
     
         
         /// <summary>
-        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.
+        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n\n    if using the MoodiModo Clones, Use `qmSetupOnIonic` function after connecting `connect.js`.
         /// </summary>
-        /// <param name="t">User token</param> 
+        /// <param name="access token">User&#39;s access token</param> 
+        /// <param name="mashape key">Mashape API key</param> 
         /// <returns></returns>            
-        public void V1ConnectJsGet (string t)
+        public void V1ConnectJsGet (string access token, string mashape key)
         {
+            
+            // verify the required parameter 'access token' is set
+            if (access token == null) throw new ApiException(400, "Missing required parameter 'access token' when calling V1ConnectJsGet");
             
     
             var path = "/v1/connect.js";
@@ -228,7 +234,8 @@ namespace IO.Swagger.Api
 
             pathParams.Add("format", "json");
             
-            if (t != null) queryParams.Add("t", ApiClient.ParameterToString(t)); // query parameter
+            if (access token != null) queryParams.Add("access token", ApiClient.ParameterToString(access token)); // query parameter
+            if (mashape key != null) queryParams.Add("mashape key", ApiClient.ParameterToString(mashape key)); // query parameter
             
             
             
@@ -249,12 +256,15 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.
+        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n\n    if using the MoodiModo Clones, Use `qmSetupOnIonic` function after connecting `connect.js`.
         /// </summary>
-        /// <param name="t">User token</param>
+        /// <param name="access token">User&#39;s access token</param>
+        /// <param name="mashape key">Mashape API key</param>
         /// <returns></returns>
-        public async System.Threading.Tasks.Task V1ConnectJsGetAsync (string t)
+        public async System.Threading.Tasks.Task V1ConnectJsGetAsync (string access token, string mashape key)
         {
+            // verify the required parameter 'access token' is set
+            if (access token == null) throw new ApiException(400, "Missing required parameter 'access token' when calling V1ConnectJsGet");
             
     
             var path = "/v1/connect.js";
@@ -268,7 +278,8 @@ namespace IO.Swagger.Api
     
             pathParams.Add("format", "json");
             
-            if (t != null) queryParams.Add("t", ApiClient.ParameterToString(t)); // query parameter
+            if (access token != null) queryParams.Add("access token", ApiClient.ParameterToString(access token)); // query parameter
+            if (mashape key != null) queryParams.Add("mashape key", ApiClient.ParameterToString(mashape key)); // query parameter
             
             
             

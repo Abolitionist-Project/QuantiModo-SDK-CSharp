@@ -8,12 +8,18 @@ using IO.Swagger.Model;
 namespace IO.Swagger.Api
 {
     
+    /// <summary>
+    /// Represents a collection of functions to interact with the API endpoints
+    /// </summary>
     public interface IVotesApi
     {
         
         /// <summary>
-        /// Post or update vote This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
+        /// Post or update vote
         /// </summary>
+        /// <remarks>
+        /// This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
+        /// </remarks>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
         /// <param name="correlation">Correlation value</param>
@@ -22,8 +28,11 @@ namespace IO.Swagger.Api
         CommonResponse V1VotesPost (string cause, string effect, double? correlation, bool? vote);
   
         /// <summary>
-        /// Post or update vote This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
+        /// Post or update vote
         /// </summary>
+        /// <remarks>
+        /// This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
+        /// </remarks>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
         /// <param name="correlation">Correlation value</param>
@@ -32,16 +41,22 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, double? correlation, bool? vote);
         
         /// <summary>
-        /// Delete vote Delete previously posted vote
+        /// Delete vote
         /// </summary>
+        /// <remarks>
+        /// Delete previously posted vote
+        /// </remarks>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
         /// <returns>CommonResponse</returns>
         CommonResponse V1VotesDeletePost (string cause, string effect);
   
         /// <summary>
-        /// Delete vote Delete previously posted vote
+        /// Delete vote
         /// </summary>
+        /// <remarks>
+        /// Delete previously posted vote
+        /// </remarks>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
         /// <returns>CommonResponse</returns>
@@ -98,7 +113,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
-        /// <value>An instance of the ApiClient</param>
+        /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
     
         
@@ -132,6 +147,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
@@ -183,7 +208,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
@@ -231,6 +266,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
@@ -276,7 +321,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter

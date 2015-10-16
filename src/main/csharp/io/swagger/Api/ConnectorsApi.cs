@@ -8,68 +8,98 @@ using IO.Swagger.Model;
 namespace IO.Swagger.Api
 {
     
+    /// <summary>
+    /// Represents a collection of functions to interact with the API endpoints
+    /// </summary>
     public interface IConnectorsApi
     {
         
         /// <summary>
-        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n\n    if using the MoodiModo Clones, Use `qmSetupOnIonic` function after connecting `connect.js`.
+        /// Get embeddable connect javascript
         /// </summary>
+        /// <remarks>
+        /// Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n\n    if using the MoodiModo Clones, Use `qmSetupOnIonic` function after connecting `connect.js`.
+        /// </remarks>
         /// <param name="access token">User&#39;s access token</param>
         /// <param name="mashape key">Mashape API key</param>
         /// <returns></returns>
         void V1ConnectJsGet (string access token, string mashape key);
   
         /// <summary>
-        /// Get embeddable connect javascript Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n\n    if using the MoodiModo Clones, Use `qmSetupOnIonic` function after connecting `connect.js`.
+        /// Get embeddable connect javascript
         /// </summary>
+        /// <remarks>
+        /// Get embeddable connect javascript. Usage:\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Use `qmSetupInPopup` function after connecting `connect.js`.\n\n  - Embedding in applications with popups for 3rd-party authentication\nwindows.\n\n    Requires a selector to block. It will be embedded in this block.\n\n    Use `qmSetupOnPage` function after connecting `connect.js`.\n\n  - Embedding in mobile applications without popups for 3rd-party\nauthentication.\n\n    Use `qmSetupOnMobile` function after connecting `connect.js`.\n\n    if using the MoodiModo Clones, Use `qmSetupOnIonic` function after connecting `connect.js`.
+        /// </remarks>
         /// <param name="access token">User&#39;s access token</param>
         /// <param name="mashape key">Mashape API key</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1ConnectJsGetAsync (string access token, string mashape key);
         
         /// <summary>
-        /// Mobile connect page Mobile connect page
+        /// Mobile connect page
         /// </summary>
+        /// <remarks>
+        /// Mobile connect page
+        /// </remarks>
         /// <param name="t">User token</param>
         /// <returns></returns>
         void V1ConnectMobileGet (string t);
   
         /// <summary>
-        /// Mobile connect page Mobile connect page
+        /// Mobile connect page
         /// </summary>
+        /// <remarks>
+        /// Mobile connect page
+        /// </remarks>
         /// <param name="t">User token</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1ConnectMobileGetAsync (string t);
         
         /// <summary>
-        /// List of Connectors A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
+        /// List of Connectors
         /// </summary>
-        /// <returns>List<Connector></returns>
+        /// <remarks>
+        /// A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
+        /// </remarks>
+        /// <returns></returns>
         List<Connector> V1ConnectorsListGet ();
   
         /// <summary>
-        /// List of Connectors A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
+        /// List of Connectors
         /// </summary>
-        /// <returns>List<Connector></returns>
+        /// <remarks>
+        /// A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
+        /// </remarks>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Connector>> V1ConnectorsListGetAsync ();
         
         /// <summary>
-        /// Obtain a token from 3rd party data source Attempt to obtain a token from the data provider, store it in the database. With this, the connector to continue to obtain new user data until the token is revoked.
+        /// Obtain a token from 3rd party data source
         /// </summary>
+        /// <remarks>
+        /// Attempt to obtain a token from the data provider, store it in the database. With this, the connector to continue to obtain new user data until the token is revoked.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <returns></returns>
         void V1ConnectorsConnectorConnectGet (string connector);
   
         /// <summary>
-        /// Obtain a token from 3rd party data source Attempt to obtain a token from the data provider, store it in the database. With this, the connector to continue to obtain new user data until the token is revoked.
+        /// Obtain a token from 3rd party data source
         /// </summary>
+        /// <remarks>
+        /// Attempt to obtain a token from the data provider, store it in the database. With this, the connector to continue to obtain new user data until the token is revoked.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1ConnectorsConnectorConnectGetAsync (string connector);
         
         /// <summary>
-        /// Connection Instructions Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.
+        /// Connection Instructions
         /// </summary>
+        /// <remarks>
+        /// Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <param name="parameters">JSON Array of Parameters for the request to enable connector.</param>
         /// <param name="url">URL which should be used to enable the connector.</param>
@@ -78,8 +108,11 @@ namespace IO.Swagger.Api
         void V1ConnectorsConnectorConnectInstructionsGet (string connector, string parameters, string url, bool? usePopup);
   
         /// <summary>
-        /// Connection Instructions Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.
+        /// Connection Instructions
         /// </summary>
+        /// <remarks>
+        /// Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <param name="parameters">JSON Array of Parameters for the request to enable connector.</param>
         /// <param name="url">URL which should be used to enable the connector.</param>
@@ -88,8 +121,11 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task V1ConnectorsConnectorConnectInstructionsGetAsync (string connector, string parameters, string url, bool? usePopup);
         
         /// <summary>
-        /// Connect Parameter Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.
+        /// Connect Parameter
         /// </summary>
+        /// <remarks>
+        /// Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <param name="displayName">Name of the parameter that is user visible in the form</param>
         /// <param name="key">Name of the property that the user has to enter such as username or password Connector (used in HTTP request)</param>
@@ -101,8 +137,11 @@ namespace IO.Swagger.Api
         ConnectorInstruction V1ConnectorsConnectorConnectParameterGet (string connector, string displayName, string key, string placeholder, string type, bool? usePopup, string defaultValue);
   
         /// <summary>
-        /// Connect Parameter Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.
+        /// Connect Parameter
         /// </summary>
+        /// <remarks>
+        /// Returns instructions that describe what parameters and endpoint to use to connect to the given data provider.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <param name="displayName">Name of the parameter that is user visible in the form</param>
         /// <param name="key">Name of the property that the user has to enter such as username or password Connector (used in HTTP request)</param>
@@ -114,43 +153,61 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<ConnectorInstruction> V1ConnectorsConnectorConnectParameterGetAsync (string connector, string displayName, string key, string placeholder, string type, bool? usePopup, string defaultValue);
         
         /// <summary>
-        /// Delete stored connection info The disconnect method deletes any stored tokens or connection information from the connectors database.
+        /// Delete stored connection info
         /// </summary>
+        /// <remarks>
+        /// The disconnect method deletes any stored tokens or connection information from the connectors database.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <returns></returns>
         void V1ConnectorsConnectorDisconnectGet (string connector);
   
         /// <summary>
-        /// Delete stored connection info The disconnect method deletes any stored tokens or connection information from the connectors database.
+        /// Delete stored connection info
         /// </summary>
+        /// <remarks>
+        /// The disconnect method deletes any stored tokens or connection information from the connectors database.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1ConnectorsConnectorDisconnectGetAsync (string connector);
         
         /// <summary>
-        /// Get connector info for user Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.
+        /// Get connector info for user
         /// </summary>
+        /// <remarks>
+        /// Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <returns>ConnectorInfo</returns>
         ConnectorInfo V1ConnectorsConnectorInfoGet (string connector);
   
         /// <summary>
-        /// Get connector info for user Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.
+        /// Get connector info for user
         /// </summary>
+        /// <remarks>
+        /// Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device. Get a list of available connectors from the /connectors/list endpoint.</param>
         /// <returns>ConnectorInfo</returns>
         System.Threading.Tasks.Task<ConnectorInfo> V1ConnectorsConnectorInfoGetAsync (string connector);
         
         /// <summary>
-        /// Sync with data source The update method tells the QM Connector Framework to check with the data provider (such as Fitbit or MyFitnessPal) and retrieve any new measurements available.
+        /// Sync with data source
         /// </summary>
+        /// <remarks>
+        /// The update method tells the QM Connector Framework to check with the data provider (such as Fitbit or MyFitnessPal) and retrieve any new measurements available.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device</param>
         /// <returns></returns>
         void V1ConnectorsConnectorUpdateGet (string connector);
   
         /// <summary>
-        /// Sync with data source The update method tells the QM Connector Framework to check with the data provider (such as Fitbit or MyFitnessPal) and retrieve any new measurements available.
+        /// Sync with data source
         /// </summary>
+        /// <remarks>
+        /// The update method tells the QM Connector Framework to check with the data provider (such as Fitbit or MyFitnessPal) and retrieve any new measurements available.
+        /// </remarks>
         /// <param name="connector">Lowercase system name of the source application or device</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1ConnectorsConnectorUpdateGetAsync (string connector);
@@ -206,7 +263,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
-        /// <value>An instance of the ApiClient</param>
+        /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
     
         
@@ -232,6 +289,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/x-javascript"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (access token != null) queryParams.Add("access token", ApiClient.ParameterToString(access token)); // query parameter
@@ -275,7 +342,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/x-javascript"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (access token != null) queryParams.Add("access token", ApiClient.ParameterToString(access token)); // query parameter
@@ -318,6 +395,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "text/html"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (t != null) queryParams.Add("t", ApiClient.ParameterToString(t)); // query parameter
@@ -359,7 +446,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "text/html"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (t != null) queryParams.Add("t", ApiClient.ParameterToString(t)); // query parameter
@@ -383,7 +480,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// List of Connectors A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
         /// </summary>
-        /// <returns>List<Connector></returns>            
+        /// <returns></returns>            
         public List<Connector> V1ConnectorsListGet ()
         {
             
@@ -397,6 +494,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -421,7 +528,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// List of Connectors A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
         /// </summary>
-        /// <returns>List<Connector></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Connector>> V1ConnectorsListGetAsync ()
         {
             
@@ -434,7 +541,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -474,6 +591,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -515,7 +642,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -569,6 +706,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -622,7 +769,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -688,6 +845,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -751,7 +918,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -798,6 +975,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -839,7 +1026,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -881,6 +1078,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -922,7 +1129,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -963,6 +1180,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             
@@ -1004,7 +1231,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (connector != null) pathParams.Add("connector", ApiClient.ParameterToString(connector)); // path parameter
             

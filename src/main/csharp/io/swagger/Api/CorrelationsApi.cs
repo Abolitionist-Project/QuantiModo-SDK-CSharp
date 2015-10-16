@@ -8,12 +8,18 @@ using IO.Swagger.Model;
 namespace IO.Swagger.Api
 {
     
+    /// <summary>
+    /// Represents a collection of functions to interact with the API endpoints
+    /// </summary>
     public interface ICorrelationsApi
     {
         
         /// <summary>
-        /// Get correlations Get correlations.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;correlationCoefficient&lt;/b&gt; - Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action&lt;/li&gt;&lt;li&gt;&lt;b&gt;onsetDelay&lt;/b&gt; - The number of seconds which pass following a cause measurement before an effect would likely be observed.&lt;/li&gt;&lt;li&gt;&lt;b&gt;durationOfAction&lt;/b&gt; - The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// Get correlations
         /// </summary>
+        /// <remarks>
+        /// Get correlations.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;correlationCoefficient&lt;/b&gt; - Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action&lt;/li&gt;&lt;li&gt;&lt;b&gt;onsetDelay&lt;/b&gt; - The number of seconds which pass following a cause measurement before an effect would likely be observed.&lt;/li&gt;&lt;li&gt;&lt;b&gt;durationOfAction&lt;/b&gt; - The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// </remarks>
         /// <param name="effect">ORIGINAL variable name of the effect variable for which the user desires correlations</param>
         /// <param name="cause">ORIGINAL variable name of the cause variable for which the user desires correlations</param>
         /// <param name="correlationCoefficient">Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action</param>
@@ -23,12 +29,15 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         List<Correlation> V1CorrelationsGet (string effect, string cause, string correlationCoefficient, string onsetDelay, string durationOfAction, string lastUpdated, int? limit, int? offset, int? sort);
   
         /// <summary>
-        /// Get correlations Get correlations.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;correlationCoefficient&lt;/b&gt; - Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action&lt;/li&gt;&lt;li&gt;&lt;b&gt;onsetDelay&lt;/b&gt; - The number of seconds which pass following a cause measurement before an effect would likely be observed.&lt;/li&gt;&lt;li&gt;&lt;b&gt;durationOfAction&lt;/b&gt; - The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// Get correlations
         /// </summary>
+        /// <remarks>
+        /// Get correlations.&lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;correlationCoefficient&lt;/b&gt; - Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action&lt;/li&gt;&lt;li&gt;&lt;b&gt;onsetDelay&lt;/b&gt; - The number of seconds which pass following a cause measurement before an effect would likely be observed.&lt;/li&gt;&lt;li&gt;&lt;b&gt;durationOfAction&lt;/b&gt; - The time in seconds over which the cause would be expected to exert a measurable effect. We have selected a default value for each variable. This default value may be replaced by a user specified by adjusting their variable user settings.&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// </remarks>
         /// <param name="effect">ORIGINAL variable name of the effect variable for which the user desires correlations</param>
         /// <param name="cause">ORIGINAL variable name of the cause variable for which the user desires correlations</param>
         /// <param name="correlationCoefficient">Pearson correlation coefficient between cause and effect after lagging by onset delay and grouping by duration of action</param>
@@ -38,142 +47,193 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Correlation>> V1CorrelationsGetAsync (string effect, string cause, string correlationCoefficient, string onsetDelay, string durationOfAction, string lastUpdated, int? limit, int? offset, int? sort);
         
         /// <summary>
-        /// Store or Update a Correlation Add correlation
+        /// Store or Update a Correlation
         /// </summary>
+        /// <remarks>
+        /// Add correlation
+        /// </remarks>
         /// <param name="body">Provides correlation data</param>
         /// <returns></returns>
         void V1CorrelationsPost (PostCorrelation body);
   
         /// <summary>
-        /// Store or Update a Correlation Add correlation
+        /// Store or Update a Correlation
         /// </summary>
+        /// <remarks>
+        /// Add correlation
+        /// </remarks>
         /// <param name="body">Provides correlation data</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1CorrelationsPostAsync (PostCorrelation body);
         
         /// <summary>
-        /// Search user correlations for a given cause Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// Search user correlations for a given cause
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// </remarks>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="userId">User id</param>
         /// <param name="variableName">Effect variable name</param>
         /// <param name="organizationToken">Organization access token</param>
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         List<Correlation> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameCausesGet (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic);
   
         /// <summary>
-        /// Search user correlations for a given cause Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// Search user correlations for a given cause
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all user cause variables for a given cause. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// </remarks>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="userId">User id</param>
         /// <param name="variableName">Effect variable name</param>
         /// <param name="organizationToken">Organization access token</param>
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Correlation>> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameCausesGetAsync (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic);
         
         /// <summary>
-        /// Search user correlations for a given cause Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// Search user correlations for a given cause
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// </remarks>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="userId">User id</param>
         /// <param name="variableName">Cause variable name</param>
         /// <param name="organizationToken">Organization access token</param>
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param>
-        /// <returns>List<CommonResponse></returns>
+        /// <returns></returns>
         List<CommonResponse> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameEffectsGet (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic);
   
         /// <summary>
-        /// Search user correlations for a given cause Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// Search user correlations for a given cause
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all user cause variables for a given effect. If parameter \&quot;include_public\&quot; is used, it also returns public correlations. User correlation overwrites or supersedes public correlation.
+        /// </remarks>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="userId">User id</param>
         /// <param name="variableName">Cause variable name</param>
         /// <param name="organizationToken">Organization access token</param>
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param>
-        /// <returns>List<CommonResponse></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<CommonResponse>> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameEffectsGetAsync (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic);
         
         /// <summary>
-        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
+        /// Get average correlations for variables containing search term
         /// </summary>
+        /// <remarks>
+        /// Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
+        /// </remarks>
         /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
         /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         List<Correlation> V1PublicCorrelationsSearchSearchGet (string search, string effectOrCause);
   
         /// <summary>
-        /// Get average correlations for variables containing search term Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
+        /// Get average correlations for variables containing search term
         /// </summary>
+        /// <remarks>
+        /// Returns the average correlations from all users for all public variables that contain the characters in the search query. Returns average of all users public variable correlations with a specified cause or effect.
+        /// </remarks>
         /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
         /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Correlation>> V1PublicCorrelationsSearchSearchGetAsync (string search, string effectOrCause);
         
         /// <summary>
-        /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect
+        /// Search user correlations for a given effect
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all user cause variables for a given effect
+        /// </remarks>
         /// <param name="variableName">Effect variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         List<Correlation> V1VariablesVariableNameCausesGet (string variableName);
   
         /// <summary>
-        /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect
+        /// Search user correlations for a given effect
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all user cause variables for a given effect
+        /// </remarks>
         /// <param name="variableName">Effect variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Correlation>> V1VariablesVariableNameCausesGetAsync (string variableName);
         
         /// <summary>
-        /// Search user correlations for a given cause Returns average of all correlations and votes for all user effect variables for a given cause
+        /// Search user correlations for a given cause
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all user effect variables for a given cause
+        /// </remarks>
         /// <param name="variableName">Cause variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         List<Correlation> V1VariablesVariableNameEffectsGet (string variableName);
   
         /// <summary>
-        /// Search user correlations for a given cause Returns average of all correlations and votes for all user effect variables for a given cause
+        /// Search user correlations for a given cause
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all user effect variables for a given cause
+        /// </remarks>
         /// <param name="variableName">Cause variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Correlation>> V1VariablesVariableNameEffectsGetAsync (string variableName);
         
         /// <summary>
-        /// Search public correlations for a given effect Returns average of all correlations and votes for all public cause variables for a given effect
+        /// Search public correlations for a given effect
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all public cause variables for a given effect
+        /// </remarks>
         /// <param name="variableName">Effect variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         List<Correlation> V1VariablesVariableNamePublicCausesGet (string variableName);
   
         /// <summary>
-        /// Search public correlations for a given effect Returns average of all correlations and votes for all public cause variables for a given effect
+        /// Search public correlations for a given effect
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all public cause variables for a given effect
+        /// </remarks>
         /// <param name="variableName">Effect variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Correlation>> V1VariablesVariableNamePublicCausesGetAsync (string variableName);
         
         /// <summary>
-        /// Search public correlations for a given cause Returns average of all correlations and votes for all public cause variables for a given cause
+        /// Search public correlations for a given cause
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all public cause variables for a given cause
+        /// </remarks>
         /// <param name="variableName">Cause variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         List<Correlation> V1VariablesVariableNamePublicEffectsGet (string variableName);
   
         /// <summary>
-        /// Search public correlations for a given cause Returns average of all correlations and votes for all public cause variables for a given cause
+        /// Search public correlations for a given cause
         /// </summary>
+        /// <remarks>
+        /// Returns average of all correlations and votes for all public cause variables for a given cause
+        /// </remarks>
         /// <param name="variableName">Cause variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Correlation>> V1VariablesVariableNamePublicEffectsGetAsync (string variableName);
         
         /// <summary>
-        /// Post or update vote This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
+        /// Post or update vote
         /// </summary>
+        /// <remarks>
+        /// This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
+        /// </remarks>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
         /// <param name="correlation">Correlation value</param>
@@ -182,8 +242,11 @@ namespace IO.Swagger.Api
         CommonResponse V1VotesPost (string cause, string effect, double? correlation, bool? vote);
   
         /// <summary>
-        /// Post or update vote This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
+        /// Post or update vote
         /// </summary>
+        /// <remarks>
+        /// This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
+        /// </remarks>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
         /// <param name="correlation">Correlation value</param>
@@ -192,16 +255,22 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<CommonResponse> V1VotesPostAsync (string cause, string effect, double? correlation, bool? vote);
         
         /// <summary>
-        /// Delete vote Delete previously posted vote
+        /// Delete vote
         /// </summary>
+        /// <remarks>
+        /// Delete previously posted vote
+        /// </remarks>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
         /// <returns>CommonResponse</returns>
         CommonResponse V1VotesDeletePost (string cause, string effect);
   
         /// <summary>
-        /// Delete vote Delete previously posted vote
+        /// Delete vote
         /// </summary>
+        /// <remarks>
+        /// Delete previously posted vote
+        /// </remarks>
         /// <param name="cause">Cause variable name</param>
         /// <param name="effect">Effect variable name</param>
         /// <returns>CommonResponse</returns>
@@ -258,7 +327,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
-        /// <value>An instance of the ApiClient</param>
+        /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
     
         
@@ -274,7 +343,7 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param> 
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
-        /// <returns>List<Correlation></returns>            
+        /// <returns></returns>            
         public List<Correlation> V1CorrelationsGet (string effect, string cause, string correlationCoefficient, string onsetDelay, string durationOfAction, string lastUpdated, int? limit, int? offset, int? sort)
         {
             
@@ -288,6 +357,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
@@ -330,7 +409,7 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Correlation>> V1CorrelationsGetAsync (string effect, string cause, string correlationCoefficient, string onsetDelay, string durationOfAction, string lastUpdated, int? limit, int? offset, int? sort)
         {
             
@@ -343,7 +422,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (effect != null) queryParams.Add("effect", ApiClient.ParameterToString(effect)); // query parameter
@@ -392,6 +481,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -433,7 +532,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -462,7 +571,7 @@ namespace IO.Swagger.Api
         /// <param name="variableName">Effect variable name</param> 
         /// <param name="organizationToken">Organization access token</param> 
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param> 
-        /// <returns>List<Correlation></returns>            
+        /// <returns></returns>            
         public List<Correlation> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameCausesGet (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic)
         {
             
@@ -488,6 +597,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (organizationId != null) pathParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // path parameter
             if (userId != null) pathParams.Add("userId", ApiClient.ParameterToString(userId)); // path parameter
@@ -522,7 +641,7 @@ namespace IO.Swagger.Api
         /// <param name="variableName">Effect variable name</param>
         /// <param name="organizationToken">Organization access token</param>
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Correlation>> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameCausesGetAsync (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic)
         {
             // verify the required parameter 'organizationId' is set
@@ -543,7 +662,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (organizationId != null) pathParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // path parameter
             if (userId != null) pathParams.Add("userId", ApiClient.ParameterToString(userId)); // path parameter
@@ -575,7 +704,7 @@ namespace IO.Swagger.Api
         /// <param name="variableName">Cause variable name</param> 
         /// <param name="organizationToken">Organization access token</param> 
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param> 
-        /// <returns>List<CommonResponse></returns>            
+        /// <returns></returns>            
         public List<CommonResponse> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameEffectsGet (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic)
         {
             
@@ -601,6 +730,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (organizationId != null) pathParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // path parameter
             if (userId != null) pathParams.Add("userId", ApiClient.ParameterToString(userId)); // path parameter
@@ -635,7 +774,7 @@ namespace IO.Swagger.Api
         /// <param name="variableName">Cause variable name</param>
         /// <param name="organizationToken">Organization access token</param>
         /// <param name="includePublic">Include bublic correlations, Can be \&quot;1\&quot; or empty.</param>
-        /// <returns>List<CommonResponse></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<CommonResponse>> V1OrganizationsOrganizationIdUsersUserIdVariablesVariableNameEffectsGetAsync (int? organizationId, int? userId, string variableName, string organizationToken, string includePublic)
         {
             // verify the required parameter 'organizationId' is set
@@ -656,7 +795,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (organizationId != null) pathParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // path parameter
             if (userId != null) pathParams.Add("userId", ApiClient.ParameterToString(userId)); // path parameter
@@ -685,7 +834,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="search">Name of the variable that you want to know the causes or effects of.</param> 
         /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param> 
-        /// <returns>List<Correlation></returns>            
+        /// <returns></returns>            
         public List<Correlation> V1PublicCorrelationsSearchSearchGet (string search, string effectOrCause)
         {
             
@@ -705,6 +854,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (search != null) pathParams.Add("search", ApiClient.ParameterToString(search)); // path parameter
             
@@ -733,7 +892,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="search">Name of the variable that you want to know the causes or effects of.</param>
         /// <param name="effectOrCause">Specifies whether to return the effects or causes of the searched variable.</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Correlation>> V1PublicCorrelationsSearchSearchGetAsync (string search, string effectOrCause)
         {
             // verify the required parameter 'search' is set
@@ -750,7 +909,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (search != null) pathParams.Add("search", ApiClient.ParameterToString(search)); // path parameter
             
@@ -775,7 +944,7 @@ namespace IO.Swagger.Api
         /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect
         /// </summary>
         /// <param name="variableName">Effect variable name</param> 
-        /// <returns>List<Correlation></returns>            
+        /// <returns></returns>            
         public List<Correlation> V1VariablesVariableNameCausesGet (string variableName)
         {
             
@@ -792,6 +961,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (variableName != null) pathParams.Add("variableName", ApiClient.ParameterToString(variableName)); // path parameter
             
@@ -818,7 +997,7 @@ namespace IO.Swagger.Api
         /// Search user correlations for a given effect Returns average of all correlations and votes for all user cause variables for a given effect
         /// </summary>
         /// <param name="variableName">Effect variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Correlation>> V1VariablesVariableNameCausesGetAsync (string variableName)
         {
             // verify the required parameter 'variableName' is set
@@ -833,7 +1012,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (variableName != null) pathParams.Add("variableName", ApiClient.ParameterToString(variableName)); // path parameter
             
@@ -857,7 +1046,7 @@ namespace IO.Swagger.Api
         /// Search user correlations for a given cause Returns average of all correlations and votes for all user effect variables for a given cause
         /// </summary>
         /// <param name="variableName">Cause variable name</param> 
-        /// <returns>List<Correlation></returns>            
+        /// <returns></returns>            
         public List<Correlation> V1VariablesVariableNameEffectsGet (string variableName)
         {
             
@@ -874,6 +1063,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (variableName != null) pathParams.Add("variableName", ApiClient.ParameterToString(variableName)); // path parameter
             
@@ -900,7 +1099,7 @@ namespace IO.Swagger.Api
         /// Search user correlations for a given cause Returns average of all correlations and votes for all user effect variables for a given cause
         /// </summary>
         /// <param name="variableName">Cause variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Correlation>> V1VariablesVariableNameEffectsGetAsync (string variableName)
         {
             // verify the required parameter 'variableName' is set
@@ -915,7 +1114,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (variableName != null) pathParams.Add("variableName", ApiClient.ParameterToString(variableName)); // path parameter
             
@@ -939,7 +1148,7 @@ namespace IO.Swagger.Api
         /// Search public correlations for a given effect Returns average of all correlations and votes for all public cause variables for a given effect
         /// </summary>
         /// <param name="variableName">Effect variable name</param> 
-        /// <returns>List<Correlation></returns>            
+        /// <returns></returns>            
         public List<Correlation> V1VariablesVariableNamePublicCausesGet (string variableName)
         {
             
@@ -956,6 +1165,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (variableName != null) pathParams.Add("variableName", ApiClient.ParameterToString(variableName)); // path parameter
             
@@ -982,7 +1201,7 @@ namespace IO.Swagger.Api
         /// Search public correlations for a given effect Returns average of all correlations and votes for all public cause variables for a given effect
         /// </summary>
         /// <param name="variableName">Effect variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Correlation>> V1VariablesVariableNamePublicCausesGetAsync (string variableName)
         {
             // verify the required parameter 'variableName' is set
@@ -997,7 +1216,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (variableName != null) pathParams.Add("variableName", ApiClient.ParameterToString(variableName)); // path parameter
             
@@ -1021,7 +1250,7 @@ namespace IO.Swagger.Api
         /// Search public correlations for a given cause Returns average of all correlations and votes for all public cause variables for a given cause
         /// </summary>
         /// <param name="variableName">Cause variable name</param> 
-        /// <returns>List<Correlation></returns>            
+        /// <returns></returns>            
         public List<Correlation> V1VariablesVariableNamePublicEffectsGet (string variableName)
         {
             
@@ -1038,6 +1267,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (variableName != null) pathParams.Add("variableName", ApiClient.ParameterToString(variableName)); // path parameter
             
@@ -1064,7 +1303,7 @@ namespace IO.Swagger.Api
         /// Search public correlations for a given cause Returns average of all correlations and votes for all public cause variables for a given cause
         /// </summary>
         /// <param name="variableName">Cause variable name</param>
-        /// <returns>List<Correlation></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Correlation>> V1VariablesVariableNamePublicEffectsGetAsync (string variableName)
         {
             // verify the required parameter 'variableName' is set
@@ -1079,7 +1318,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (variableName != null) pathParams.Add("variableName", ApiClient.ParameterToString(variableName)); // path parameter
             
@@ -1129,6 +1378,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
@@ -1180,7 +1439,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
@@ -1228,6 +1497,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
@@ -1273,7 +1552,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter

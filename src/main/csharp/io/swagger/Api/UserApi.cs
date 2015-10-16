@@ -8,34 +8,49 @@ using IO.Swagger.Model;
 namespace IO.Swagger.Api
 {
     
+    /// <summary>
+    /// Represents a collection of functions to interact with the API endpoints
+    /// </summary>
     public interface IUserApi
     {
         
         /// <summary>
-        /// Get user tokens for existing users, create new users Get user tokens for existing users, create new users
+        /// Get user tokens for existing users, create new users
         /// </summary>
+        /// <remarks>
+        /// Get user tokens for existing users, create new users
+        /// </remarks>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="body">Provides organization token and user ID</param>
         /// <returns>UserTokenSuccessfulResponse</returns>
         UserTokenSuccessfulResponse V1OrganizationsOrganizationIdUsersPost (int? organizationId, UserTokenRequest body);
   
         /// <summary>
-        /// Get user tokens for existing users, create new users Get user tokens for existing users, create new users
+        /// Get user tokens for existing users, create new users
         /// </summary>
+        /// <remarks>
+        /// Get user tokens for existing users, create new users
+        /// </remarks>
         /// <param name="organizationId">Organization ID</param>
         /// <param name="body">Provides organization token and user ID</param>
         /// <returns>UserTokenSuccessfulResponse</returns>
         System.Threading.Tasks.Task<UserTokenSuccessfulResponse> V1OrganizationsOrganizationIdUsersPostAsync (int? organizationId, UserTokenRequest body);
         
         /// <summary>
-        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
+        /// Get all available units for variableGet authenticated user
         /// </summary>
+        /// <remarks>
+        /// Returns user info for the currently authenticated user.
+        /// </remarks>
         /// <returns>User</returns>
         User V1UserMeGet ();
   
         /// <summary>
-        /// Get all available units for variableGet authenticated user Returns user info for the currently authenticated user.
+        /// Get all available units for variableGet authenticated user
         /// </summary>
+        /// <remarks>
+        /// Returns user info for the currently authenticated user.
+        /// </remarks>
         /// <returns>User</returns>
         System.Threading.Tasks.Task<User> V1UserMeGetAsync ();
         
@@ -90,7 +105,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
-        /// <value>An instance of the ApiClient</param>
+        /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
     
         
@@ -119,6 +134,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (organizationId != null) pathParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // path parameter
             
@@ -164,7 +189,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             if (organizationId != null) pathParams.Add("organizationId", ApiClient.ParameterToString(organizationId)); // path parameter
             
@@ -202,6 +237,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -239,7 +284,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             

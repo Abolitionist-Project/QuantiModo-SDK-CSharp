@@ -8,57 +8,78 @@ using IO.Swagger.Model;
 namespace IO.Swagger.Api
 {
     
+    /// <summary>
+    /// Represents a collection of functions to interact with the API endpoints
+    /// </summary>
     public interface IUnitsApi
     {
         
         /// <summary>
-        /// Get unit categories Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
+        /// Get unit categories
         /// </summary>
+        /// <remarks>
+        /// Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
+        /// </remarks>
         /// <returns>UnitCategory</returns>
         UnitCategory V1UnitCategoriesGet ();
   
         /// <summary>
-        /// Get unit categories Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
+        /// Get unit categories
         /// </summary>
+        /// <remarks>
+        /// Get a list of the categories of measurement units such as &#39;Distance&#39;, &#39;Duration&#39;, &#39;Energy&#39;, &#39;Frequency&#39;, &#39;Miscellany&#39;, &#39;Pressure&#39;, &#39;Proportion&#39;, &#39;Rating&#39;, &#39;Temperature&#39;, &#39;Volume&#39;, and &#39;Weight&#39;.
+        /// </remarks>
         /// <returns>UnitCategory</returns>
         System.Threading.Tasks.Task<UnitCategory> V1UnitCategoriesGetAsync ();
         
         /// <summary>
-        /// Get all available units Get all available units
+        /// Get all available units
         /// </summary>
+        /// <remarks>
+        /// Get all available units
+        /// </remarks>
         /// <param name="unitName">Unit name</param>
         /// <param name="abbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param>
         /// <param name="categoryName">Restrict the results to a specific unit category by providing the unit category name.</param>
-        /// <returns>List<Unit></returns>
+        /// <returns></returns>
         List<Unit> V1UnitsGet (string unitName, string abbreviatedUnitName, string categoryName);
   
         /// <summary>
-        /// Get all available units Get all available units
+        /// Get all available units
         /// </summary>
+        /// <remarks>
+        /// Get all available units
+        /// </remarks>
         /// <param name="unitName">Unit name</param>
         /// <param name="abbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param>
         /// <param name="categoryName">Restrict the results to a specific unit category by providing the unit category name.</param>
-        /// <returns>List<Unit></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Unit>> V1UnitsGetAsync (string unitName, string abbreviatedUnitName, string categoryName);
         
         /// <summary>
-        /// Units for Variable Get a list of all possible units to use for a given variable
+        /// Units for Variable
         /// </summary>
+        /// <remarks>
+        /// Get a list of all possible units to use for a given variable
+        /// </remarks>
         /// <param name="unitName">Name of Unit you want to retrieve</param>
         /// <param name="abbreviatedUnitName">Abbreviated Unit Name of the unit you want</param>
         /// <param name="categoryName">Name of the category you want units for</param>
         /// <param name="variable">Name of the variable you want units for</param>
-        /// <returns>List<Unit></returns>
+        /// <returns></returns>
         List<Unit> V1UnitsVariableGet (string unitName, string abbreviatedUnitName, string categoryName, string variable);
   
         /// <summary>
-        /// Units for Variable Get a list of all possible units to use for a given variable
+        /// Units for Variable
         /// </summary>
+        /// <remarks>
+        /// Get a list of all possible units to use for a given variable
+        /// </remarks>
         /// <param name="unitName">Name of Unit you want to retrieve</param>
         /// <param name="abbreviatedUnitName">Abbreviated Unit Name of the unit you want</param>
         /// <param name="categoryName">Name of the category you want units for</param>
         /// <param name="variable">Name of the variable you want units for</param>
-        /// <returns>List<Unit></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Unit>> V1UnitsVariableGetAsync (string unitName, string abbreviatedUnitName, string categoryName, string variable);
         
     }
@@ -112,7 +133,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
-        /// <value>An instance of the ApiClient</param>
+        /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
     
         
@@ -133,6 +154,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -170,7 +201,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -195,7 +236,7 @@ namespace IO.Swagger.Api
         /// <param name="unitName">Unit name</param> 
         /// <param name="abbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param> 
         /// <param name="categoryName">Restrict the results to a specific unit category by providing the unit category name.</param> 
-        /// <returns>List<Unit></returns>            
+        /// <returns></returns>            
         public List<Unit> V1UnitsGet (string unitName, string abbreviatedUnitName, string categoryName)
         {
             
@@ -209,6 +250,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (unitName != null) queryParams.Add("unitName", ApiClient.ParameterToString(unitName)); // query parameter
@@ -239,7 +290,7 @@ namespace IO.Swagger.Api
         /// <param name="unitName">Unit name</param>
         /// <param name="abbreviatedUnitName">Restrict the results to a specific unit by providing the unit abbreviation.</param>
         /// <param name="categoryName">Restrict the results to a specific unit category by providing the unit category name.</param>
-        /// <returns>List<Unit></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Unit>> V1UnitsGetAsync (string unitName, string abbreviatedUnitName, string categoryName)
         {
             
@@ -252,7 +303,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (unitName != null) queryParams.Add("unitName", ApiClient.ParameterToString(unitName)); // query parameter
@@ -281,7 +342,7 @@ namespace IO.Swagger.Api
         /// <param name="abbreviatedUnitName">Abbreviated Unit Name of the unit you want</param> 
         /// <param name="categoryName">Name of the category you want units for</param> 
         /// <param name="variable">Name of the variable you want units for</param> 
-        /// <returns>List<Unit></returns>            
+        /// <returns></returns>            
         public List<Unit> V1UnitsVariableGet (string unitName, string abbreviatedUnitName, string categoryName, string variable)
         {
             
@@ -295,6 +356,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (unitName != null) queryParams.Add("unitName", ApiClient.ParameterToString(unitName)); // query parameter
@@ -327,7 +398,7 @@ namespace IO.Swagger.Api
         /// <param name="abbreviatedUnitName">Abbreviated Unit Name of the unit you want</param>
         /// <param name="categoryName">Name of the category you want units for</param>
         /// <param name="variable">Name of the variable you want units for</param>
-        /// <returns>List<Unit></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Unit>> V1UnitsVariableGetAsync (string unitName, string abbreviatedUnitName, string categoryName, string variable)
         {
             
@@ -340,7 +411,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (unitName != null) queryParams.Add("unitName", ApiClient.ParameterToString(unitName)); // query parameter

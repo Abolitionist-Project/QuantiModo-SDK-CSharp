@@ -8,38 +8,56 @@ using IO.Swagger.Model;
 namespace IO.Swagger.Api
 {
     
+    /// <summary>
+    /// Represents a collection of functions to interact with the API endpoints
+    /// </summary>
     public interface IMeasurementsApi
     {
         
         /// <summary>
-        /// Get measurement sources Returns a list of all the apps from which measurement data is obtained.
+        /// Get measurement sources
         /// </summary>
+        /// <remarks>
+        /// Returns a list of all the apps from which measurement data is obtained.
+        /// </remarks>
         /// <returns>MeasurementSource</returns>
         MeasurementSource V1MeasurementSourcesGet ();
   
         /// <summary>
-        /// Get measurement sources Returns a list of all the apps from which measurement data is obtained.
+        /// Get measurement sources
         /// </summary>
+        /// <remarks>
+        /// Returns a list of all the apps from which measurement data is obtained.
+        /// </remarks>
         /// <returns>MeasurementSource</returns>
         System.Threading.Tasks.Task<MeasurementSource> V1MeasurementSourcesGetAsync ();
         
         /// <summary>
-        /// Add a data source Add a life-tracking app or device to the QuantiModo list of data sources.
+        /// Add a data source
         /// </summary>
+        /// <remarks>
+        /// Add a life-tracking app or device to the QuantiModo list of data sources.
+        /// </remarks>
         /// <param name="name">An array of names of data sources you want to add.</param>
         /// <returns></returns>
         void V1MeasurementSourcesPost (MeasurementSource name);
   
         /// <summary>
-        /// Add a data source Add a life-tracking app or device to the QuantiModo list of data sources.
+        /// Add a data source
         /// </summary>
+        /// <remarks>
+        /// Add a life-tracking app or device to the QuantiModo list of data sources.
+        /// </remarks>
         /// <param name="name">An array of names of data sources you want to add.</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1MeasurementSourcesPostAsync (MeasurementSource name);
         
         /// <summary>
-        /// Get measurements for this user Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// Get measurements for this user
         /// </summary>
+        /// <remarks>
+        /// Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// </remarks>
         /// <param name="variableName">Name of the variable you want measurements for</param>
         /// <param name="source">Name of the source you want measurements for (supports exact name match only)</param>
         /// <param name="value">Value of measurement</param>
@@ -56,8 +74,11 @@ namespace IO.Swagger.Api
         Measurement V1MeasurementsGet (string variableName, string source, string value, string lastUpdated, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort);
   
         /// <summary>
-        /// Get measurements for this user Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// Get measurements for this user
         /// </summary>
+        /// <remarks>
+        /// Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// </remarks>
         /// <param name="variableName">Name of the variable you want measurements for</param>
         /// <param name="source">Name of the source you want measurements for (supports exact name match only)</param>
         /// <param name="value">Value of measurement</param>
@@ -74,22 +95,31 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<Measurement> V1MeasurementsGetAsync (string variableName, string source, string value, string lastUpdated, string unit, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort);
         
         /// <summary>
-        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;startTime\&quot;:1439389320,\&quot;value\&quot;:\&quot;3\&quot;}],\&quot;name\&quot;:\&quot;Acne (out of 5)\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
+        /// Post a new set or update existing measurements to the database
         /// </summary>
+        /// <remarks>
+        /// You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;startTime\&quot;:1439389320,\&quot;value\&quot;:\&quot;3\&quot;}],\&quot;name\&quot;:\&quot;Acne (out of 5)\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
+        /// </remarks>
         /// <param name="measurements">An array of measurements you want to insert.</param>
         /// <returns></returns>
         void V1MeasurementsPost (MeasurementSet measurements);
   
         /// <summary>
-        /// Post a new set or update existing measurements to the database You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;startTime\&quot;:1439389320,\&quot;value\&quot;:\&quot;3\&quot;}],\&quot;name\&quot;:\&quot;Acne (out of 5)\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
+        /// Post a new set or update existing measurements to the database
         /// </summary>
+        /// <remarks>
+        /// You can submit or update multiple measurements in a \&quot;measurements\&quot; sub-array.  If the variable these measurements correspond to does not already exist in the database, it will be automatically added.  The request body should look something like [{\&quot;measurements\&quot;:[{\&quot;startTime\&quot;:1439389320,\&quot;value\&quot;:\&quot;3\&quot;}],\&quot;name\&quot;:\&quot;Acne (out of 5)\&quot;,\&quot;source\&quot;:\&quot;QuantiModo\&quot;,\&quot;category\&quot;:\&quot;Symptoms\&quot;,\&quot;combinationOperation\&quot;:\&quot;MEAN\&quot;,\&quot;unit\&quot;:\&quot;/5\&quot;}]
+        /// </remarks>
         /// <param name="measurements">An array of measurements you want to insert.</param>
         /// <returns></returns>
         System.Threading.Tasks.Task V1MeasurementsPostAsync (MeasurementSet measurements);
         
         /// <summary>
-        /// Get daily measurements for this user Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// Get daily measurements for this user
         /// </summary>
+        /// <remarks>
+        /// Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// </remarks>
         /// <param name="variableName">Name of the variable you want measurements for</param>
         /// <param name="abbreviatedUnitName">The unit your want the measurements in</param>
         /// <param name="startTime">The lower limit of measurements returned (Iso8601)</param>
@@ -103,8 +133,11 @@ namespace IO.Swagger.Api
         Measurement V1MeasurementsDailyGet (string variableName, string abbreviatedUnitName, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort);
   
         /// <summary>
-        /// Get daily measurements for this user Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// Get daily measurements for this user
         /// </summary>
+        /// <remarks>
+        /// Measurements are any value that can be recorded like daily steps, a mood rating, or apples eaten. &lt;br&gt;Supported filter parameters:&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;value&lt;/b&gt; - Value of measurement&lt;/li&gt;&lt;li&gt;&lt;b&gt;lastUpdated&lt;/b&gt; - The time that this measurement was created or last updated in the UTC format \&quot;YYYY-MM-DDThh:mm:ss\&quot;&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;
+        /// </remarks>
         /// <param name="variableName">Name of the variable you want measurements for</param>
         /// <param name="abbreviatedUnitName">The unit your want the measurements in</param>
         /// <param name="startTime">The lower limit of measurements returned (Iso8601)</param>
@@ -118,16 +151,22 @@ namespace IO.Swagger.Api
         System.Threading.Tasks.Task<Measurement> V1MeasurementsDailyGetAsync (string variableName, string abbreviatedUnitName, string startTime, string endTime, int? groupingWidth, string groupingTimezone, int? limit, int? offset, int? sort);
         
         /// <summary>
-        /// Get measurements range for this user Get Unix time-stamp (epoch time) of the user&#39;s first and last measurements taken.
+        /// Get measurements range for this user
         /// </summary>
+        /// <remarks>
+        /// Get Unix time-stamp (epoch time) of the user&#39;s first and last measurements taken.
+        /// </remarks>
         /// <param name="sources">Enter source name to limit to specific source (varchar)</param>
         /// <param name="user">If not specified, uses currently logged in user (bigint)</param>
         /// <returns>MeasurementRange</returns>
         MeasurementRange V1MeasurementsRangeGet (string sources, int? user);
   
         /// <summary>
-        /// Get measurements range for this user Get Unix time-stamp (epoch time) of the user&#39;s first and last measurements taken.
+        /// Get measurements range for this user
         /// </summary>
+        /// <remarks>
+        /// Get Unix time-stamp (epoch time) of the user&#39;s first and last measurements taken.
+        /// </remarks>
         /// <param name="sources">Enter source name to limit to specific source (varchar)</param>
         /// <param name="user">If not specified, uses currently logged in user (bigint)</param>
         /// <returns>MeasurementRange</returns>
@@ -184,7 +223,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
-        /// <value>An instance of the ApiClient</param>
+        /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
     
         
@@ -205,6 +244,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -242,7 +291,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -282,6 +341,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -323,7 +392,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -373,6 +452,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (variableName != null) queryParams.Add("variableName", ApiClient.ParameterToString(variableName)); // query parameter
@@ -434,7 +523,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (variableName != null) queryParams.Add("variableName", ApiClient.ParameterToString(variableName)); // query parameter
@@ -486,6 +585,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -527,7 +636,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             
@@ -577,6 +696,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (variableName != null) queryParams.Add("variableName", ApiClient.ParameterToString(variableName)); // query parameter
@@ -634,7 +763,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (variableName != null) queryParams.Add("variableName", ApiClient.ParameterToString(variableName)); // query parameter
@@ -681,6 +820,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (sources != null) queryParams.Add("sources", ApiClient.ParameterToString(sources)); // query parameter
@@ -722,7 +871,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (sources != null) queryParams.Add("sources", ApiClient.ParameterToString(sources)); // query parameter

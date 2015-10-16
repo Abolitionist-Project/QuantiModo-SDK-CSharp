@@ -8,12 +8,18 @@ using IO.Swagger.Model;
 namespace IO.Swagger.Api
 {
     
+    /// <summary>
+    /// Represents a collection of functions to interact with the API endpoints
+    /// </summary>
     public interface IPairsApi
     {
         
         /// <summary>
-        /// Get pairs Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.
+        /// Get pairs
         /// </summary>
+        /// <remarks>
+        /// Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.
+        /// </remarks>
         /// <param name="cause">Original variable name for the explanatory or independent variable</param>
         /// <param name="effect">Original variable name for the outcome or dependent variable</param>
         /// <param name="causeSource">Name of data source that the cause measurements should come from</param>
@@ -27,12 +33,15 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
-        /// <returns>List<Pairs></returns>
+        /// <returns></returns>
         List<Pairs> V1PairsGet (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort);
   
         /// <summary>
-        /// Get pairs Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.
+        /// Get pairs
         /// </summary>
+        /// <remarks>
+        /// Pairs cause measurements with effect measurements grouped over the duration of action after the onset delay.
+        /// </remarks>
         /// <param name="cause">Original variable name for the explanatory or independent variable</param>
         /// <param name="effect">Original variable name for the outcome or dependent variable</param>
         /// <param name="causeSource">Name of data source that the cause measurements should come from</param>
@@ -46,7 +55,7 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
-        /// <returns>List<Pairs></returns>
+        /// <returns></returns>
         System.Threading.Tasks.Task<List<Pairs>> V1PairsGetAsync (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort);
         
     }
@@ -100,7 +109,7 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Gets or sets the API client.
         /// </summary>
-        /// <value>An instance of the ApiClient</param>
+        /// <value>An instance of the ApiClient</value>
         public ApiClient ApiClient {get; set;}
     
         
@@ -120,7 +129,7 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param> 
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param> 
-        /// <returns>List<Pairs></returns>            
+        /// <returns></returns>            
         public List<Pairs> V1PairsGet (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort)
         {
             
@@ -140,6 +149,16 @@ namespace IO.Swagger.Api
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
 
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter
@@ -190,7 +209,7 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0.</param>
         /// <param name="offset">Now suppose you wanted to show results 11-20. You&#39;d set the offset to 10 and the limit to 10.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with `-, it will sort in descending order.</param>
-        /// <returns>List<Pairs></returns>
+        /// <returns></returns>
         public async System.Threading.Tasks.Task<List<Pairs>> V1PairsGetAsync (string cause, string effect, string causeSource, string causeUnit, string delay, string duration, string effectSource, string effectUnit, string endTime, string startTime, int? limit, int? offset, int? sort)
         {
             // verify the required parameter 'cause' is set
@@ -207,7 +226,17 @@ namespace IO.Swagger.Api
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
-    
+
+            // to determine the Accept header
+            String[] http_header_accepts = new String[] {
+                "application/json"
+            };
+            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            if (http_header_accept != null)
+                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
             if (cause != null) queryParams.Add("cause", ApiClient.ParameterToString(cause)); // query parameter

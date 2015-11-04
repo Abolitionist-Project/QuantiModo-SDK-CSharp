@@ -11,7 +11,7 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class UnitCategory {
+  public class Source {
     
     /// <summary>
     /// id
@@ -22,9 +22,17 @@ namespace IO.Swagger.Model {
 
     
     /// <summary>
-    /// Unit category name
+    /// client_id
     /// </summary>
-    /// <value>Unit category name</value>
+    /// <value>client_id</value>
+    [DataMember(Name="client_id", EmitDefaultValue=false)]
+    public string ClientId { get; set; }
+
+    
+    /// <summary>
+    /// Name of the application or device
+    /// </summary>
+    /// <value>Name of the application or device</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
@@ -52,9 +60,11 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class UnitCategory {\n");
+      sb.Append("class Source {\n");
       
       sb.Append("  Id: ").Append(Id).Append("\n");
+      
+      sb.Append("  ClientId: ").Append(ClientId).Append("\n");
       
       sb.Append("  Name: ").Append(Name).Append("\n");
       

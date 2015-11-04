@@ -11,7 +11,7 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class UnitCategory {
+  public class MeasurementExport {
     
     /// <summary>
     /// id
@@ -22,11 +22,27 @@ namespace IO.Swagger.Model {
 
     
     /// <summary>
-    /// Unit category name
+    /// ID of User
     /// </summary>
-    /// <value>Unit category name</value>
-    [DataMember(Name="name", EmitDefaultValue=false)]
-    public string Name { get; set; }
+    /// <value>ID of User</value>
+    [DataMember(Name="user_id", EmitDefaultValue=false)]
+    public int? UserId { get; set; }
+
+    
+    /// <summary>
+    /// Status of Measurement Export
+    /// </summary>
+    /// <value>Status of Measurement Export</value>
+    [DataMember(Name="status", EmitDefaultValue=false)]
+    public string Status { get; set; }
+
+    
+    /// <summary>
+    /// Error message
+    /// </summary>
+    /// <value>Error message</value>
+    [DataMember(Name="error_message", EmitDefaultValue=false)]
+    public string ErrorMessage { get; set; }
 
     
     /// <summary>
@@ -52,11 +68,15 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class UnitCategory {\n");
+      sb.Append("class MeasurementExport {\n");
       
       sb.Append("  Id: ").Append(Id).Append("\n");
       
-      sb.Append("  Name: ").Append(Name).Append("\n");
+      sb.Append("  UserId: ").Append(UserId).Append("\n");
+      
+      sb.Append("  Status: ").Append(Status).Append("\n");
+      
+      sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
       
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
       

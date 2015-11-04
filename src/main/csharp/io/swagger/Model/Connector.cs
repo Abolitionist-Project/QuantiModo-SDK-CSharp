@@ -33,7 +33,7 @@ namespace IO.Swagger.Model {
     /// Connector pretty display name
     /// </summary>
     /// <value>Connector pretty display name</value>
-    [DataMember(Name="displayName", EmitDefaultValue=false)]
+    [DataMember(Name="display_name", EmitDefaultValue=false)]
     public string DisplayName { get; set; }
 
     
@@ -49,48 +49,40 @@ namespace IO.Swagger.Model {
     /// URL to a site where one can get this device or application
     /// </summary>
     /// <value>URL to a site where one can get this device or application</value>
-    [DataMember(Name="getItUrl", EmitDefaultValue=false)]
+    [DataMember(Name="get_it_url", EmitDefaultValue=false)]
     public string GetItUrl { get; set; }
 
     
     /// <summary>
-    /// True if the authenticated user has this connector enabled
+    /// Short description
     /// </summary>
-    /// <value>True if the authenticated user has this connector enabled</value>
-    [DataMember(Name="connected", EmitDefaultValue=false)]
-    public string Connected { get; set; }
+    /// <value>Short description</value>
+    [DataMember(Name="short_description", EmitDefaultValue=false)]
+    public string ShortDescription { get; set; }
 
     
     /// <summary>
-    /// URL and parameters used when connecting to a service
+    /// Long description
     /// </summary>
-    /// <value>URL and parameters used when connecting to a service</value>
-    [DataMember(Name="connectInstructions", EmitDefaultValue=false)]
-    public string ConnectInstructions { get; set; }
+    /// <value>Long description</value>
+    [DataMember(Name="long_description", EmitDefaultValue=false)]
+    public string LongDescription { get; set; }
 
     
     /// <summary>
-    /// Epoch timestamp of last sync
+    /// enabled
     /// </summary>
-    /// <value>Epoch timestamp of last sync</value>
-    [DataMember(Name="lastUpdate", EmitDefaultValue=false)]
-    public int? LastUpdate { get; set; }
+    /// <value>enabled</value>
+    [DataMember(Name="enabled", EmitDefaultValue=false)]
+    public bool? Enabled { get; set; }
 
     
     /// <summary>
-    /// Number of measurements obtained during latest update
+    /// oauth
     /// </summary>
-    /// <value>Number of measurements obtained during latest update</value>
-    [DataMember(Name="totalMeasurementsInLastUpdate", EmitDefaultValue=false)]
-    public int? TotalMeasurementsInLastUpdate { get; set; }
-
-    
-    /// <summary>
-    /// True if user has no measurements for this connector
-    /// </summary>
-    /// <value>True if user has no measurements for this connector</value>
-    [DataMember(Name="noDataYet", EmitDefaultValue=false)]
-    public bool? NoDataYet { get; set; }
+    /// <value>oauth</value>
+    [DataMember(Name="oauth", EmitDefaultValue=false)]
+    public bool? Oauth { get; set; }
 
     
 
@@ -112,15 +104,13 @@ namespace IO.Swagger.Model {
       
       sb.Append("  GetItUrl: ").Append(GetItUrl).Append("\n");
       
-      sb.Append("  Connected: ").Append(Connected).Append("\n");
+      sb.Append("  ShortDescription: ").Append(ShortDescription).Append("\n");
       
-      sb.Append("  ConnectInstructions: ").Append(ConnectInstructions).Append("\n");
+      sb.Append("  LongDescription: ").Append(LongDescription).Append("\n");
       
-      sb.Append("  LastUpdate: ").Append(LastUpdate).Append("\n");
+      sb.Append("  Enabled: ").Append(Enabled).Append("\n");
       
-      sb.Append("  TotalMeasurementsInLastUpdate: ").Append(TotalMeasurementsInLastUpdate).Append("\n");
-      
-      sb.Append("  NoDataYet: ").Append(NoDataYet).Append("\n");
+      sb.Append("  Oauth: ").Append(Oauth).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

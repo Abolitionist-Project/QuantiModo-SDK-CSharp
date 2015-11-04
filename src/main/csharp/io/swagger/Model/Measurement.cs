@@ -14,43 +14,59 @@ namespace IO.Swagger.Model {
   public class Measurement {
     
     /// <summary>
-    /// ORIGINAL Name of the variable for which we are creating the measurement records
+    /// id
     /// </summary>
-    /// <value>ORIGINAL Name of the variable for which we are creating the measurement records</value>
-    [DataMember(Name="variable", EmitDefaultValue=false)]
-    public string Variable { get; set; }
+    /// <value>id</value>
+    [DataMember(Name="id", EmitDefaultValue=false)]
+    public int? Id { get; set; }
+
+    
+    /// <summary>
+    /// ID of user that owns this measurement
+    /// </summary>
+    /// <value>ID of user that owns this measurement</value>
+    [DataMember(Name="user_id", EmitDefaultValue=false)]
+    public int? UserId { get; set; }
+
+    
+    /// <summary>
+    /// client_id
+    /// </summary>
+    /// <value>client_id</value>
+    [DataMember(Name="client_id", EmitDefaultValue=false)]
+    public string ClientId { get; set; }
+
+    
+    /// <summary>
+    /// Connector ID
+    /// </summary>
+    /// <value>Connector ID</value>
+    [DataMember(Name="connector_id", EmitDefaultValue=false)]
+    public int? ConnectorId { get; set; }
+
+    
+    /// <summary>
+    /// ID of the variable for which we are creating the measurement records
+    /// </summary>
+    /// <value>ID of the variable for which we are creating the measurement records</value>
+    [DataMember(Name="variable_id", EmitDefaultValue=false)]
+    public int? VariableId { get; set; }
 
     
     /// <summary>
     /// Application or device used to record the measurement values
     /// </summary>
     /// <value>Application or device used to record the measurement values</value>
-    [DataMember(Name="source", EmitDefaultValue=false)]
-    public string Source { get; set; }
-
-    
-    /// <summary>
-    /// Timestamp for the measurement event in epoch time
-    /// </summary>
-    /// <value>Timestamp for the measurement event in epoch time</value>
-    [DataMember(Name="timestamp", EmitDefaultValue=false)]
-    public long? Timestamp { get; set; }
+    [DataMember(Name="source_id", EmitDefaultValue=false)]
+    public int? SourceId { get; set; }
 
     
     /// <summary>
     /// Start Time for the measurement event in ISO 8601
     /// </summary>
     /// <value>Start Time for the measurement event in ISO 8601</value>
-    [DataMember(Name="startTime", EmitDefaultValue=false)]
-    public string StartTime { get; set; }
-
-    
-    /// <summary>
-    /// Start Time for the measurement event in ISO 8601
-    /// </summary>
-    /// <value>Start Time for the measurement event in ISO 8601</value>
-    [DataMember(Name="humanTime", EmitDefaultValue=false)]
-    public HumanTime HumanTime { get; set; }
+    [DataMember(Name="start_time", EmitDefaultValue=false)]
+    public int? StartTime { get; set; }
 
     
     /// <summary>
@@ -58,55 +74,39 @@ namespace IO.Swagger.Model {
     /// </summary>
     /// <value>Converted measurement value in requested unit</value>
     [DataMember(Name="value", EmitDefaultValue=false)]
-    public double? Value { get; set; }
+    public float? Value { get; set; }
 
     
     /// <summary>
-    /// Unit of measurement as requested in GET request
+    /// Unit ID of measurement as requested in GET request
     /// </summary>
-    /// <value>Unit of measurement as requested in GET request</value>
-    [DataMember(Name="unit", EmitDefaultValue=false)]
-    public string Unit { get; set; }
+    /// <value>Unit ID of measurement as requested in GET request</value>
+    [DataMember(Name="unit_id", EmitDefaultValue=false)]
+    public int? UnitId { get; set; }
 
     
     /// <summary>
     /// Original value
     /// </summary>
     /// <value>Original value</value>
-    [DataMember(Name="originalValue", EmitDefaultValue=false)]
-    public int? OriginalValue { get; set; }
+    [DataMember(Name="original_value", EmitDefaultValue=false)]
+    public float? OriginalValue { get; set; }
 
     
     /// <summary>
-    /// Measurement value in the unit as orignally submitted
+    /// Unit ID of measurement as originally submitted
     /// </summary>
-    /// <value>Measurement value in the unit as orignally submitted</value>
-    [DataMember(Name="storedValue", EmitDefaultValue=false)]
-    public double? StoredValue { get; set; }
+    /// <value>Unit ID of measurement as originally submitted</value>
+    [DataMember(Name="original_unit_id", EmitDefaultValue=false)]
+    public int? OriginalUnitId { get; set; }
 
     
     /// <summary>
-    /// Unit of measurement as originally submitted
+    /// duration of measurement in seconds
     /// </summary>
-    /// <value>Unit of measurement as originally submitted</value>
-    [DataMember(Name="storedAbbreviatedUnitName", EmitDefaultValue=false)]
-    public string StoredAbbreviatedUnitName { get; set; }
-
-    
-    /// <summary>
-    /// Original Unit of measurement as originally submitted
-    /// </summary>
-    /// <value>Original Unit of measurement as originally submitted</value>
-    [DataMember(Name="originalAbbreviatedUnitName", EmitDefaultValue=false)]
-    public string OriginalAbbreviatedUnitName { get; set; }
-
-    
-    /// <summary>
-    /// Unit of measurement as originally submitted
-    /// </summary>
-    /// <value>Unit of measurement as originally submitted</value>
-    [DataMember(Name="abbreviatedUnitName", EmitDefaultValue=false)]
-    public string AbbreviatedUnitName { get; set; }
+    /// <value>duration of measurement in seconds</value>
+    [DataMember(Name="duration", EmitDefaultValue=false)]
+    public int? Duration { get; set; }
 
     
     /// <summary>
@@ -115,6 +115,54 @@ namespace IO.Swagger.Model {
     /// <value>Note of measurement</value>
     [DataMember(Name="note", EmitDefaultValue=false)]
     public string Note { get; set; }
+
+    
+    /// <summary>
+    /// latitude
+    /// </summary>
+    /// <value>latitude</value>
+    [DataMember(Name="latitude", EmitDefaultValue=false)]
+    public float? Latitude { get; set; }
+
+    
+    /// <summary>
+    /// longitude
+    /// </summary>
+    /// <value>longitude</value>
+    [DataMember(Name="longitude", EmitDefaultValue=false)]
+    public float? Longitude { get; set; }
+
+    
+    /// <summary>
+    /// location
+    /// </summary>
+    /// <value>location</value>
+    [DataMember(Name="location", EmitDefaultValue=false)]
+    public string Location { get; set; }
+
+    
+    /// <summary>
+    /// created_at
+    /// </summary>
+    /// <value>created_at</value>
+    [DataMember(Name="created_at", EmitDefaultValue=false)]
+    public DateTime? CreatedAt { get; set; }
+
+    
+    /// <summary>
+    /// updated_at
+    /// </summary>
+    /// <value>updated_at</value>
+    [DataMember(Name="updated_at", EmitDefaultValue=false)]
+    public DateTime? UpdatedAt { get; set; }
+
+    
+    /// <summary>
+    /// error
+    /// </summary>
+    /// <value>error</value>
+    [DataMember(Name="error", EmitDefaultValue=false)]
+    public string Error { get; set; }
 
     
 
@@ -126,31 +174,43 @@ namespace IO.Swagger.Model {
       var sb = new StringBuilder();
       sb.Append("class Measurement {\n");
       
-      sb.Append("  Variable: ").Append(Variable).Append("\n");
+      sb.Append("  Id: ").Append(Id).Append("\n");
       
-      sb.Append("  Source: ").Append(Source).Append("\n");
+      sb.Append("  UserId: ").Append(UserId).Append("\n");
       
-      sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+      sb.Append("  ClientId: ").Append(ClientId).Append("\n");
+      
+      sb.Append("  ConnectorId: ").Append(ConnectorId).Append("\n");
+      
+      sb.Append("  VariableId: ").Append(VariableId).Append("\n");
+      
+      sb.Append("  SourceId: ").Append(SourceId).Append("\n");
       
       sb.Append("  StartTime: ").Append(StartTime).Append("\n");
       
-      sb.Append("  HumanTime: ").Append(HumanTime).Append("\n");
-      
       sb.Append("  Value: ").Append(Value).Append("\n");
       
-      sb.Append("  Unit: ").Append(Unit).Append("\n");
+      sb.Append("  UnitId: ").Append(UnitId).Append("\n");
       
       sb.Append("  OriginalValue: ").Append(OriginalValue).Append("\n");
       
-      sb.Append("  StoredValue: ").Append(StoredValue).Append("\n");
+      sb.Append("  OriginalUnitId: ").Append(OriginalUnitId).Append("\n");
       
-      sb.Append("  StoredAbbreviatedUnitName: ").Append(StoredAbbreviatedUnitName).Append("\n");
-      
-      sb.Append("  OriginalAbbreviatedUnitName: ").Append(OriginalAbbreviatedUnitName).Append("\n");
-      
-      sb.Append("  AbbreviatedUnitName: ").Append(AbbreviatedUnitName).Append("\n");
+      sb.Append("  Duration: ").Append(Duration).Append("\n");
       
       sb.Append("  Note: ").Append(Note).Append("\n");
+      
+      sb.Append("  Latitude: ").Append(Latitude).Append("\n");
+      
+      sb.Append("  Longitude: ").Append(Longitude).Append("\n");
+      
+      sb.Append("  Location: ").Append(Location).Append("\n");
+      
+      sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+      
+      sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+      
+      sb.Append("  Error: ").Append(Error).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

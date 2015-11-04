@@ -11,7 +11,7 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class UnitCategory {
+  public class Update {
     
     /// <summary>
     /// id
@@ -22,11 +22,43 @@ namespace IO.Swagger.Model {
 
     
     /// <summary>
-    /// Unit category name
+    /// user_id
     /// </summary>
-    /// <value>Unit category name</value>
-    [DataMember(Name="name", EmitDefaultValue=false)]
-    public string Name { get; set; }
+    /// <value>user_id</value>
+    [DataMember(Name="user_id", EmitDefaultValue=false)]
+    public int? UserId { get; set; }
+
+    
+    /// <summary>
+    /// connector_id
+    /// </summary>
+    /// <value>connector_id</value>
+    [DataMember(Name="connector_id", EmitDefaultValue=false)]
+    public int? ConnectorId { get; set; }
+
+    
+    /// <summary>
+    /// number_of_measurements
+    /// </summary>
+    /// <value>number_of_measurements</value>
+    [DataMember(Name="number_of_measurements", EmitDefaultValue=false)]
+    public int? NumberOfMeasurements { get; set; }
+
+    
+    /// <summary>
+    /// success
+    /// </summary>
+    /// <value>success</value>
+    [DataMember(Name="success", EmitDefaultValue=false)]
+    public bool? Success { get; set; }
+
+    
+    /// <summary>
+    /// message
+    /// </summary>
+    /// <value>message</value>
+    [DataMember(Name="message", EmitDefaultValue=false)]
+    public string Message { get; set; }
 
     
     /// <summary>
@@ -52,11 +84,19 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class UnitCategory {\n");
+      sb.Append("class Update {\n");
       
       sb.Append("  Id: ").Append(Id).Append("\n");
       
-      sb.Append("  Name: ").Append(Name).Append("\n");
+      sb.Append("  UserId: ").Append(UserId).Append("\n");
+      
+      sb.Append("  ConnectorId: ").Append(ConnectorId).Append("\n");
+      
+      sb.Append("  NumberOfMeasurements: ").Append(NumberOfMeasurements).Append("\n");
+      
+      sb.Append("  Success: ").Append(Success).Append("\n");
+      
+      sb.Append("  Message: ").Append(Message).Append("\n");
       
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
       

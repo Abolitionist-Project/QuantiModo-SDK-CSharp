@@ -11,22 +11,30 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class UnitCategory {
+  public class Credential {
     
     /// <summary>
-    /// id
+    /// connector_id
     /// </summary>
-    /// <value>id</value>
-    [DataMember(Name="id", EmitDefaultValue=false)]
-    public int? Id { get; set; }
+    /// <value>connector_id</value>
+    [DataMember(Name="connector_id", EmitDefaultValue=false)]
+    public int? ConnectorId { get; set; }
 
     
     /// <summary>
-    /// Unit category name
+    /// attr_key
     /// </summary>
-    /// <value>Unit category name</value>
-    [DataMember(Name="name", EmitDefaultValue=false)]
-    public string Name { get; set; }
+    /// <value>attr_key</value>
+    [DataMember(Name="attr_key", EmitDefaultValue=false)]
+    public string AttrKey { get; set; }
+
+    
+    /// <summary>
+    /// attr_value
+    /// </summary>
+    /// <value>attr_value</value>
+    [DataMember(Name="attr_value", EmitDefaultValue=false)]
+    public string AttrValue { get; set; }
 
     
     /// <summary>
@@ -52,11 +60,13 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class UnitCategory {\n");
+      sb.Append("class Credential {\n");
       
-      sb.Append("  Id: ").Append(Id).Append("\n");
+      sb.Append("  ConnectorId: ").Append(ConnectorId).Append("\n");
       
-      sb.Append("  Name: ").Append(Name).Append("\n");
+      sb.Append("  AttrKey: ").Append(AttrKey).Append("\n");
+      
+      sb.Append("  AttrValue: ").Append(AttrValue).Append("\n");
       
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
       

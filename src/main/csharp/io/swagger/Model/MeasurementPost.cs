@@ -11,38 +11,38 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class UnitCategory {
+  public class MeasurementPost {
     
     /// <summary>
-    /// id
+    /// variable_id
     /// </summary>
-    /// <value>id</value>
-    [DataMember(Name="id", EmitDefaultValue=false)]
-    public int? Id { get; set; }
+    /// <value>variable_id</value>
+    [DataMember(Name="variable_id", EmitDefaultValue=false)]
+    public int? VariableId { get; set; }
 
     
     /// <summary>
-    /// Unit category name
+    /// source_id
     /// </summary>
-    /// <value>Unit category name</value>
-    [DataMember(Name="name", EmitDefaultValue=false)]
-    public string Name { get; set; }
+    /// <value>source_id</value>
+    [DataMember(Name="source_id", EmitDefaultValue=false)]
+    public int? SourceId { get; set; }
 
     
     /// <summary>
-    /// created_at
+    /// unit_id
     /// </summary>
-    /// <value>created_at</value>
-    [DataMember(Name="created_at", EmitDefaultValue=false)]
-    public DateTime? CreatedAt { get; set; }
+    /// <value>unit_id</value>
+    [DataMember(Name="unit_id", EmitDefaultValue=false)]
+    public int? UnitId { get; set; }
 
     
     /// <summary>
-    /// updated_at
+    /// measurements
     /// </summary>
-    /// <value>updated_at</value>
-    [DataMember(Name="updated_at", EmitDefaultValue=false)]
-    public DateTime? UpdatedAt { get; set; }
+    /// <value>measurements</value>
+    [DataMember(Name="measurements", EmitDefaultValue=false)]
+    public List<MeasurementValue> Measurements { get; set; }
 
     
 
@@ -52,15 +52,15 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class UnitCategory {\n");
+      sb.Append("class MeasurementPost {\n");
       
-      sb.Append("  Id: ").Append(Id).Append("\n");
+      sb.Append("  VariableId: ").Append(VariableId).Append("\n");
       
-      sb.Append("  Name: ").Append(Name).Append("\n");
+      sb.Append("  SourceId: ").Append(SourceId).Append("\n");
       
-      sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+      sb.Append("  UnitId: ").Append(UnitId).Append("\n");
       
-      sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+      sb.Append("  Measurements: ").Append(Measurements).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

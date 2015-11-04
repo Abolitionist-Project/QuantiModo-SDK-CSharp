@@ -14,6 +14,22 @@ namespace IO.Swagger.Model {
   public class Unit {
     
     /// <summary>
+    /// id
+    /// </summary>
+    /// <value>id</value>
+    [DataMember(Name="id", EmitDefaultValue=false)]
+    public int? Id { get; set; }
+
+    
+    /// <summary>
+    /// client_id
+    /// </summary>
+    /// <value>client_id</value>
+    [DataMember(Name="client_id", EmitDefaultValue=false)]
+    public string ClientId { get; set; }
+
+    
+    /// <summary>
     /// Unit name
     /// </summary>
     /// <value>Unit name</value>
@@ -25,40 +41,80 @@ namespace IO.Swagger.Model {
     /// Unit abbreviation
     /// </summary>
     /// <value>Unit abbreviation</value>
-    [DataMember(Name="abbreviatedName", EmitDefaultValue=false)]
+    [DataMember(Name="abbreviated_name", EmitDefaultValue=false)]
     public string AbbreviatedName { get; set; }
 
     
     /// <summary>
-    /// Unit category
+    /// Unit category ID
     /// </summary>
-    /// <value>Unit category</value>
-    [DataMember(Name="category", EmitDefaultValue=false)]
-    public string Category { get; set; }
+    /// <value>Unit category ID</value>
+    [DataMember(Name="category_id", EmitDefaultValue=false)]
+    public int? CategoryId { get; set; }
 
     
     /// <summary>
     /// Unit minimum value
     /// </summary>
     /// <value>Unit minimum value</value>
-    [DataMember(Name="minimum", EmitDefaultValue=false)]
-    public double? Minimum { get; set; }
+    [DataMember(Name="minimum_value", EmitDefaultValue=false)]
+    public float? MinimumValue { get; set; }
 
     
     /// <summary>
     /// Unit maximum value
     /// </summary>
     /// <value>Unit maximum value</value>
-    [DataMember(Name="maximum", EmitDefaultValue=false)]
-    public double? Maximum { get; set; }
+    [DataMember(Name="maximum_value", EmitDefaultValue=false)]
+    public float? MaximumValue { get; set; }
 
     
     /// <summary>
-    /// Conversion steps list
+    /// updated
     /// </summary>
-    /// <value>Conversion steps list</value>
-    [DataMember(Name="conversionSteps", EmitDefaultValue=false)]
-    public List<ConversionStep> ConversionSteps { get; set; }
+    /// <value>updated</value>
+    [DataMember(Name="updated", EmitDefaultValue=false)]
+    public int? Updated { get; set; }
+
+    
+    /// <summary>
+    /// ID of default unit
+    /// </summary>
+    /// <value>ID of default unit</value>
+    [DataMember(Name="default_unit_id", EmitDefaultValue=false)]
+    public int? DefaultUnitId { get; set; }
+
+    
+    /// <summary>
+    /// Value multiplied to
+    /// </summary>
+    /// <value>Value multiplied to</value>
+    [DataMember(Name="multiply", EmitDefaultValue=false)]
+    public float? Multiply { get; set; }
+
+    
+    /// <summary>
+    /// Value which should be added to convert to default unit
+    /// </summary>
+    /// <value>Value which should be added to convert to default unit</value>
+    [DataMember(Name="add", EmitDefaultValue=false)]
+    public float? Add { get; set; }
+
+    
+    /// <summary>
+    /// created_at
+    /// </summary>
+    /// <value>created_at</value>
+    [DataMember(Name="created_at", EmitDefaultValue=false)]
+    public DateTime? CreatedAt { get; set; }
+
+    
+    /// <summary>
+    /// updated_at
+    /// </summary>
+    /// <value>updated_at</value>
+    [DataMember(Name="updated_at", EmitDefaultValue=false)]
+    public DateTime? UpdatedAt { get; set; }
 
     
 
@@ -70,17 +126,31 @@ namespace IO.Swagger.Model {
       var sb = new StringBuilder();
       sb.Append("class Unit {\n");
       
+      sb.Append("  Id: ").Append(Id).Append("\n");
+      
+      sb.Append("  ClientId: ").Append(ClientId).Append("\n");
+      
       sb.Append("  Name: ").Append(Name).Append("\n");
       
       sb.Append("  AbbreviatedName: ").Append(AbbreviatedName).Append("\n");
       
-      sb.Append("  Category: ").Append(Category).Append("\n");
+      sb.Append("  CategoryId: ").Append(CategoryId).Append("\n");
       
-      sb.Append("  Minimum: ").Append(Minimum).Append("\n");
+      sb.Append("  MinimumValue: ").Append(MinimumValue).Append("\n");
       
-      sb.Append("  Maximum: ").Append(Maximum).Append("\n");
+      sb.Append("  MaximumValue: ").Append(MaximumValue).Append("\n");
       
-      sb.Append("  ConversionSteps: ").Append(ConversionSteps).Append("\n");
+      sb.Append("  Updated: ").Append(Updated).Append("\n");
+      
+      sb.Append("  DefaultUnitId: ").Append(DefaultUnitId).Append("\n");
+      
+      sb.Append("  Multiply: ").Append(Multiply).Append("\n");
+      
+      sb.Append("  Add: ").Append(Add).Append("\n");
+      
+      sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+      
+      sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

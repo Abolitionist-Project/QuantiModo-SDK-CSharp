@@ -11,7 +11,7 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class Correlation {
+  public class AggregatedCorrelation {
     
     /// <summary>
     /// id
@@ -22,155 +22,147 @@ namespace IO.Swagger.Model {
 
     
     /// <summary>
-    /// Time at which correlation was calculated
+    /// correlation
     /// </summary>
-    /// <value>Time at which correlation was calculated</value>
-    [DataMember(Name="timestamp", EmitDefaultValue=false)]
-    public int? Timestamp { get; set; }
-
-    
-    /// <summary>
-    /// ID of user that owns this correlation
-    /// </summary>
-    /// <value>ID of user that owns this correlation</value>
-    [DataMember(Name="user_id", EmitDefaultValue=false)]
-    public int? UserId { get; set; }
-
-    
-    /// <summary>
-    /// Pearson correlation coefficient between cause and effect measurements
-    /// </summary>
-    /// <value>Pearson correlation coefficient between cause and effect measurements</value>
+    /// <value>correlation</value>
     [DataMember(Name="correlation", EmitDefaultValue=false)]
     public float? Correlation { get; set; }
 
     
     /// <summary>
-    /// variable ID of the cause variable for which the user desires correlations
+    /// cause_id
     /// </summary>
-    /// <value>variable ID of the cause variable for which the user desires correlations</value>
+    /// <value>cause_id</value>
     [DataMember(Name="cause_id", EmitDefaultValue=false)]
     public int? CauseId { get; set; }
 
     
     /// <summary>
-    /// variable ID of the effect variable for which the user desires correlations
+    /// effect_id
     /// </summary>
-    /// <value>variable ID of the effect variable for which the user desires correlations</value>
+    /// <value>effect_id</value>
     [DataMember(Name="effect_id", EmitDefaultValue=false)]
     public int? EffectId { get; set; }
 
     
     /// <summary>
-    /// User estimated or default time after cause measurement before a perceivable effect is observed
+    /// onset_delay
     /// </summary>
-    /// <value>User estimated or default time after cause measurement before a perceivable effect is observed</value>
+    /// <value>onset_delay</value>
     [DataMember(Name="onset_delay", EmitDefaultValue=false)]
     public int? OnsetDelay { get; set; }
 
     
     /// <summary>
-    /// Time over which the cause is expected to produce a perceivable effect following the onset delay
+    /// duration_of_action
     /// </summary>
-    /// <value>Time over which the cause is expected to produce a perceivable effect following the onset delay</value>
+    /// <value>duration_of_action</value>
     [DataMember(Name="duration_of_action", EmitDefaultValue=false)]
     public int? DurationOfAction { get; set; }
 
     
     /// <summary>
-    /// Number of points that went into the correlation calculation
+    /// number_of_pairs
     /// </summary>
-    /// <value>Number of points that went into the correlation calculation</value>
+    /// <value>number_of_pairs</value>
     [DataMember(Name="number_of_pairs", EmitDefaultValue=false)]
     public int? NumberOfPairs { get; set; }
 
     
     /// <summary>
-    /// cause value that predicts an above average effect value (in default unit for cause variable)
+    /// value_predicting_high_outcome
     /// </summary>
-    /// <value>cause value that predicts an above average effect value (in default unit for cause variable)</value>
+    /// <value>value_predicting_high_outcome</value>
     [DataMember(Name="value_predicting_high_outcome", EmitDefaultValue=false)]
     public float? ValuePredictingHighOutcome { get; set; }
 
     
     /// <summary>
-    /// cause value that predicts a below average effect value (in default unit for cause variable)
+    /// value_predicting_low_outcome
     /// </summary>
-    /// <value>cause value that predicts a below average effect value (in default unit for cause variable)</value>
+    /// <value>value_predicting_low_outcome</value>
     [DataMember(Name="value_predicting_low_outcome", EmitDefaultValue=false)]
     public float? ValuePredictingLowOutcome { get; set; }
 
     
     /// <summary>
-    /// Optimal Pearson Product
+    /// optimal_pearson_product
     /// </summary>
-    /// <value>Optimal Pearson Product</value>
+    /// <value>optimal_pearson_product</value>
     [DataMember(Name="optimal_pearson_product", EmitDefaultValue=false)]
     public float? OptimalPearsonProduct { get; set; }
 
     
     /// <summary>
-    /// Vote
+    /// vote
     /// </summary>
-    /// <value>Vote</value>
+    /// <value>vote</value>
     [DataMember(Name="vote", EmitDefaultValue=false)]
     public float? Vote { get; set; }
 
     
     /// <summary>
-    /// A function of the effect size and sample size
+    /// number_of_users
     /// </summary>
-    /// <value>A function of the effect size and sample size</value>
+    /// <value>number_of_users</value>
+    [DataMember(Name="number_of_users", EmitDefaultValue=false)]
+    public int? NumberOfUsers { get; set; }
+
+    
+    /// <summary>
+    /// number_of_correlations
+    /// </summary>
+    /// <value>number_of_correlations</value>
+    [DataMember(Name="number_of_correlations", EmitDefaultValue=false)]
+    public int? NumberOfCorrelations { get; set; }
+
+    
+    /// <summary>
+    /// statistical_significance
+    /// </summary>
+    /// <value>statistical_significance</value>
     [DataMember(Name="statistical_significance", EmitDefaultValue=false)]
     public float? StatisticalSignificance { get; set; }
 
     
     /// <summary>
-    /// Unit of Cause
+    /// cause_unit
     /// </summary>
-    /// <value>Unit of Cause</value>
+    /// <value>cause_unit</value>
     [DataMember(Name="cause_unit", EmitDefaultValue=false)]
     public string CauseUnit { get; set; }
 
     
     /// <summary>
-    /// Unit ID of Cause
+    /// cause_unit_id
     /// </summary>
-    /// <value>Unit ID of Cause</value>
+    /// <value>cause_unit_id</value>
     [DataMember(Name="cause_unit_id", EmitDefaultValue=false)]
     public int? CauseUnitId { get; set; }
 
     
     /// <summary>
-    /// Cause changes
+    /// cause_changes
     /// </summary>
-    /// <value>Cause changes</value>
+    /// <value>cause_changes</value>
     [DataMember(Name="cause_changes", EmitDefaultValue=false)]
     public int? CauseChanges { get; set; }
 
     
     /// <summary>
-    /// Effect changes
+    /// effect_changes
     /// </summary>
-    /// <value>Effect changes</value>
+    /// <value>effect_changes</value>
     [DataMember(Name="effect_changes", EmitDefaultValue=false)]
     public int? EffectChanges { get; set; }
 
     
     /// <summary>
-    /// QM Score
+    /// aggregate_qm_score
     /// </summary>
-    /// <value>QM Score</value>
-    [DataMember(Name="qm_score", EmitDefaultValue=false)]
-    public float? QmScore { get; set; }
-
-    
-    /// <summary>
-    /// error
-    /// </summary>
-    /// <value>error</value>
-    [DataMember(Name="error", EmitDefaultValue=false)]
-    public string Error { get; set; }
+    /// <value>aggregate_qm_score</value>
+    [DataMember(Name="aggregate_qm_score", EmitDefaultValue=false)]
+    public float? AggregateQmScore { get; set; }
 
     
     /// <summary>
@@ -190,17 +182,41 @@ namespace IO.Swagger.Model {
 
     
     /// <summary>
-    /// Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation
+    /// status
     /// </summary>
-    /// <value>Correlation when cause and effect are reversed. For any causal relationship, the forward correlation should exceed the reverse correlation</value>
+    /// <value>status</value>
+    [DataMember(Name="status", EmitDefaultValue=false)]
+    public string Status { get; set; }
+
+    
+    /// <summary>
+    /// error_message
+    /// </summary>
+    /// <value>error_message</value>
+    [DataMember(Name="error_message", EmitDefaultValue=false)]
+    public string ErrorMessage { get; set; }
+
+    
+    /// <summary>
+    /// last_successful_update_time
+    /// </summary>
+    /// <value>last_successful_update_time</value>
+    [DataMember(Name="last_successful_update_time", EmitDefaultValue=false)]
+    public DateTime? LastSuccessfulUpdateTime { get; set; }
+
+    
+    /// <summary>
+    /// reverse_pearson_correlation_coefficient
+    /// </summary>
+    /// <value>reverse_pearson_correlation_coefficient</value>
     [DataMember(Name="reverse_pearson_correlation_coefficient", EmitDefaultValue=false)]
     public float? ReversePearsonCorrelationCoefficient { get; set; }
 
     
     /// <summary>
-    /// Predictive Pearson Correlation Coefficient
+    /// predictive_pearson_correlation_coefficient
     /// </summary>
-    /// <value>Predictive Pearson Correlation Coefficient</value>
+    /// <value>predictive_pearson_correlation_coefficient</value>
     [DataMember(Name="predictive_pearson_correlation_coefficient", EmitDefaultValue=false)]
     public float? PredictivePearsonCorrelationCoefficient { get; set; }
 
@@ -212,13 +228,9 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class Correlation {\n");
+      sb.Append("class AggregatedCorrelation {\n");
       
       sb.Append("  Id: ").Append(Id).Append("\n");
-      
-      sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
-      
-      sb.Append("  UserId: ").Append(UserId).Append("\n");
       
       sb.Append("  Correlation: ").Append(Correlation).Append("\n");
       
@@ -240,6 +252,10 @@ namespace IO.Swagger.Model {
       
       sb.Append("  Vote: ").Append(Vote).Append("\n");
       
+      sb.Append("  NumberOfUsers: ").Append(NumberOfUsers).Append("\n");
+      
+      sb.Append("  NumberOfCorrelations: ").Append(NumberOfCorrelations).Append("\n");
+      
       sb.Append("  StatisticalSignificance: ").Append(StatisticalSignificance).Append("\n");
       
       sb.Append("  CauseUnit: ").Append(CauseUnit).Append("\n");
@@ -250,13 +266,17 @@ namespace IO.Swagger.Model {
       
       sb.Append("  EffectChanges: ").Append(EffectChanges).Append("\n");
       
-      sb.Append("  QmScore: ").Append(QmScore).Append("\n");
-      
-      sb.Append("  Error: ").Append(Error).Append("\n");
+      sb.Append("  AggregateQmScore: ").Append(AggregateQmScore).Append("\n");
       
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
       
       sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+      
+      sb.Append("  Status: ").Append(Status).Append("\n");
+      
+      sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
+      
+      sb.Append("  LastSuccessfulUpdateTime: ").Append(LastSuccessfulUpdateTime).Append("\n");
       
       sb.Append("  ReversePearsonCorrelationCoefficient: ").Append(ReversePearsonCorrelationCoefficient).Append("\n");
       

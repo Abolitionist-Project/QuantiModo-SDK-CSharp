@@ -14,243 +14,291 @@ namespace IO.Swagger.Model {
   public class Variable {
     
     /// <summary>
-    /// Variable ID
+    /// id
     /// </summary>
-    /// <value>Variable ID</value>
+    /// <value>id</value>
     [DataMember(Name="id", EmitDefaultValue=false)]
     public int? Id { get; set; }
 
     
     /// <summary>
-    /// User-defined variable display name.
+    /// client_id
     /// </summary>
-    /// <value>User-defined variable display name.</value>
+    /// <value>client_id</value>
+    [DataMember(Name="client_id", EmitDefaultValue=false)]
+    public string ClientId { get; set; }
+
+    
+    /// <summary>
+    /// parent_id
+    /// </summary>
+    /// <value>parent_id</value>
+    [DataMember(Name="parent_id", EmitDefaultValue=false)]
+    public int? ParentId { get; set; }
+
+    
+    /// <summary>
+    /// Name of the variable
+    /// </summary>
+    /// <value>Name of the variable</value>
     [DataMember(Name="name", EmitDefaultValue=false)]
     public string Name { get; set; }
 
     
     /// <summary>
-    /// Name used when the variable was originally created in the `variables` table.
+    /// Category of the variable
     /// </summary>
-    /// <value>Name used when the variable was originally created in the `variables` table.</value>
-    [DataMember(Name="originalName", EmitDefaultValue=false)]
-    public string OriginalName { get; set; }
+    /// <value>Category of the variable</value>
+    [DataMember(Name="variable_category_id", EmitDefaultValue=false)]
+    public int? VariableCategoryId { get; set; }
 
     
     /// <summary>
-    /// Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc.
+    /// ID of the default unit of measurement to use for this variable
     /// </summary>
-    /// <value>Variable category like Mood, Sleep, Physical Activity, Treatment, Symptom, etc.</value>
-    [DataMember(Name="category", EmitDefaultValue=false)]
-    public string Category { get; set; }
+    /// <value>ID of the default unit of measurement to use for this variable</value>
+    [DataMember(Name="default_unit_id", EmitDefaultValue=false)]
+    public int? DefaultUnitId { get; set; }
 
     
     /// <summary>
-    /// Abbreviated name of the default unit for the variable
+    /// How to combine values of this variable (for instance, to see a summary of the values over a month) 0 for sum OR 1 for mean
     /// </summary>
-    /// <value>Abbreviated name of the default unit for the variable</value>
-    [DataMember(Name="abbreviatedUnitName", EmitDefaultValue=false)]
-    public string AbbreviatedUnitName { get; set; }
-
-    
-    /// <summary>
-    /// Id of the default unit for the variable
-    /// </summary>
-    /// <value>Id of the default unit for the variable</value>
-    [DataMember(Name="abbreviatedUnitId", EmitDefaultValue=false)]
-    public int? AbbreviatedUnitId { get; set; }
-
-    
-    /// <summary>
-    /// Comma-separated list of source names to limit variables to those sources
-    /// </summary>
-    /// <value>Comma-separated list of source names to limit variables to those sources</value>
-    [DataMember(Name="sources", EmitDefaultValue=false)]
-    public string Sources { get; set; }
-
-    
-    /// <summary>
-    /// Minimum reasonable value for this variable (uses default unit)
-    /// </summary>
-    /// <value>Minimum reasonable value for this variable (uses default unit)</value>
-    [DataMember(Name="minimumValue", EmitDefaultValue=false)]
-    public double? MinimumValue { get; set; }
-
-    
-    /// <summary>
-    /// Maximum reasonable value for this variable (uses default unit)
-    /// </summary>
-    /// <value>Maximum reasonable value for this variable (uses default unit)</value>
-    [DataMember(Name="maximumValue", EmitDefaultValue=false)]
-    public double? MaximumValue { get; set; }
-
-    
-    /// <summary>
-    /// How to aggregate measurements over time.
-    /// </summary>
-    /// <value>How to aggregate measurements over time.</value>
-    [DataMember(Name="combinationOperation", EmitDefaultValue=false)]
+    /// <value>How to combine values of this variable (for instance, to see a summary of the values over a month) 0 for sum OR 1 for mean</value>
+    [DataMember(Name="combination_operation", EmitDefaultValue=false)]
     public string CombinationOperation { get; set; }
 
     
     /// <summary>
-    /// Value for replacing null measurements
+    /// filling_value
     /// </summary>
-    /// <value>Value for replacing null measurements</value>
-    [DataMember(Name="fillingValue", EmitDefaultValue=false)]
-    public double? FillingValue { get; set; }
+    /// <value>filling_value</value>
+    [DataMember(Name="filling_value", EmitDefaultValue=false)]
+    public float? FillingValue { get; set; }
 
     
     /// <summary>
-    /// The Variable this Variable should be joined with. If the variable is joined with some other variable then it is not shown to user in the list of variables.
+    /// maximum_allowed_value
     /// </summary>
-    /// <value>The Variable this Variable should be joined with. If the variable is joined with some other variable then it is not shown to user in the list of variables.</value>
-    [DataMember(Name="joinWith", EmitDefaultValue=false)]
-    public string JoinWith { get; set; }
+    /// <value>maximum_allowed_value</value>
+    [DataMember(Name="maximum_allowed_value", EmitDefaultValue=false)]
+    public float? MaximumAllowedValue { get; set; }
 
     
     /// <summary>
-    /// Array of Variables that are joined with this Variable
+    /// minimum_allowed_value
     /// </summary>
-    /// <value>Array of Variables that are joined with this Variable</value>
-    [DataMember(Name="joinedVariables", EmitDefaultValue=false)]
-    public List<Variable> JoinedVariables { get; set; }
+    /// <value>minimum_allowed_value</value>
+    [DataMember(Name="minimum_allowed_value", EmitDefaultValue=false)]
+    public float? MinimumAllowedValue { get; set; }
 
     
     /// <summary>
-    /// Id of the parent variable if this variable has any parent
+    /// onset_delay
     /// </summary>
-    /// <value>Id of the parent variable if this variable has any parent</value>
-    [DataMember(Name="parent", EmitDefaultValue=false)]
-    public int? Parent { get; set; }
-
-    
-    /// <summary>
-    /// Array of Variables that are sub variables to this Variable
-    /// </summary>
-    /// <value>Array of Variables that are sub variables to this Variable</value>
-    [DataMember(Name="subVariables", EmitDefaultValue=false)]
-    public List<Variable> SubVariables { get; set; }
-
-    
-    /// <summary>
-    /// How long it takes for a measurement in this variable to take effect
-    /// </summary>
-    /// <value>How long it takes for a measurement in this variable to take effect</value>
-    [DataMember(Name="onsetDelay", EmitDefaultValue=false)]
+    /// <value>onset_delay</value>
+    [DataMember(Name="onset_delay", EmitDefaultValue=false)]
     public int? OnsetDelay { get; set; }
 
     
     /// <summary>
-    /// How long the effect of a measurement in this variable lasts
+    /// duration_of_action
     /// </summary>
-    /// <value>How long the effect of a measurement in this variable lasts</value>
-    [DataMember(Name="durationOfAction", EmitDefaultValue=false)]
+    /// <value>duration_of_action</value>
+    [DataMember(Name="duration_of_action", EmitDefaultValue=false)]
     public int? DurationOfAction { get; set; }
 
     
     /// <summary>
-    /// Earliest measurement time
+    /// public
     /// </summary>
-    /// <value>Earliest measurement time</value>
-    [DataMember(Name="earliestMeasurementTime", EmitDefaultValue=false)]
-    public int? EarliestMeasurementTime { get; set; }
+    /// <value>public</value>
+    [DataMember(Name="public", EmitDefaultValue=false)]
+    public int? Public { get; set; }
 
     
     /// <summary>
-    /// Latest measurement time
+    /// cause_only
     /// </summary>
-    /// <value>Latest measurement time</value>
-    [DataMember(Name="latestMeasurementTime", EmitDefaultValue=false)]
-    public int? LatestMeasurementTime { get; set; }
+    /// <value>cause_only</value>
+    [DataMember(Name="cause_only", EmitDefaultValue=false)]
+    public bool? CauseOnly { get; set; }
 
     
     /// <summary>
-    /// When this variable or its settings were last updated
+    /// most_common_value
     /// </summary>
-    /// <value>When this variable or its settings were last updated</value>
-    [DataMember(Name="updated", EmitDefaultValue=false)]
-    public int? Updated { get; set; }
+    /// <value>most_common_value</value>
+    [DataMember(Name="most_common_value", EmitDefaultValue=false)]
+    public float? MostCommonValue { get; set; }
 
     
     /// <summary>
-    /// A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user.
+    /// most_common_unit_id
     /// </summary>
-    /// <value>A value of 1 indicates that this variable is generally a cause in a causal relationship.  An example of a causeOnly variable would be a variable such as Cloud Cover which would generally not be influenced by the behaviour of the user.</value>
-    [DataMember(Name="causeOnly", EmitDefaultValue=false)]
-    public int? CauseOnly { get; set; }
+    /// <value>most_common_unit_id</value>
+    [DataMember(Name="most_common_unit_id", EmitDefaultValue=false)]
+    public int? MostCommonUnitId { get; set; }
 
     
     /// <summary>
-    /// Number of correlations
+    /// standard_deviation
     /// </summary>
-    /// <value>Number of correlations</value>
-    [DataMember(Name="numberOfCorrelations", EmitDefaultValue=false)]
-    public int? NumberOfCorrelations { get; set; }
+    /// <value>standard_deviation</value>
+    [DataMember(Name="standard_deviation", EmitDefaultValue=false)]
+    public float? StandardDeviation { get; set; }
 
     
     /// <summary>
-    /// Outcome variables (those with `outcome` == 1) are variables for which a human would generally want to identify the influencing factors.  These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables.
+    /// variance
     /// </summary>
-    /// <value>Outcome variables (those with `outcome` == 1) are variables for which a human would generally want to identify the influencing factors.  These include symptoms of illness, physique, mood, cognitive performance, etc.  Generally correlation calculations are only performed on outcome variables.</value>
+    /// <value>variance</value>
+    [DataMember(Name="variance", EmitDefaultValue=false)]
+    public float? Variance { get; set; }
+
+    
+    /// <summary>
+    /// mean
+    /// </summary>
+    /// <value>mean</value>
+    [DataMember(Name="mean", EmitDefaultValue=false)]
+    public float? Mean { get; set; }
+
+    
+    /// <summary>
+    /// median
+    /// </summary>
+    /// <value>median</value>
+    [DataMember(Name="median", EmitDefaultValue=false)]
+    public float? Median { get; set; }
+
+    
+    /// <summary>
+    /// number_of_measurements
+    /// </summary>
+    /// <value>number_of_measurements</value>
+    [DataMember(Name="number_of_measurements", EmitDefaultValue=false)]
+    public float? NumberOfMeasurements { get; set; }
+
+    
+    /// <summary>
+    /// number_of_unique_values
+    /// </summary>
+    /// <value>number_of_unique_values</value>
+    [DataMember(Name="number_of_unique_values", EmitDefaultValue=false)]
+    public float? NumberOfUniqueValues { get; set; }
+
+    
+    /// <summary>
+    /// skewness
+    /// </summary>
+    /// <value>skewness</value>
+    [DataMember(Name="skewness", EmitDefaultValue=false)]
+    public float? Skewness { get; set; }
+
+    
+    /// <summary>
+    /// kurtosis
+    /// </summary>
+    /// <value>kurtosis</value>
+    [DataMember(Name="kurtosis", EmitDefaultValue=false)]
+    public float? Kurtosis { get; set; }
+
+    
+    /// <summary>
+    /// status
+    /// </summary>
+    /// <value>status</value>
+    [DataMember(Name="status", EmitDefaultValue=false)]
+    public string Status { get; set; }
+
+    
+    /// <summary>
+    /// error_message
+    /// </summary>
+    /// <value>error_message</value>
+    [DataMember(Name="error_message", EmitDefaultValue=false)]
+    public string ErrorMessage { get; set; }
+
+    
+    /// <summary>
+    /// last_successful_update_time
+    /// </summary>
+    /// <value>last_successful_update_time</value>
+    [DataMember(Name="last_successful_update_time", EmitDefaultValue=false)]
+    public DateTime? LastSuccessfulUpdateTime { get; set; }
+
+    
+    /// <summary>
+    /// created_at
+    /// </summary>
+    /// <value>created_at</value>
+    [DataMember(Name="created_at", EmitDefaultValue=false)]
+    public DateTime? CreatedAt { get; set; }
+
+    
+    /// <summary>
+    /// updated_at
+    /// </summary>
+    /// <value>updated_at</value>
+    [DataMember(Name="updated_at", EmitDefaultValue=false)]
+    public DateTime? UpdatedAt { get; set; }
+
+    
+    /// <summary>
+    /// product_url
+    /// </summary>
+    /// <value>product_url</value>
+    [DataMember(Name="product_url", EmitDefaultValue=false)]
+    public string ProductUrl { get; set; }
+
+    
+    /// <summary>
+    /// image_url
+    /// </summary>
+    /// <value>image_url</value>
+    [DataMember(Name="image_url", EmitDefaultValue=false)]
+    public string ImageUrl { get; set; }
+
+    
+    /// <summary>
+    /// price
+    /// </summary>
+    /// <value>price</value>
+    [DataMember(Name="price", EmitDefaultValue=false)]
+    public float? Price { get; set; }
+
+    
+    /// <summary>
+    /// number_of_user_variables
+    /// </summary>
+    /// <value>number_of_user_variables</value>
+    [DataMember(Name="number_of_user_variables", EmitDefaultValue=false)]
+    public int? NumberOfUserVariables { get; set; }
+
+    
+    /// <summary>
+    /// outcome
+    /// </summary>
+    /// <value>outcome</value>
     [DataMember(Name="outcome", EmitDefaultValue=false)]
-    public int? Outcome { get; set; }
+    public bool? Outcome { get; set; }
 
     
     /// <summary>
-    /// The number of measurements that a given user had for this variable the last time a correlation calculation was performed. Generally correlation values are only updated once the current number of measurements for a variable is more than 10% greater than the measurementsAtLastAnalysis.  This avoids a computationally-demanding recalculation when there's not enough new data to make a significant difference in the correlation.
+    /// minimum_recorded_value
     /// </summary>
-    /// <value>The number of measurements that a given user had for this variable the last time a correlation calculation was performed. Generally correlation values are only updated once the current number of measurements for a variable is more than 10% greater than the measurementsAtLastAnalysis.  This avoids a computationally-demanding recalculation when there's not enough new data to make a significant difference in the correlation.</value>
-    [DataMember(Name="measurementsAtLastAnalysis", EmitDefaultValue=false)]
-    public int? MeasurementsAtLastAnalysis { get; set; }
+    /// <value>minimum_recorded_value</value>
+    [DataMember(Name="minimum_recorded_value", EmitDefaultValue=false)]
+    public float? MinimumRecordedValue { get; set; }
 
     
     /// <summary>
-    /// Number of measurements
+    /// maximum_recorded_value
     /// </summary>
-    /// <value>Number of measurements</value>
-    [DataMember(Name="numberOfMeasurements", EmitDefaultValue=false)]
-    public int? NumberOfMeasurements { get; set; }
-
-    
-    /// <summary>
-    /// Last unit
-    /// </summary>
-    /// <value>Last unit</value>
-    [DataMember(Name="lastUnit", EmitDefaultValue=false)]
-    public string LastUnit { get; set; }
-
-    
-    /// <summary>
-    /// Last value
-    /// </summary>
-    /// <value>Last value</value>
-    [DataMember(Name="lastValue", EmitDefaultValue=false)]
-    public int? LastValue { get; set; }
-
-    
-    /// <summary>
-    /// Most common value
-    /// </summary>
-    /// <value>Most common value</value>
-    [DataMember(Name="mostCommonValue", EmitDefaultValue=false)]
-    public int? MostCommonValue { get; set; }
-
-    
-    /// <summary>
-    /// Most common unit
-    /// </summary>
-    /// <value>Most common unit</value>
-    [DataMember(Name="mostCommonUnit", EmitDefaultValue=false)]
-    public string MostCommonUnit { get; set; }
-
-    
-    /// <summary>
-    /// Last source
-    /// </summary>
-    /// <value>Last source</value>
-    [DataMember(Name="lastSource", EmitDefaultValue=false)]
-    public int? LastSource { get; set; }
+    /// <value>maximum_recorded_value</value>
+    [DataMember(Name="maximum_recorded_value", EmitDefaultValue=false)]
+    public float? MaximumRecordedValue { get; set; }
 
     
 
@@ -264,63 +312,75 @@ namespace IO.Swagger.Model {
       
       sb.Append("  Id: ").Append(Id).Append("\n");
       
+      sb.Append("  ClientId: ").Append(ClientId).Append("\n");
+      
+      sb.Append("  ParentId: ").Append(ParentId).Append("\n");
+      
       sb.Append("  Name: ").Append(Name).Append("\n");
       
-      sb.Append("  OriginalName: ").Append(OriginalName).Append("\n");
+      sb.Append("  VariableCategoryId: ").Append(VariableCategoryId).Append("\n");
       
-      sb.Append("  Category: ").Append(Category).Append("\n");
-      
-      sb.Append("  AbbreviatedUnitName: ").Append(AbbreviatedUnitName).Append("\n");
-      
-      sb.Append("  AbbreviatedUnitId: ").Append(AbbreviatedUnitId).Append("\n");
-      
-      sb.Append("  Sources: ").Append(Sources).Append("\n");
-      
-      sb.Append("  MinimumValue: ").Append(MinimumValue).Append("\n");
-      
-      sb.Append("  MaximumValue: ").Append(MaximumValue).Append("\n");
+      sb.Append("  DefaultUnitId: ").Append(DefaultUnitId).Append("\n");
       
       sb.Append("  CombinationOperation: ").Append(CombinationOperation).Append("\n");
       
       sb.Append("  FillingValue: ").Append(FillingValue).Append("\n");
       
-      sb.Append("  JoinWith: ").Append(JoinWith).Append("\n");
+      sb.Append("  MaximumAllowedValue: ").Append(MaximumAllowedValue).Append("\n");
       
-      sb.Append("  JoinedVariables: ").Append(JoinedVariables).Append("\n");
-      
-      sb.Append("  Parent: ").Append(Parent).Append("\n");
-      
-      sb.Append("  SubVariables: ").Append(SubVariables).Append("\n");
+      sb.Append("  MinimumAllowedValue: ").Append(MinimumAllowedValue).Append("\n");
       
       sb.Append("  OnsetDelay: ").Append(OnsetDelay).Append("\n");
       
       sb.Append("  DurationOfAction: ").Append(DurationOfAction).Append("\n");
       
-      sb.Append("  EarliestMeasurementTime: ").Append(EarliestMeasurementTime).Append("\n");
-      
-      sb.Append("  LatestMeasurementTime: ").Append(LatestMeasurementTime).Append("\n");
-      
-      sb.Append("  Updated: ").Append(Updated).Append("\n");
+      sb.Append("  Public: ").Append(Public).Append("\n");
       
       sb.Append("  CauseOnly: ").Append(CauseOnly).Append("\n");
       
-      sb.Append("  NumberOfCorrelations: ").Append(NumberOfCorrelations).Append("\n");
+      sb.Append("  MostCommonValue: ").Append(MostCommonValue).Append("\n");
       
-      sb.Append("  Outcome: ").Append(Outcome).Append("\n");
+      sb.Append("  MostCommonUnitId: ").Append(MostCommonUnitId).Append("\n");
       
-      sb.Append("  MeasurementsAtLastAnalysis: ").Append(MeasurementsAtLastAnalysis).Append("\n");
+      sb.Append("  StandardDeviation: ").Append(StandardDeviation).Append("\n");
+      
+      sb.Append("  Variance: ").Append(Variance).Append("\n");
+      
+      sb.Append("  Mean: ").Append(Mean).Append("\n");
+      
+      sb.Append("  Median: ").Append(Median).Append("\n");
       
       sb.Append("  NumberOfMeasurements: ").Append(NumberOfMeasurements).Append("\n");
       
-      sb.Append("  LastUnit: ").Append(LastUnit).Append("\n");
+      sb.Append("  NumberOfUniqueValues: ").Append(NumberOfUniqueValues).Append("\n");
       
-      sb.Append("  LastValue: ").Append(LastValue).Append("\n");
+      sb.Append("  Skewness: ").Append(Skewness).Append("\n");
       
-      sb.Append("  MostCommonValue: ").Append(MostCommonValue).Append("\n");
+      sb.Append("  Kurtosis: ").Append(Kurtosis).Append("\n");
       
-      sb.Append("  MostCommonUnit: ").Append(MostCommonUnit).Append("\n");
+      sb.Append("  Status: ").Append(Status).Append("\n");
       
-      sb.Append("  LastSource: ").Append(LastSource).Append("\n");
+      sb.Append("  ErrorMessage: ").Append(ErrorMessage).Append("\n");
+      
+      sb.Append("  LastSuccessfulUpdateTime: ").Append(LastSuccessfulUpdateTime).Append("\n");
+      
+      sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
+      
+      sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
+      
+      sb.Append("  ProductUrl: ").Append(ProductUrl).Append("\n");
+      
+      sb.Append("  ImageUrl: ").Append(ImageUrl).Append("\n");
+      
+      sb.Append("  Price: ").Append(Price).Append("\n");
+      
+      sb.Append("  NumberOfUserVariables: ").Append(NumberOfUserVariables).Append("\n");
+      
+      sb.Append("  Outcome: ").Append(Outcome).Append("\n");
+      
+      sb.Append("  MinimumRecordedValue: ").Append(MinimumRecordedValue).Append("\n");
+      
+      sb.Append("  MaximumRecordedValue: ").Append(MaximumRecordedValue).Append("\n");
       
       sb.Append("}\n");
       return sb.ToString();

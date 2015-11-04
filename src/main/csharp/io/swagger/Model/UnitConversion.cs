@@ -11,22 +11,38 @@ namespace IO.Swagger.Model {
   /// 
   /// </summary>
   [DataContract]
-  public class UnitCategory {
+  public class UnitConversion {
     
     /// <summary>
-    /// id
+    /// unit_id
     /// </summary>
-    /// <value>id</value>
-    [DataMember(Name="id", EmitDefaultValue=false)]
-    public int? Id { get; set; }
+    /// <value>unit_id</value>
+    [DataMember(Name="unit_id", EmitDefaultValue=false)]
+    public int? UnitId { get; set; }
 
     
     /// <summary>
-    /// Unit category name
+    /// step in the conversion process
     /// </summary>
-    /// <value>Unit category name</value>
-    [DataMember(Name="name", EmitDefaultValue=false)]
-    public string Name { get; set; }
+    /// <value>step in the conversion process</value>
+    [DataMember(Name="step_number", EmitDefaultValue=false)]
+    public bool? StepNumber { get; set; }
+
+    
+    /// <summary>
+    /// 0 is add and 1 is multiply
+    /// </summary>
+    /// <value>0 is add and 1 is multiply</value>
+    [DataMember(Name="operation", EmitDefaultValue=false)]
+    public bool? Operation { get; set; }
+
+    
+    /// <summary>
+    /// number used in the operation
+    /// </summary>
+    /// <value>number used in the operation</value>
+    [DataMember(Name="value", EmitDefaultValue=false)]
+    public float? Value { get; set; }
 
     
     /// <summary>
@@ -52,11 +68,15 @@ namespace IO.Swagger.Model {
     /// <returns>String presentation of the object</returns>
     public override string ToString()  {
       var sb = new StringBuilder();
-      sb.Append("class UnitCategory {\n");
+      sb.Append("class UnitConversion {\n");
       
-      sb.Append("  Id: ").Append(Id).Append("\n");
+      sb.Append("  UnitId: ").Append(UnitId).Append("\n");
       
-      sb.Append("  Name: ").Append(Name).Append("\n");
+      sb.Append("  StepNumber: ").Append(StepNumber).Append("\n");
+      
+      sb.Append("  Operation: ").Append(Operation).Append("\n");
+      
+      sb.Append("  Value: ").Append(Value).Append("\n");
       
       sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
       

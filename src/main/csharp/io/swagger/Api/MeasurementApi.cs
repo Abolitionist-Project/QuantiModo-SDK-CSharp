@@ -92,7 +92,7 @@ namespace IO.Swagger.Api
         /// Get Measurements CSV
         /// </summary>
         /// <remarks>
-        /// Get Measurements CSV
+        /// Download a CSV containing all user measurements
         /// </remarks>
         /// <returns>Stream</returns>
         Stream MeasurementsCsvGet ();
@@ -101,7 +101,7 @@ namespace IO.Swagger.Api
         /// Get Measurements CSV
         /// </summary>
         /// <remarks>
-        /// Get Measurements CSV
+        /// Download a CSV containing all user measurements
         /// </remarks>
         /// <returns>Stream</returns>
         System.Threading.Tasks.Task<Stream> MeasurementsCsvGetAsync ();
@@ -110,7 +110,7 @@ namespace IO.Swagger.Api
         /// Post Request for Measurements CSV
         /// </summary>
         /// <remarks>
-        /// Post Request for Measurements CSV
+        /// Use this endpoint to schedule a CSV export containing all user measurements to be emailed to the user within 24 hours.
         /// </remarks>
         /// <returns>int?</returns>
         int? MeasurementsRequestCsvPost ();
@@ -119,7 +119,7 @@ namespace IO.Swagger.Api
         /// Post Request for Measurements CSV
         /// </summary>
         /// <remarks>
-        /// Post Request for Measurements CSV
+        /// Use this endpoint to schedule a CSV export containing all user measurements to be emailed to the user within 24 hours.
         /// </remarks>
         /// <returns>int?</returns>
         System.Threading.Tasks.Task<int?> MeasurementsRequestCsvPostAsync ();
@@ -504,7 +504,7 @@ namespace IO.Swagger.Api
         }
         
         /// <summary>
-        /// Get Measurements CSV Get Measurements CSV
+        /// Get Measurements CSV Download a CSV containing all user measurements
         /// </summary>
         /// <returns>Stream</returns>            
         public Stream MeasurementsCsvGet ()
@@ -552,7 +552,7 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Get Measurements CSV Get Measurements CSV
+        /// Get Measurements CSV Download a CSV containing all user measurements
         /// </summary>
         /// <returns>Stream</returns>
         public async System.Threading.Tasks.Task<Stream> MeasurementsCsvGetAsync ()
@@ -597,7 +597,7 @@ namespace IO.Swagger.Api
         }
         
         /// <summary>
-        /// Post Request for Measurements CSV Post Request for Measurements CSV
+        /// Post Request for Measurements CSV Use this endpoint to schedule a CSV export containing all user measurements to be emailed to the user within 24 hours.
         /// </summary>
         /// <returns>int?</returns>            
         public int? MeasurementsRequestCsvPost ()
@@ -645,7 +645,7 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Post Request for Measurements CSV Post Request for Measurements CSV
+        /// Post Request for Measurements CSV Use this endpoint to schedule a CSV export containing all user measurements to be emailed to the user within 24 hours.
         /// </summary>
         /// <returns>int?</returns>
         public async System.Threading.Tasks.Task<int?> MeasurementsRequestCsvPostAsync ()

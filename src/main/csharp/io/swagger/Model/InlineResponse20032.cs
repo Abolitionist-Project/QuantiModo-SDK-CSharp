@@ -14,14 +14,14 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class InlineResponse2001 : IEquatable<InlineResponse2001>
+    public class InlineResponse20032 : IEquatable<InlineResponse20032>
     {
         
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data", EmitDefaultValue=false)]
-        public AggregatedCorrelation Data { get; set; }
+        public Variable Data { get; set; }
   
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2001 {\n");
+            sb.Append("class InlineResponse20032 {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  Success: ").Append(Success).Append("\n");
             
@@ -64,15 +64,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as InlineResponse2001);
+            return this.Equals(obj as InlineResponse20032);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2001 instances are equal
+        /// Returns true if InlineResponse20032 instances are equal
         /// </summary>
-        /// <param name="obj">Instance of InlineResponse2001 to be compared</param>
+        /// <param name="obj">Instance of InlineResponse20032 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2001 other)
+        public bool Equals(InlineResponse20032 other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)

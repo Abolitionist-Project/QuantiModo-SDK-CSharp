@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 using RestSharp;
 using IO.Swagger.Client;
 using IO.Swagger.Model;
@@ -18,55 +19,113 @@ namespace IO.Swagger.Api
         /// Get all VariableCategories
         /// </summary>
         /// <remarks>
-        /// Get all VariableCategories
+        /// The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
         /// </remarks>
-        /// <param name="name">name</param>
-        /// <param name="fillingValue">filling_value</param>
-        /// <param name="maximumAllowedValue">maximum_allowed_value</param>
-        /// <param name="minimumAllowedValue">minimum_allowed_value</param>
-        /// <param name="durationOfAction">duration_of_action</param>
-        /// <param name="onsetDelay">onset_delay</param>
-        /// <param name="combinationOperation">combination_operation</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="name">Name of the category</param>
+        /// <param name="fillingValue">Value for replacing null measurements</param>
+        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
+        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
+        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
+        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
+        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
         /// <param name="updated">updated</param>
-        /// <param name="causeOnly">cause_only</param>
-        /// <param name="_public">public</param>
+        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
+        /// <param name="_public">Is category public</param>
         /// <param name="outcome">outcome</param>
-        /// <param name="createdAt">created_at</param>
-        /// <param name="updatedAt">updated_at</param>
-        /// <param name="imageUrl">image_url</param>
-        /// <param name="defaultUnitId">default_unit_id</param>
-        /// <param name="limit">limit</param>
-        /// <param name="offset">offset</param>
-        /// <param name="sort">sort</param>
-        /// <returns>InlineResponse20023</returns>
-        InlineResponse20023 VariableCategoriesGet (string name, double? fillingValue, double? maximumAllowedValue, double? minimumAllowedValue, int? durationOfAction, int? onsetDelay, string combinationOperation, int? updated, bool? causeOnly, int? _public, bool? outcome, string createdAt, string updatedAt, string imageUrl, int? defaultUnitId, int? limit, int? offset, string sort);
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="imageUrl">Image URL</param>
+        /// <param name="defaultUnitId">ID of the default unit for the category</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>InlineResponse20027</returns>
+        InlineResponse20027 VariableCategoriesGet (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all VariableCategories
         /// </summary>
         /// <remarks>
-        /// Get all VariableCategories
+        /// The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
         /// </remarks>
-        /// <param name="name">name</param>
-        /// <param name="fillingValue">filling_value</param>
-        /// <param name="maximumAllowedValue">maximum_allowed_value</param>
-        /// <param name="minimumAllowedValue">minimum_allowed_value</param>
-        /// <param name="durationOfAction">duration_of_action</param>
-        /// <param name="onsetDelay">onset_delay</param>
-        /// <param name="combinationOperation">combination_operation</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="name">Name of the category</param>
+        /// <param name="fillingValue">Value for replacing null measurements</param>
+        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
+        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
+        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
+        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
+        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
         /// <param name="updated">updated</param>
-        /// <param name="causeOnly">cause_only</param>
-        /// <param name="_public">public</param>
+        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
+        /// <param name="_public">Is category public</param>
         /// <param name="outcome">outcome</param>
-        /// <param name="createdAt">created_at</param>
-        /// <param name="updatedAt">updated_at</param>
-        /// <param name="imageUrl">image_url</param>
-        /// <param name="defaultUnitId">default_unit_id</param>
-        /// <param name="limit">limit</param>
-        /// <param name="offset">offset</param>
-        /// <param name="sort">sort</param>
-        /// <returns>InlineResponse20023</returns>
-        System.Threading.Tasks.Task<InlineResponse20023> VariableCategoriesGetAsync (string name, double? fillingValue, double? maximumAllowedValue, double? minimumAllowedValue, int? durationOfAction, int? onsetDelay, string combinationOperation, int? updated, bool? causeOnly, int? _public, bool? outcome, string createdAt, string updatedAt, string imageUrl, int? defaultUnitId, int? limit, int? offset, string sort);
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="imageUrl">Image URL</param>
+        /// <param name="defaultUnitId">ID of the default unit for the category</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>ApiResponse of InlineResponse20027</returns>
+        ApiResponse<InlineResponse20027> VariableCategoriesGetWithHttpInfo (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null);
+
+        /// <summary>
+        /// Get all VariableCategories
+        /// </summary>
+        /// <remarks>
+        /// The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="name">Name of the category</param>
+        /// <param name="fillingValue">Value for replacing null measurements</param>
+        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
+        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
+        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
+        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
+        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
+        /// <param name="updated">updated</param>
+        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
+        /// <param name="_public">Is category public</param>
+        /// <param name="outcome">outcome</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="imageUrl">Image URL</param>
+        /// <param name="defaultUnitId">ID of the default unit for the category</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of InlineResponse20027</returns>
+        System.Threading.Tasks.Task<InlineResponse20027> VariableCategoriesGetAsync (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null);
+
+        /// <summary>
+        /// Get all VariableCategories
+        /// </summary>
+        /// <remarks>
+        /// The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="name">Name of the category</param>
+        /// <param name="fillingValue">Value for replacing null measurements</param>
+        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
+        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
+        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
+        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
+        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
+        /// <param name="updated">updated</param>
+        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
+        /// <param name="_public">Is category public</param>
+        /// <param name="outcome">outcome</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="imageUrl">Image URL</param>
+        /// <param name="defaultUnitId">ID of the default unit for the category</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of ApiResponse (InlineResponse20027)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20027>> VariableCategoriesGetAsyncWithHttpInfo (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store VariableCategory
@@ -74,9 +133,10 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// Store VariableCategory
         /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>InlineResponse20024</returns>
-        InlineResponse20024 VariableCategoriesPost (VariableCategory body);
+        /// <returns>InlineResponse20028</returns>
+        InlineResponse20028 VariableCategoriesPost (string accessToken = null, VariableCategory body = null);
   
         /// <summary>
         /// Store VariableCategory
@@ -84,9 +144,32 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// Store VariableCategory
         /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>InlineResponse20024</returns>
-        System.Threading.Tasks.Task<InlineResponse20024> VariableCategoriesPostAsync (VariableCategory body);
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        ApiResponse<InlineResponse20028> VariableCategoriesPostWithHttpInfo (string accessToken = null, VariableCategory body = null);
+
+        /// <summary>
+        /// Store VariableCategory
+        /// </summary>
+        /// <remarks>
+        /// Store VariableCategory
+        /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableCategory that should be stored</param>
+        /// <returns>Task of InlineResponse20028</returns>
+        System.Threading.Tasks.Task<InlineResponse20028> VariableCategoriesPostAsync (string accessToken = null, VariableCategory body = null);
+
+        /// <summary>
+        /// Store VariableCategory
+        /// </summary>
+        /// <remarks>
+        /// Store VariableCategory
+        /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableCategory that should be stored</param>
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20028>> VariableCategoriesPostAsyncWithHttpInfo (string accessToken = null, VariableCategory body = null);
         
         /// <summary>
         /// Get VariableCategory
@@ -95,8 +178,9 @@ namespace IO.Swagger.Api
         /// Get VariableCategory
         /// </remarks>
         /// <param name="id">id of VariableCategory</param>
-        /// <returns>InlineResponse20024</returns>
-        InlineResponse20024 VariableCategoriesIdGet (int? id);
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>InlineResponse20028</returns>
+        InlineResponse20028 VariableCategoriesIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get VariableCategory
@@ -105,8 +189,31 @@ namespace IO.Swagger.Api
         /// Get VariableCategory
         /// </remarks>
         /// <param name="id">id of VariableCategory</param>
-        /// <returns>InlineResponse20024</returns>
-        System.Threading.Tasks.Task<InlineResponse20024> VariableCategoriesIdGetAsync (int? id);
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        ApiResponse<InlineResponse20028> VariableCategoriesIdGetWithHttpInfo (int? id, string accessToken = null);
+
+        /// <summary>
+        /// Get VariableCategory
+        /// </summary>
+        /// <remarks>
+        /// Get VariableCategory
+        /// </remarks>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse20028</returns>
+        System.Threading.Tasks.Task<InlineResponse20028> VariableCategoriesIdGetAsync (int? id, string accessToken = null);
+
+        /// <summary>
+        /// Get VariableCategory
+        /// </summary>
+        /// <remarks>
+        /// Get VariableCategory
+        /// </remarks>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20028>> VariableCategoriesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update VariableCategory
@@ -115,9 +222,10 @@ namespace IO.Swagger.Api
         /// Update VariableCategory
         /// </remarks>
         /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableCategory that should be updated</param>
         /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 VariableCategoriesIdPut (int? id, VariableCategory body);
+        InlineResponse2002 VariableCategoriesIdPut (int? id, string accessToken = null, VariableCategory body = null);
   
         /// <summary>
         /// Update VariableCategory
@@ -126,9 +234,34 @@ namespace IO.Swagger.Api
         /// Update VariableCategory
         /// </remarks>
         /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableCategory that should be updated</param>
-        /// <returns>InlineResponse2002</returns>
-        System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdPutAsync (int? id, VariableCategory body);
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> VariableCategoriesIdPutWithHttpInfo (int? id, string accessToken = null, VariableCategory body = null);
+
+        /// <summary>
+        /// Update VariableCategory
+        /// </summary>
+        /// <remarks>
+        /// Update VariableCategory
+        /// </remarks>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableCategory that should be updated</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdPutAsync (int? id, string accessToken = null, VariableCategory body = null);
+
+        /// <summary>
+        /// Update VariableCategory
+        /// </summary>
+        /// <remarks>
+        /// Update VariableCategory
+        /// </remarks>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableCategory that should be updated</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableCategoriesIdPutAsyncWithHttpInfo (int? id, string accessToken = null, VariableCategory body = null);
         
         /// <summary>
         /// Delete VariableCategory
@@ -137,8 +270,9 @@ namespace IO.Swagger.Api
         /// Delete VariableCategory
         /// </remarks>
         /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 VariableCategoriesIdDelete (int? id);
+        InlineResponse2002 VariableCategoriesIdDelete (int? id, string accessToken = null);
   
         /// <summary>
         /// Delete VariableCategory
@@ -147,8 +281,31 @@ namespace IO.Swagger.Api
         /// Delete VariableCategory
         /// </remarks>
         /// <param name="id">id of VariableCategory</param>
-        /// <returns>InlineResponse2002</returns>
-        System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdDeleteAsync (int? id);
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> VariableCategoriesIdDeleteWithHttpInfo (int? id, string accessToken = null);
+
+        /// <summary>
+        /// Delete VariableCategory
+        /// </summary>
+        /// <remarks>
+        /// Delete VariableCategory
+        /// </remarks>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdDeleteAsync (int? id, string accessToken = null);
+
+        /// <summary>
+        /// Delete VariableCategory
+        /// </summary>
+        /// <remarks>
+        /// Delete VariableCategory
+        /// </remarks>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableCategoriesIdDeleteAsyncWithHttpInfo (int? id, string accessToken = null);
         
     }
   
@@ -160,74 +317,127 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Initializes a new instance of the <see cref="VariableCategoryApi"/> class.
         /// </summary>
-        /// <param name="apiClient"> an instance of ApiClient (optional)</param>
-        /// <returns></returns>
-        public VariableCategoryApi(ApiClient apiClient = null)
-        {
-            if (apiClient == null) // use the default one in Configuration
-                this.ApiClient = Configuration.DefaultApiClient; 
-            else
-                this.ApiClient = apiClient;
-        }
-    
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VariableCategoryApi"/> class.
-        /// </summary>
         /// <returns></returns>
         public VariableCategoryApi(String basePath)
         {
-            this.ApiClient = new ApiClient(basePath);
+            this.Configuration = new Configuration(new ApiClient(basePath));
         }
     
         /// <summary>
-        /// Sets the base path of the API client.
+        /// Initializes a new instance of the <see cref="VariableCategoryApi"/> class
+        /// using Configuration object
         /// </summary>
-        /// <param name="basePath">The base path</param>
-        /// <value>The base path</value>
-        public void SetBasePath(String basePath)
+        /// <param name="configuration">An instance of Configuration</param>
+        /// <returns></returns>
+        public VariableCategoryApi(Configuration configuration = null)
         {
-            this.ApiClient.BasePath = basePath;
+            if (configuration == null) // use the default one in Configuration
+                this.Configuration = Configuration.Default; 
+            else
+                this.Configuration = configuration;
         }
-    
+
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.BasePath;
+            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+        }
+
+        /// <summary>
+        /// Sets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        [Obsolete("SetBasePath is deprecated, please do 'Configuraiton.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
+        public void SetBasePath(String basePath)
+        {
+            // do nothing
         }
     
         /// <summary>
-        /// Gets or sets the API client.
+        /// Gets or sets the configuration object
         /// </summary>
-        /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient {get; set;}
-    
+        /// <value>An instance of the Configuration</value>
+        public Configuration Configuration {get; set;}
+
+        /// <summary>
+        /// Gets the default header.
+        /// </summary>
+        /// <returns>Dictionary of HTTP header</returns>
+        [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+        public Dictionary<String, String> DefaultHeader()
+        {
+            return this.Configuration.DefaultHeader;
+        }
+
+        /// <summary>
+        /// Add default header.
+        /// </summary>
+        /// <param name="key">Header field name.</param>
+        /// <param name="value">Header field value.</param>
+        /// <returns></returns>
+        [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+        public void AddDefaultHeader(string key, string value)
+        {
+            this.Configuration.AddDefaultHeader(key, value);
+        }
+   
         
         /// <summary>
-        /// Get all VariableCategories Get all VariableCategories
+        /// Get all VariableCategories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
         /// </summary>
-        /// <param name="name">name</param> 
-        /// <param name="fillingValue">filling_value</param> 
-        /// <param name="maximumAllowedValue">maximum_allowed_value</param> 
-        /// <param name="minimumAllowedValue">minimum_allowed_value</param> 
-        /// <param name="durationOfAction">duration_of_action</param> 
-        /// <param name="onsetDelay">onset_delay</param> 
-        /// <param name="combinationOperation">combination_operation</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <param name="name">Name of the category</param> 
+        /// <param name="fillingValue">Value for replacing null measurements</param> 
+        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param> 
+        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param> 
+        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param> 
+        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param> 
+        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param> 
         /// <param name="updated">updated</param> 
-        /// <param name="causeOnly">cause_only</param> 
-        /// <param name="_public">public</param> 
+        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param> 
+        /// <param name="_public">Is category public</param> 
         /// <param name="outcome">outcome</param> 
-        /// <param name="createdAt">created_at</param> 
-        /// <param name="updatedAt">updated_at</param> 
-        /// <param name="imageUrl">image_url</param> 
-        /// <param name="defaultUnitId">default_unit_id</param> 
-        /// <param name="limit">limit</param> 
-        /// <param name="offset">offset</param> 
-        /// <param name="sort">sort</param> 
-        /// <returns>InlineResponse20023</returns>            
-        public InlineResponse20023 VariableCategoriesGet (string name, double? fillingValue, double? maximumAllowedValue, double? minimumAllowedValue, int? durationOfAction, int? onsetDelay, string combinationOperation, int? updated, bool? causeOnly, int? _public, bool? outcome, string createdAt, string updatedAt, string imageUrl, int? defaultUnitId, int? limit, int? offset, string sort)
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param> 
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param> 
+        /// <param name="imageUrl">Image URL</param> 
+        /// <param name="defaultUnitId">ID of the default unit for the category</param> 
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
+        /// <returns>InlineResponse20027</returns>
+        public InlineResponse20027 VariableCategoriesGet (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null)
+        {
+             ApiResponse<InlineResponse20027> response = VariableCategoriesGetWithHttpInfo(accessToken, name, fillingValue, maximumAllowedValue, minimumAllowedValue, durationOfAction, onsetDelay, combinationOperation, updated, causeOnly, _public, outcome, createdAt, updatedAt, imageUrl, defaultUnitId, limit, offset, sort);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Get all VariableCategories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <param name="name">Name of the category</param> 
+        /// <param name="fillingValue">Value for replacing null measurements</param> 
+        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param> 
+        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param> 
+        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param> 
+        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param> 
+        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param> 
+        /// <param name="updated">updated</param> 
+        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param> 
+        /// <param name="_public">Is category public</param> 
+        /// <param name="outcome">outcome</param> 
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param> 
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param> 
+        /// <param name="imageUrl">Image URL</param> 
+        /// <param name="defaultUnitId">ID of the default unit for the category</param> 
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
+        /// <returns>ApiResponse of InlineResponse20027</returns>
+        public ApiResponse< InlineResponse20027 > VariableCategoriesGetWithHttpInfo (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -235,7 +445,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -244,74 +454,118 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
-            if (name != null) queryParams.Add("name", ApiClient.ParameterToString(name)); // query parameter
-            if (fillingValue != null) queryParams.Add("filling_value", ApiClient.ParameterToString(fillingValue)); // query parameter
-            if (maximumAllowedValue != null) queryParams.Add("maximum_allowed_value", ApiClient.ParameterToString(maximumAllowedValue)); // query parameter
-            if (minimumAllowedValue != null) queryParams.Add("minimum_allowed_value", ApiClient.ParameterToString(minimumAllowedValue)); // query parameter
-            if (durationOfAction != null) queryParams.Add("duration_of_action", ApiClient.ParameterToString(durationOfAction)); // query parameter
-            if (onsetDelay != null) queryParams.Add("onset_delay", ApiClient.ParameterToString(onsetDelay)); // query parameter
-            if (combinationOperation != null) queryParams.Add("combination_operation", ApiClient.ParameterToString(combinationOperation)); // query parameter
-            if (updated != null) queryParams.Add("updated", ApiClient.ParameterToString(updated)); // query parameter
-            if (causeOnly != null) queryParams.Add("cause_only", ApiClient.ParameterToString(causeOnly)); // query parameter
-            if (_public != null) queryParams.Add("public", ApiClient.ParameterToString(_public)); // query parameter
-            if (outcome != null) queryParams.Add("outcome", ApiClient.ParameterToString(outcome)); // query parameter
-            if (createdAt != null) queryParams.Add("created_at", ApiClient.ParameterToString(createdAt)); // query parameter
-            if (updatedAt != null) queryParams.Add("updated_at", ApiClient.ParameterToString(updatedAt)); // query parameter
-            if (imageUrl != null) queryParams.Add("image_url", ApiClient.ParameterToString(imageUrl)); // query parameter
-            if (defaultUnitId != null) queryParams.Add("default_unit_id", ApiClient.ParameterToString(defaultUnitId)); // query parameter
-            if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-            if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
-            if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (name != null) queryParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // query parameter
+            if (fillingValue != null) queryParams.Add("filling_value", Configuration.ApiClient.ParameterToString(fillingValue)); // query parameter
+            if (maximumAllowedValue != null) queryParams.Add("maximum_allowed_value", Configuration.ApiClient.ParameterToString(maximumAllowedValue)); // query parameter
+            if (minimumAllowedValue != null) queryParams.Add("minimum_allowed_value", Configuration.ApiClient.ParameterToString(minimumAllowedValue)); // query parameter
+            if (durationOfAction != null) queryParams.Add("duration_of_action", Configuration.ApiClient.ParameterToString(durationOfAction)); // query parameter
+            if (onsetDelay != null) queryParams.Add("onset_delay", Configuration.ApiClient.ParameterToString(onsetDelay)); // query parameter
+            if (combinationOperation != null) queryParams.Add("combination_operation", Configuration.ApiClient.ParameterToString(combinationOperation)); // query parameter
+            if (updated != null) queryParams.Add("updated", Configuration.ApiClient.ParameterToString(updated)); // query parameter
+            if (causeOnly != null) queryParams.Add("cause_only", Configuration.ApiClient.ParameterToString(causeOnly)); // query parameter
+            if (_public != null) queryParams.Add("public", Configuration.ApiClient.ParameterToString(_public)); // query parameter
+            if (outcome != null) queryParams.Add("outcome", Configuration.ApiClient.ParameterToString(outcome)); // query parameter
+            if (createdAt != null) queryParams.Add("created_at", Configuration.ApiClient.ParameterToString(createdAt)); // query parameter
+            if (updatedAt != null) queryParams.Add("updated_at", Configuration.ApiClient.ParameterToString(updatedAt)); // query parameter
+            if (imageUrl != null) queryParams.Add("image_url", Configuration.ApiClient.ParameterToString(imageUrl)); // query parameter
+            if (defaultUnitId != null) queryParams.Add("default_unit_id", Configuration.ApiClient.ParameterToString(defaultUnitId)); // query parameter
+            if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             
             
             
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse20023) ApiClient.Deserialize(response, typeof(InlineResponse20023));
+            return new ApiResponse<InlineResponse20027>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20027) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20027)));
+            
         }
     
         /// <summary>
-        /// Get all VariableCategories Get all VariableCategories
+        /// Get all VariableCategories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
         /// </summary>
-        /// <param name="name">name</param>
-        /// <param name="fillingValue">filling_value</param>
-        /// <param name="maximumAllowedValue">maximum_allowed_value</param>
-        /// <param name="minimumAllowedValue">minimum_allowed_value</param>
-        /// <param name="durationOfAction">duration_of_action</param>
-        /// <param name="onsetDelay">onset_delay</param>
-        /// <param name="combinationOperation">combination_operation</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="name">Name of the category</param>
+        /// <param name="fillingValue">Value for replacing null measurements</param>
+        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
+        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
+        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
+        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
+        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
         /// <param name="updated">updated</param>
-        /// <param name="causeOnly">cause_only</param>
-        /// <param name="_public">public</param>
+        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
+        /// <param name="_public">Is category public</param>
         /// <param name="outcome">outcome</param>
-        /// <param name="createdAt">created_at</param>
-        /// <param name="updatedAt">updated_at</param>
-        /// <param name="imageUrl">image_url</param>
-        /// <param name="defaultUnitId">default_unit_id</param>
-        /// <param name="limit">limit</param>
-        /// <param name="offset">offset</param>
-        /// <param name="sort">sort</param>
-        /// <returns>InlineResponse20023</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20023> VariableCategoriesGetAsync (string name, double? fillingValue, double? maximumAllowedValue, double? minimumAllowedValue, int? durationOfAction, int? onsetDelay, string combinationOperation, int? updated, bool? causeOnly, int? _public, bool? outcome, string createdAt, string updatedAt, string imageUrl, int? defaultUnitId, int? limit, int? offset, string sort)
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="imageUrl">Image URL</param>
+        /// <param name="defaultUnitId">ID of the default unit for the category</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of InlineResponse20027</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20027> VariableCategoriesGetAsync (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null)
+        {
+             ApiResponse<InlineResponse20027> response = await VariableCategoriesGetAsyncWithHttpInfo(accessToken, name, fillingValue, maximumAllowedValue, minimumAllowedValue, durationOfAction, onsetDelay, combinationOperation, updated, causeOnly, _public, outcome, createdAt, updatedAt, imageUrl, defaultUnitId, limit, offset, sort);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Get all VariableCategories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="name">Name of the category</param>
+        /// <param name="fillingValue">Value for replacing null measurements</param>
+        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
+        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
+        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
+        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
+        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
+        /// <param name="updated">updated</param>
+        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
+        /// <param name="_public">Is category public</param>
+        /// <param name="outcome">outcome</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="imageUrl">Image URL</param>
+        /// <param name="defaultUnitId">ID of the default unit for the category</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of ApiResponse (InlineResponse20027)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20027>> VariableCategoriesGetAsyncWithHttpInfo (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -328,54 +582,83 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
-            if (name != null) queryParams.Add("name", ApiClient.ParameterToString(name)); // query parameter
-            if (fillingValue != null) queryParams.Add("filling_value", ApiClient.ParameterToString(fillingValue)); // query parameter
-            if (maximumAllowedValue != null) queryParams.Add("maximum_allowed_value", ApiClient.ParameterToString(maximumAllowedValue)); // query parameter
-            if (minimumAllowedValue != null) queryParams.Add("minimum_allowed_value", ApiClient.ParameterToString(minimumAllowedValue)); // query parameter
-            if (durationOfAction != null) queryParams.Add("duration_of_action", ApiClient.ParameterToString(durationOfAction)); // query parameter
-            if (onsetDelay != null) queryParams.Add("onset_delay", ApiClient.ParameterToString(onsetDelay)); // query parameter
-            if (combinationOperation != null) queryParams.Add("combination_operation", ApiClient.ParameterToString(combinationOperation)); // query parameter
-            if (updated != null) queryParams.Add("updated", ApiClient.ParameterToString(updated)); // query parameter
-            if (causeOnly != null) queryParams.Add("cause_only", ApiClient.ParameterToString(causeOnly)); // query parameter
-            if (_public != null) queryParams.Add("public", ApiClient.ParameterToString(_public)); // query parameter
-            if (outcome != null) queryParams.Add("outcome", ApiClient.ParameterToString(outcome)); // query parameter
-            if (createdAt != null) queryParams.Add("created_at", ApiClient.ParameterToString(createdAt)); // query parameter
-            if (updatedAt != null) queryParams.Add("updated_at", ApiClient.ParameterToString(updatedAt)); // query parameter
-            if (imageUrl != null) queryParams.Add("image_url", ApiClient.ParameterToString(imageUrl)); // query parameter
-            if (defaultUnitId != null) queryParams.Add("default_unit_id", ApiClient.ParameterToString(defaultUnitId)); // query parameter
-            if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-            if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
-            if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (name != null) queryParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // query parameter
+            if (fillingValue != null) queryParams.Add("filling_value", Configuration.ApiClient.ParameterToString(fillingValue)); // query parameter
+            if (maximumAllowedValue != null) queryParams.Add("maximum_allowed_value", Configuration.ApiClient.ParameterToString(maximumAllowedValue)); // query parameter
+            if (minimumAllowedValue != null) queryParams.Add("minimum_allowed_value", Configuration.ApiClient.ParameterToString(minimumAllowedValue)); // query parameter
+            if (durationOfAction != null) queryParams.Add("duration_of_action", Configuration.ApiClient.ParameterToString(durationOfAction)); // query parameter
+            if (onsetDelay != null) queryParams.Add("onset_delay", Configuration.ApiClient.ParameterToString(onsetDelay)); // query parameter
+            if (combinationOperation != null) queryParams.Add("combination_operation", Configuration.ApiClient.ParameterToString(combinationOperation)); // query parameter
+            if (updated != null) queryParams.Add("updated", Configuration.ApiClient.ParameterToString(updated)); // query parameter
+            if (causeOnly != null) queryParams.Add("cause_only", Configuration.ApiClient.ParameterToString(causeOnly)); // query parameter
+            if (_public != null) queryParams.Add("public", Configuration.ApiClient.ParameterToString(_public)); // query parameter
+            if (outcome != null) queryParams.Add("outcome", Configuration.ApiClient.ParameterToString(outcome)); // query parameter
+            if (createdAt != null) queryParams.Add("created_at", Configuration.ApiClient.ParameterToString(createdAt)); // query parameter
+            if (updatedAt != null) queryParams.Add("updated_at", Configuration.ApiClient.ParameterToString(updatedAt)); // query parameter
+            if (imageUrl != null) queryParams.Add("image_url", Configuration.ApiClient.ParameterToString(imageUrl)); // query parameter
+            if (defaultUnitId != null) queryParams.Add("default_unit_id", Configuration.ApiClient.ParameterToString(defaultUnitId)); // query parameter
+            if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             
             
             
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
 
-            return (InlineResponse20023) ApiClient.Deserialize(response, typeof(InlineResponse20023));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse20027>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20027) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20027)));
+            
         }
         
         /// <summary>
         /// Store VariableCategory Store VariableCategory
         /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">VariableCategory that should be stored</param> 
-        /// <returns>InlineResponse20024</returns>            
-        public InlineResponse20024 VariableCategoriesPost (VariableCategory body)
+        /// <returns>InlineResponse20028</returns>
+        public InlineResponse20028 VariableCategoriesPost (string accessToken = null, VariableCategory body = null)
+        {
+             ApiResponse<InlineResponse20028> response = VariableCategoriesPostWithHttpInfo(accessToken, body);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Store VariableCategory Store VariableCategory
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <param name="body">VariableCategory that should be stored</param> 
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        public ApiResponse< InlineResponse20028 > VariableCategoriesPostWithHttpInfo (string accessToken = null, VariableCategory body = null)
         {
             
     
@@ -383,7 +666,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -392,40 +675,67 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
-            postBody = ApiClient.Serialize(body); // http body (model) parameter
+            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesPost: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesPost: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesPost: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse20024) ApiClient.Deserialize(response, typeof(InlineResponse20024));
+            return new ApiResponse<InlineResponse20028>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20028) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20028)));
+            
         }
     
         /// <summary>
         /// Store VariableCategory Store VariableCategory
         /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>InlineResponse20024</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20024> VariableCategoriesPostAsync (VariableCategory body)
+        /// <returns>Task of InlineResponse20028</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20028> VariableCategoriesPostAsync (string accessToken = null, VariableCategory body = null)
+        {
+             ApiResponse<InlineResponse20028> response = await VariableCategoriesPostAsyncWithHttpInfo(accessToken, body);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Store VariableCategory Store VariableCategory
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableCategory that should be stored</param>
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20028>> VariableCategoriesPostAsyncWithHttpInfo (string accessToken = null, VariableCategory body = null)
         {
             
     
@@ -442,37 +752,66 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
-            postBody = ApiClient.Serialize(body); // http body (model) parameter
+            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesPost: " + response.Content, response.Content);
 
-            return (InlineResponse20024) ApiClient.Deserialize(response, typeof(InlineResponse20024));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesPost: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesPost: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse20028>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20028) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20028)));
+            
         }
         
         /// <summary>
         /// Get VariableCategory Get VariableCategory
         /// </summary>
         /// <param name="id">id of VariableCategory</param> 
-        /// <returns>InlineResponse20024</returns>            
-        public InlineResponse20024 VariableCategoriesIdGet (int? id)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <returns>InlineResponse20028</returns>
+        public InlineResponse20028 VariableCategoriesIdGet (int? id, string accessToken = null)
+        {
+             ApiResponse<InlineResponse20028> response = VariableCategoriesIdGetWithHttpInfo(id, accessToken);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Get VariableCategory Get VariableCategory
+        /// </summary>
+        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        public ApiResponse< InlineResponse20028 > VariableCategoriesIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -483,7 +822,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -492,40 +831,67 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
             
+
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdGet: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdGet: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse20024) ApiClient.Deserialize(response, typeof(InlineResponse20024));
+            return new ApiResponse<InlineResponse20028>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20028) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20028)));
+            
         }
     
         /// <summary>
         /// Get VariableCategory Get VariableCategory
         /// </summary>
         /// <param name="id">id of VariableCategory</param>
-        /// <returns>InlineResponse20024</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20024> VariableCategoriesIdGetAsync (int? id)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse20028</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20028> VariableCategoriesIdGetAsync (int? id, string accessToken = null)
+        {
+             ApiResponse<InlineResponse20028> response = await VariableCategoriesIdGetAsyncWithHttpInfo(id, accessToken);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Get VariableCategory Get VariableCategory
+        /// </summary>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20028>> VariableCategoriesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdGet");
@@ -544,38 +910,68 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
             
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdGet: " + response.Content, response.Content);
 
-            return (InlineResponse20024) ApiClient.Deserialize(response, typeof(InlineResponse20024));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdGet: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse20028>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20028) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20028)));
+            
         }
         
         /// <summary>
         /// Update VariableCategory Update VariableCategory
         /// </summary>
         /// <param name="id">id of VariableCategory</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">VariableCategory that should be updated</param> 
-        /// <returns>InlineResponse2002</returns>            
-        public InlineResponse2002 VariableCategoriesIdPut (int? id, VariableCategory body)
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 VariableCategoriesIdPut (int? id, string accessToken = null, VariableCategory body = null)
+        {
+             ApiResponse<InlineResponse2002> response = VariableCategoriesIdPutWithHttpInfo(id, accessToken, body);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Update VariableCategory Update VariableCategory
+        /// </summary>
+        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <param name="body">VariableCategory that should be updated</param> 
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > VariableCategoriesIdPutWithHttpInfo (int? id, string accessToken = null, VariableCategory body = null)
         {
             
             // verify the required parameter 'id' is set
@@ -586,7 +982,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -595,42 +991,70 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
+            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
             
-            postBody = ApiClient.Serialize(body); // http body (model) parameter
+
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdPut: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdPut: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdPut: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdPut: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse2002) ApiClient.Deserialize(response, typeof(InlineResponse2002));
+            return new ApiResponse<InlineResponse2002>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2002) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2002)));
+            
         }
     
         /// <summary>
         /// Update VariableCategory Update VariableCategory
         /// </summary>
         /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableCategory that should be updated</param>
-        /// <returns>InlineResponse2002</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdPutAsync (int? id, VariableCategory body)
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdPutAsync (int? id, string accessToken = null, VariableCategory body = null)
+        {
+             ApiResponse<InlineResponse2002> response = await VariableCategoriesIdPutAsyncWithHttpInfo(id, accessToken, body);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Update VariableCategory Update VariableCategory
+        /// </summary>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableCategory that should be updated</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableCategoriesIdPutAsyncWithHttpInfo (int? id, string accessToken = null, VariableCategory body = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdPut");
@@ -649,38 +1073,67 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
+            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
             
-            postBody = ApiClient.Serialize(body); // http body (model) parameter
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdPut: " + response.Content, response.Content);
 
-            return (InlineResponse2002) ApiClient.Deserialize(response, typeof(InlineResponse2002));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdPut: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdPut: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse2002>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2002) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2002)));
+            
         }
         
         /// <summary>
         /// Delete VariableCategory Delete VariableCategory
         /// </summary>
         /// <param name="id">id of VariableCategory</param> 
-        /// <returns>InlineResponse2002</returns>            
-        public InlineResponse2002 VariableCategoriesIdDelete (int? id)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 VariableCategoriesIdDelete (int? id, string accessToken = null)
+        {
+             ApiResponse<InlineResponse2002> response = VariableCategoriesIdDeleteWithHttpInfo(id, accessToken);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Delete VariableCategory Delete VariableCategory
+        /// </summary>
+        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > VariableCategoriesIdDeleteWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -691,7 +1144,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -700,40 +1153,67 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
             
+
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdDelete: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdDelete: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdDelete: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdDelete: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse2002) ApiClient.Deserialize(response, typeof(InlineResponse2002));
+            return new ApiResponse<InlineResponse2002>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2002) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2002)));
+            
         }
     
         /// <summary>
         /// Delete VariableCategory Delete VariableCategory
         /// </summary>
         /// <param name="id">id of VariableCategory</param>
-        /// <returns>InlineResponse2002</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdDeleteAsync (int? id)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdDeleteAsync (int? id, string accessToken = null)
+        {
+             ApiResponse<InlineResponse2002> response = await VariableCategoriesIdDeleteAsyncWithHttpInfo(id, accessToken);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Delete VariableCategory Delete VariableCategory
+        /// </summary>
+        /// <param name="id">id of VariableCategory</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableCategoriesIdDeleteAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdDelete");
@@ -752,29 +1232,45 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
             
-            
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableCategoriesIdDelete: " + response.Content, response.Content);
 
-            return (InlineResponse2002) ApiClient.Deserialize(response, typeof(InlineResponse2002));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdDelete: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableCategoriesIdDelete: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse2002>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2002) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2002)));
+            
         }
         
     }

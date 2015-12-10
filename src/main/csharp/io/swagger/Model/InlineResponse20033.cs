@@ -14,14 +14,14 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class InlineResponse2001 : IEquatable<InlineResponse2001>
+    public class InlineResponse20033 : IEquatable<InlineResponse20033>
     {
         
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data", EmitDefaultValue=false)]
-        public AggregatedCorrelation Data { get; set; }
+        public List<Vote> Data { get; set; }
   
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse2001 {\n");
+            sb.Append("class InlineResponse20033 {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  Success: ").Append(Success).Append("\n");
             
@@ -64,15 +64,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as InlineResponse2001);
+            return this.Equals(obj as InlineResponse20033);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse2001 instances are equal
+        /// Returns true if InlineResponse20033 instances are equal
         /// </summary>
-        /// <param name="obj">Instance of InlineResponse2001 to be compared</param>
+        /// <param name="obj">Instance of InlineResponse20033 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse2001 other)
+        public bool Equals(InlineResponse20033 other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -82,7 +82,7 @@ namespace IO.Swagger.Model
                 (
                     this.Data == other.Data ||
                     this.Data != null &&
-                    this.Data.Equals(other.Data)
+                    this.Data.SequenceEqual(other.Data)
                 ) && 
                 (
                     this.Success == other.Success ||

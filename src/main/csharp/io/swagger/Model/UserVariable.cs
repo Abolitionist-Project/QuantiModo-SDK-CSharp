@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class UserVariable : IEquatable<UserVariable>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserVariable" /> class.
+        /// </summary>
+        public UserVariable()
+        {
+            
+        }
+
         
         /// <summary>
         /// ID of the parent variable if this variable has any parent
@@ -362,6 +370,22 @@ namespace IO.Swagger.Model
   
         
         /// <summary>
+        /// Earliest measurement start_time to be used in analysis. Use ISO 8601 datetime format
+        /// </summary>
+        /// <value>Earliest measurement start_time to be used in analysis. Use ISO 8601 datetime format</value>
+        [DataMember(Name="experiment_start_time", EmitDefaultValue=false)]
+        public DateTime? ExperimentStartTime { get; set; }
+  
+        
+        /// <summary>
+        /// Latest measurement start_time to be used in analysis. Use ISO 8601 datetime format
+        /// </summary>
+        /// <value>Latest measurement start_time to be used in analysis. Use ISO 8601 datetime format</value>
+        [DataMember(Name="experiment_end_time", EmitDefaultValue=false)]
+        public DateTime? ExperimentEndTime { get; set; }
+  
+        
+        /// <summary>
         /// When the record was first created. Use ISO 8601 datetime format
         /// </summary>
         /// <value>When the record was first created. Use ISO 8601 datetime format</value>
@@ -493,6 +517,8 @@ namespace IO.Swagger.Model
             sb.Append("  Latitude: ").Append(Latitude).Append("\n");
             sb.Append("  Longitude: ").Append(Longitude).Append("\n");
             sb.Append("  Location: ").Append(Location).Append("\n");
+            sb.Append("  ExperimentStartTime: ").Append(ExperimentStartTime).Append("\n");
+            sb.Append("  ExperimentEndTime: ").Append(ExperimentEndTime).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("  Outcome: ").Append(Outcome).Append("\n");
@@ -756,6 +782,16 @@ namespace IO.Swagger.Model
                     this.Location.Equals(other.Location)
                 ) && 
                 (
+                    this.ExperimentStartTime == other.ExperimentStartTime ||
+                    this.ExperimentStartTime != null &&
+                    this.ExperimentStartTime.Equals(other.ExperimentStartTime)
+                ) && 
+                (
+                    this.ExperimentEndTime == other.ExperimentEndTime ||
+                    this.ExperimentEndTime != null &&
+                    this.ExperimentEndTime.Equals(other.ExperimentEndTime)
+                ) && 
+                (
                     this.CreatedAt == other.CreatedAt ||
                     this.CreatedAt != null &&
                     this.CreatedAt.Equals(other.CreatedAt)
@@ -947,6 +983,12 @@ namespace IO.Swagger.Model
                 
                 if (this.Location != null)
                     hash = hash * 57 + this.Location.GetHashCode();
+                
+                if (this.ExperimentStartTime != null)
+                    hash = hash * 57 + this.ExperimentStartTime.GetHashCode();
+                
+                if (this.ExperimentEndTime != null)
+                    hash = hash * 57 + this.ExperimentEndTime.GetHashCode();
                 
                 if (this.CreatedAt != null)
                     hash = hash * 57 + this.CreatedAt.GetHashCode();

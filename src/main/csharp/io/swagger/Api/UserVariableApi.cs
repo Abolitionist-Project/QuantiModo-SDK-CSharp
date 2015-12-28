@@ -79,8 +79,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20016</returns>
-        InlineResponse20016 UserVariablesGet (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse20018</returns>
+        InlineResponse20018 UserVariablesGet (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all UserVariables
@@ -146,8 +146,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20016</returns>
-        ApiResponse<InlineResponse20016> UserVariablesGetWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse20018</returns>
+        ApiResponse<InlineResponse20018> UserVariablesGetWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all UserVariables
@@ -213,8 +213,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20016</returns>
-        System.Threading.Tasks.Task<InlineResponse20016> UserVariablesGetAsync (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse20018</returns>
+        System.Threading.Tasks.Task<InlineResponse20018> UserVariablesGetAsync (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all UserVariables
@@ -280,8 +280,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> UserVariablesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20018>> UserVariablesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store UserVariable
@@ -291,8 +291,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariable that should be stored</param>
-        /// <returns>InlineResponse20026</returns>
-        InlineResponse20026 UserVariablesPost (string accessToken = null, UserVariable body = null);
+        /// <returns>InlineResponse20030</returns>
+        InlineResponse20030 UserVariablesPost (string accessToken = null, UserVariable body = null);
   
         /// <summary>
         /// Store UserVariable
@@ -302,8 +302,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariable that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20026</returns>
-        ApiResponse<InlineResponse20026> UserVariablesPostWithHttpInfo (string accessToken = null, UserVariable body = null);
+        /// <returns>ApiResponse of InlineResponse20030</returns>
+        ApiResponse<InlineResponse20030> UserVariablesPostWithHttpInfo (string accessToken = null, UserVariable body = null);
 
         /// <summary>
         /// Store UserVariable
@@ -313,8 +313,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariable that should be stored</param>
-        /// <returns>Task of InlineResponse20026</returns>
-        System.Threading.Tasks.Task<InlineResponse20026> UserVariablesPostAsync (string accessToken = null, UserVariable body = null);
+        /// <returns>Task of InlineResponse20030</returns>
+        System.Threading.Tasks.Task<InlineResponse20030> UserVariablesPostAsync (string accessToken = null, UserVariable body = null);
 
         /// <summary>
         /// Store UserVariable
@@ -324,8 +324,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariable that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20026>> UserVariablesPostAsyncWithHttpInfo (string accessToken = null, UserVariable body = null);
+        /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20030>> UserVariablesPostAsyncWithHttpInfo (string accessToken = null, UserVariable body = null);
         
         /// <summary>
         /// Get UserVariable
@@ -335,8 +335,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UserVariable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20026</returns>
-        InlineResponse20026 UserVariablesIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20030</returns>
+        InlineResponse20030 UserVariablesIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get UserVariable
@@ -346,8 +346,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UserVariable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20026</returns>
-        ApiResponse<InlineResponse20026> UserVariablesIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20030</returns>
+        ApiResponse<InlineResponse20030> UserVariablesIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
         /// Get UserVariable
@@ -357,8 +357,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UserVariable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20026</returns>
-        System.Threading.Tasks.Task<InlineResponse20026> UserVariablesIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20030</returns>
+        System.Threading.Tasks.Task<InlineResponse20030> UserVariablesIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
         /// Get UserVariable
@@ -368,8 +368,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UserVariable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20026>> UserVariablesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20030>> UserVariablesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update UserVariable
@@ -602,10 +602,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20016</returns>
-        public InlineResponse20016 UserVariablesGet (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse20018</returns>
+        public InlineResponse20018 UserVariablesGet (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20016> response = UserVariablesGetWithHttpInfo(accessToken, clientId, parentId, variableId, userId, defaultUnitId, minimumAllowedValue, maximumAllowedValue, fillingValue, joinWith, onsetDelay, durationOfAction, variableCategoryId, updated, _public, causeOnly, fillingType, numberOfMeasurements, numberOfProcessedMeasurements, measurementsAtLastAnalysis, lastUnitId, lastOriginalUnitId, lastOriginalValue, lastValue, lastOriginalValue2, lastSourceId, numberOfCorrelations, status, errorMessage, lastSuccessfulUpdateTime, standardDeviation, variance, minimumRecordedValue, maximumRecordedValue, mean, median, mostCommonUnitId, mostCommonValue, numberOfUniqueDailyValues, numberOfChanges, skewness, kurtosis, latitude, longitude, location, createdAt, updatedAt, outcome, sources, earliestSourceTime, latestSourceTime, earliestMeasurementTime, latestMeasurementTime, earliestFillingTime, latestFillingTime, limit, offset, sort);
+             ApiResponse<InlineResponse20018> response = UserVariablesGetWithHttpInfo(accessToken, clientId, parentId, variableId, userId, defaultUnitId, minimumAllowedValue, maximumAllowedValue, fillingValue, joinWith, onsetDelay, durationOfAction, variableCategoryId, updated, _public, causeOnly, fillingType, numberOfMeasurements, numberOfProcessedMeasurements, measurementsAtLastAnalysis, lastUnitId, lastOriginalUnitId, lastOriginalValue, lastValue, lastOriginalValue2, lastSourceId, numberOfCorrelations, status, errorMessage, lastSuccessfulUpdateTime, standardDeviation, variance, minimumRecordedValue, maximumRecordedValue, mean, median, mostCommonUnitId, mostCommonValue, numberOfUniqueDailyValues, numberOfChanges, skewness, kurtosis, latitude, longitude, location, createdAt, updatedAt, outcome, sources, earliestSourceTime, latestSourceTime, earliestMeasurementTime, latestMeasurementTime, earliestFillingTime, latestFillingTime, limit, offset, sort);
              return response.Data;
         }
 
@@ -670,8 +670,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20016</returns>
-        public ApiResponse< InlineResponse20016 > UserVariablesGetWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse20018</returns>
+        public ApiResponse< InlineResponse20018 > UserVariablesGetWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -779,9 +779,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariablesGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20016>(statusCode,
+            return new ApiResponse<InlineResponse20018>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20016) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20016)));
+                (InlineResponse20018) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20018)));
             
         }
     
@@ -846,10 +846,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20016</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20016> UserVariablesGetAsync (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse20018</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20018> UserVariablesGetAsync (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20016> response = await UserVariablesGetAsyncWithHttpInfo(accessToken, clientId, parentId, variableId, userId, defaultUnitId, minimumAllowedValue, maximumAllowedValue, fillingValue, joinWith, onsetDelay, durationOfAction, variableCategoryId, updated, _public, causeOnly, fillingType, numberOfMeasurements, numberOfProcessedMeasurements, measurementsAtLastAnalysis, lastUnitId, lastOriginalUnitId, lastOriginalValue, lastValue, lastOriginalValue2, lastSourceId, numberOfCorrelations, status, errorMessage, lastSuccessfulUpdateTime, standardDeviation, variance, minimumRecordedValue, maximumRecordedValue, mean, median, mostCommonUnitId, mostCommonValue, numberOfUniqueDailyValues, numberOfChanges, skewness, kurtosis, latitude, longitude, location, createdAt, updatedAt, outcome, sources, earliestSourceTime, latestSourceTime, earliestMeasurementTime, latestMeasurementTime, earliestFillingTime, latestFillingTime, limit, offset, sort);
+             ApiResponse<InlineResponse20018> response = await UserVariablesGetAsyncWithHttpInfo(accessToken, clientId, parentId, variableId, userId, defaultUnitId, minimumAllowedValue, maximumAllowedValue, fillingValue, joinWith, onsetDelay, durationOfAction, variableCategoryId, updated, _public, causeOnly, fillingType, numberOfMeasurements, numberOfProcessedMeasurements, measurementsAtLastAnalysis, lastUnitId, lastOriginalUnitId, lastOriginalValue, lastValue, lastOriginalValue2, lastSourceId, numberOfCorrelations, status, errorMessage, lastSuccessfulUpdateTime, standardDeviation, variance, minimumRecordedValue, maximumRecordedValue, mean, median, mostCommonUnitId, mostCommonValue, numberOfUniqueDailyValues, numberOfChanges, skewness, kurtosis, latitude, longitude, location, createdAt, updatedAt, outcome, sources, earliestSourceTime, latestSourceTime, earliestMeasurementTime, latestMeasurementTime, earliestFillingTime, latestFillingTime, limit, offset, sort);
              return response.Data;
 
         }
@@ -915,8 +915,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> UserVariablesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20018>> UserVariablesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -1024,9 +1024,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariablesGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20016>(statusCode,
+            return new ApiResponse<InlineResponse20018>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20016) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20016)));
+                (InlineResponse20018) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20018)));
             
         }
         
@@ -1035,10 +1035,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">UserVariable that should be stored</param> 
-        /// <returns>InlineResponse20026</returns>
-        public InlineResponse20026 UserVariablesPost (string accessToken = null, UserVariable body = null)
+        /// <returns>InlineResponse20030</returns>
+        public InlineResponse20030 UserVariablesPost (string accessToken = null, UserVariable body = null)
         {
-             ApiResponse<InlineResponse20026> response = UserVariablesPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20030> response = UserVariablesPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -1047,8 +1047,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">UserVariable that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20026</returns>
-        public ApiResponse< InlineResponse20026 > UserVariablesPostWithHttpInfo (string accessToken = null, UserVariable body = null)
+        /// <returns>ApiResponse of InlineResponse20030</returns>
+        public ApiResponse< InlineResponse20030 > UserVariablesPostWithHttpInfo (string accessToken = null, UserVariable body = null)
         {
             
     
@@ -1100,9 +1100,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariablesPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20026>(statusCode,
+            return new ApiResponse<InlineResponse20030>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20026) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20026)));
+                (InlineResponse20030) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20030)));
             
         }
     
@@ -1111,10 +1111,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariable that should be stored</param>
-        /// <returns>Task of InlineResponse20026</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20026> UserVariablesPostAsync (string accessToken = null, UserVariable body = null)
+        /// <returns>Task of InlineResponse20030</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20030> UserVariablesPostAsync (string accessToken = null, UserVariable body = null)
         {
-             ApiResponse<InlineResponse20026> response = await UserVariablesPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20030> response = await UserVariablesPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -1124,8 +1124,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariable that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20026>> UserVariablesPostAsyncWithHttpInfo (string accessToken = null, UserVariable body = null)
+        /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20030>> UserVariablesPostAsyncWithHttpInfo (string accessToken = null, UserVariable body = null)
         {
             
     
@@ -1177,9 +1177,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariablesPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20026>(statusCode,
+            return new ApiResponse<InlineResponse20030>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20026) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20026)));
+                (InlineResponse20030) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20030)));
             
         }
         
@@ -1188,10 +1188,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UserVariable</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20026</returns>
-        public InlineResponse20026 UserVariablesIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20030</returns>
+        public InlineResponse20030 UserVariablesIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20026> response = UserVariablesIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20030> response = UserVariablesIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
@@ -1200,8 +1200,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UserVariable</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20026</returns>
-        public ApiResponse< InlineResponse20026 > UserVariablesIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20030</returns>
+        public ApiResponse< InlineResponse20030 > UserVariablesIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -1256,9 +1256,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariablesIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20026>(statusCode,
+            return new ApiResponse<InlineResponse20030>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20026) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20026)));
+                (InlineResponse20030) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20030)));
             
         }
     
@@ -1267,10 +1267,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UserVariable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20026</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20026> UserVariablesIdGetAsync (int? id, string accessToken = null)
+        /// <returns>Task of InlineResponse20030</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20030> UserVariablesIdGetAsync (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20026> response = await UserVariablesIdGetAsyncWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20030> response = await UserVariablesIdGetAsyncWithHttpInfo(id, accessToken);
              return response.Data;
 
         }
@@ -1280,8 +1280,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UserVariable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20026)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20026>> UserVariablesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>Task of ApiResponse (InlineResponse20030)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20030>> UserVariablesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UserVariablesIdGet");
@@ -1335,9 +1335,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariablesIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20026>(statusCode,
+            return new ApiResponse<InlineResponse20030>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20026) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20026)));
+                (InlineResponse20030) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20030)));
             
         }
         

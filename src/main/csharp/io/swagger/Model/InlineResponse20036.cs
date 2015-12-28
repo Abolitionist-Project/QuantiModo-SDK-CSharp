@@ -14,12 +14,12 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class InlineResponse20015 : IEquatable<InlineResponse20015>
+    public class InlineResponse20036 : IEquatable<InlineResponse20036>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse20015" /> class.
+        /// Initializes a new instance of the <see cref="InlineResponse20036" /> class.
         /// </summary>
-        public InlineResponse20015()
+        public InlineResponse20036()
         {
             
         }
@@ -29,7 +29,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data", EmitDefaultValue=false)]
-        public List<TrackingReminder> Data { get; set; }
+        public Vote Data { get; set; }
   
         
         /// <summary>
@@ -47,7 +47,7 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse20015 {\n");
+            sb.Append("class InlineResponse20036 {\n");
             sb.Append("  Data: ").Append(Data).Append("\n");
             sb.Append("  Success: ").Append(Success).Append("\n");
             
@@ -72,15 +72,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as InlineResponse20015);
+            return this.Equals(obj as InlineResponse20036);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse20015 instances are equal
+        /// Returns true if InlineResponse20036 instances are equal
         /// </summary>
-        /// <param name="obj">Instance of InlineResponse20015 to be compared</param>
+        /// <param name="obj">Instance of InlineResponse20036 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse20015 other)
+        public bool Equals(InlineResponse20036 other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -90,7 +90,7 @@ namespace IO.Swagger.Model
                 (
                     this.Data == other.Data ||
                     this.Data != null &&
-                    this.Data.SequenceEqual(other.Data)
+                    this.Data.Equals(other.Data)
                 ) && 
                 (
                     this.Success == other.Success ||

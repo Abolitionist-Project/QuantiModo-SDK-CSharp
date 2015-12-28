@@ -16,12 +16,20 @@ namespace IO.Swagger.Model
     [DataContract]
     public class InlineResponse20021 : IEquatable<InlineResponse20021>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse20021" /> class.
+        /// </summary>
+        public InlineResponse20021()
+        {
+            
+        }
+
         
         /// <summary>
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data", EmitDefaultValue=false)]
-        public List<Unit> Data { get; set; }
+        public List<Source> Data { get; set; }
   
         
         /// <summary>

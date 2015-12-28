@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class Source : IEquatable<Source>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Source" /> class.
+        /// </summary>
+        public Source()
+        {
+            
+        }
+
         
         /// <summary>
         /// id

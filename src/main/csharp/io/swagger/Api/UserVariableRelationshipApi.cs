@@ -42,8 +42,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20024</returns>
-        InlineResponse20024 UserVariableRelationshipsGet (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse20017</returns>
+        InlineResponse20017 UserVariableRelationshipsGet (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all UserVariableRelationships
@@ -72,8 +72,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20024</returns>
-        ApiResponse<InlineResponse20024> UserVariableRelationshipsGetWithHttpInfo (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse20017</returns>
+        ApiResponse<InlineResponse20017> UserVariableRelationshipsGetWithHttpInfo (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all UserVariableRelationships
@@ -102,8 +102,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20024</returns>
-        System.Threading.Tasks.Task<InlineResponse20024> UserVariableRelationshipsGetAsync (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse20017</returns>
+        System.Threading.Tasks.Task<InlineResponse20017> UserVariableRelationshipsGetAsync (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all UserVariableRelationships
@@ -132,8 +132,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20024>> UserVariableRelationshipsGetAsyncWithHttpInfo (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20017>> UserVariableRelationshipsGetAsyncWithHttpInfo (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store UserVariableRelationship
@@ -143,8 +143,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariableRelationship that should be stored</param>
-        /// <returns>InlineResponse20025</returns>
-        InlineResponse20025 UserVariableRelationshipsPost (string accessToken = null, UserVariableRelationship body = null);
+        /// <returns>InlineResponse20029</returns>
+        InlineResponse20029 UserVariableRelationshipsPost (string accessToken = null, UserVariableRelationship body = null);
   
         /// <summary>
         /// Store UserVariableRelationship
@@ -154,8 +154,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariableRelationship that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20025</returns>
-        ApiResponse<InlineResponse20025> UserVariableRelationshipsPostWithHttpInfo (string accessToken = null, UserVariableRelationship body = null);
+        /// <returns>ApiResponse of InlineResponse20029</returns>
+        ApiResponse<InlineResponse20029> UserVariableRelationshipsPostWithHttpInfo (string accessToken = null, UserVariableRelationship body = null);
 
         /// <summary>
         /// Store UserVariableRelationship
@@ -165,8 +165,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariableRelationship that should be stored</param>
-        /// <returns>Task of InlineResponse20025</returns>
-        System.Threading.Tasks.Task<InlineResponse20025> UserVariableRelationshipsPostAsync (string accessToken = null, UserVariableRelationship body = null);
+        /// <returns>Task of InlineResponse20029</returns>
+        System.Threading.Tasks.Task<InlineResponse20029> UserVariableRelationshipsPostAsync (string accessToken = null, UserVariableRelationship body = null);
 
         /// <summary>
         /// Store UserVariableRelationship
@@ -176,8 +176,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariableRelationship that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20025>> UserVariableRelationshipsPostAsyncWithHttpInfo (string accessToken = null, UserVariableRelationship body = null);
+        /// <returns>Task of ApiResponse (InlineResponse20029)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20029>> UserVariableRelationshipsPostAsyncWithHttpInfo (string accessToken = null, UserVariableRelationship body = null);
         
         /// <summary>
         /// Get UserVariableRelationship
@@ -187,8 +187,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UserVariableRelationship</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20025</returns>
-        InlineResponse20025 UserVariableRelationshipsIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20029</returns>
+        InlineResponse20029 UserVariableRelationshipsIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get UserVariableRelationship
@@ -198,8 +198,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UserVariableRelationship</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20025</returns>
-        ApiResponse<InlineResponse20025> UserVariableRelationshipsIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20029</returns>
+        ApiResponse<InlineResponse20029> UserVariableRelationshipsIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
         /// Get UserVariableRelationship
@@ -209,8 +209,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UserVariableRelationship</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20025</returns>
-        System.Threading.Tasks.Task<InlineResponse20025> UserVariableRelationshipsIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20029</returns>
+        System.Threading.Tasks.Task<InlineResponse20029> UserVariableRelationshipsIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
         /// Get UserVariableRelationship
@@ -220,8 +220,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UserVariableRelationship</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20025>> UserVariableRelationshipsIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20029)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20029>> UserVariableRelationshipsIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update UserVariableRelationship
@@ -417,10 +417,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20024</returns>
-        public InlineResponse20024 UserVariableRelationshipsGet (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse20017</returns>
+        public InlineResponse20017 UserVariableRelationshipsGet (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20024> response = UserVariableRelationshipsGetWithHttpInfo(accessToken, id, confidenceLevel, confidenceScore, direction, durationOfAction, errorMessage, onsetDelay, outcomeVariableId, predictorVariableId, predictorUnitId, sinnRank, strengthLevel, strengthScore, userId, vote, valuePredictingHighOutcome, valuePredictingLowOutcome, limit, offset, sort);
+             ApiResponse<InlineResponse20017> response = UserVariableRelationshipsGetWithHttpInfo(accessToken, id, confidenceLevel, confidenceScore, direction, durationOfAction, errorMessage, onsetDelay, outcomeVariableId, predictorVariableId, predictorUnitId, sinnRank, strengthLevel, strengthScore, userId, vote, valuePredictingHighOutcome, valuePredictingLowOutcome, limit, offset, sort);
              return response.Data;
         }
 
@@ -448,8 +448,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20024</returns>
-        public ApiResponse< InlineResponse20024 > UserVariableRelationshipsGetWithHttpInfo (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse20017</returns>
+        public ApiResponse< InlineResponse20017 > UserVariableRelationshipsGetWithHttpInfo (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -520,9 +520,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariableRelationshipsGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20024>(statusCode,
+            return new ApiResponse<InlineResponse20017>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20024) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20024)));
+                (InlineResponse20017) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20017)));
             
         }
     
@@ -550,10 +550,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20024</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20024> UserVariableRelationshipsGetAsync (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse20017</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20017> UserVariableRelationshipsGetAsync (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20024> response = await UserVariableRelationshipsGetAsyncWithHttpInfo(accessToken, id, confidenceLevel, confidenceScore, direction, durationOfAction, errorMessage, onsetDelay, outcomeVariableId, predictorVariableId, predictorUnitId, sinnRank, strengthLevel, strengthScore, userId, vote, valuePredictingHighOutcome, valuePredictingLowOutcome, limit, offset, sort);
+             ApiResponse<InlineResponse20017> response = await UserVariableRelationshipsGetAsyncWithHttpInfo(accessToken, id, confidenceLevel, confidenceScore, direction, durationOfAction, errorMessage, onsetDelay, outcomeVariableId, predictorVariableId, predictorUnitId, sinnRank, strengthLevel, strengthScore, userId, vote, valuePredictingHighOutcome, valuePredictingLowOutcome, limit, offset, sort);
              return response.Data;
 
         }
@@ -582,8 +582,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20024>> UserVariableRelationshipsGetAsyncWithHttpInfo (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse20017)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20017>> UserVariableRelationshipsGetAsyncWithHttpInfo (string accessToken = null, int? id = null, string confidenceLevel = null, double? confidenceScore = null, string direction = null, int? durationOfAction = null, string errorMessage = null, int? onsetDelay = null, int? outcomeVariableId = null, int? predictorVariableId = null, int? predictorUnitId = null, double? sinnRank = null, string strengthLevel = null, double? strengthScore = null, int? userId = null, string vote = null, double? valuePredictingHighOutcome = null, double? valuePredictingLowOutcome = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -654,9 +654,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariableRelationshipsGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20024>(statusCode,
+            return new ApiResponse<InlineResponse20017>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20024) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20024)));
+                (InlineResponse20017) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20017)));
             
         }
         
@@ -665,10 +665,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">UserVariableRelationship that should be stored</param> 
-        /// <returns>InlineResponse20025</returns>
-        public InlineResponse20025 UserVariableRelationshipsPost (string accessToken = null, UserVariableRelationship body = null)
+        /// <returns>InlineResponse20029</returns>
+        public InlineResponse20029 UserVariableRelationshipsPost (string accessToken = null, UserVariableRelationship body = null)
         {
-             ApiResponse<InlineResponse20025> response = UserVariableRelationshipsPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20029> response = UserVariableRelationshipsPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -677,8 +677,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">UserVariableRelationship that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20025</returns>
-        public ApiResponse< InlineResponse20025 > UserVariableRelationshipsPostWithHttpInfo (string accessToken = null, UserVariableRelationship body = null)
+        /// <returns>ApiResponse of InlineResponse20029</returns>
+        public ApiResponse< InlineResponse20029 > UserVariableRelationshipsPostWithHttpInfo (string accessToken = null, UserVariableRelationship body = null)
         {
             
     
@@ -730,9 +730,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariableRelationshipsPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20025>(statusCode,
+            return new ApiResponse<InlineResponse20029>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20025) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20025)));
+                (InlineResponse20029) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20029)));
             
         }
     
@@ -741,10 +741,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariableRelationship that should be stored</param>
-        /// <returns>Task of InlineResponse20025</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20025> UserVariableRelationshipsPostAsync (string accessToken = null, UserVariableRelationship body = null)
+        /// <returns>Task of InlineResponse20029</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20029> UserVariableRelationshipsPostAsync (string accessToken = null, UserVariableRelationship body = null)
         {
-             ApiResponse<InlineResponse20025> response = await UserVariableRelationshipsPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20029> response = await UserVariableRelationshipsPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -754,8 +754,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UserVariableRelationship that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20025>> UserVariableRelationshipsPostAsyncWithHttpInfo (string accessToken = null, UserVariableRelationship body = null)
+        /// <returns>Task of ApiResponse (InlineResponse20029)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20029>> UserVariableRelationshipsPostAsyncWithHttpInfo (string accessToken = null, UserVariableRelationship body = null)
         {
             
     
@@ -807,9 +807,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariableRelationshipsPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20025>(statusCode,
+            return new ApiResponse<InlineResponse20029>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20025) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20025)));
+                (InlineResponse20029) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20029)));
             
         }
         
@@ -818,10 +818,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UserVariableRelationship</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20025</returns>
-        public InlineResponse20025 UserVariableRelationshipsIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20029</returns>
+        public InlineResponse20029 UserVariableRelationshipsIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20025> response = UserVariableRelationshipsIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20029> response = UserVariableRelationshipsIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
@@ -830,8 +830,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UserVariableRelationship</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20025</returns>
-        public ApiResponse< InlineResponse20025 > UserVariableRelationshipsIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20029</returns>
+        public ApiResponse< InlineResponse20029 > UserVariableRelationshipsIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -886,9 +886,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariableRelationshipsIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20025>(statusCode,
+            return new ApiResponse<InlineResponse20029>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20025) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20025)));
+                (InlineResponse20029) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20029)));
             
         }
     
@@ -897,10 +897,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UserVariableRelationship</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20025</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20025> UserVariableRelationshipsIdGetAsync (int? id, string accessToken = null)
+        /// <returns>Task of InlineResponse20029</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20029> UserVariableRelationshipsIdGetAsync (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20025> response = await UserVariableRelationshipsIdGetAsyncWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20029> response = await UserVariableRelationshipsIdGetAsyncWithHttpInfo(id, accessToken);
              return response.Data;
 
         }
@@ -910,8 +910,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UserVariableRelationship</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20025>> UserVariableRelationshipsIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>Task of ApiResponse (InlineResponse20029)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20029>> UserVariableRelationshipsIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UserVariableRelationshipsIdGet");
@@ -965,9 +965,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariableRelationshipsIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20025>(statusCode,
+            return new ApiResponse<InlineResponse20029>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20025) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20025)));
+                (InlineResponse20029) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20029)));
             
         }
         

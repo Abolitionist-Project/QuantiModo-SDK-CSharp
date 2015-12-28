@@ -32,8 +32,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20015</returns>
-        InlineResponse20015 UpdatesGet (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse20016</returns>
+        InlineResponse20016 UpdatesGet (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all Updates
@@ -52,8 +52,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20015</returns>
-        ApiResponse<InlineResponse20015> UpdatesGetWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse20016</returns>
+        ApiResponse<InlineResponse20016> UpdatesGetWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all Updates
@@ -72,8 +72,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20015</returns>
-        System.Threading.Tasks.Task<InlineResponse20015> UpdatesGetAsync (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse20016</returns>
+        System.Threading.Tasks.Task<InlineResponse20016> UpdatesGetAsync (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all Updates
@@ -92,8 +92,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20015>> UpdatesGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> UpdatesGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store Update
@@ -103,8 +103,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Update that should be stored</param>
-        /// <returns>InlineResponse20023</returns>
-        InlineResponse20023 UpdatesPost (string accessToken = null, Update body = null);
+        /// <returns>InlineResponse20028</returns>
+        InlineResponse20028 UpdatesPost (string accessToken = null, Update body = null);
   
         /// <summary>
         /// Store Update
@@ -114,8 +114,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Update that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        ApiResponse<InlineResponse20023> UpdatesPostWithHttpInfo (string accessToken = null, Update body = null);
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        ApiResponse<InlineResponse20028> UpdatesPostWithHttpInfo (string accessToken = null, Update body = null);
 
         /// <summary>
         /// Store Update
@@ -125,8 +125,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Update that should be stored</param>
-        /// <returns>Task of InlineResponse20023</returns>
-        System.Threading.Tasks.Task<InlineResponse20023> UpdatesPostAsync (string accessToken = null, Update body = null);
+        /// <returns>Task of InlineResponse20028</returns>
+        System.Threading.Tasks.Task<InlineResponse20028> UpdatesPostAsync (string accessToken = null, Update body = null);
 
         /// <summary>
         /// Store Update
@@ -136,8 +136,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Update that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20023>> UpdatesPostAsyncWithHttpInfo (string accessToken = null, Update body = null);
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20028>> UpdatesPostAsyncWithHttpInfo (string accessToken = null, Update body = null);
         
         /// <summary>
         /// Get Update
@@ -147,8 +147,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Update</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20023</returns>
-        InlineResponse20023 UpdatesIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20028</returns>
+        InlineResponse20028 UpdatesIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get Update
@@ -158,8 +158,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Update</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        ApiResponse<InlineResponse20023> UpdatesIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        ApiResponse<InlineResponse20028> UpdatesIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
         /// Get Update
@@ -169,8 +169,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Update</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20023</returns>
-        System.Threading.Tasks.Task<InlineResponse20023> UpdatesIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20028</returns>
+        System.Threading.Tasks.Task<InlineResponse20028> UpdatesIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
         /// Get Update
@@ -180,8 +180,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Update</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20023>> UpdatesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20028>> UpdatesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update Update
@@ -367,10 +367,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20015</returns>
-        public InlineResponse20015 UpdatesGet (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse20016</returns>
+        public InlineResponse20016 UpdatesGet (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20015> response = UpdatesGetWithHttpInfo(accessToken, userId, connectorId, numberOfMeasurements, success, message, createdAt, updatedAt, limit, offset, sort);
+             ApiResponse<InlineResponse20016> response = UpdatesGetWithHttpInfo(accessToken, userId, connectorId, numberOfMeasurements, success, message, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
         }
 
@@ -388,8 +388,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20015</returns>
-        public ApiResponse< InlineResponse20015 > UpdatesGetWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse20016</returns>
+        public ApiResponse< InlineResponse20016 > UpdatesGetWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -450,9 +450,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UpdatesGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20015>(statusCode,
+            return new ApiResponse<InlineResponse20016>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20015) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20015)));
+                (InlineResponse20016) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20016)));
             
         }
     
@@ -470,10 +470,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20015</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20015> UpdatesGetAsync (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse20016</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20016> UpdatesGetAsync (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20015> response = await UpdatesGetAsyncWithHttpInfo(accessToken, userId, connectorId, numberOfMeasurements, success, message, createdAt, updatedAt, limit, offset, sort);
+             ApiResponse<InlineResponse20016> response = await UpdatesGetAsyncWithHttpInfo(accessToken, userId, connectorId, numberOfMeasurements, success, message, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
 
         }
@@ -492,8 +492,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20015>> UpdatesGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> UpdatesGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, int? numberOfMeasurements = null, bool? success = null, string message = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -554,9 +554,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UpdatesGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20015>(statusCode,
+            return new ApiResponse<InlineResponse20016>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20015) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20015)));
+                (InlineResponse20016) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20016)));
             
         }
         
@@ -565,10 +565,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Update that should be stored</param> 
-        /// <returns>InlineResponse20023</returns>
-        public InlineResponse20023 UpdatesPost (string accessToken = null, Update body = null)
+        /// <returns>InlineResponse20028</returns>
+        public InlineResponse20028 UpdatesPost (string accessToken = null, Update body = null)
         {
-             ApiResponse<InlineResponse20023> response = UpdatesPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20028> response = UpdatesPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -577,8 +577,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Update that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        public ApiResponse< InlineResponse20023 > UpdatesPostWithHttpInfo (string accessToken = null, Update body = null)
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        public ApiResponse< InlineResponse20028 > UpdatesPostWithHttpInfo (string accessToken = null, Update body = null)
         {
             
     
@@ -630,9 +630,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UpdatesPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20023>(statusCode,
+            return new ApiResponse<InlineResponse20028>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20023) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20023)));
+                (InlineResponse20028) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20028)));
             
         }
     
@@ -641,10 +641,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Update that should be stored</param>
-        /// <returns>Task of InlineResponse20023</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20023> UpdatesPostAsync (string accessToken = null, Update body = null)
+        /// <returns>Task of InlineResponse20028</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20028> UpdatesPostAsync (string accessToken = null, Update body = null)
         {
-             ApiResponse<InlineResponse20023> response = await UpdatesPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20028> response = await UpdatesPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -654,8 +654,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Update that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20023>> UpdatesPostAsyncWithHttpInfo (string accessToken = null, Update body = null)
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20028>> UpdatesPostAsyncWithHttpInfo (string accessToken = null, Update body = null)
         {
             
     
@@ -707,9 +707,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UpdatesPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20023>(statusCode,
+            return new ApiResponse<InlineResponse20028>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20023) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20023)));
+                (InlineResponse20028) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20028)));
             
         }
         
@@ -718,10 +718,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Update</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20023</returns>
-        public InlineResponse20023 UpdatesIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20028</returns>
+        public InlineResponse20028 UpdatesIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20023> response = UpdatesIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20028> response = UpdatesIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
@@ -730,8 +730,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Update</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20023</returns>
-        public ApiResponse< InlineResponse20023 > UpdatesIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20028</returns>
+        public ApiResponse< InlineResponse20028 > UpdatesIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -786,9 +786,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UpdatesIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20023>(statusCode,
+            return new ApiResponse<InlineResponse20028>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20023) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20023)));
+                (InlineResponse20028) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20028)));
             
         }
     
@@ -797,10 +797,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Update</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20023</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20023> UpdatesIdGetAsync (int? id, string accessToken = null)
+        /// <returns>Task of InlineResponse20028</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20028> UpdatesIdGetAsync (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20023> response = await UpdatesIdGetAsyncWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20028> response = await UpdatesIdGetAsyncWithHttpInfo(id, accessToken);
              return response.Data;
 
         }
@@ -810,8 +810,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Update</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20023>> UpdatesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>Task of ApiResponse (InlineResponse20028)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20028>> UpdatesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UpdatesIdGet");
@@ -865,9 +865,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UpdatesIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20023>(statusCode,
+            return new ApiResponse<InlineResponse20028>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20023) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20023)));
+                (InlineResponse20028) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20028)));
             
         }
         

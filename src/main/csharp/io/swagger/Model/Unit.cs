@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class Unit : IEquatable<Unit>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Unit" /> class.
+        /// </summary>
+        public Unit()
+        {
+            
+        }
+
         
         /// <summary>
         /// id

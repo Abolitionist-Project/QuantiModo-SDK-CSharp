@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class Correlation : IEquatable<Correlation>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Correlation" /> class.
+        /// </summary>
+        public Correlation()
+        {
+            
+        }
+
         
         /// <summary>
         /// id

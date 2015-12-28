@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class CommonVariableRelationship : IEquatable<CommonVariableRelationship>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommonVariableRelationship" /> class.
+        /// </summary>
+        public CommonVariableRelationship()
+        {
+            
+        }
+
         
         /// <summary>
         /// id

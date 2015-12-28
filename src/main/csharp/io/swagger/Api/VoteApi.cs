@@ -32,8 +32,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20033</returns>
-        InlineResponse20033 VotesGet (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse20020</returns>
+        InlineResponse20020 VotesGet (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all Votes
@@ -52,8 +52,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20033</returns>
-        ApiResponse<InlineResponse20033> VotesGetWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse20020</returns>
+        ApiResponse<InlineResponse20020> VotesGetWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all Votes
@@ -72,8 +72,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20033</returns>
-        System.Threading.Tasks.Task<InlineResponse20033> VotesGetAsync (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse20020</returns>
+        System.Threading.Tasks.Task<InlineResponse20020> VotesGetAsync (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all Votes
@@ -92,8 +92,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20033>> VotesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20020>> VotesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store Vote
@@ -103,8 +103,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Vote that should be stored</param>
-        /// <returns>InlineResponse20034</returns>
-        InlineResponse20034 VotesPost (string accessToken = null, Vote body = null);
+        /// <returns>InlineResponse20036</returns>
+        InlineResponse20036 VotesPost (string accessToken = null, Vote body = null);
   
         /// <summary>
         /// Store Vote
@@ -114,8 +114,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Vote that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20034</returns>
-        ApiResponse<InlineResponse20034> VotesPostWithHttpInfo (string accessToken = null, Vote body = null);
+        /// <returns>ApiResponse of InlineResponse20036</returns>
+        ApiResponse<InlineResponse20036> VotesPostWithHttpInfo (string accessToken = null, Vote body = null);
 
         /// <summary>
         /// Store Vote
@@ -125,8 +125,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Vote that should be stored</param>
-        /// <returns>Task of InlineResponse20034</returns>
-        System.Threading.Tasks.Task<InlineResponse20034> VotesPostAsync (string accessToken = null, Vote body = null);
+        /// <returns>Task of InlineResponse20036</returns>
+        System.Threading.Tasks.Task<InlineResponse20036> VotesPostAsync (string accessToken = null, Vote body = null);
 
         /// <summary>
         /// Store Vote
@@ -136,8 +136,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Vote that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20034>> VotesPostAsyncWithHttpInfo (string accessToken = null, Vote body = null);
+        /// <returns>Task of ApiResponse (InlineResponse20036)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20036>> VotesPostAsyncWithHttpInfo (string accessToken = null, Vote body = null);
         
         /// <summary>
         /// Get Vote
@@ -147,8 +147,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Vote</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20034</returns>
-        InlineResponse20034 VotesIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20036</returns>
+        InlineResponse20036 VotesIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get Vote
@@ -158,8 +158,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Vote</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20034</returns>
-        ApiResponse<InlineResponse20034> VotesIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20036</returns>
+        ApiResponse<InlineResponse20036> VotesIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
         /// Get Vote
@@ -169,8 +169,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Vote</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20034</returns>
-        System.Threading.Tasks.Task<InlineResponse20034> VotesIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20036</returns>
+        System.Threading.Tasks.Task<InlineResponse20036> VotesIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
         /// Get Vote
@@ -180,8 +180,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Vote</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20034>> VotesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20036)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20036>> VotesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update Vote
@@ -367,10 +367,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20033</returns>
-        public InlineResponse20033 VotesGet (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse20020</returns>
+        public InlineResponse20020 VotesGet (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20033> response = VotesGetWithHttpInfo(accessToken, clientId, userId, causeId, effectId, value, createdAt, updatedAt, limit, offset, sort);
+             ApiResponse<InlineResponse20020> response = VotesGetWithHttpInfo(accessToken, clientId, userId, causeId, effectId, value, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
         }
 
@@ -388,8 +388,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20033</returns>
-        public ApiResponse< InlineResponse20033 > VotesGetWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse20020</returns>
+        public ApiResponse< InlineResponse20020 > VotesGetWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -450,9 +450,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VotesGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20033>(statusCode,
+            return new ApiResponse<InlineResponse20020>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20033) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20033)));
+                (InlineResponse20020) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20020)));
             
         }
     
@@ -470,10 +470,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20033</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20033> VotesGetAsync (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse20020</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20020> VotesGetAsync (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20033> response = await VotesGetAsyncWithHttpInfo(accessToken, clientId, userId, causeId, effectId, value, createdAt, updatedAt, limit, offset, sort);
+             ApiResponse<InlineResponse20020> response = await VotesGetAsyncWithHttpInfo(accessToken, clientId, userId, causeId, effectId, value, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
 
         }
@@ -492,8 +492,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20033>> VotesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20020>> VotesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? causeId = null, int? effectId = null, int? value = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -554,9 +554,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VotesGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20033>(statusCode,
+            return new ApiResponse<InlineResponse20020>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20033) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20033)));
+                (InlineResponse20020) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20020)));
             
         }
         
@@ -565,10 +565,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Vote that should be stored</param> 
-        /// <returns>InlineResponse20034</returns>
-        public InlineResponse20034 VotesPost (string accessToken = null, Vote body = null)
+        /// <returns>InlineResponse20036</returns>
+        public InlineResponse20036 VotesPost (string accessToken = null, Vote body = null)
         {
-             ApiResponse<InlineResponse20034> response = VotesPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20036> response = VotesPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -577,8 +577,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Vote that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20034</returns>
-        public ApiResponse< InlineResponse20034 > VotesPostWithHttpInfo (string accessToken = null, Vote body = null)
+        /// <returns>ApiResponse of InlineResponse20036</returns>
+        public ApiResponse< InlineResponse20036 > VotesPostWithHttpInfo (string accessToken = null, Vote body = null)
         {
             
     
@@ -630,9 +630,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VotesPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20034>(statusCode,
+            return new ApiResponse<InlineResponse20036>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20034) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20034)));
+                (InlineResponse20036) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20036)));
             
         }
     
@@ -641,10 +641,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Vote that should be stored</param>
-        /// <returns>Task of InlineResponse20034</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20034> VotesPostAsync (string accessToken = null, Vote body = null)
+        /// <returns>Task of InlineResponse20036</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20036> VotesPostAsync (string accessToken = null, Vote body = null)
         {
-             ApiResponse<InlineResponse20034> response = await VotesPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20036> response = await VotesPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -654,8 +654,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Vote that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20034>> VotesPostAsyncWithHttpInfo (string accessToken = null, Vote body = null)
+        /// <returns>Task of ApiResponse (InlineResponse20036)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20036>> VotesPostAsyncWithHttpInfo (string accessToken = null, Vote body = null)
         {
             
     
@@ -707,9 +707,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VotesPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20034>(statusCode,
+            return new ApiResponse<InlineResponse20036>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20034) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20034)));
+                (InlineResponse20036) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20036)));
             
         }
         
@@ -718,10 +718,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Vote</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20034</returns>
-        public InlineResponse20034 VotesIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20036</returns>
+        public InlineResponse20036 VotesIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20034> response = VotesIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20036> response = VotesIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
@@ -730,8 +730,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Vote</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20034</returns>
-        public ApiResponse< InlineResponse20034 > VotesIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20036</returns>
+        public ApiResponse< InlineResponse20036 > VotesIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -786,9 +786,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VotesIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20034>(statusCode,
+            return new ApiResponse<InlineResponse20036>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20034) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20034)));
+                (InlineResponse20036) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20036)));
             
         }
     
@@ -797,10 +797,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Vote</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20034</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20034> VotesIdGetAsync (int? id, string accessToken = null)
+        /// <returns>Task of InlineResponse20036</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20036> VotesIdGetAsync (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20034> response = await VotesIdGetAsyncWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20036> response = await VotesIdGetAsyncWithHttpInfo(id, accessToken);
              return response.Data;
 
         }
@@ -810,8 +810,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Vote</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20034>> VotesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>Task of ApiResponse (InlineResponse20036)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20036>> VotesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VotesIdGet");
@@ -865,9 +865,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VotesIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20034>(statusCode,
+            return new ApiResponse<InlineResponse20036>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20034) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20034)));
+                (InlineResponse20036) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20036)));
             
         }
         

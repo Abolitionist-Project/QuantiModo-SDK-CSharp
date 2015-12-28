@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class InlineResponse2001 : IEquatable<InlineResponse2001>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlineResponse2001" /> class.
+        /// </summary>
+        public InlineResponse2001()
+        {
+            
+        }
+
         
         /// <summary>
         /// Gets or Sets Data

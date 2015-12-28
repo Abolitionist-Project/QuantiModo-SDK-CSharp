@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class MeasurementPost : IEquatable<MeasurementPost>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MeasurementPost" /> class.
+        /// </summary>
+        public MeasurementPost()
+        {
+            
+        }
+
         
         /// <summary>
         /// ID of the variable for the measurement as obtained from the GET variables endpoint

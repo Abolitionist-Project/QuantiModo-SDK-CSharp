@@ -61,8 +61,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort records by a given field name. If the field name is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20031</returns>
-        InlineResponse20031 VariablesGet (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse20034</returns>
+        InlineResponse20034 VariablesGet (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all Variables
@@ -110,8 +110,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort records by a given field name. If the field name is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20031</returns>
-        ApiResponse<InlineResponse20031> VariablesGetWithHttpInfo (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse20034</returns>
+        ApiResponse<InlineResponse20034> VariablesGetWithHttpInfo (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all Variables
@@ -159,8 +159,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort records by a given field name. If the field name is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20031</returns>
-        System.Threading.Tasks.Task<InlineResponse20031> VariablesGetAsync (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse20034</returns>
+        System.Threading.Tasks.Task<InlineResponse20034> VariablesGetAsync (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all Variables
@@ -208,8 +208,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort records by a given field name. If the field name is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20031>> VariablesGetAsyncWithHttpInfo (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20034>> VariablesGetAsyncWithHttpInfo (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store Variable
@@ -219,8 +219,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Variable that should be stored</param>
-        /// <returns>InlineResponse20032</returns>
-        InlineResponse20032 VariablesPost (string accessToken = null, Variable body = null);
+        /// <returns>InlineResponse20035</returns>
+        InlineResponse20035 VariablesPost (string accessToken = null, Variable body = null);
   
         /// <summary>
         /// Store Variable
@@ -230,8 +230,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Variable that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20032</returns>
-        ApiResponse<InlineResponse20032> VariablesPostWithHttpInfo (string accessToken = null, Variable body = null);
+        /// <returns>ApiResponse of InlineResponse20035</returns>
+        ApiResponse<InlineResponse20035> VariablesPostWithHttpInfo (string accessToken = null, Variable body = null);
 
         /// <summary>
         /// Store Variable
@@ -241,8 +241,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Variable that should be stored</param>
-        /// <returns>Task of InlineResponse20032</returns>
-        System.Threading.Tasks.Task<InlineResponse20032> VariablesPostAsync (string accessToken = null, Variable body = null);
+        /// <returns>Task of InlineResponse20035</returns>
+        System.Threading.Tasks.Task<InlineResponse20035> VariablesPostAsync (string accessToken = null, Variable body = null);
 
         /// <summary>
         /// Store Variable
@@ -252,8 +252,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Variable that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20032>> VariablesPostAsyncWithHttpInfo (string accessToken = null, Variable body = null);
+        /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20035>> VariablesPostAsyncWithHttpInfo (string accessToken = null, Variable body = null);
         
         /// <summary>
         /// Get Variable
@@ -263,8 +263,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Variable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20032</returns>
-        InlineResponse20032 VariablesIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20035</returns>
+        InlineResponse20035 VariablesIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get Variable
@@ -274,8 +274,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Variable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20032</returns>
-        ApiResponse<InlineResponse20032> VariablesIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20035</returns>
+        ApiResponse<InlineResponse20035> VariablesIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
         /// Get Variable
@@ -285,8 +285,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Variable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20032</returns>
-        System.Threading.Tasks.Task<InlineResponse20032> VariablesIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20035</returns>
+        System.Threading.Tasks.Task<InlineResponse20035> VariablesIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
         /// Get Variable
@@ -296,8 +296,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Variable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20032>> VariablesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20035>> VariablesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update Variable
@@ -512,10 +512,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort records by a given field name. If the field name is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20031</returns>
-        public InlineResponse20031 VariablesGet (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse20034</returns>
+        public InlineResponse20034 VariablesGet (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20031> response = VariablesGetWithHttpInfo(accessToken, id, clientId, parentId, name, variableCategoryId, defaultUnitId, combinationOperation, fillingValue, maximumAllowedValue, minimumAllowedValue, onsetDelay, durationOfAction, _public, causeOnly, mostCommonValue, mostCommonUnitId, standardDeviation, variance, mean, median, numberOfMeasurements, numberOfUniqueValues, skewness, kurtosis, status, errorMessage, lastSuccessfulUpdateTime, createdAt, updatedAt, productUrl, imageUrl, price, numberOfUserVariables, outcome, minimumRecordedValue, maximumRecordedValue, limit, offset, sort);
+             ApiResponse<InlineResponse20034> response = VariablesGetWithHttpInfo(accessToken, id, clientId, parentId, name, variableCategoryId, defaultUnitId, combinationOperation, fillingValue, maximumAllowedValue, minimumAllowedValue, onsetDelay, durationOfAction, _public, causeOnly, mostCommonValue, mostCommonUnitId, standardDeviation, variance, mean, median, numberOfMeasurements, numberOfUniqueValues, skewness, kurtosis, status, errorMessage, lastSuccessfulUpdateTime, createdAt, updatedAt, productUrl, imageUrl, price, numberOfUserVariables, outcome, minimumRecordedValue, maximumRecordedValue, limit, offset, sort);
              return response.Data;
         }
 
@@ -562,8 +562,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort records by a given field name. If the field name is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20031</returns>
-        public ApiResponse< InlineResponse20031 > VariablesGetWithHttpInfo (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse20034</returns>
+        public ApiResponse< InlineResponse20034 > VariablesGetWithHttpInfo (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -653,9 +653,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VariablesGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20031>(statusCode,
+            return new ApiResponse<InlineResponse20034>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20031) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20031)));
+                (InlineResponse20034) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20034)));
             
         }
     
@@ -702,10 +702,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort records by a given field name. If the field name is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20031</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20031> VariablesGetAsync (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse20034</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20034> VariablesGetAsync (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20031> response = await VariablesGetAsyncWithHttpInfo(accessToken, id, clientId, parentId, name, variableCategoryId, defaultUnitId, combinationOperation, fillingValue, maximumAllowedValue, minimumAllowedValue, onsetDelay, durationOfAction, _public, causeOnly, mostCommonValue, mostCommonUnitId, standardDeviation, variance, mean, median, numberOfMeasurements, numberOfUniqueValues, skewness, kurtosis, status, errorMessage, lastSuccessfulUpdateTime, createdAt, updatedAt, productUrl, imageUrl, price, numberOfUserVariables, outcome, minimumRecordedValue, maximumRecordedValue, limit, offset, sort);
+             ApiResponse<InlineResponse20034> response = await VariablesGetAsyncWithHttpInfo(accessToken, id, clientId, parentId, name, variableCategoryId, defaultUnitId, combinationOperation, fillingValue, maximumAllowedValue, minimumAllowedValue, onsetDelay, durationOfAction, _public, causeOnly, mostCommonValue, mostCommonUnitId, standardDeviation, variance, mean, median, numberOfMeasurements, numberOfUniqueValues, skewness, kurtosis, status, errorMessage, lastSuccessfulUpdateTime, createdAt, updatedAt, productUrl, imageUrl, price, numberOfUserVariables, outcome, minimumRecordedValue, maximumRecordedValue, limit, offset, sort);
              return response.Data;
 
         }
@@ -753,8 +753,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort records by a given field name. If the field name is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20031>> VariablesGetAsyncWithHttpInfo (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse20034)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20034>> VariablesGetAsyncWithHttpInfo (string accessToken = null, int? id = null, string clientId = null, int? parentId = null, string name = null, int? variableCategoryId = null, int? defaultUnitId = null, string combinationOperation = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? onsetDelay = null, int? durationOfAction = null, int? _public = null, bool? causeOnly = null, double? mostCommonValue = null, int? mostCommonUnitId = null, double? standardDeviation = null, double? variance = null, double? mean = null, double? median = null, double? numberOfMeasurements = null, double? numberOfUniqueValues = null, double? skewness = null, double? kurtosis = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, string createdAt = null, string updatedAt = null, string productUrl = null, string imageUrl = null, double? price = null, int? numberOfUserVariables = null, bool? outcome = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -844,9 +844,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VariablesGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20031>(statusCode,
+            return new ApiResponse<InlineResponse20034>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20031) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20031)));
+                (InlineResponse20034) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20034)));
             
         }
         
@@ -855,10 +855,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Variable that should be stored</param> 
-        /// <returns>InlineResponse20032</returns>
-        public InlineResponse20032 VariablesPost (string accessToken = null, Variable body = null)
+        /// <returns>InlineResponse20035</returns>
+        public InlineResponse20035 VariablesPost (string accessToken = null, Variable body = null)
         {
-             ApiResponse<InlineResponse20032> response = VariablesPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20035> response = VariablesPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -867,8 +867,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Variable that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20032</returns>
-        public ApiResponse< InlineResponse20032 > VariablesPostWithHttpInfo (string accessToken = null, Variable body = null)
+        /// <returns>ApiResponse of InlineResponse20035</returns>
+        public ApiResponse< InlineResponse20035 > VariablesPostWithHttpInfo (string accessToken = null, Variable body = null)
         {
             
     
@@ -920,9 +920,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VariablesPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20032>(statusCode,
+            return new ApiResponse<InlineResponse20035>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20032) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20032)));
+                (InlineResponse20035) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20035)));
             
         }
     
@@ -931,10 +931,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Variable that should be stored</param>
-        /// <returns>Task of InlineResponse20032</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20032> VariablesPostAsync (string accessToken = null, Variable body = null)
+        /// <returns>Task of InlineResponse20035</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20035> VariablesPostAsync (string accessToken = null, Variable body = null)
         {
-             ApiResponse<InlineResponse20032> response = await VariablesPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20035> response = await VariablesPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -944,8 +944,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Variable that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20032>> VariablesPostAsyncWithHttpInfo (string accessToken = null, Variable body = null)
+        /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20035>> VariablesPostAsyncWithHttpInfo (string accessToken = null, Variable body = null)
         {
             
     
@@ -997,9 +997,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VariablesPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20032>(statusCode,
+            return new ApiResponse<InlineResponse20035>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20032) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20032)));
+                (InlineResponse20035) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20035)));
             
         }
         
@@ -1008,10 +1008,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Variable</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20032</returns>
-        public InlineResponse20032 VariablesIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20035</returns>
+        public InlineResponse20035 VariablesIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20032> response = VariablesIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20035> response = VariablesIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
@@ -1020,8 +1020,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Variable</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20032</returns>
-        public ApiResponse< InlineResponse20032 > VariablesIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20035</returns>
+        public ApiResponse< InlineResponse20035 > VariablesIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -1076,9 +1076,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VariablesIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20032>(statusCode,
+            return new ApiResponse<InlineResponse20035>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20032) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20032)));
+                (InlineResponse20035) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20035)));
             
         }
     
@@ -1087,10 +1087,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Variable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20032</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20032> VariablesIdGetAsync (int? id, string accessToken = null)
+        /// <returns>Task of InlineResponse20035</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20035> VariablesIdGetAsync (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20032> response = await VariablesIdGetAsyncWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20035> response = await VariablesIdGetAsyncWithHttpInfo(id, accessToken);
              return response.Data;
 
         }
@@ -1100,8 +1100,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Variable</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20032>> VariablesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>Task of ApiResponse (InlineResponse20035)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20035>> VariablesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariablesIdGet");
@@ -1155,9 +1155,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling VariablesIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20032>(statusCode,
+            return new ApiResponse<InlineResponse20035>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20032) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20032)));
+                (InlineResponse20035) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20035)));
             
         }
         

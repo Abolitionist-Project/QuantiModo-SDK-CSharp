@@ -12,324 +12,308 @@ namespace IO.Swagger.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IVariableCategoryApi
+    public interface ITrackingReminderApi
     {
         
         /// <summary>
-        /// Get all VariableCategories
+        /// Get tracking reminders
         /// </summary>
         /// <remarks>
-        /// The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// Users can be reminded to track certain variables at a specified frequency with a default value.
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="name">Name of the category</param>
-        /// <param name="fillingValue">Value for replacing null measurements</param>
-        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
-        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
-        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
-        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
-        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
-        /// <param name="updated">updated</param>
-        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
-        /// <param name="_public">Is category public</param>
-        /// <param name="outcome">outcome</param>
+        /// <param name="clientId">The ID of the client application which last created or updated this tracking reminder</param>
+        /// <param name="userId">ID of the user who created a reminder</param>
+        /// <param name="variableId">Id for the variable to be tracked</param>
+        /// <param name="popUp">True if the reminders should appear as a popup notification</param>
+        /// <param name="sms">True if the reminders should be delivered via SMS</param>
+        /// <param name="email">True if the reminders should be delivered via email</param>
+        /// <param name="notificationBar">True if the reminders should appear in the notification bar</param>
+        /// <param name="lastReminded">ISO 8601 timestamp for the last time a reminder was sent</param>
+        /// <param name="lastTracked">ISO 8601 timestamp for the last time a measurement was received for this user and variable</param>
         /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
         /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
-        /// <param name="imageUrl">Image URL</param>
-        /// <param name="defaultUnitId">ID of the default unit for the category</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20031</returns>
-        InlineResponse20031 VariableCategoriesGet (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse20015</returns>
+        InlineResponse20015 TrackingRemindersGet (string accessToken = null, string clientId = null, int? userId = null, int? variableId = null, bool? popUp = null, bool? sms = null, bool? email = null, bool? notificationBar = null, string lastReminded = null, string lastTracked = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
-        /// Get all VariableCategories
+        /// Get tracking reminders
         /// </summary>
         /// <remarks>
-        /// The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// Users can be reminded to track certain variables at a specified frequency with a default value.
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="name">Name of the category</param>
-        /// <param name="fillingValue">Value for replacing null measurements</param>
-        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
-        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
-        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
-        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
-        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
-        /// <param name="updated">updated</param>
-        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
-        /// <param name="_public">Is category public</param>
-        /// <param name="outcome">outcome</param>
+        /// <param name="clientId">The ID of the client application which last created or updated this tracking reminder</param>
+        /// <param name="userId">ID of the user who created a reminder</param>
+        /// <param name="variableId">Id for the variable to be tracked</param>
+        /// <param name="popUp">True if the reminders should appear as a popup notification</param>
+        /// <param name="sms">True if the reminders should be delivered via SMS</param>
+        /// <param name="email">True if the reminders should be delivered via email</param>
+        /// <param name="notificationBar">True if the reminders should appear in the notification bar</param>
+        /// <param name="lastReminded">ISO 8601 timestamp for the last time a reminder was sent</param>
+        /// <param name="lastTracked">ISO 8601 timestamp for the last time a measurement was received for this user and variable</param>
         /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
         /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
-        /// <param name="imageUrl">Image URL</param>
-        /// <param name="defaultUnitId">ID of the default unit for the category</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20031</returns>
-        ApiResponse<InlineResponse20031> VariableCategoriesGetWithHttpInfo (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse20015</returns>
+        ApiResponse<InlineResponse20015> TrackingRemindersGetWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? variableId = null, bool? popUp = null, bool? sms = null, bool? email = null, bool? notificationBar = null, string lastReminded = null, string lastTracked = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
-        /// Get all VariableCategories
+        /// Get tracking reminders
         /// </summary>
         /// <remarks>
-        /// The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// Users can be reminded to track certain variables at a specified frequency with a default value.
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="name">Name of the category</param>
-        /// <param name="fillingValue">Value for replacing null measurements</param>
-        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
-        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
-        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
-        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
-        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
-        /// <param name="updated">updated</param>
-        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
-        /// <param name="_public">Is category public</param>
-        /// <param name="outcome">outcome</param>
+        /// <param name="clientId">The ID of the client application which last created or updated this tracking reminder</param>
+        /// <param name="userId">ID of the user who created a reminder</param>
+        /// <param name="variableId">Id for the variable to be tracked</param>
+        /// <param name="popUp">True if the reminders should appear as a popup notification</param>
+        /// <param name="sms">True if the reminders should be delivered via SMS</param>
+        /// <param name="email">True if the reminders should be delivered via email</param>
+        /// <param name="notificationBar">True if the reminders should appear in the notification bar</param>
+        /// <param name="lastReminded">ISO 8601 timestamp for the last time a reminder was sent</param>
+        /// <param name="lastTracked">ISO 8601 timestamp for the last time a measurement was received for this user and variable</param>
         /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
         /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
-        /// <param name="imageUrl">Image URL</param>
-        /// <param name="defaultUnitId">ID of the default unit for the category</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20031</returns>
-        System.Threading.Tasks.Task<InlineResponse20031> VariableCategoriesGetAsync (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse20015</returns>
+        System.Threading.Tasks.Task<InlineResponse20015> TrackingRemindersGetAsync (string accessToken = null, string clientId = null, int? userId = null, int? variableId = null, bool? popUp = null, bool? sms = null, bool? email = null, bool? notificationBar = null, string lastReminded = null, string lastTracked = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
-        /// Get all VariableCategories
+        /// Get tracking reminders
         /// </summary>
         /// <remarks>
-        /// The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// Users can be reminded to track certain variables at a specified frequency with a default value.
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="name">Name of the category</param>
-        /// <param name="fillingValue">Value for replacing null measurements</param>
-        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
-        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
-        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
-        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
-        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
-        /// <param name="updated">updated</param>
-        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
-        /// <param name="_public">Is category public</param>
-        /// <param name="outcome">outcome</param>
+        /// <param name="clientId">The ID of the client application which last created or updated this tracking reminder</param>
+        /// <param name="userId">ID of the user who created a reminder</param>
+        /// <param name="variableId">Id for the variable to be tracked</param>
+        /// <param name="popUp">True if the reminders should appear as a popup notification</param>
+        /// <param name="sms">True if the reminders should be delivered via SMS</param>
+        /// <param name="email">True if the reminders should be delivered via email</param>
+        /// <param name="notificationBar">True if the reminders should appear in the notification bar</param>
+        /// <param name="lastReminded">ISO 8601 timestamp for the last time a reminder was sent</param>
+        /// <param name="lastTracked">ISO 8601 timestamp for the last time a measurement was received for this user and variable</param>
         /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
         /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
-        /// <param name="imageUrl">Image URL</param>
-        /// <param name="defaultUnitId">ID of the default unit for the category</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20031>> VariableCategoriesGetAsyncWithHttpInfo (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20015>> TrackingRemindersGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? variableId = null, bool? popUp = null, bool? sms = null, bool? email = null, bool? notificationBar = null, string lastReminded = null, string lastTracked = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
-        /// Store VariableCategory
+        /// Store TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Store VariableCategory
+        /// This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>InlineResponse20032</returns>
-        InlineResponse20032 VariableCategoriesPost (string accessToken = null, VariableCategory body = null);
+        /// <param name="body">TrackingReminder that should be stored</param>
+        /// <returns>InlineResponse20023</returns>
+        InlineResponse20023 TrackingRemindersPost (string accessToken = null, TrackingReminder body = null);
   
         /// <summary>
-        /// Store VariableCategory
+        /// Store TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Store VariableCategory
+        /// This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20032</returns>
-        ApiResponse<InlineResponse20032> VariableCategoriesPostWithHttpInfo (string accessToken = null, VariableCategory body = null);
+        /// <param name="body">TrackingReminder that should be stored</param>
+        /// <returns>ApiResponse of InlineResponse20023</returns>
+        ApiResponse<InlineResponse20023> TrackingRemindersPostWithHttpInfo (string accessToken = null, TrackingReminder body = null);
 
         /// <summary>
-        /// Store VariableCategory
+        /// Store TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Store VariableCategory
+        /// This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>Task of InlineResponse20032</returns>
-        System.Threading.Tasks.Task<InlineResponse20032> VariableCategoriesPostAsync (string accessToken = null, VariableCategory body = null);
+        /// <param name="body">TrackingReminder that should be stored</param>
+        /// <returns>Task of InlineResponse20023</returns>
+        System.Threading.Tasks.Task<InlineResponse20023> TrackingRemindersPostAsync (string accessToken = null, TrackingReminder body = null);
 
         /// <summary>
-        /// Store VariableCategory
+        /// Store TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Store VariableCategory
+        /// This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20032>> VariableCategoriesPostAsyncWithHttpInfo (string accessToken = null, VariableCategory body = null);
+        /// <param name="body">TrackingReminder that should be stored</param>
+        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20023>> TrackingRemindersPostAsyncWithHttpInfo (string accessToken = null, TrackingReminder body = null);
         
         /// <summary>
-        /// Get VariableCategory
+        /// Get TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Get VariableCategory
+        /// Get TrackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20032</returns>
-        InlineResponse20032 VariableCategoriesIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20023</returns>
+        InlineResponse20023 TrackingRemindersIdGet (int? id, string accessToken = null);
   
         /// <summary>
-        /// Get VariableCategory
+        /// Get TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Get VariableCategory
+        /// Get TrackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20032</returns>
-        ApiResponse<InlineResponse20032> VariableCategoriesIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20023</returns>
+        ApiResponse<InlineResponse20023> TrackingRemindersIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
-        /// Get VariableCategory
+        /// Get TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Get VariableCategory
+        /// Get TrackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20032</returns>
-        System.Threading.Tasks.Task<InlineResponse20032> VariableCategoriesIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20023</returns>
+        System.Threading.Tasks.Task<InlineResponse20023> TrackingRemindersIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
-        /// Get VariableCategory
+        /// Get TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Get VariableCategory
+        /// Get TrackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20032>> VariableCategoriesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20023>> TrackingRemindersIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
-        /// Update VariableCategory
+        /// Update TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Update VariableCategory
+        /// Update TrackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be updated</param>
+        /// <param name="body">TrackingReminder that should be updated</param>
         /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 VariableCategoriesIdPut (int? id, string accessToken = null, VariableCategory body = null);
+        InlineResponse2002 TrackingRemindersIdPut (int? id, string accessToken = null, TrackingReminder body = null);
   
         /// <summary>
-        /// Update VariableCategory
+        /// Update TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Update VariableCategory
+        /// Update TrackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be updated</param>
+        /// <param name="body">TrackingReminder that should be updated</param>
         /// <returns>ApiResponse of InlineResponse2002</returns>
-        ApiResponse<InlineResponse2002> VariableCategoriesIdPutWithHttpInfo (int? id, string accessToken = null, VariableCategory body = null);
+        ApiResponse<InlineResponse2002> TrackingRemindersIdPutWithHttpInfo (int? id, string accessToken = null, TrackingReminder body = null);
 
         /// <summary>
-        /// Update VariableCategory
+        /// Update TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Update VariableCategory
+        /// Update TrackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be updated</param>
+        /// <param name="body">TrackingReminder that should be updated</param>
         /// <returns>Task of InlineResponse2002</returns>
-        System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdPutAsync (int? id, string accessToken = null, VariableCategory body = null);
+        System.Threading.Tasks.Task<InlineResponse2002> TrackingRemindersIdPutAsync (int? id, string accessToken = null, TrackingReminder body = null);
 
         /// <summary>
-        /// Update VariableCategory
+        /// Update TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Update VariableCategory
+        /// Update TrackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be updated</param>
+        /// <param name="body">TrackingReminder that should be updated</param>
         /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableCategoriesIdPutAsyncWithHttpInfo (int? id, string accessToken = null, VariableCategory body = null);
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> TrackingRemindersIdPutAsyncWithHttpInfo (int? id, string accessToken = null, TrackingReminder body = null);
         
         /// <summary>
-        /// Delete VariableCategory
+        /// Delete TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Delete VariableCategory
+        /// Delete previously posted trackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 VariableCategoriesIdDelete (int? id, string accessToken = null);
+        InlineResponse2002 TrackingRemindersIdDelete (int? id, string accessToken = null);
   
         /// <summary>
-        /// Delete VariableCategory
+        /// Delete TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Delete VariableCategory
+        /// Delete previously posted trackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <returns>ApiResponse of InlineResponse2002</returns>
-        ApiResponse<InlineResponse2002> VariableCategoriesIdDeleteWithHttpInfo (int? id, string accessToken = null);
+        ApiResponse<InlineResponse2002> TrackingRemindersIdDeleteWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
-        /// Delete VariableCategory
+        /// Delete TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Delete VariableCategory
+        /// Delete previously posted trackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <returns>Task of InlineResponse2002</returns>
-        System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdDeleteAsync (int? id, string accessToken = null);
+        System.Threading.Tasks.Task<InlineResponse2002> TrackingRemindersIdDeleteAsync (int? id, string accessToken = null);
 
         /// <summary>
-        /// Delete VariableCategory
+        /// Delete TrackingReminder
         /// </summary>
         /// <remarks>
-        /// Delete VariableCategory
+        /// Delete previously posted trackingReminder
         /// </remarks>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableCategoriesIdDeleteAsyncWithHttpInfo (int? id, string accessToken = null);
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> TrackingRemindersIdDeleteAsyncWithHttpInfo (int? id, string accessToken = null);
         
     }
   
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public class VariableCategoryApi : IVariableCategoryApi
+    public class TrackingReminderApi : ITrackingReminderApi
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="VariableCategoryApi"/> class.
+        /// Initializes a new instance of the <see cref="TrackingReminderApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public VariableCategoryApi(String basePath)
+        public TrackingReminderApi(String basePath)
         {
             this.Configuration = new Configuration(new ApiClient(basePath));
         }
     
         /// <summary>
-        /// Initializes a new instance of the <see cref="VariableCategoryApi"/> class
+        /// Initializes a new instance of the <see cref="TrackingReminderApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public VariableCategoryApi(Configuration configuration = null)
+        public TrackingReminderApi(Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Configuration.Default; 
@@ -386,62 +370,54 @@ namespace IO.Swagger.Api
    
         
         /// <summary>
-        /// Get all VariableCategories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// Get tracking reminders Users can be reminded to track certain variables at a specified frequency with a default value.
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <param name="name">Name of the category</param> 
-        /// <param name="fillingValue">Value for replacing null measurements</param> 
-        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param> 
-        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param> 
-        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param> 
-        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param> 
-        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param> 
-        /// <param name="updated">updated</param> 
-        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param> 
-        /// <param name="_public">Is category public</param> 
-        /// <param name="outcome">outcome</param> 
+        /// <param name="clientId">The ID of the client application which last created or updated this tracking reminder</param> 
+        /// <param name="userId">ID of the user who created a reminder</param> 
+        /// <param name="variableId">Id for the variable to be tracked</param> 
+        /// <param name="popUp">True if the reminders should appear as a popup notification</param> 
+        /// <param name="sms">True if the reminders should be delivered via SMS</param> 
+        /// <param name="email">True if the reminders should be delivered via email</param> 
+        /// <param name="notificationBar">True if the reminders should appear in the notification bar</param> 
+        /// <param name="lastReminded">ISO 8601 timestamp for the last time a reminder was sent</param> 
+        /// <param name="lastTracked">ISO 8601 timestamp for the last time a measurement was received for this user and variable</param> 
         /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param> 
         /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param> 
-        /// <param name="imageUrl">Image URL</param> 
-        /// <param name="defaultUnitId">ID of the default unit for the category</param> 
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20031</returns>
-        public InlineResponse20031 VariableCategoriesGet (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse20015</returns>
+        public InlineResponse20015 TrackingRemindersGet (string accessToken = null, string clientId = null, int? userId = null, int? variableId = null, bool? popUp = null, bool? sms = null, bool? email = null, bool? notificationBar = null, string lastReminded = null, string lastTracked = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20031> response = VariableCategoriesGetWithHttpInfo(accessToken, name, fillingValue, maximumAllowedValue, minimumAllowedValue, durationOfAction, onsetDelay, combinationOperation, updated, causeOnly, _public, outcome, createdAt, updatedAt, imageUrl, defaultUnitId, limit, offset, sort);
+             ApiResponse<InlineResponse20015> response = TrackingRemindersGetWithHttpInfo(accessToken, clientId, userId, variableId, popUp, sms, email, notificationBar, lastReminded, lastTracked, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
         }
 
         /// <summary>
-        /// Get all VariableCategories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// Get tracking reminders Users can be reminded to track certain variables at a specified frequency with a default value.
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <param name="name">Name of the category</param> 
-        /// <param name="fillingValue">Value for replacing null measurements</param> 
-        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param> 
-        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param> 
-        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param> 
-        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param> 
-        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param> 
-        /// <param name="updated">updated</param> 
-        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param> 
-        /// <param name="_public">Is category public</param> 
-        /// <param name="outcome">outcome</param> 
+        /// <param name="clientId">The ID of the client application which last created or updated this tracking reminder</param> 
+        /// <param name="userId">ID of the user who created a reminder</param> 
+        /// <param name="variableId">Id for the variable to be tracked</param> 
+        /// <param name="popUp">True if the reminders should appear as a popup notification</param> 
+        /// <param name="sms">True if the reminders should be delivered via SMS</param> 
+        /// <param name="email">True if the reminders should be delivered via email</param> 
+        /// <param name="notificationBar">True if the reminders should appear in the notification bar</param> 
+        /// <param name="lastReminded">ISO 8601 timestamp for the last time a reminder was sent</param> 
+        /// <param name="lastTracked">ISO 8601 timestamp for the last time a measurement was received for this user and variable</param> 
         /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param> 
         /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param> 
-        /// <param name="imageUrl">Image URL</param> 
-        /// <param name="defaultUnitId">ID of the default unit for the category</param> 
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20031</returns>
-        public ApiResponse< InlineResponse20031 > VariableCategoriesGetWithHttpInfo (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse20015</returns>
+        public ApiResponse< InlineResponse20015 > TrackingRemindersGetWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? variableId = null, bool? popUp = null, bool? sms = null, bool? email = null, bool? notificationBar = null, string lastReminded = null, string lastTracked = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
-            var path_ = "/variableCategories";
+            var path_ = "/trackingReminders";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -463,21 +439,17 @@ namespace IO.Swagger.Api
             pathParams.Add("format", "json");
             
             if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
-            if (name != null) queryParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // query parameter
-            if (fillingValue != null) queryParams.Add("filling_value", Configuration.ApiClient.ParameterToString(fillingValue)); // query parameter
-            if (maximumAllowedValue != null) queryParams.Add("maximum_allowed_value", Configuration.ApiClient.ParameterToString(maximumAllowedValue)); // query parameter
-            if (minimumAllowedValue != null) queryParams.Add("minimum_allowed_value", Configuration.ApiClient.ParameterToString(minimumAllowedValue)); // query parameter
-            if (durationOfAction != null) queryParams.Add("duration_of_action", Configuration.ApiClient.ParameterToString(durationOfAction)); // query parameter
-            if (onsetDelay != null) queryParams.Add("onset_delay", Configuration.ApiClient.ParameterToString(onsetDelay)); // query parameter
-            if (combinationOperation != null) queryParams.Add("combination_operation", Configuration.ApiClient.ParameterToString(combinationOperation)); // query parameter
-            if (updated != null) queryParams.Add("updated", Configuration.ApiClient.ParameterToString(updated)); // query parameter
-            if (causeOnly != null) queryParams.Add("cause_only", Configuration.ApiClient.ParameterToString(causeOnly)); // query parameter
-            if (_public != null) queryParams.Add("public", Configuration.ApiClient.ParameterToString(_public)); // query parameter
-            if (outcome != null) queryParams.Add("outcome", Configuration.ApiClient.ParameterToString(outcome)); // query parameter
+            if (clientId != null) queryParams.Add("client_id", Configuration.ApiClient.ParameterToString(clientId)); // query parameter
+            if (userId != null) queryParams.Add("user_id", Configuration.ApiClient.ParameterToString(userId)); // query parameter
+            if (variableId != null) queryParams.Add("variable_id", Configuration.ApiClient.ParameterToString(variableId)); // query parameter
+            if (popUp != null) queryParams.Add("pop_up", Configuration.ApiClient.ParameterToString(popUp)); // query parameter
+            if (sms != null) queryParams.Add("sms", Configuration.ApiClient.ParameterToString(sms)); // query parameter
+            if (email != null) queryParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // query parameter
+            if (notificationBar != null) queryParams.Add("notification_bar", Configuration.ApiClient.ParameterToString(notificationBar)); // query parameter
+            if (lastReminded != null) queryParams.Add("last_reminded", Configuration.ApiClient.ParameterToString(lastReminded)); // query parameter
+            if (lastTracked != null) queryParams.Add("last_tracked", Configuration.ApiClient.ParameterToString(lastTracked)); // query parameter
             if (createdAt != null) queryParams.Add("created_at", Configuration.ApiClient.ParameterToString(createdAt)); // query parameter
             if (updatedAt != null) queryParams.Add("updated_at", Configuration.ApiClient.ParameterToString(updatedAt)); // query parameter
-            if (imageUrl != null) queryParams.Add("image_url", Configuration.ApiClient.ParameterToString(imageUrl)); // query parameter
-            if (defaultUnitId != null) queryParams.Add("default_unit_id", Configuration.ApiClient.ParameterToString(defaultUnitId)); // query parameter
             if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
             if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
@@ -502,74 +474,66 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
     
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersGet: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20031>(statusCode,
+            return new ApiResponse<InlineResponse20015>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20031) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20031)));
+                (InlineResponse20015) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20015)));
             
         }
     
         /// <summary>
-        /// Get all VariableCategories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// Get tracking reminders Users can be reminded to track certain variables at a specified frequency with a default value.
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="name">Name of the category</param>
-        /// <param name="fillingValue">Value for replacing null measurements</param>
-        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
-        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
-        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
-        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
-        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
-        /// <param name="updated">updated</param>
-        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
-        /// <param name="_public">Is category public</param>
-        /// <param name="outcome">outcome</param>
+        /// <param name="clientId">The ID of the client application which last created or updated this tracking reminder</param>
+        /// <param name="userId">ID of the user who created a reminder</param>
+        /// <param name="variableId">Id for the variable to be tracked</param>
+        /// <param name="popUp">True if the reminders should appear as a popup notification</param>
+        /// <param name="sms">True if the reminders should be delivered via SMS</param>
+        /// <param name="email">True if the reminders should be delivered via email</param>
+        /// <param name="notificationBar">True if the reminders should appear in the notification bar</param>
+        /// <param name="lastReminded">ISO 8601 timestamp for the last time a reminder was sent</param>
+        /// <param name="lastTracked">ISO 8601 timestamp for the last time a measurement was received for this user and variable</param>
         /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
         /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
-        /// <param name="imageUrl">Image URL</param>
-        /// <param name="defaultUnitId">ID of the default unit for the category</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20031</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20031> VariableCategoriesGetAsync (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse20015</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20015> TrackingRemindersGetAsync (string accessToken = null, string clientId = null, int? userId = null, int? variableId = null, bool? popUp = null, bool? sms = null, bool? email = null, bool? notificationBar = null, string lastReminded = null, string lastTracked = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20031> response = await VariableCategoriesGetAsyncWithHttpInfo(accessToken, name, fillingValue, maximumAllowedValue, minimumAllowedValue, durationOfAction, onsetDelay, combinationOperation, updated, causeOnly, _public, outcome, createdAt, updatedAt, imageUrl, defaultUnitId, limit, offset, sort);
+             ApiResponse<InlineResponse20015> response = await TrackingRemindersGetAsyncWithHttpInfo(accessToken, clientId, userId, variableId, popUp, sms, email, notificationBar, lastReminded, lastTracked, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
 
         }
 
         /// <summary>
-        /// Get all VariableCategories The variable categories include Activity, Causes of Illness, Cognitive Performance, Conditions, Environment, Foods, Location, Miscellaneous, Mood, Nutrition, Physical Activity, Physique, Sleep, Social Interactions, Symptoms, Treatments, Vital Signs, and Work.
+        /// Get tracking reminders Users can be reminded to track certain variables at a specified frequency with a default value.
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="name">Name of the category</param>
-        /// <param name="fillingValue">Value for replacing null measurements</param>
-        /// <param name="maximumAllowedValue">Maximum recorded value of this category</param>
-        /// <param name="minimumAllowedValue">Minimum recorded value of this category</param>
-        /// <param name="durationOfAction">Estimated number of seconds following the onset delay in which a stimulus produces a perceivable effect</param>
-        /// <param name="onsetDelay">Estimated number of seconds that pass before a stimulus produces a perceivable effect</param>
-        /// <param name="combinationOperation">How to combine values of this variable (for instance, to see a summary of the values over a month) SUM or MEAN</param>
-        /// <param name="updated">updated</param>
-        /// <param name="causeOnly">A value of 1 indicates that this category is generally a cause in a causal relationship.  An example of a causeOnly category would be a category such as Work which would generally not be influenced by the behaviour of the user</param>
-        /// <param name="_public">Is category public</param>
-        /// <param name="outcome">outcome</param>
+        /// <param name="clientId">The ID of the client application which last created or updated this tracking reminder</param>
+        /// <param name="userId">ID of the user who created a reminder</param>
+        /// <param name="variableId">Id for the variable to be tracked</param>
+        /// <param name="popUp">True if the reminders should appear as a popup notification</param>
+        /// <param name="sms">True if the reminders should be delivered via SMS</param>
+        /// <param name="email">True if the reminders should be delivered via email</param>
+        /// <param name="notificationBar">True if the reminders should appear in the notification bar</param>
+        /// <param name="lastReminded">ISO 8601 timestamp for the last time a reminder was sent</param>
+        /// <param name="lastTracked">ISO 8601 timestamp for the last time a measurement was received for this user and variable</param>
         /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
         /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
-        /// <param name="imageUrl">Image URL</param>
-        /// <param name="defaultUnitId">ID of the default unit for the category</param>
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20031)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20031>> VariableCategoriesGetAsyncWithHttpInfo (string accessToken = null, string name = null, double? fillingValue = null, double? maximumAllowedValue = null, double? minimumAllowedValue = null, int? durationOfAction = null, int? onsetDelay = null, string combinationOperation = null, int? updated = null, bool? causeOnly = null, int? _public = null, bool? outcome = null, string createdAt = null, string updatedAt = null, string imageUrl = null, int? defaultUnitId = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20015>> TrackingRemindersGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? userId = null, int? variableId = null, bool? popUp = null, bool? sms = null, bool? email = null, bool? notificationBar = null, string lastReminded = null, string lastTracked = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
-            var path_ = "/variableCategories";
+            var path_ = "/trackingReminders";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -591,21 +555,17 @@ namespace IO.Swagger.Api
             pathParams.Add("format", "json");
             
             if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
-            if (name != null) queryParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // query parameter
-            if (fillingValue != null) queryParams.Add("filling_value", Configuration.ApiClient.ParameterToString(fillingValue)); // query parameter
-            if (maximumAllowedValue != null) queryParams.Add("maximum_allowed_value", Configuration.ApiClient.ParameterToString(maximumAllowedValue)); // query parameter
-            if (minimumAllowedValue != null) queryParams.Add("minimum_allowed_value", Configuration.ApiClient.ParameterToString(minimumAllowedValue)); // query parameter
-            if (durationOfAction != null) queryParams.Add("duration_of_action", Configuration.ApiClient.ParameterToString(durationOfAction)); // query parameter
-            if (onsetDelay != null) queryParams.Add("onset_delay", Configuration.ApiClient.ParameterToString(onsetDelay)); // query parameter
-            if (combinationOperation != null) queryParams.Add("combination_operation", Configuration.ApiClient.ParameterToString(combinationOperation)); // query parameter
-            if (updated != null) queryParams.Add("updated", Configuration.ApiClient.ParameterToString(updated)); // query parameter
-            if (causeOnly != null) queryParams.Add("cause_only", Configuration.ApiClient.ParameterToString(causeOnly)); // query parameter
-            if (_public != null) queryParams.Add("public", Configuration.ApiClient.ParameterToString(_public)); // query parameter
-            if (outcome != null) queryParams.Add("outcome", Configuration.ApiClient.ParameterToString(outcome)); // query parameter
+            if (clientId != null) queryParams.Add("client_id", Configuration.ApiClient.ParameterToString(clientId)); // query parameter
+            if (userId != null) queryParams.Add("user_id", Configuration.ApiClient.ParameterToString(userId)); // query parameter
+            if (variableId != null) queryParams.Add("variable_id", Configuration.ApiClient.ParameterToString(variableId)); // query parameter
+            if (popUp != null) queryParams.Add("pop_up", Configuration.ApiClient.ParameterToString(popUp)); // query parameter
+            if (sms != null) queryParams.Add("sms", Configuration.ApiClient.ParameterToString(sms)); // query parameter
+            if (email != null) queryParams.Add("email", Configuration.ApiClient.ParameterToString(email)); // query parameter
+            if (notificationBar != null) queryParams.Add("notification_bar", Configuration.ApiClient.ParameterToString(notificationBar)); // query parameter
+            if (lastReminded != null) queryParams.Add("last_reminded", Configuration.ApiClient.ParameterToString(lastReminded)); // query parameter
+            if (lastTracked != null) queryParams.Add("last_tracked", Configuration.ApiClient.ParameterToString(lastTracked)); // query parameter
             if (createdAt != null) queryParams.Add("created_at", Configuration.ApiClient.ParameterToString(createdAt)); // query parameter
             if (updatedAt != null) queryParams.Add("updated_at", Configuration.ApiClient.ParameterToString(updatedAt)); // query parameter
-            if (imageUrl != null) queryParams.Add("image_url", Configuration.ApiClient.ParameterToString(imageUrl)); // query parameter
-            if (defaultUnitId != null) queryParams.Add("default_unit_id", Configuration.ApiClient.ParameterToString(defaultUnitId)); // query parameter
             if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
             if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
             if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
@@ -630,39 +590,39 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
  
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesGet: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersGet: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20031>(statusCode,
+            return new ApiResponse<InlineResponse20015>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20031) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20031)));
+                (InlineResponse20015) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20015)));
             
         }
         
         /// <summary>
-        /// Store VariableCategory Store VariableCategory
+        /// Store TrackingReminder This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <param name="body">VariableCategory that should be stored</param> 
-        /// <returns>InlineResponse20032</returns>
-        public InlineResponse20032 VariableCategoriesPost (string accessToken = null, VariableCategory body = null)
+        /// <param name="body">TrackingReminder that should be stored</param> 
+        /// <returns>InlineResponse20023</returns>
+        public InlineResponse20023 TrackingRemindersPost (string accessToken = null, TrackingReminder body = null)
         {
-             ApiResponse<InlineResponse20032> response = VariableCategoriesPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20023> response = TrackingRemindersPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
         /// <summary>
-        /// Store VariableCategory Store VariableCategory
+        /// Store TrackingReminder This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <param name="body">VariableCategory that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20032</returns>
-        public ApiResponse< InlineResponse20032 > VariableCategoriesPostWithHttpInfo (string accessToken = null, VariableCategory body = null)
+        /// <param name="body">TrackingReminder that should be stored</param> 
+        /// <returns>ApiResponse of InlineResponse20023</returns>
+        public ApiResponse< InlineResponse20023 > TrackingRemindersPostWithHttpInfo (string accessToken = null, TrackingReminder body = null)
         {
             
     
-            var path_ = "/variableCategories";
+            var path_ = "/trackingReminders";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -706,40 +666,40 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
     
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesPost: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersPost: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesPost: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20032>(statusCode,
+            return new ApiResponse<InlineResponse20023>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20032) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20032)));
+                (InlineResponse20023) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20023)));
             
         }
     
         /// <summary>
-        /// Store VariableCategory Store VariableCategory
+        /// Store TrackingReminder This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>Task of InlineResponse20032</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20032> VariableCategoriesPostAsync (string accessToken = null, VariableCategory body = null)
+        /// <param name="body">TrackingReminder that should be stored</param>
+        /// <returns>Task of InlineResponse20023</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20023> TrackingRemindersPostAsync (string accessToken = null, TrackingReminder body = null)
         {
-             ApiResponse<InlineResponse20032> response = await VariableCategoriesPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20023> response = await TrackingRemindersPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
 
         /// <summary>
-        /// Store VariableCategory Store VariableCategory
+        /// Store TrackingReminder This is to enable users to indicate their opinion on the plausibility of a causal relationship between a treatment and outcome. QuantiModo incorporates crowd-sourced plausibility estimations into their algorithm. This is done allowing user to indicate their view of the plausibility of each relationship with thumbs up/down buttons placed next to each prediction.
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20032>> VariableCategoriesPostAsyncWithHttpInfo (string accessToken = null, VariableCategory body = null)
+        /// <param name="body">TrackingReminder that should be stored</param>
+        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20023>> TrackingRemindersPostAsyncWithHttpInfo (string accessToken = null, TrackingReminder body = null)
         {
             
     
-            var path_ = "/variableCategories";
+            var path_ = "/trackingReminders";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -783,42 +743,42 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
  
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesPost: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersPost: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesPost: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20032>(statusCode,
+            return new ApiResponse<InlineResponse20023>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20032) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20032)));
+                (InlineResponse20023) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20023)));
             
         }
         
         /// <summary>
-        /// Get VariableCategory Get VariableCategory
+        /// Get TrackingReminder Get TrackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="id">id of TrackingReminder</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20032</returns>
-        public InlineResponse20032 VariableCategoriesIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20023</returns>
+        public InlineResponse20023 TrackingRemindersIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20032> response = VariableCategoriesIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20023> response = TrackingRemindersIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
         /// <summary>
-        /// Get VariableCategory Get VariableCategory
+        /// Get TrackingReminder Get TrackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="id">id of TrackingReminder</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20032</returns>
-        public ApiResponse< InlineResponse20032 > VariableCategoriesIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20023</returns>
+        public ApiResponse< InlineResponse20023 > TrackingRemindersIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdGet");
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling TrackingRemindersIdGet");
             
     
-            var path_ = "/variableCategories/{id}";
+            var path_ = "/trackingReminders/{id}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -862,42 +822,42 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
     
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdGet: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdGet: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20032>(statusCode,
+            return new ApiResponse<InlineResponse20023>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20032) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20032)));
+                (InlineResponse20023) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20023)));
             
         }
     
         /// <summary>
-        /// Get VariableCategory Get VariableCategory
+        /// Get TrackingReminder Get TrackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20032</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20032> VariableCategoriesIdGetAsync (int? id, string accessToken = null)
+        /// <returns>Task of InlineResponse20023</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20023> TrackingRemindersIdGetAsync (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20032> response = await VariableCategoriesIdGetAsyncWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20023> response = await TrackingRemindersIdGetAsyncWithHttpInfo(id, accessToken);
              return response.Data;
 
         }
 
         /// <summary>
-        /// Get VariableCategory Get VariableCategory
+        /// Get TrackingReminder Get TrackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20032)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20032>> VariableCategoriesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>Task of ApiResponse (InlineResponse20023)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20023>> TrackingRemindersIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdGet");
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling TrackingRemindersIdGet");
             
     
-            var path_ = "/variableCategories/{id}";
+            var path_ = "/trackingReminders/{id}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -941,44 +901,44 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
  
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdGet: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdGet: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdGet: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20032>(statusCode,
+            return new ApiResponse<InlineResponse20023>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20032) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20032)));
+                (InlineResponse20023) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20023)));
             
         }
         
         /// <summary>
-        /// Update VariableCategory Update VariableCategory
+        /// Update TrackingReminder Update TrackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="id">id of TrackingReminder</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <param name="body">VariableCategory that should be updated</param> 
+        /// <param name="body">TrackingReminder that should be updated</param> 
         /// <returns>InlineResponse2002</returns>
-        public InlineResponse2002 VariableCategoriesIdPut (int? id, string accessToken = null, VariableCategory body = null)
+        public InlineResponse2002 TrackingRemindersIdPut (int? id, string accessToken = null, TrackingReminder body = null)
         {
-             ApiResponse<InlineResponse2002> response = VariableCategoriesIdPutWithHttpInfo(id, accessToken, body);
+             ApiResponse<InlineResponse2002> response = TrackingRemindersIdPutWithHttpInfo(id, accessToken, body);
              return response.Data;
         }
 
         /// <summary>
-        /// Update VariableCategory Update VariableCategory
+        /// Update TrackingReminder Update TrackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="id">id of TrackingReminder</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <param name="body">VariableCategory that should be updated</param> 
+        /// <param name="body">TrackingReminder that should be updated</param> 
         /// <returns>ApiResponse of InlineResponse2002</returns>
-        public ApiResponse< InlineResponse2002 > VariableCategoriesIdPutWithHttpInfo (int? id, string accessToken = null, VariableCategory body = null)
+        public ApiResponse< InlineResponse2002 > TrackingRemindersIdPutWithHttpInfo (int? id, string accessToken = null, TrackingReminder body = null)
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdPut");
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling TrackingRemindersIdPut");
             
     
-            var path_ = "/variableCategories/{id}";
+            var path_ = "/trackingReminders/{id}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -1023,9 +983,9 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
     
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdPut: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdPut: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdPut: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdPut: " + response.ErrorMessage, response.ErrorMessage);
     
             return new ApiResponse<InlineResponse2002>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -1034,33 +994,33 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Update VariableCategory Update VariableCategory
+        /// Update TrackingReminder Update TrackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be updated</param>
+        /// <param name="body">TrackingReminder that should be updated</param>
         /// <returns>Task of InlineResponse2002</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdPutAsync (int? id, string accessToken = null, VariableCategory body = null)
+        public async System.Threading.Tasks.Task<InlineResponse2002> TrackingRemindersIdPutAsync (int? id, string accessToken = null, TrackingReminder body = null)
         {
-             ApiResponse<InlineResponse2002> response = await VariableCategoriesIdPutAsyncWithHttpInfo(id, accessToken, body);
+             ApiResponse<InlineResponse2002> response = await TrackingRemindersIdPutAsyncWithHttpInfo(id, accessToken, body);
              return response.Data;
 
         }
 
         /// <summary>
-        /// Update VariableCategory Update VariableCategory
+        /// Update TrackingReminder Update TrackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="body">VariableCategory that should be updated</param>
+        /// <param name="body">TrackingReminder that should be updated</param>
         /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableCategoriesIdPutAsyncWithHttpInfo (int? id, string accessToken = null, VariableCategory body = null)
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> TrackingRemindersIdPutAsyncWithHttpInfo (int? id, string accessToken = null, TrackingReminder body = null)
         {
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdPut");
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling TrackingRemindersIdPut");
             
     
-            var path_ = "/variableCategories/{id}";
+            var path_ = "/trackingReminders/{id}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -1105,9 +1065,9 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
  
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdPut: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdPut: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdPut: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdPut: " + response.ErrorMessage, response.ErrorMessage);
 
             return new ApiResponse<InlineResponse2002>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -1116,31 +1076,31 @@ namespace IO.Swagger.Api
         }
         
         /// <summary>
-        /// Delete VariableCategory Delete VariableCategory
+        /// Delete TrackingReminder Delete previously posted trackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="id">id of TrackingReminder</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <returns>InlineResponse2002</returns>
-        public InlineResponse2002 VariableCategoriesIdDelete (int? id, string accessToken = null)
+        public InlineResponse2002 TrackingRemindersIdDelete (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse2002> response = VariableCategoriesIdDeleteWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse2002> response = TrackingRemindersIdDeleteWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
         /// <summary>
-        /// Delete VariableCategory Delete VariableCategory
+        /// Delete TrackingReminder Delete previously posted trackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param> 
+        /// <param name="id">id of TrackingReminder</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <returns>ApiResponse of InlineResponse2002</returns>
-        public ApiResponse< InlineResponse2002 > VariableCategoriesIdDeleteWithHttpInfo (int? id, string accessToken = null)
+        public ApiResponse< InlineResponse2002 > TrackingRemindersIdDeleteWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdDelete");
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling TrackingRemindersIdDelete");
             
     
-            var path_ = "/variableCategories/{id}";
+            var path_ = "/trackingReminders/{id}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -1184,9 +1144,9 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
     
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdDelete: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdDelete: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdDelete: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdDelete: " + response.ErrorMessage, response.ErrorMessage);
     
             return new ApiResponse<InlineResponse2002>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
@@ -1195,31 +1155,31 @@ namespace IO.Swagger.Api
         }
     
         /// <summary>
-        /// Delete VariableCategory Delete VariableCategory
+        /// Delete TrackingReminder Delete previously posted trackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <returns>Task of InlineResponse2002</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2002> VariableCategoriesIdDeleteAsync (int? id, string accessToken = null)
+        public async System.Threading.Tasks.Task<InlineResponse2002> TrackingRemindersIdDeleteAsync (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse2002> response = await VariableCategoriesIdDeleteAsyncWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse2002> response = await TrackingRemindersIdDeleteAsyncWithHttpInfo(id, accessToken);
              return response.Data;
 
         }
 
         /// <summary>
-        /// Delete VariableCategory Delete VariableCategory
+        /// Delete TrackingReminder Delete previously posted trackingReminder
         /// </summary>
-        /// <param name="id">id of VariableCategory</param>
+        /// <param name="id">id of TrackingReminder</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableCategoriesIdDeleteAsyncWithHttpInfo (int? id, string accessToken = null)
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> TrackingRemindersIdDeleteAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableCategoriesIdDelete");
+            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling TrackingRemindersIdDelete");
             
     
-            var path_ = "/variableCategories/{id}";
+            var path_ = "/trackingReminders/{id}";
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
@@ -1263,9 +1223,9 @@ namespace IO.Swagger.Api
             int statusCode = (int) response.StatusCode;
  
             if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdDelete: " + response.Content, response.Content);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdDelete: " + response.Content, response.Content);
             else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling VariableCategoriesIdDelete: " + response.ErrorMessage, response.ErrorMessage);
+                throw new ApiException (statusCode, "Error calling TrackingRemindersIdDelete: " + response.ErrorMessage, response.ErrorMessage);
 
             return new ApiResponse<InlineResponse2002>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),

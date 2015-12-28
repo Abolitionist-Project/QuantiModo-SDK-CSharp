@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class Vote : IEquatable<Vote>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Vote" /> class.
+        /// </summary>
+        public Vote()
+        {
+            
+        }
+
         
         /// <summary>
         /// id

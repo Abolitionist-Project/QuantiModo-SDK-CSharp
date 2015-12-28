@@ -19,23 +19,56 @@ namespace IO.Swagger.Client
     public class ApiClient
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApiClient" /> class.
+        /// Initializes a new instance of the <see cref="ApiClient" /> class
+        /// with default configuration and base path (https://app.quantimo.do/api/v2).
+        /// </summary>
+        public ApiClient()
+        {
+            Configuration = Configuration.Default;
+            RestClient = new RestClient("https://app.quantimo.do/api/v2");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiClient" /> class
+        /// with default base path (https://app.quantimo.do/api/v2).
+        /// </summary>
+        /// <param name="config">An instance of Configuration.</param>
+        public ApiClient(Configuration config = null)
+        {
+            if (config == null)
+                Configuration = Configuration.Default;
+            else
+                Configuration = config;
+
+            RestClient = new RestClient("https://app.quantimo.do/api/v2");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiClient" /> class
+        /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath="https://app.quantimo.do/api/v2")
+        public ApiClient(String basePath = "https://app.quantimo.do/api/v2")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
+            Configuration = Configuration.Default;
         }
 
         /// <summary>
         /// Gets or sets the default API client for making HTTP calls.
         /// </summary>
         /// <value>The default API client.</value>
-        public static ApiClient Default = new ApiClient();
+        public static ApiClient Default = new ApiClient(Configuration.Default);
     
+        /// <summary>
+        /// Gets or sets the Configuration.
+        /// </summary>
+        /// <value>An instance of the Configuration.</value>
+        public Configuration Configuration { get; set; }
+
         /// <summary>
         /// Gets or sets the RestClient.
         /// </summary>
@@ -147,7 +180,7 @@ namespace IO.Swagger.Client
         }
     
         /// <summary>
-        /// If parameter is DateTime, output in ISO8601 format.
+        /// If parameter is DateTime, output in a formatted string (default ISO 8601), customizable with Configuration.DateTime.
         /// If parameter is a list, join the list with ",".
         /// Otherwise just return the string.
         /// </summary>
@@ -156,16 +189,21 @@ namespace IO.Swagger.Client
         public string ParameterToString(object obj)
         {
             if (obj is DateTime)
-                return ((DateTime)obj).ToString ("u");
+                // Return a formatted date string - Can be customized with Configuration.DateTimeFormat
+                // Defaults to an ISO 8601, using the known as a Round-trip date/time pattern ("o")
+                // https://msdn.microsoft.com/en-us/library/az4se3k1(v=vs.110).aspx#Anchor_8
+                // For example: 2009-06-15T13:45:30.0000000
+                return ((DateTime)obj).ToString (Configuration.DateTimeFormat);
             else if (obj is IList)
             {
-                string flattenString = "";
-                string separator = ",";
+                var flattenedString = new StringBuilder();
                 foreach (var param in (IList)obj)
                 {
-                    flattenString += param.ToString() + separator;
+                    if (flattenedString.Length > 0)
+                        flattenedString.Append(",");
+                    flattenedString.Append(param);
                 }
-                return flattenString.Remove(flattenString.Length - 1);;
+                return flattenedString.ToString();
             }
             else
                 return Convert.ToString (obj);
@@ -194,13 +232,16 @@ namespace IO.Swagger.Client
                     var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
                         ? Path.GetTempPath()
                         : Configuration.TempFolderPath;
-                    var regex = new Regex(@"Content-Disposition:.*filename=['""]?([^'""\s]+)['""]?$");
-                    var match = regex.Match(headers.ToString());
-                    if (match.Success)
+                    var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
+                    foreach (var header in headers)
                     {
-                        string fileName = filePath + match.Value.Replace("\"", "").Replace("'", "");
-                        File.WriteAllBytes(fileName, data);
-                        return new FileStream(fileName, FileMode.Open);
+                        var match = regex.Match(header.ToString());
+                        if (match.Success)
+                        {
+                            string fileName = filePath + match.Groups[1].Value.Replace("\"", "").Replace("'", "");
+                            File.WriteAllBytes(fileName, data);
+                            return new FileStream(fileName, FileMode.Open);
+                        }
                     }
                 }
                 var stream = new MemoryStream(data);

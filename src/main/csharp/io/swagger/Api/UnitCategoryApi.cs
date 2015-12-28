@@ -28,8 +28,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20019</returns>
-        InlineResponse20019 UnitCategoriesGet (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse20024</returns>
+        InlineResponse20024 UnitCategoriesGet (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get unit categories
@@ -44,8 +44,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20019</returns>
-        ApiResponse<InlineResponse20019> UnitCategoriesGetWithHttpInfo (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse20024</returns>
+        ApiResponse<InlineResponse20024> UnitCategoriesGetWithHttpInfo (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get unit categories
@@ -60,8 +60,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20019</returns>
-        System.Threading.Tasks.Task<InlineResponse20019> UnitCategoriesGetAsync (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse20024</returns>
+        System.Threading.Tasks.Task<InlineResponse20024> UnitCategoriesGetAsync (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get unit categories
@@ -76,8 +76,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20019>> UnitCategoriesGetAsyncWithHttpInfo (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20024>> UnitCategoriesGetAsyncWithHttpInfo (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store UnitCategory
@@ -87,8 +87,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UnitCategory that should be stored</param>
-        /// <returns>InlineResponse20020</returns>
-        InlineResponse20020 UnitCategoriesPost (string accessToken = null, UnitCategory body = null);
+        /// <returns>InlineResponse20025</returns>
+        InlineResponse20025 UnitCategoriesPost (string accessToken = null, UnitCategory body = null);
   
         /// <summary>
         /// Store UnitCategory
@@ -98,8 +98,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UnitCategory that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20020</returns>
-        ApiResponse<InlineResponse20020> UnitCategoriesPostWithHttpInfo (string accessToken = null, UnitCategory body = null);
+        /// <returns>ApiResponse of InlineResponse20025</returns>
+        ApiResponse<InlineResponse20025> UnitCategoriesPostWithHttpInfo (string accessToken = null, UnitCategory body = null);
 
         /// <summary>
         /// Store UnitCategory
@@ -109,8 +109,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UnitCategory that should be stored</param>
-        /// <returns>Task of InlineResponse20020</returns>
-        System.Threading.Tasks.Task<InlineResponse20020> UnitCategoriesPostAsync (string accessToken = null, UnitCategory body = null);
+        /// <returns>Task of InlineResponse20025</returns>
+        System.Threading.Tasks.Task<InlineResponse20025> UnitCategoriesPostAsync (string accessToken = null, UnitCategory body = null);
 
         /// <summary>
         /// Store UnitCategory
@@ -120,8 +120,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UnitCategory that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20020>> UnitCategoriesPostAsyncWithHttpInfo (string accessToken = null, UnitCategory body = null);
+        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20025>> UnitCategoriesPostAsyncWithHttpInfo (string accessToken = null, UnitCategory body = null);
         
         /// <summary>
         /// Get UnitCategory
@@ -131,8 +131,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UnitCategory</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20020</returns>
-        InlineResponse20020 UnitCategoriesIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20025</returns>
+        InlineResponse20025 UnitCategoriesIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get UnitCategory
@@ -142,8 +142,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UnitCategory</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20020</returns>
-        ApiResponse<InlineResponse20020> UnitCategoriesIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20025</returns>
+        ApiResponse<InlineResponse20025> UnitCategoriesIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
         /// Get UnitCategory
@@ -153,8 +153,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UnitCategory</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20020</returns>
-        System.Threading.Tasks.Task<InlineResponse20020> UnitCategoriesIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20025</returns>
+        System.Threading.Tasks.Task<InlineResponse20025> UnitCategoriesIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
         /// Get UnitCategory
@@ -164,8 +164,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of UnitCategory</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20020>> UnitCategoriesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20025>> UnitCategoriesIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update UnitCategory
@@ -347,10 +347,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20019</returns>
-        public InlineResponse20019 UnitCategoriesGet (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse20024</returns>
+        public InlineResponse20024 UnitCategoriesGet (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20019> response = UnitCategoriesGetWithHttpInfo(accessToken, name, createdAt, updatedAt, limit, offset, sort);
+             ApiResponse<InlineResponse20024> response = UnitCategoriesGetWithHttpInfo(accessToken, name, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
         }
 
@@ -364,8 +364,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20019</returns>
-        public ApiResponse< InlineResponse20019 > UnitCategoriesGetWithHttpInfo (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse20024</returns>
+        public ApiResponse< InlineResponse20024 > UnitCategoriesGetWithHttpInfo (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -422,9 +422,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UnitCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20019>(statusCode,
+            return new ApiResponse<InlineResponse20024>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20019) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20019)));
+                (InlineResponse20024) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20024)));
             
         }
     
@@ -438,10 +438,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20019</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20019> UnitCategoriesGetAsync (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse20024</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20024> UnitCategoriesGetAsync (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20019> response = await UnitCategoriesGetAsyncWithHttpInfo(accessToken, name, createdAt, updatedAt, limit, offset, sort);
+             ApiResponse<InlineResponse20024> response = await UnitCategoriesGetAsyncWithHttpInfo(accessToken, name, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
 
         }
@@ -456,8 +456,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20019>> UnitCategoriesGetAsyncWithHttpInfo (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse20024)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20024>> UnitCategoriesGetAsyncWithHttpInfo (string accessToken = null, string name = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -514,9 +514,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UnitCategoriesGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20019>(statusCode,
+            return new ApiResponse<InlineResponse20024>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20019) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20019)));
+                (InlineResponse20024) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20024)));
             
         }
         
@@ -525,10 +525,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">UnitCategory that should be stored</param> 
-        /// <returns>InlineResponse20020</returns>
-        public InlineResponse20020 UnitCategoriesPost (string accessToken = null, UnitCategory body = null)
+        /// <returns>InlineResponse20025</returns>
+        public InlineResponse20025 UnitCategoriesPost (string accessToken = null, UnitCategory body = null)
         {
-             ApiResponse<InlineResponse20020> response = UnitCategoriesPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20025> response = UnitCategoriesPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -537,8 +537,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">UnitCategory that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20020</returns>
-        public ApiResponse< InlineResponse20020 > UnitCategoriesPostWithHttpInfo (string accessToken = null, UnitCategory body = null)
+        /// <returns>ApiResponse of InlineResponse20025</returns>
+        public ApiResponse< InlineResponse20025 > UnitCategoriesPostWithHttpInfo (string accessToken = null, UnitCategory body = null)
         {
             
     
@@ -590,9 +590,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UnitCategoriesPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20020>(statusCode,
+            return new ApiResponse<InlineResponse20025>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20020) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20020)));
+                (InlineResponse20025) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20025)));
             
         }
     
@@ -601,10 +601,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UnitCategory that should be stored</param>
-        /// <returns>Task of InlineResponse20020</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20020> UnitCategoriesPostAsync (string accessToken = null, UnitCategory body = null)
+        /// <returns>Task of InlineResponse20025</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20025> UnitCategoriesPostAsync (string accessToken = null, UnitCategory body = null)
         {
-             ApiResponse<InlineResponse20020> response = await UnitCategoriesPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20025> response = await UnitCategoriesPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -614,8 +614,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">UnitCategory that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20020>> UnitCategoriesPostAsyncWithHttpInfo (string accessToken = null, UnitCategory body = null)
+        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20025>> UnitCategoriesPostAsyncWithHttpInfo (string accessToken = null, UnitCategory body = null)
         {
             
     
@@ -667,9 +667,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UnitCategoriesPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20020>(statusCode,
+            return new ApiResponse<InlineResponse20025>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20020) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20020)));
+                (InlineResponse20025) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20025)));
             
         }
         
@@ -678,10 +678,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UnitCategory</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20020</returns>
-        public InlineResponse20020 UnitCategoriesIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20025</returns>
+        public InlineResponse20025 UnitCategoriesIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20020> response = UnitCategoriesIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20025> response = UnitCategoriesIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
@@ -690,8 +690,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UnitCategory</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20020</returns>
-        public ApiResponse< InlineResponse20020 > UnitCategoriesIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20025</returns>
+        public ApiResponse< InlineResponse20025 > UnitCategoriesIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -746,9 +746,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UnitCategoriesIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20020>(statusCode,
+            return new ApiResponse<InlineResponse20025>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20020) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20020)));
+                (InlineResponse20025) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20025)));
             
         }
     
@@ -757,10 +757,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UnitCategory</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20020</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20020> UnitCategoriesIdGetAsync (int? id, string accessToken = null)
+        /// <returns>Task of InlineResponse20025</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20025> UnitCategoriesIdGetAsync (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20020> response = await UnitCategoriesIdGetAsyncWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20025> response = await UnitCategoriesIdGetAsyncWithHttpInfo(id, accessToken);
              return response.Data;
 
         }
@@ -770,8 +770,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of UnitCategory</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20020>> UnitCategoriesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>Task of ApiResponse (InlineResponse20025)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20025>> UnitCategoriesIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UnitCategoriesIdGet");
@@ -825,9 +825,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UnitCategoriesIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20020>(statusCode,
+            return new ApiResponse<InlineResponse20025>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20020) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20020)));
+                (InlineResponse20025) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20025)));
             
         }
         

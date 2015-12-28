@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class MeasurementExport : IEquatable<MeasurementExport>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MeasurementExport" /> class.
+        /// </summary>
+        public MeasurementExport()
+        {
+            
+        }
+
         
         /// <summary>
         /// id

@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class UnitConversion : IEquatable<UnitConversion>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnitConversion" /> class.
+        /// </summary>
+        public UnitConversion()
+        {
+            
+        }
+
         
         /// <summary>
         /// unit_id

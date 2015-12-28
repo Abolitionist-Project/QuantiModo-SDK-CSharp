@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class Measurement : IEquatable<Measurement>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Measurement" /> class.
+        /// </summary>
+        public Measurement()
+        {
+            
+        }
+
         
         /// <summary>
         /// id

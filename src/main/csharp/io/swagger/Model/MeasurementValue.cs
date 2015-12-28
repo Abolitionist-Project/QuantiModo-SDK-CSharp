@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class MeasurementValue : IEquatable<MeasurementValue>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MeasurementValue" /> class.
+        /// </summary>
+        public MeasurementValue()
+        {
+            
+        }
+
         
         /// <summary>
         /// When the measurement event occurred . Use ISO 8601 datetime format

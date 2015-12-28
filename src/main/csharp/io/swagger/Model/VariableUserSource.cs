@@ -16,6 +16,14 @@ namespace IO.Swagger.Model
     [DataContract]
     public class VariableUserSource : IEquatable<VariableUserSource>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VariableUserSource" /> class.
+        /// </summary>
+        public VariableUserSource()
+        {
+            
+        }
+
         
         /// <summary>
         /// ID of User

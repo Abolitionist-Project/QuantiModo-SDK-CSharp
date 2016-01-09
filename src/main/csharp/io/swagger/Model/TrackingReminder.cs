@@ -14,7 +14,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class TrackingReminder : IEquatable<TrackingReminder>
+    public class TrackingReminder :  IEquatable<TrackingReminder>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingReminder" /> class.

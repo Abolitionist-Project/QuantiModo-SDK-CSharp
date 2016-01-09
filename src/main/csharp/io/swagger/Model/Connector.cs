@@ -14,7 +14,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class Connector : IEquatable<Connector>
+    public class Connector :  IEquatable<Connector>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Connector" /> class.

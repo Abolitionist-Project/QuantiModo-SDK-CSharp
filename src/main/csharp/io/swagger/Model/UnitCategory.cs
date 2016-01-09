@@ -14,7 +14,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class UnitCategory : IEquatable<UnitCategory>
+    public class UnitCategory :  IEquatable<UnitCategory>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UnitCategory" /> class.

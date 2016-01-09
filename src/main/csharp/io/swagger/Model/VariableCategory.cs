@@ -14,7 +14,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class VariableCategory : IEquatable<VariableCategory>
+    public class VariableCategory :  IEquatable<VariableCategory>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VariableCategory" /> class.

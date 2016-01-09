@@ -14,7 +14,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class AggregatedCorrelation : IEquatable<AggregatedCorrelation>
+    public class AggregatedCorrelation :  IEquatable<AggregatedCorrelation>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AggregatedCorrelation" /> class.

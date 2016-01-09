@@ -14,7 +14,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class Credential : IEquatable<Credential>
+    public class Credential :  IEquatable<Credential>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Credential" /> class.

@@ -14,7 +14,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class UserVariable : IEquatable<UserVariable>
+    public class UserVariable :  IEquatable<UserVariable>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserVariable" /> class.

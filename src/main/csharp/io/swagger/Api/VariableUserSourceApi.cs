@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 using RestSharp;
 using IO.Swagger.Client;
 using IO.Swagger.Model;
@@ -20,16 +21,19 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// Get all VariableUserSources
         /// </remarks>
-        /// <param name="variableId">variable_id</param>
-        /// <param name="userId">user_id</param>
-        /// <param name="timestamp">timestamp</param>
-        /// <param name="createdAt">created_at</param>
-        /// <param name="updatedAt">updated_at</param>
-        /// <param name="limit">limit</param>
-        /// <param name="offset">offset</param>
-        /// <param name="sort">sort</param>
-        /// <returns>InlineResponse20025</returns>
-        InlineResponse20025 VariableUserSourcesGet (int? variableId, int? userId, int? timestamp, string createdAt, string updatedAt, int? limit, int? offset, string sort);
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="variableId">ID of variable</param>
+        /// <param name="userId">ID of User</param>
+        /// <param name="timestamp">Time that this measurement occurred Uses epoch minute (epoch time divided by 60)</param>
+        /// <param name="earliestMeasurementTime">Earliest measurement time</param>
+        /// <param name="latestMeasurementTime">Latest measurement time</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>InlineResponse20019</returns>
+        InlineResponse20019 VariableUserSourcesGet (string accessToken = null, int? variableId = null, int? userId = null, int? timestamp = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all VariableUserSources
@@ -37,16 +41,59 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// Get all VariableUserSources
         /// </remarks>
-        /// <param name="variableId">variable_id</param>
-        /// <param name="userId">user_id</param>
-        /// <param name="timestamp">timestamp</param>
-        /// <param name="createdAt">created_at</param>
-        /// <param name="updatedAt">updated_at</param>
-        /// <param name="limit">limit</param>
-        /// <param name="offset">offset</param>
-        /// <param name="sort">sort</param>
-        /// <returns>InlineResponse20025</returns>
-        System.Threading.Tasks.Task<InlineResponse20025> VariableUserSourcesGetAsync (int? variableId, int? userId, int? timestamp, string createdAt, string updatedAt, int? limit, int? offset, string sort);
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="variableId">ID of variable</param>
+        /// <param name="userId">ID of User</param>
+        /// <param name="timestamp">Time that this measurement occurred Uses epoch minute (epoch time divided by 60)</param>
+        /// <param name="earliestMeasurementTime">Earliest measurement time</param>
+        /// <param name="latestMeasurementTime">Latest measurement time</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>ApiResponse of InlineResponse20019</returns>
+        ApiResponse<InlineResponse20019> VariableUserSourcesGetWithHttpInfo (string accessToken = null, int? variableId = null, int? userId = null, int? timestamp = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+
+        /// <summary>
+        /// Get all VariableUserSources
+        /// </summary>
+        /// <remarks>
+        /// Get all VariableUserSources
+        /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="variableId">ID of variable</param>
+        /// <param name="userId">ID of User</param>
+        /// <param name="timestamp">Time that this measurement occurred Uses epoch minute (epoch time divided by 60)</param>
+        /// <param name="earliestMeasurementTime">Earliest measurement time</param>
+        /// <param name="latestMeasurementTime">Latest measurement time</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of InlineResponse20019</returns>
+        System.Threading.Tasks.Task<InlineResponse20019> VariableUserSourcesGetAsync (string accessToken = null, int? variableId = null, int? userId = null, int? timestamp = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+
+        /// <summary>
+        /// Get all VariableUserSources
+        /// </summary>
+        /// <remarks>
+        /// Get all VariableUserSources
+        /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="variableId">ID of variable</param>
+        /// <param name="userId">ID of User</param>
+        /// <param name="timestamp">Time that this measurement occurred Uses epoch minute (epoch time divided by 60)</param>
+        /// <param name="earliestMeasurementTime">Earliest measurement time</param>
+        /// <param name="latestMeasurementTime">Latest measurement time</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20019>> VariableUserSourcesGetAsyncWithHttpInfo (string accessToken = null, int? variableId = null, int? userId = null, int? timestamp = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store VariableUserSource
@@ -54,9 +101,10 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// Store VariableUserSource
         /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableUserSource that should be stored</param>
-        /// <returns>InlineResponse20026</returns>
-        InlineResponse20026 VariableUserSourcesPost (VariableUserSource body);
+        /// <returns>InlineResponse20033</returns>
+        InlineResponse20033 VariableUserSourcesPost (string accessToken = null, VariableUserSource body = null);
   
         /// <summary>
         /// Store VariableUserSource
@@ -64,9 +112,32 @@ namespace IO.Swagger.Api
         /// <remarks>
         /// Store VariableUserSource
         /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableUserSource that should be stored</param>
-        /// <returns>InlineResponse20026</returns>
-        System.Threading.Tasks.Task<InlineResponse20026> VariableUserSourcesPostAsync (VariableUserSource body);
+        /// <returns>ApiResponse of InlineResponse20033</returns>
+        ApiResponse<InlineResponse20033> VariableUserSourcesPostWithHttpInfo (string accessToken = null, VariableUserSource body = null);
+
+        /// <summary>
+        /// Store VariableUserSource
+        /// </summary>
+        /// <remarks>
+        /// Store VariableUserSource
+        /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableUserSource that should be stored</param>
+        /// <returns>Task of InlineResponse20033</returns>
+        System.Threading.Tasks.Task<InlineResponse20033> VariableUserSourcesPostAsync (string accessToken = null, VariableUserSource body = null);
+
+        /// <summary>
+        /// Store VariableUserSource
+        /// </summary>
+        /// <remarks>
+        /// Store VariableUserSource
+        /// </remarks>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableUserSource that should be stored</param>
+        /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20033>> VariableUserSourcesPostAsyncWithHttpInfo (string accessToken = null, VariableUserSource body = null);
         
         /// <summary>
         /// Get VariableUserSource
@@ -76,8 +147,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
-        /// <returns>InlineResponse20026</returns>
-        InlineResponse20026 VariableUserSourcesIdGet (int? id, int? sourceId);
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>InlineResponse20033</returns>
+        InlineResponse20033 VariableUserSourcesIdGet (int? id, int? sourceId, string accessToken = null);
   
         /// <summary>
         /// Get VariableUserSource
@@ -87,8 +159,33 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
-        /// <returns>InlineResponse20026</returns>
-        System.Threading.Tasks.Task<InlineResponse20026> VariableUserSourcesIdGetAsync (int? id, int? sourceId);
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>ApiResponse of InlineResponse20033</returns>
+        ApiResponse<InlineResponse20033> VariableUserSourcesIdGetWithHttpInfo (int? id, int? sourceId, string accessToken = null);
+
+        /// <summary>
+        /// Get VariableUserSource
+        /// </summary>
+        /// <remarks>
+        /// Get VariableUserSource
+        /// </remarks>
+        /// <param name="id">id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse20033</returns>
+        System.Threading.Tasks.Task<InlineResponse20033> VariableUserSourcesIdGetAsync (int? id, int? sourceId, string accessToken = null);
+
+        /// <summary>
+        /// Get VariableUserSource
+        /// </summary>
+        /// <remarks>
+        /// Get VariableUserSource
+        /// </remarks>
+        /// <param name="id">id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20033>> VariableUserSourcesIdGetAsyncWithHttpInfo (int? id, int? sourceId, string accessToken = null);
         
         /// <summary>
         /// Update VariableUserSource
@@ -98,9 +195,10 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">variable_id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableUserSource that should be updated</param>
         /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 VariableUserSourcesIdPut (int? id, int? sourceId, VariableUserSource body);
+        InlineResponse2002 VariableUserSourcesIdPut (int? id, int? sourceId, string accessToken = null, VariableUserSource body = null);
   
         /// <summary>
         /// Update VariableUserSource
@@ -110,9 +208,36 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">variable_id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableUserSource that should be updated</param>
-        /// <returns>InlineResponse2002</returns>
-        System.Threading.Tasks.Task<InlineResponse2002> VariableUserSourcesIdPutAsync (int? id, int? sourceId, VariableUserSource body);
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> VariableUserSourcesIdPutWithHttpInfo (int? id, int? sourceId, string accessToken = null, VariableUserSource body = null);
+
+        /// <summary>
+        /// Update VariableUserSource
+        /// </summary>
+        /// <remarks>
+        /// Update VariableUserSource
+        /// </remarks>
+        /// <param name="id">variable_id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableUserSource that should be updated</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> VariableUserSourcesIdPutAsync (int? id, int? sourceId, string accessToken = null, VariableUserSource body = null);
+
+        /// <summary>
+        /// Update VariableUserSource
+        /// </summary>
+        /// <remarks>
+        /// Update VariableUserSource
+        /// </remarks>
+        /// <param name="id">variable_id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableUserSource that should be updated</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableUserSourcesIdPutAsyncWithHttpInfo (int? id, int? sourceId, string accessToken = null, VariableUserSource body = null);
         
         /// <summary>
         /// Delete VariableUserSource
@@ -122,8 +247,9 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">variable_id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <returns>InlineResponse2002</returns>
-        InlineResponse2002 VariableUserSourcesIdDelete (int? id, int? sourceId);
+        InlineResponse2002 VariableUserSourcesIdDelete (int? id, int? sourceId, string accessToken = null);
   
         /// <summary>
         /// Delete VariableUserSource
@@ -133,8 +259,33 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">variable_id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
-        /// <returns>InlineResponse2002</returns>
-        System.Threading.Tasks.Task<InlineResponse2002> VariableUserSourcesIdDeleteAsync (int? id, int? sourceId);
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        ApiResponse<InlineResponse2002> VariableUserSourcesIdDeleteWithHttpInfo (int? id, int? sourceId, string accessToken = null);
+
+        /// <summary>
+        /// Delete VariableUserSource
+        /// </summary>
+        /// <remarks>
+        /// Delete VariableUserSource
+        /// </remarks>
+        /// <param name="id">variable_id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        System.Threading.Tasks.Task<InlineResponse2002> VariableUserSourcesIdDeleteAsync (int? id, int? sourceId, string accessToken = null);
+
+        /// <summary>
+        /// Delete VariableUserSource
+        /// </summary>
+        /// <remarks>
+        /// Delete VariableUserSource
+        /// </remarks>
+        /// <param name="id">variable_id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableUserSourcesIdDeleteAsyncWithHttpInfo (int? id, int? sourceId, string accessToken = null);
         
     }
   
@@ -146,64 +297,111 @@ namespace IO.Swagger.Api
         /// <summary>
         /// Initializes a new instance of the <see cref="VariableUserSourceApi"/> class.
         /// </summary>
-        /// <param name="apiClient"> an instance of ApiClient (optional)</param>
-        /// <returns></returns>
-        public VariableUserSourceApi(ApiClient apiClient = null)
-        {
-            if (apiClient == null) // use the default one in Configuration
-                this.ApiClient = Configuration.DefaultApiClient; 
-            else
-                this.ApiClient = apiClient;
-        }
-    
-        /// <summary>
-        /// Initializes a new instance of the <see cref="VariableUserSourceApi"/> class.
-        /// </summary>
         /// <returns></returns>
         public VariableUserSourceApi(String basePath)
         {
-            this.ApiClient = new ApiClient(basePath);
+            this.Configuration = new Configuration(new ApiClient(basePath));
         }
     
         /// <summary>
-        /// Sets the base path of the API client.
+        /// Initializes a new instance of the <see cref="VariableUserSourceApi"/> class
+        /// using Configuration object
         /// </summary>
-        /// <param name="basePath">The base path</param>
-        /// <value>The base path</value>
-        public void SetBasePath(String basePath)
+        /// <param name="configuration">An instance of Configuration</param>
+        /// <returns></returns>
+        public VariableUserSourceApi(Configuration configuration = null)
         {
-            this.ApiClient.BasePath = basePath;
+            if (configuration == null) // use the default one in Configuration
+                this.Configuration = Configuration.Default; 
+            else
+                this.Configuration = configuration;
         }
-    
+
         /// <summary>
         /// Gets the base path of the API client.
         /// </summary>
         /// <value>The base path</value>
         public String GetBasePath()
         {
-            return this.ApiClient.BasePath;
+            return this.Configuration.ApiClient.RestClient.BaseUrl.ToString();
+        }
+
+        /// <summary>
+        /// Sets the base path of the API client.
+        /// </summary>
+        /// <value>The base path</value>
+        [Obsolete("SetBasePath is deprecated, please do 'Configuraiton.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
+        public void SetBasePath(String basePath)
+        {
+            // do nothing
         }
     
         /// <summary>
-        /// Gets or sets the API client.
+        /// Gets or sets the configuration object
         /// </summary>
-        /// <value>An instance of the ApiClient</value>
-        public ApiClient ApiClient {get; set;}
-    
+        /// <value>An instance of the Configuration</value>
+        public Configuration Configuration {get; set;}
+
+        /// <summary>
+        /// Gets the default header.
+        /// </summary>
+        /// <returns>Dictionary of HTTP header</returns>
+        [Obsolete("DefaultHeader is deprecated, please use Configuration.DefaultHeader instead.")]
+        public Dictionary<String, String> DefaultHeader()
+        {
+            return this.Configuration.DefaultHeader;
+        }
+
+        /// <summary>
+        /// Add default header.
+        /// </summary>
+        /// <param name="key">Header field name.</param>
+        /// <param name="value">Header field value.</param>
+        /// <returns></returns>
+        [Obsolete("AddDefaultHeader is deprecated, please use Configuration.AddDefaultHeader instead.")]
+        public void AddDefaultHeader(string key, string value)
+        {
+            this.Configuration.AddDefaultHeader(key, value);
+        }
+   
         
         /// <summary>
         /// Get all VariableUserSources Get all VariableUserSources
         /// </summary>
-        /// <param name="variableId">variable_id</param> 
-        /// <param name="userId">user_id</param> 
-        /// <param name="timestamp">timestamp</param> 
-        /// <param name="createdAt">created_at</param> 
-        /// <param name="updatedAt">updated_at</param> 
-        /// <param name="limit">limit</param> 
-        /// <param name="offset">offset</param> 
-        /// <param name="sort">sort</param> 
-        /// <returns>InlineResponse20025</returns>            
-        public InlineResponse20025 VariableUserSourcesGet (int? variableId, int? userId, int? timestamp, string createdAt, string updatedAt, int? limit, int? offset, string sort)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <param name="variableId">ID of variable</param> 
+        /// <param name="userId">ID of User</param> 
+        /// <param name="timestamp">Time that this measurement occurred Uses epoch minute (epoch time divided by 60)</param> 
+        /// <param name="earliestMeasurementTime">Earliest measurement time</param> 
+        /// <param name="latestMeasurementTime">Latest measurement time</param> 
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param> 
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param> 
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
+        /// <returns>InlineResponse20019</returns>
+        public InlineResponse20019 VariableUserSourcesGet (string accessToken = null, int? variableId = null, int? userId = null, int? timestamp = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        {
+             ApiResponse<InlineResponse20019> response = VariableUserSourcesGetWithHttpInfo(accessToken, variableId, userId, timestamp, earliestMeasurementTime, latestMeasurementTime, createdAt, updatedAt, limit, offset, sort);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Get all VariableUserSources Get all VariableUserSources
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <param name="variableId">ID of variable</param> 
+        /// <param name="userId">ID of User</param> 
+        /// <param name="timestamp">Time that this measurement occurred Uses epoch minute (epoch time divided by 60)</param> 
+        /// <param name="earliestMeasurementTime">Earliest measurement time</param> 
+        /// <param name="latestMeasurementTime">Latest measurement time</param> 
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param> 
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param> 
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
+        /// <returns>ApiResponse of InlineResponse20019</returns>
+        public ApiResponse< InlineResponse20019 > VariableUserSourcesGetWithHttpInfo (string accessToken = null, int? variableId = null, int? userId = null, int? timestamp = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -211,7 +409,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -220,54 +418,94 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
-            if (variableId != null) queryParams.Add("variable_id", ApiClient.ParameterToString(variableId)); // query parameter
-            if (userId != null) queryParams.Add("user_id", ApiClient.ParameterToString(userId)); // query parameter
-            if (timestamp != null) queryParams.Add("timestamp", ApiClient.ParameterToString(timestamp)); // query parameter
-            if (createdAt != null) queryParams.Add("created_at", ApiClient.ParameterToString(createdAt)); // query parameter
-            if (updatedAt != null) queryParams.Add("updated_at", ApiClient.ParameterToString(updatedAt)); // query parameter
-            if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-            if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
-            if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (variableId != null) queryParams.Add("variable_id", Configuration.ApiClient.ParameterToString(variableId)); // query parameter
+            if (userId != null) queryParams.Add("user_id", Configuration.ApiClient.ParameterToString(userId)); // query parameter
+            if (timestamp != null) queryParams.Add("timestamp", Configuration.ApiClient.ParameterToString(timestamp)); // query parameter
+            if (earliestMeasurementTime != null) queryParams.Add("earliest_measurement_time", Configuration.ApiClient.ParameterToString(earliestMeasurementTime)); // query parameter
+            if (latestMeasurementTime != null) queryParams.Add("latest_measurement_time", Configuration.ApiClient.ParameterToString(latestMeasurementTime)); // query parameter
+            if (createdAt != null) queryParams.Add("created_at", Configuration.ApiClient.ParameterToString(createdAt)); // query parameter
+            if (updatedAt != null) queryParams.Add("updated_at", Configuration.ApiClient.ParameterToString(updatedAt)); // query parameter
+            if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             
             
             
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesGet: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesGet: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse20025) ApiClient.Deserialize(response, typeof(InlineResponse20025));
+            return new ApiResponse<InlineResponse20019>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20019) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20019)));
+            
         }
     
         /// <summary>
         /// Get all VariableUserSources Get all VariableUserSources
         /// </summary>
-        /// <param name="variableId">variable_id</param>
-        /// <param name="userId">user_id</param>
-        /// <param name="timestamp">timestamp</param>
-        /// <param name="createdAt">created_at</param>
-        /// <param name="updatedAt">updated_at</param>
-        /// <param name="limit">limit</param>
-        /// <param name="offset">offset</param>
-        /// <param name="sort">sort</param>
-        /// <returns>InlineResponse20025</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20025> VariableUserSourcesGetAsync (int? variableId, int? userId, int? timestamp, string createdAt, string updatedAt, int? limit, int? offset, string sort)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="variableId">ID of variable</param>
+        /// <param name="userId">ID of User</param>
+        /// <param name="timestamp">Time that this measurement occurred Uses epoch minute (epoch time divided by 60)</param>
+        /// <param name="earliestMeasurementTime">Earliest measurement time</param>
+        /// <param name="latestMeasurementTime">Latest measurement time</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of InlineResponse20019</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20019> VariableUserSourcesGetAsync (string accessToken = null, int? variableId = null, int? userId = null, int? timestamp = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        {
+             ApiResponse<InlineResponse20019> response = await VariableUserSourcesGetAsyncWithHttpInfo(accessToken, variableId, userId, timestamp, earliestMeasurementTime, latestMeasurementTime, createdAt, updatedAt, limit, offset, sort);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Get all VariableUserSources Get all VariableUserSources
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="variableId">ID of variable</param>
+        /// <param name="userId">ID of User</param>
+        /// <param name="timestamp">Time that this measurement occurred Uses epoch minute (epoch time divided by 60)</param>
+        /// <param name="earliestMeasurementTime">Earliest measurement time</param>
+        /// <param name="latestMeasurementTime">Latest measurement time</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20019>> VariableUserSourcesGetAsyncWithHttpInfo (string accessToken = null, int? variableId = null, int? userId = null, int? timestamp = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -284,44 +522,75 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
-            if (variableId != null) queryParams.Add("variable_id", ApiClient.ParameterToString(variableId)); // query parameter
-            if (userId != null) queryParams.Add("user_id", ApiClient.ParameterToString(userId)); // query parameter
-            if (timestamp != null) queryParams.Add("timestamp", ApiClient.ParameterToString(timestamp)); // query parameter
-            if (createdAt != null) queryParams.Add("created_at", ApiClient.ParameterToString(createdAt)); // query parameter
-            if (updatedAt != null) queryParams.Add("updated_at", ApiClient.ParameterToString(updatedAt)); // query parameter
-            if (limit != null) queryParams.Add("limit", ApiClient.ParameterToString(limit)); // query parameter
-            if (offset != null) queryParams.Add("offset", ApiClient.ParameterToString(offset)); // query parameter
-            if (sort != null) queryParams.Add("sort", ApiClient.ParameterToString(sort)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (variableId != null) queryParams.Add("variable_id", Configuration.ApiClient.ParameterToString(variableId)); // query parameter
+            if (userId != null) queryParams.Add("user_id", Configuration.ApiClient.ParameterToString(userId)); // query parameter
+            if (timestamp != null) queryParams.Add("timestamp", Configuration.ApiClient.ParameterToString(timestamp)); // query parameter
+            if (earliestMeasurementTime != null) queryParams.Add("earliest_measurement_time", Configuration.ApiClient.ParameterToString(earliestMeasurementTime)); // query parameter
+            if (latestMeasurementTime != null) queryParams.Add("latest_measurement_time", Configuration.ApiClient.ParameterToString(latestMeasurementTime)); // query parameter
+            if (createdAt != null) queryParams.Add("created_at", Configuration.ApiClient.ParameterToString(createdAt)); // query parameter
+            if (updatedAt != null) queryParams.Add("updated_at", Configuration.ApiClient.ParameterToString(updatedAt)); // query parameter
+            if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
             
             
             
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesGet: " + response.Content, response.Content);
 
-            return (InlineResponse20025) ApiClient.Deserialize(response, typeof(InlineResponse20025));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesGet: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse20019>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20019) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20019)));
+            
         }
         
         /// <summary>
         /// Store VariableUserSource Store VariableUserSource
         /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">VariableUserSource that should be stored</param> 
-        /// <returns>InlineResponse20026</returns>            
-        public InlineResponse20026 VariableUserSourcesPost (VariableUserSource body)
+        /// <returns>InlineResponse20033</returns>
+        public InlineResponse20033 VariableUserSourcesPost (string accessToken = null, VariableUserSource body = null)
+        {
+             ApiResponse<InlineResponse20033> response = VariableUserSourcesPostWithHttpInfo(accessToken, body);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Store VariableUserSource Store VariableUserSource
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <param name="body">VariableUserSource that should be stored</param> 
+        /// <returns>ApiResponse of InlineResponse20033</returns>
+        public ApiResponse< InlineResponse20033 > VariableUserSourcesPostWithHttpInfo (string accessToken = null, VariableUserSource body = null)
         {
             
     
@@ -329,7 +598,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -338,40 +607,67 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
-            postBody = ApiClient.Serialize(body); // http body (model) parameter
+            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesPost: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesPost: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesPost: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse20026) ApiClient.Deserialize(response, typeof(InlineResponse20026));
+            return new ApiResponse<InlineResponse20033>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20033) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20033)));
+            
         }
     
         /// <summary>
         /// Store VariableUserSource Store VariableUserSource
         /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableUserSource that should be stored</param>
-        /// <returns>InlineResponse20026</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20026> VariableUserSourcesPostAsync (VariableUserSource body)
+        /// <returns>Task of InlineResponse20033</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20033> VariableUserSourcesPostAsync (string accessToken = null, VariableUserSource body = null)
+        {
+             ApiResponse<InlineResponse20033> response = await VariableUserSourcesPostAsyncWithHttpInfo(accessToken, body);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Store VariableUserSource Store VariableUserSource
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableUserSource that should be stored</param>
+        /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20033>> VariableUserSourcesPostAsyncWithHttpInfo (string accessToken = null, VariableUserSource body = null)
         {
             
     
@@ -388,29 +684,45 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
             
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
             
             
             
-            postBody = ApiClient.Serialize(body); // http body (model) parameter
+            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesPost: " + response.Content, response.Content);
 
-            return (InlineResponse20026) ApiClient.Deserialize(response, typeof(InlineResponse20026));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesPost: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesPost: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse20033>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20033) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20033)));
+            
         }
         
         /// <summary>
@@ -418,8 +730,22 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of VariableUserSource</param> 
         /// <param name="sourceId">source id of VariableUserSource</param> 
-        /// <returns>InlineResponse20026</returns>            
-        public InlineResponse20026 VariableUserSourcesIdGet (int? id, int? sourceId)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <returns>InlineResponse20033</returns>
+        public InlineResponse20033 VariableUserSourcesIdGet (int? id, int? sourceId, string accessToken = null)
+        {
+             ApiResponse<InlineResponse20033> response = VariableUserSourcesIdGetWithHttpInfo(id, sourceId, accessToken);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Get VariableUserSource Get VariableUserSource
+        /// </summary>
+        /// <param name="id">id of VariableUserSource</param> 
+        /// <param name="sourceId">source id of VariableUserSource</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <returns>ApiResponse of InlineResponse20033</returns>
+        public ApiResponse< InlineResponse20033 > VariableUserSourcesIdGetWithHttpInfo (int? id, int? sourceId, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -433,7 +759,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -442,33 +768,46 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             
-            if (sourceId != null) queryParams.Add("source_id", ApiClient.ParameterToString(sourceId)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (sourceId != null) queryParams.Add("source_id", Configuration.ApiClient.ParameterToString(sourceId)); // query parameter
             
             
             
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdGet: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdGet: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse20026) ApiClient.Deserialize(response, typeof(InlineResponse20026));
+            return new ApiResponse<InlineResponse20033>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20033) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20033)));
+            
         }
     
         /// <summary>
@@ -476,8 +815,23 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
-        /// <returns>InlineResponse20026</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20026> VariableUserSourcesIdGetAsync (int? id, int? sourceId)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse20033</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20033> VariableUserSourcesIdGetAsync (int? id, int? sourceId, string accessToken = null)
+        {
+             ApiResponse<InlineResponse20033> response = await VariableUserSourcesIdGetAsyncWithHttpInfo(id, sourceId, accessToken);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Get VariableUserSource Get VariableUserSource
+        /// </summary>
+        /// <param name="id">id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse20033)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20033>> VariableUserSourcesIdGetAsyncWithHttpInfo (int? id, int? sourceId, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableUserSourcesIdGet");
@@ -498,30 +852,46 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             
-            if (sourceId != null) queryParams.Add("source_id", ApiClient.ParameterToString(sourceId)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (sourceId != null) queryParams.Add("source_id", Configuration.ApiClient.ParameterToString(sourceId)); // query parameter
             
             
             
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdGet: " + response.Content, response.Content);
 
-            return (InlineResponse20026) ApiClient.Deserialize(response, typeof(InlineResponse20026));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdGet: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse20033>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20033) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20033)));
+            
         }
         
         /// <summary>
@@ -529,9 +899,24 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">variable_id of VariableUserSource</param> 
         /// <param name="sourceId">source id of VariableUserSource</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">VariableUserSource that should be updated</param> 
-        /// <returns>InlineResponse2002</returns>            
-        public InlineResponse2002 VariableUserSourcesIdPut (int? id, int? sourceId, VariableUserSource body)
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 VariableUserSourcesIdPut (int? id, int? sourceId, string accessToken = null, VariableUserSource body = null)
+        {
+             ApiResponse<InlineResponse2002> response = VariableUserSourcesIdPutWithHttpInfo(id, sourceId, accessToken, body);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Update VariableUserSource Update VariableUserSource
+        /// </summary>
+        /// <param name="id">variable_id of VariableUserSource</param> 
+        /// <param name="sourceId">source id of VariableUserSource</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <param name="body">VariableUserSource that should be updated</param> 
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > VariableUserSourcesIdPutWithHttpInfo (int? id, int? sourceId, string accessToken = null, VariableUserSource body = null)
         {
             
             // verify the required parameter 'id' is set
@@ -545,7 +930,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -554,34 +939,47 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             
-            if (sourceId != null) queryParams.Add("source_id", ApiClient.ParameterToString(sourceId)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (sourceId != null) queryParams.Add("source_id", Configuration.ApiClient.ParameterToString(sourceId)); // query parameter
             
             
             
-            postBody = ApiClient.Serialize(body); // http body (model) parameter
+            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdPut: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdPut: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdPut: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdPut: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse2002) ApiClient.Deserialize(response, typeof(InlineResponse2002));
+            return new ApiResponse<InlineResponse2002>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2002) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2002)));
+            
         }
     
         /// <summary>
@@ -589,9 +987,25 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">variable_id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">VariableUserSource that should be updated</param>
-        /// <returns>InlineResponse2002</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2002> VariableUserSourcesIdPutAsync (int? id, int? sourceId, VariableUserSource body)
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> VariableUserSourcesIdPutAsync (int? id, int? sourceId, string accessToken = null, VariableUserSource body = null)
+        {
+             ApiResponse<InlineResponse2002> response = await VariableUserSourcesIdPutAsyncWithHttpInfo(id, sourceId, accessToken, body);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Update VariableUserSource Update VariableUserSource
+        /// </summary>
+        /// <param name="id">variable_id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="body">VariableUserSource that should be updated</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableUserSourcesIdPutAsyncWithHttpInfo (int? id, int? sourceId, string accessToken = null, VariableUserSource body = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableUserSourcesIdPut");
@@ -612,31 +1026,47 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             
-            if (sourceId != null) queryParams.Add("source_id", ApiClient.ParameterToString(sourceId)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (sourceId != null) queryParams.Add("source_id", Configuration.ApiClient.ParameterToString(sourceId)); // query parameter
             
             
             
-            postBody = ApiClient.Serialize(body); // http body (model) parameter
+            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdPut: " + response.Content, response.Content);
 
-            return (InlineResponse2002) ApiClient.Deserialize(response, typeof(InlineResponse2002));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdPut: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdPut: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse2002>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2002) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2002)));
+            
         }
         
         /// <summary>
@@ -644,8 +1074,22 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">variable_id of VariableUserSource</param> 
         /// <param name="sourceId">source id of VariableUserSource</param> 
-        /// <returns>InlineResponse2002</returns>            
-        public InlineResponse2002 VariableUserSourcesIdDelete (int? id, int? sourceId)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <returns>InlineResponse2002</returns>
+        public InlineResponse2002 VariableUserSourcesIdDelete (int? id, int? sourceId, string accessToken = null)
+        {
+             ApiResponse<InlineResponse2002> response = VariableUserSourcesIdDeleteWithHttpInfo(id, sourceId, accessToken);
+             return response.Data;
+        }
+
+        /// <summary>
+        /// Delete VariableUserSource Delete VariableUserSource
+        /// </summary>
+        /// <param name="id">variable_id of VariableUserSource</param> 
+        /// <param name="sourceId">source id of VariableUserSource</param> 
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
+        /// <returns>ApiResponse of InlineResponse2002</returns>
+        public ApiResponse< InlineResponse2002 > VariableUserSourcesIdDeleteWithHttpInfo (int? id, int? sourceId, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
@@ -659,7 +1103,7 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
             String postBody = null;
@@ -668,33 +1112,46 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             
-            if (sourceId != null) queryParams.Add("source_id", ApiClient.ParameterToString(sourceId)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (sourceId != null) queryParams.Add("source_id", Configuration.ApiClient.ParameterToString(sourceId)); // query parameter
             
             
             
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
+
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) ApiClient.CallApi(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
     
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdDelete: " + response.Content, response.Content);
-            else if (((int)response.StatusCode) == 0)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdDelete: " + response.ErrorMessage, response.ErrorMessage);
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdDelete: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdDelete: " + response.ErrorMessage, response.ErrorMessage);
     
-            return (InlineResponse2002) ApiClient.Deserialize(response, typeof(InlineResponse2002));
+            return new ApiResponse<InlineResponse2002>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2002) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2002)));
+            
         }
     
         /// <summary>
@@ -702,8 +1159,23 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">variable_id of VariableUserSource</param>
         /// <param name="sourceId">source id of VariableUserSource</param>
-        /// <returns>InlineResponse2002</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2002> VariableUserSourcesIdDeleteAsync (int? id, int? sourceId)
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse2002</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2002> VariableUserSourcesIdDeleteAsync (int? id, int? sourceId, string accessToken = null)
+        {
+             ApiResponse<InlineResponse2002> response = await VariableUserSourcesIdDeleteAsyncWithHttpInfo(id, sourceId, accessToken);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Delete VariableUserSource Delete VariableUserSource
+        /// </summary>
+        /// <param name="id">variable_id of VariableUserSource</param>
+        /// <param name="sourceId">source id of VariableUserSource</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse2002)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2002>> VariableUserSourcesIdDeleteAsyncWithHttpInfo (int? id, int? sourceId, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling VariableUserSourcesIdDelete");
@@ -724,30 +1196,46 @@ namespace IO.Swagger.Api
             String[] http_header_accepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = ApiClient.SelectHeaderAccept(http_header_accepts);
+            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
             if (http_header_accept != null)
-                headerParams.Add("Accept", ApiClient.SelectHeaderAccept(http_header_accepts));
+                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
             pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", ApiClient.ParameterToString(id)); // path parameter
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
             
-            if (sourceId != null) queryParams.Add("source_id", ApiClient.ParameterToString(sourceId)); // query parameter
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (sourceId != null) queryParams.Add("source_id", Configuration.ApiClient.ParameterToString(sourceId)); // query parameter
             
             
             
             
-    
-            // authentication setting, if any
-            String[] authSettings = new String[] {  };
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) await ApiClient.CallApiAsync(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams, authSettings);
-            if (((int)response.StatusCode) >= 400)
-                throw new ApiException ((int)response.StatusCode, "Error calling VariableUserSourcesIdDelete: " + response.Content, response.Content);
 
-            return (InlineResponse2002) ApiClient.Deserialize(response, typeof(InlineResponse2002));
+            
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+
+            int statusCode = (int) response.StatusCode;
+ 
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdDelete: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling VariableUserSourcesIdDelete: " + response.ErrorMessage, response.ErrorMessage);
+
+            return new ApiResponse<InlineResponse2002>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2002) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2002)));
+            
         }
         
     }

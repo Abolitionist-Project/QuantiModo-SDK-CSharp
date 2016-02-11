@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class VariableUserSource :  IEquatable<VariableUserSource>
+    public partial class VariableUserSource :  IEquatable<VariableUserSource>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VariableUserSource" /> class.
@@ -134,7 +135,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if VariableUserSource instances are equal
         /// </summary>
-        /// <param name="obj">Instance of VariableUserSource to be compared</param>
+        /// <param name="other">Instance of VariableUserSource to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(VariableUserSource other)
         {
@@ -198,28 +199,28 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.UserId != null)
-                    hash = hash * 57 + this.UserId.GetHashCode();
+                    hash = hash * 59 + this.UserId.GetHashCode();
                 
                 if (this.VariableId != null)
-                    hash = hash * 57 + this.VariableId.GetHashCode();
+                    hash = hash * 59 + this.VariableId.GetHashCode();
                 
                 if (this.SourceId != null)
-                    hash = hash * 57 + this.SourceId.GetHashCode();
+                    hash = hash * 59 + this.SourceId.GetHashCode();
                 
                 if (this.Timestamp != null)
-                    hash = hash * 57 + this.Timestamp.GetHashCode();
+                    hash = hash * 59 + this.Timestamp.GetHashCode();
                 
                 if (this.EarliestMeasurementTime != null)
-                    hash = hash * 57 + this.EarliestMeasurementTime.GetHashCode();
+                    hash = hash * 59 + this.EarliestMeasurementTime.GetHashCode();
                 
                 if (this.LatestMeasurementTime != null)
-                    hash = hash * 57 + this.LatestMeasurementTime.GetHashCode();
+                    hash = hash * 59 + this.LatestMeasurementTime.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 return hash;
             }

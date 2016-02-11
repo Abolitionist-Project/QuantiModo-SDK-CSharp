@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class MeasurementExport :  IEquatable<MeasurementExport>
+    public partial class MeasurementExport :  IEquatable<MeasurementExport>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MeasurementExport" /> class.
@@ -116,7 +117,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if MeasurementExport instances are equal
         /// </summary>
-        /// <param name="obj">Instance of MeasurementExport to be compared</param>
+        /// <param name="other">Instance of MeasurementExport to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(MeasurementExport other)
         {
@@ -170,22 +171,22 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.UserId != null)
-                    hash = hash * 57 + this.UserId.GetHashCode();
+                    hash = hash * 59 + this.UserId.GetHashCode();
                 
                 if (this.Status != null)
-                    hash = hash * 57 + this.Status.GetHashCode();
+                    hash = hash * 59 + this.Status.GetHashCode();
                 
                 if (this.ErrorMessage != null)
-                    hash = hash * 57 + this.ErrorMessage.GetHashCode();
+                    hash = hash * 59 + this.ErrorMessage.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 return hash;
             }

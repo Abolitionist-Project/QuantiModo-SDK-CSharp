@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class UserVariableRelationship :  IEquatable<UserVariableRelationship>
+    public partial class UserVariableRelationship :  IEquatable<UserVariableRelationship>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserVariableRelationship" /> class.
@@ -215,7 +216,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if UserVariableRelationship instances are equal
         /// </summary>
-        /// <param name="obj">Instance of UserVariableRelationship to be compared</param>
+        /// <param name="other">Instance of UserVariableRelationship to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(UserVariableRelationship other)
         {
@@ -324,55 +325,55 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.ConfidenceLevel != null)
-                    hash = hash * 57 + this.ConfidenceLevel.GetHashCode();
+                    hash = hash * 59 + this.ConfidenceLevel.GetHashCode();
                 
                 if (this.ConfidenceScore != null)
-                    hash = hash * 57 + this.ConfidenceScore.GetHashCode();
+                    hash = hash * 59 + this.ConfidenceScore.GetHashCode();
                 
                 if (this.Direction != null)
-                    hash = hash * 57 + this.Direction.GetHashCode();
+                    hash = hash * 59 + this.Direction.GetHashCode();
                 
                 if (this.DurationOfAction != null)
-                    hash = hash * 57 + this.DurationOfAction.GetHashCode();
+                    hash = hash * 59 + this.DurationOfAction.GetHashCode();
                 
                 if (this.ErrorMessage != null)
-                    hash = hash * 57 + this.ErrorMessage.GetHashCode();
+                    hash = hash * 59 + this.ErrorMessage.GetHashCode();
                 
                 if (this.OnsetDelay != null)
-                    hash = hash * 57 + this.OnsetDelay.GetHashCode();
+                    hash = hash * 59 + this.OnsetDelay.GetHashCode();
                 
                 if (this.OutcomeVariableId != null)
-                    hash = hash * 57 + this.OutcomeVariableId.GetHashCode();
+                    hash = hash * 59 + this.OutcomeVariableId.GetHashCode();
                 
                 if (this.PredictorVariableId != null)
-                    hash = hash * 57 + this.PredictorVariableId.GetHashCode();
+                    hash = hash * 59 + this.PredictorVariableId.GetHashCode();
                 
                 if (this.PredictorUnitId != null)
-                    hash = hash * 57 + this.PredictorUnitId.GetHashCode();
+                    hash = hash * 59 + this.PredictorUnitId.GetHashCode();
                 
                 if (this.SinnRank != null)
-                    hash = hash * 57 + this.SinnRank.GetHashCode();
+                    hash = hash * 59 + this.SinnRank.GetHashCode();
                 
                 if (this.StrengthLevel != null)
-                    hash = hash * 57 + this.StrengthLevel.GetHashCode();
+                    hash = hash * 59 + this.StrengthLevel.GetHashCode();
                 
                 if (this.StrengthScore != null)
-                    hash = hash * 57 + this.StrengthScore.GetHashCode();
+                    hash = hash * 59 + this.StrengthScore.GetHashCode();
                 
                 if (this.UserId != null)
-                    hash = hash * 57 + this.UserId.GetHashCode();
+                    hash = hash * 59 + this.UserId.GetHashCode();
                 
                 if (this.Vote != null)
-                    hash = hash * 57 + this.Vote.GetHashCode();
+                    hash = hash * 59 + this.Vote.GetHashCode();
                 
                 if (this.ValuePredictingHighOutcome != null)
-                    hash = hash * 57 + this.ValuePredictingHighOutcome.GetHashCode();
+                    hash = hash * 59 + this.ValuePredictingHighOutcome.GetHashCode();
                 
                 if (this.ValuePredictingLowOutcome != null)
-                    hash = hash * 57 + this.ValuePredictingLowOutcome.GetHashCode();
+                    hash = hash * 59 + this.ValuePredictingLowOutcome.GetHashCode();
                 
                 return hash;
             }

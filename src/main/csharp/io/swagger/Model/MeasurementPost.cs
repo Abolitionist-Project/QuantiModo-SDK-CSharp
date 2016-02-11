@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class MeasurementPost :  IEquatable<MeasurementPost>
+    public partial class MeasurementPost :  IEquatable<MeasurementPost>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MeasurementPost" /> class.
@@ -98,7 +99,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if MeasurementPost instances are equal
         /// </summary>
-        /// <param name="obj">Instance of MeasurementPost to be compared</param>
+        /// <param name="other">Instance of MeasurementPost to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(MeasurementPost other)
         {
@@ -142,16 +143,16 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.VariableId != null)
-                    hash = hash * 57 + this.VariableId.GetHashCode();
+                    hash = hash * 59 + this.VariableId.GetHashCode();
                 
                 if (this.SourceId != null)
-                    hash = hash * 57 + this.SourceId.GetHashCode();
+                    hash = hash * 59 + this.SourceId.GetHashCode();
                 
                 if (this.UnitId != null)
-                    hash = hash * 57 + this.UnitId.GetHashCode();
+                    hash = hash * 59 + this.UnitId.GetHashCode();
                 
                 if (this.Measurements != null)
-                    hash = hash * 57 + this.Measurements.GetHashCode();
+                    hash = hash * 59 + this.Measurements.GetHashCode();
                 
                 return hash;
             }

@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using IO.Swagger.Client;
@@ -79,8 +80,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20018</returns>
-        InlineResponse20018 UserVariablesGet (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse2009</returns>
+        InlineResponse2009 UserVariablesGet (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all UserVariables
@@ -146,8 +147,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20018</returns>
-        ApiResponse<InlineResponse20018> UserVariablesGetWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse2009</returns>
+        ApiResponse<InlineResponse2009> UserVariablesGetWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all UserVariables
@@ -213,8 +214,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20018</returns>
-        System.Threading.Tasks.Task<InlineResponse20018> UserVariablesGetAsync (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse2009</returns>
+        System.Threading.Tasks.Task<InlineResponse2009> UserVariablesGetAsync (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all UserVariables
@@ -280,8 +281,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20018>> UserVariablesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2009>> UserVariablesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store UserVariable
@@ -602,10 +603,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20018</returns>
-        public InlineResponse20018 UserVariablesGet (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse2009</returns>
+        public InlineResponse2009 UserVariablesGet (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20018> response = UserVariablesGetWithHttpInfo(accessToken, clientId, parentId, variableId, userId, defaultUnitId, minimumAllowedValue, maximumAllowedValue, fillingValue, joinWith, onsetDelay, durationOfAction, variableCategoryId, updated, _public, causeOnly, fillingType, numberOfMeasurements, numberOfProcessedMeasurements, measurementsAtLastAnalysis, lastUnitId, lastOriginalUnitId, lastOriginalValue, lastValue, lastOriginalValue2, lastSourceId, numberOfCorrelations, status, errorMessage, lastSuccessfulUpdateTime, standardDeviation, variance, minimumRecordedValue, maximumRecordedValue, mean, median, mostCommonUnitId, mostCommonValue, numberOfUniqueDailyValues, numberOfChanges, skewness, kurtosis, latitude, longitude, location, createdAt, updatedAt, outcome, sources, earliestSourceTime, latestSourceTime, earliestMeasurementTime, latestMeasurementTime, earliestFillingTime, latestFillingTime, limit, offset, sort);
+             ApiResponse<InlineResponse2009> response = UserVariablesGetWithHttpInfo(accessToken, clientId, parentId, variableId, userId, defaultUnitId, minimumAllowedValue, maximumAllowedValue, fillingValue, joinWith, onsetDelay, durationOfAction, variableCategoryId, updated, _public, causeOnly, fillingType, numberOfMeasurements, numberOfProcessedMeasurements, measurementsAtLastAnalysis, lastUnitId, lastOriginalUnitId, lastOriginalValue, lastValue, lastOriginalValue2, lastSourceId, numberOfCorrelations, status, errorMessage, lastSuccessfulUpdateTime, standardDeviation, variance, minimumRecordedValue, maximumRecordedValue, mean, median, mostCommonUnitId, mostCommonValue, numberOfUniqueDailyValues, numberOfChanges, skewness, kurtosis, latitude, longitude, location, createdAt, updatedAt, outcome, sources, earliestSourceTime, latestSourceTime, earliestMeasurementTime, latestMeasurementTime, earliestFillingTime, latestFillingTime, limit, offset, sort);
              return response.Data;
         }
 
@@ -670,8 +671,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20018</returns>
-        public ApiResponse< InlineResponse20018 > UserVariablesGetWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse2009</returns>
+        public ApiResponse< InlineResponse2009 > UserVariablesGetWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -682,15 +683,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -759,7 +766,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -770,7 +776,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -779,9 +787,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariablesGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20018>(statusCode,
+            return new ApiResponse<InlineResponse2009>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20018) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20018)));
+                (InlineResponse2009) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2009)));
             
         }
     
@@ -846,10 +854,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20018</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20018> UserVariablesGetAsync (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse2009</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2009> UserVariablesGetAsync (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20018> response = await UserVariablesGetAsyncWithHttpInfo(accessToken, clientId, parentId, variableId, userId, defaultUnitId, minimumAllowedValue, maximumAllowedValue, fillingValue, joinWith, onsetDelay, durationOfAction, variableCategoryId, updated, _public, causeOnly, fillingType, numberOfMeasurements, numberOfProcessedMeasurements, measurementsAtLastAnalysis, lastUnitId, lastOriginalUnitId, lastOriginalValue, lastValue, lastOriginalValue2, lastSourceId, numberOfCorrelations, status, errorMessage, lastSuccessfulUpdateTime, standardDeviation, variance, minimumRecordedValue, maximumRecordedValue, mean, median, mostCommonUnitId, mostCommonValue, numberOfUniqueDailyValues, numberOfChanges, skewness, kurtosis, latitude, longitude, location, createdAt, updatedAt, outcome, sources, earliestSourceTime, latestSourceTime, earliestMeasurementTime, latestMeasurementTime, earliestFillingTime, latestFillingTime, limit, offset, sort);
+             ApiResponse<InlineResponse2009> response = await UserVariablesGetAsyncWithHttpInfo(accessToken, clientId, parentId, variableId, userId, defaultUnitId, minimumAllowedValue, maximumAllowedValue, fillingValue, joinWith, onsetDelay, durationOfAction, variableCategoryId, updated, _public, causeOnly, fillingType, numberOfMeasurements, numberOfProcessedMeasurements, measurementsAtLastAnalysis, lastUnitId, lastOriginalUnitId, lastOriginalValue, lastValue, lastOriginalValue2, lastSourceId, numberOfCorrelations, status, errorMessage, lastSuccessfulUpdateTime, standardDeviation, variance, minimumRecordedValue, maximumRecordedValue, mean, median, mostCommonUnitId, mostCommonValue, numberOfUniqueDailyValues, numberOfChanges, skewness, kurtosis, latitude, longitude, location, createdAt, updatedAt, outcome, sources, earliestSourceTime, latestSourceTime, earliestMeasurementTime, latestMeasurementTime, earliestFillingTime, latestFillingTime, limit, offset, sort);
              return response.Data;
 
         }
@@ -915,8 +923,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20018)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20018>> UserVariablesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse2009)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2009>> UserVariablesGetAsyncWithHttpInfo (string accessToken = null, string clientId = null, int? parentId = null, int? variableId = null, int? userId = null, int? defaultUnitId = null, double? minimumAllowedValue = null, double? maximumAllowedValue = null, double? fillingValue = null, int? joinWith = null, int? onsetDelay = null, int? durationOfAction = null, int? variableCategoryId = null, int? updated = null, int? _public = null, bool? causeOnly = null, string fillingType = null, int? numberOfMeasurements = null, int? numberOfProcessedMeasurements = null, int? measurementsAtLastAnalysis = null, int? lastUnitId = null, int? lastOriginalUnitId = null, int? lastOriginalValue = null, double? lastValue = null, double? lastOriginalValue2 = null, int? lastSourceId = null, int? numberOfCorrelations = null, string status = null, string errorMessage = null, string lastSuccessfulUpdateTime = null, double? standardDeviation = null, double? variance = null, double? minimumRecordedValue = null, double? maximumRecordedValue = null, double? mean = null, double? median = null, int? mostCommonUnitId = null, double? mostCommonValue = null, double? numberOfUniqueDailyValues = null, int? numberOfChanges = null, double? skewness = null, double? kurtosis = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, bool? outcome = null, string sources = null, int? earliestSourceTime = null, int? latestSourceTime = null, int? earliestMeasurementTime = null, int? latestMeasurementTime = null, int? earliestFillingTime = null, int? latestFillingTime = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -924,18 +932,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1015,7 +1029,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1024,9 +1040,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling UserVariablesGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20018>(statusCode,
+            return new ApiResponse<InlineResponse2009>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20018) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20018)));
+                (InlineResponse2009) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2009)));
             
         }
         
@@ -1059,15 +1075,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1077,10 +1099,15 @@ namespace IO.Swagger.Api
             
             
             
-            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            
+            if (body.GetType() != typeof(byte[]))
+            {
+                postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                postBody = body; // byte array
+            }
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1091,7 +1118,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1133,18 +1162,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1168,7 +1203,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1205,7 +1242,8 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UserVariablesIdGet");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UserVariableApi->UserVariablesIdGet");
             
     
             var path_ = "/userVariables/{id}";
@@ -1215,15 +1253,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1236,7 +1280,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1247,7 +1290,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1291,18 +1336,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1326,7 +1377,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1365,7 +1418,8 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UserVariablesIdPut");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UserVariableApi->UserVariablesIdPut");
             
     
             var path_ = "/userVariables/{id}";
@@ -1375,15 +1429,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1394,10 +1454,15 @@ namespace IO.Swagger.Api
             
             
             
-            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            
+            if (body.GetType() != typeof(byte[]))
+            {
+                postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                postBody = body; // byte array
+            }
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1408,7 +1473,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.PUT, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1454,18 +1521,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1490,7 +1563,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1527,7 +1602,8 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling UserVariablesIdDelete");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling UserVariableApi->UserVariablesIdDelete");
             
     
             var path_ = "/userVariables/{id}";
@@ -1537,15 +1613,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1558,7 +1640,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1569,7 +1650,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1613,18 +1696,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1648,7 +1737,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  

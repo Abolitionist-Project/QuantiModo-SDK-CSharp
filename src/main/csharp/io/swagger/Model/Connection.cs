@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class Connection :  IEquatable<Connection>
+    public partial class Connection :  IEquatable<Connection>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Connection" /> class.
@@ -161,7 +162,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if Connection instances are equal
         /// </summary>
-        /// <param name="obj">Instance of Connection to be compared</param>
+        /// <param name="other">Instance of Connection to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(Connection other)
         {
@@ -240,37 +241,37 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.UserId != null)
-                    hash = hash * 57 + this.UserId.GetHashCode();
+                    hash = hash * 59 + this.UserId.GetHashCode();
                 
                 if (this.ConnectorId != null)
-                    hash = hash * 57 + this.ConnectorId.GetHashCode();
+                    hash = hash * 59 + this.ConnectorId.GetHashCode();
                 
                 if (this.ConnectStatus != null)
-                    hash = hash * 57 + this.ConnectStatus.GetHashCode();
+                    hash = hash * 59 + this.ConnectStatus.GetHashCode();
                 
                 if (this.ConnectError != null)
-                    hash = hash * 57 + this.ConnectError.GetHashCode();
+                    hash = hash * 59 + this.ConnectError.GetHashCode();
                 
                 if (this.UpdateRequestedAt != null)
-                    hash = hash * 57 + this.UpdateRequestedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdateRequestedAt.GetHashCode();
                 
                 if (this.UpdateStatus != null)
-                    hash = hash * 57 + this.UpdateStatus.GetHashCode();
+                    hash = hash * 59 + this.UpdateStatus.GetHashCode();
                 
                 if (this.UpdateError != null)
-                    hash = hash * 57 + this.UpdateError.GetHashCode();
+                    hash = hash * 59 + this.UpdateError.GetHashCode();
                 
                 if (this.LastSuccessfulUpdatedAt != null)
-                    hash = hash * 57 + this.LastSuccessfulUpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.LastSuccessfulUpdatedAt.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 return hash;
             }

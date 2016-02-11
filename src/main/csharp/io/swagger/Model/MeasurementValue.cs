@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class MeasurementValue :  IEquatable<MeasurementValue>
+    public partial class MeasurementValue :  IEquatable<MeasurementValue>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MeasurementValue" /> class.
@@ -89,7 +90,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if MeasurementValue instances are equal
         /// </summary>
-        /// <param name="obj">Instance of MeasurementValue to be compared</param>
+        /// <param name="other">Instance of MeasurementValue to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(MeasurementValue other)
         {
@@ -128,13 +129,13 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.StartTime != null)
-                    hash = hash * 57 + this.StartTime.GetHashCode();
+                    hash = hash * 59 + this.StartTime.GetHashCode();
                 
                 if (this.Value != null)
-                    hash = hash * 57 + this.Value.GetHashCode();
+                    hash = hash * 59 + this.Value.GetHashCode();
                 
                 if (this.Note != null)
-                    hash = hash * 57 + this.Note.GetHashCode();
+                    hash = hash * 59 + this.Note.GetHashCode();
                 
                 return hash;
             }

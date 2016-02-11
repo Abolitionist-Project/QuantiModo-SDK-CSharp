@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class VariableCategory :  IEquatable<VariableCategory>
+    public partial class VariableCategory :  IEquatable<VariableCategory>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VariableCategory" /> class.
@@ -206,7 +207,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if VariableCategory instances are equal
         /// </summary>
-        /// <param name="obj">Instance of VariableCategory to be compared</param>
+        /// <param name="other">Instance of VariableCategory to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(VariableCategory other)
         {
@@ -310,52 +311,52 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.Name != null)
-                    hash = hash * 57 + this.Name.GetHashCode();
+                    hash = hash * 59 + this.Name.GetHashCode();
                 
                 if (this.FillingValue != null)
-                    hash = hash * 57 + this.FillingValue.GetHashCode();
+                    hash = hash * 59 + this.FillingValue.GetHashCode();
                 
                 if (this.MaximumAllowedValue != null)
-                    hash = hash * 57 + this.MaximumAllowedValue.GetHashCode();
+                    hash = hash * 59 + this.MaximumAllowedValue.GetHashCode();
                 
                 if (this.MinimumAllowedValue != null)
-                    hash = hash * 57 + this.MinimumAllowedValue.GetHashCode();
+                    hash = hash * 59 + this.MinimumAllowedValue.GetHashCode();
                 
                 if (this.DurationOfAction != null)
-                    hash = hash * 57 + this.DurationOfAction.GetHashCode();
+                    hash = hash * 59 + this.DurationOfAction.GetHashCode();
                 
                 if (this.OnsetDelay != null)
-                    hash = hash * 57 + this.OnsetDelay.GetHashCode();
+                    hash = hash * 59 + this.OnsetDelay.GetHashCode();
                 
                 if (this.CombinationOperation != null)
-                    hash = hash * 57 + this.CombinationOperation.GetHashCode();
+                    hash = hash * 59 + this.CombinationOperation.GetHashCode();
                 
                 if (this.Updated != null)
-                    hash = hash * 57 + this.Updated.GetHashCode();
+                    hash = hash * 59 + this.Updated.GetHashCode();
                 
                 if (this.CauseOnly != null)
-                    hash = hash * 57 + this.CauseOnly.GetHashCode();
+                    hash = hash * 59 + this.CauseOnly.GetHashCode();
                 
                 if (this.Public != null)
-                    hash = hash * 57 + this.Public.GetHashCode();
+                    hash = hash * 59 + this.Public.GetHashCode();
                 
                 if (this.Outcome != null)
-                    hash = hash * 57 + this.Outcome.GetHashCode();
+                    hash = hash * 59 + this.Outcome.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 if (this.ImageUrl != null)
-                    hash = hash * 57 + this.ImageUrl.GetHashCode();
+                    hash = hash * 59 + this.ImageUrl.GetHashCode();
                 
                 if (this.DefaultUnitId != null)
-                    hash = hash * 57 + this.DefaultUnitId.GetHashCode();
+                    hash = hash * 59 + this.DefaultUnitId.GetHashCode();
                 
                 return hash;
             }

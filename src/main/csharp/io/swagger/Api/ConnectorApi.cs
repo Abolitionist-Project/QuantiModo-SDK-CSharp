@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using IO.Swagger.Client;
@@ -33,8 +34,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse2007</returns>
-        InlineResponse2007 ConnectorsGet (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse20015</returns>
+        InlineResponse20015 ConnectorsGet (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get list of Connectors
@@ -54,8 +55,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        ApiResponse<InlineResponse2007> ConnectorsGetWithHttpInfo (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse20015</returns>
+        ApiResponse<InlineResponse20015> ConnectorsGetWithHttpInfo (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get list of Connectors
@@ -75,8 +76,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse2007</returns>
-        System.Threading.Tasks.Task<InlineResponse2007> ConnectorsGetAsync (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse20015</returns>
+        System.Threading.Tasks.Task<InlineResponse20015> ConnectorsGetAsync (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get list of Connectors
@@ -96,8 +97,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2007>> ConnectorsGetAsyncWithHttpInfo (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20015>> ConnectorsGetAsyncWithHttpInfo (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store Connector
@@ -107,8 +108,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Connector that should be stored</param>
-        /// <returns>InlineResponse2008</returns>
-        InlineResponse2008 ConnectorsPost (string accessToken = null, Connector body = null);
+        /// <returns>InlineResponse20016</returns>
+        InlineResponse20016 ConnectorsPost (string accessToken = null, Connector body = null);
   
         /// <summary>
         /// Store Connector
@@ -118,8 +119,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Connector that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse2008</returns>
-        ApiResponse<InlineResponse2008> ConnectorsPostWithHttpInfo (string accessToken = null, Connector body = null);
+        /// <returns>ApiResponse of InlineResponse20016</returns>
+        ApiResponse<InlineResponse20016> ConnectorsPostWithHttpInfo (string accessToken = null, Connector body = null);
 
         /// <summary>
         /// Store Connector
@@ -129,8 +130,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Connector that should be stored</param>
-        /// <returns>Task of InlineResponse2008</returns>
-        System.Threading.Tasks.Task<InlineResponse2008> ConnectorsPostAsync (string accessToken = null, Connector body = null);
+        /// <returns>Task of InlineResponse20016</returns>
+        System.Threading.Tasks.Task<InlineResponse20016> ConnectorsPostAsync (string accessToken = null, Connector body = null);
 
         /// <summary>
         /// Store Connector
@@ -140,8 +141,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Connector that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2008>> ConnectorsPostAsyncWithHttpInfo (string accessToken = null, Connector body = null);
+        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> ConnectorsPostAsyncWithHttpInfo (string accessToken = null, Connector body = null);
         
         /// <summary>
         /// Get connector info for user
@@ -151,8 +152,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Connector</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse2008</returns>
-        InlineResponse2008 ConnectorsIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20016</returns>
+        InlineResponse20016 ConnectorsIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get connector info for user
@@ -162,8 +163,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Connector</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse2008</returns>
-        ApiResponse<InlineResponse2008> ConnectorsIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20016</returns>
+        ApiResponse<InlineResponse20016> ConnectorsIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
         /// Get connector info for user
@@ -173,8 +174,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Connector</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse2008</returns>
-        System.Threading.Tasks.Task<InlineResponse2008> ConnectorsIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20016</returns>
+        System.Threading.Tasks.Task<InlineResponse20016> ConnectorsIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
         /// Get connector info for user
@@ -184,8 +185,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Connector</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2008>> ConnectorsIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> ConnectorsIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update Connector
@@ -372,10 +373,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse2007</returns>
-        public InlineResponse2007 ConnectorsGet (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse20015</returns>
+        public InlineResponse20015 ConnectorsGet (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse2007> response = ConnectorsGetWithHttpInfo(accessToken, name, displayName, image, getItUrl, shortDescription, longDescription, enabled, oauth, limit, offset, sort);
+             ApiResponse<InlineResponse20015> response = ConnectorsGetWithHttpInfo(accessToken, name, displayName, image, getItUrl, shortDescription, longDescription, enabled, oauth, limit, offset, sort);
              return response.Data;
         }
 
@@ -394,8 +395,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse2007</returns>
-        public ApiResponse< InlineResponse2007 > ConnectorsGetWithHttpInfo (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse20015</returns>
+        public ApiResponse< InlineResponse20015 > ConnectorsGetWithHttpInfo (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -406,15 +407,135 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            pathParams.Add("format", "json");
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (name != null) queryParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // query parameter
+            if (displayName != null) queryParams.Add("display_name", Configuration.ApiClient.ParameterToString(displayName)); // query parameter
+            if (image != null) queryParams.Add("image", Configuration.ApiClient.ParameterToString(image)); // query parameter
+            if (getItUrl != null) queryParams.Add("get_it_url", Configuration.ApiClient.ParameterToString(getItUrl)); // query parameter
+            if (shortDescription != null) queryParams.Add("short_description", Configuration.ApiClient.ParameterToString(shortDescription)); // query parameter
+            if (longDescription != null) queryParams.Add("long_description", Configuration.ApiClient.ParameterToString(longDescription)); // query parameter
+            if (enabled != null) queryParams.Add("enabled", Configuration.ApiClient.ParameterToString(enabled)); // query parameter
+            if (oauth != null) queryParams.Add("oauth", Configuration.ApiClient.ParameterToString(oauth)); // query parameter
+            if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
+            
+            
+            
+            
+
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
+
+            int statusCode = (int) response.StatusCode;
+    
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling ConnectorsGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling ConnectorsGet: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return new ApiResponse<InlineResponse20015>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20015) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20015)));
+            
+        }
+    
+        /// <summary>
+        /// Get list of Connectors A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="name">Lowercase system name for the data source</param>
+        /// <param name="displayName">Pretty display name for the data source</param>
+        /// <param name="image">URL to the image of the connector logo</param>
+        /// <param name="getItUrl">URL to a site where one can get this device or application</param>
+        /// <param name="shortDescription">Short description of the service (such as the categories it tracks)</param>
+        /// <param name="longDescription">Longer paragraph description of the data provider</param>
+        /// <param name="enabled">Set to 1 if the connector should be returned when listing connectors</param>
+        /// <param name="oauth">Set to 1 if the connector uses OAuth authentication as opposed to username/password</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of InlineResponse20015</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20015> ConnectorsGetAsync (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null)
+        {
+             ApiResponse<InlineResponse20015> response = await ConnectorsGetAsyncWithHttpInfo(accessToken, name, displayName, image, getItUrl, shortDescription, longDescription, enabled, oauth, limit, offset, sort);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Get list of Connectors A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="name">Lowercase system name for the data source</param>
+        /// <param name="displayName">Pretty display name for the data source</param>
+        /// <param name="image">URL to the image of the connector logo</param>
+        /// <param name="getItUrl">URL to a site where one can get this device or application</param>
+        /// <param name="shortDescription">Short description of the service (such as the categories it tracks)</param>
+        /// <param name="longDescription">Longer paragraph description of the data provider</param>
+        /// <param name="enabled">Set to 1 if the connector should be returned when listing connectors</param>
+        /// <param name="oauth">Set to 1 if the connector uses OAuth authentication as opposed to username/password</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of ApiResponse (InlineResponse20015)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20015>> ConnectorsGetAsyncWithHttpInfo (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null)
+        {
+            
+    
+            var path_ = "/connectors";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            Object postBody = null;
+
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
+                "application/json"
+            };
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -446,116 +567,11 @@ namespace IO.Swagger.Api
                 headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
             
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
-
-            int statusCode = (int) response.StatusCode;
-    
-            if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling ConnectorsGet: " + response.Content, response.Content);
-            else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling ConnectorsGet: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return new ApiResponse<InlineResponse2007>(statusCode,
-                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse2007) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2007)));
-            
-        }
-    
-        /// <summary>
-        /// Get list of Connectors A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
-        /// </summary>
-        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="name">Lowercase system name for the data source</param>
-        /// <param name="displayName">Pretty display name for the data source</param>
-        /// <param name="image">URL to the image of the connector logo</param>
-        /// <param name="getItUrl">URL to a site where one can get this device or application</param>
-        /// <param name="shortDescription">Short description of the service (such as the categories it tracks)</param>
-        /// <param name="longDescription">Longer paragraph description of the data provider</param>
-        /// <param name="enabled">Set to 1 if the connector should be returned when listing connectors</param>
-        /// <param name="oauth">Set to 1 if the connector uses OAuth authentication as opposed to username/password</param>
-        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
-        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
-        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse2007</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2007> ConnectorsGetAsync (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null)
-        {
-             ApiResponse<InlineResponse2007> response = await ConnectorsGetAsyncWithHttpInfo(accessToken, name, displayName, image, getItUrl, shortDescription, longDescription, enabled, oauth, limit, offset, sort);
-             return response.Data;
-
-        }
-
-        /// <summary>
-        /// Get list of Connectors A connector pulls data from other data providers using their API or a screenscraper. Returns a list of all available connectors and information about them such as their id, name, whether the user has provided access, logo url, connection instructions, and the update history.
-        /// </summary>
-        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="name">Lowercase system name for the data source</param>
-        /// <param name="displayName">Pretty display name for the data source</param>
-        /// <param name="image">URL to the image of the connector logo</param>
-        /// <param name="getItUrl">URL to a site where one can get this device or application</param>
-        /// <param name="shortDescription">Short description of the service (such as the categories it tracks)</param>
-        /// <param name="longDescription">Longer paragraph description of the data provider</param>
-        /// <param name="enabled">Set to 1 if the connector should be returned when listing connectors</param>
-        /// <param name="oauth">Set to 1 if the connector uses OAuth authentication as opposed to username/password</param>
-        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
-        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
-        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse2007)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2007>> ConnectorsGetAsyncWithHttpInfo (string accessToken = null, string name = null, string displayName = null, string image = null, string getItUrl = null, string shortDescription = null, string longDescription = null, bool? enabled = null, bool? oauth = null, int? limit = null, int? offset = null, string sort = null)
-        {
-            
-    
-            var path_ = "/connectors";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
-                "application/json"
-            };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            pathParams.Add("format", "json");
-            
-            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
-            if (name != null) queryParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // query parameter
-            if (displayName != null) queryParams.Add("display_name", Configuration.ApiClient.ParameterToString(displayName)); // query parameter
-            if (image != null) queryParams.Add("image", Configuration.ApiClient.ParameterToString(image)); // query parameter
-            if (getItUrl != null) queryParams.Add("get_it_url", Configuration.ApiClient.ParameterToString(getItUrl)); // query parameter
-            if (shortDescription != null) queryParams.Add("short_description", Configuration.ApiClient.ParameterToString(shortDescription)); // query parameter
-            if (longDescription != null) queryParams.Add("long_description", Configuration.ApiClient.ParameterToString(longDescription)); // query parameter
-            if (enabled != null) queryParams.Add("enabled", Configuration.ApiClient.ParameterToString(enabled)); // query parameter
-            if (oauth != null) queryParams.Add("oauth", Configuration.ApiClient.ParameterToString(oauth)); // query parameter
-            if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-            if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
-            if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
-            
-            
-            
-            
-
-            
-            // authentication (quantimodo_oauth2) required
-            
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-            
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -564,9 +580,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling ConnectorsGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse2007>(statusCode,
+            return new ApiResponse<InlineResponse20015>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse2007) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2007)));
+                (InlineResponse20015) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20015)));
             
         }
         
@@ -575,10 +591,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Connector that should be stored</param> 
-        /// <returns>InlineResponse2008</returns>
-        public InlineResponse2008 ConnectorsPost (string accessToken = null, Connector body = null)
+        /// <returns>InlineResponse20016</returns>
+        public InlineResponse20016 ConnectorsPost (string accessToken = null, Connector body = null)
         {
-             ApiResponse<InlineResponse2008> response = ConnectorsPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20016> response = ConnectorsPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -587,8 +603,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Connector that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse2008</returns>
-        public ApiResponse< InlineResponse2008 > ConnectorsPostWithHttpInfo (string accessToken = null, Connector body = null)
+        /// <returns>ApiResponse of InlineResponse20016</returns>
+        public ApiResponse< InlineResponse20016 > ConnectorsPostWithHttpInfo (string accessToken = null, Connector body = null)
         {
             
     
@@ -599,15 +615,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -617,10 +639,15 @@ namespace IO.Swagger.Api
             
             
             
-            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            
+            if (body.GetType() != typeof(byte[]))
+            {
+                postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                postBody = body; // byte array
+            }
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -631,7 +658,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -640,9 +669,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling ConnectorsPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse2008>(statusCode,
+            return new ApiResponse<InlineResponse20016>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse2008) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2008)));
+                (InlineResponse20016) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20016)));
             
         }
     
@@ -651,10 +680,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Connector that should be stored</param>
-        /// <returns>Task of InlineResponse2008</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2008> ConnectorsPostAsync (string accessToken = null, Connector body = null)
+        /// <returns>Task of InlineResponse20016</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20016> ConnectorsPostAsync (string accessToken = null, Connector body = null)
         {
-             ApiResponse<InlineResponse2008> response = await ConnectorsPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20016> response = await ConnectorsPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -664,8 +693,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Connector that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2008>> ConnectorsPostAsyncWithHttpInfo (string accessToken = null, Connector body = null)
+        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> ConnectorsPostAsyncWithHttpInfo (string accessToken = null, Connector body = null)
         {
             
     
@@ -673,18 +702,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -708,7 +743,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -717,9 +754,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling ConnectorsPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse2008>(statusCode,
+            return new ApiResponse<InlineResponse20016>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse2008) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2008)));
+                (InlineResponse20016) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20016)));
             
         }
         
@@ -728,10 +765,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Connector</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse2008</returns>
-        public InlineResponse2008 ConnectorsIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20016</returns>
+        public InlineResponse20016 ConnectorsIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse2008> response = ConnectorsIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20016> response = ConnectorsIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
@@ -740,10 +777,97 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Connector</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse2008</returns>
-        public ApiResponse< InlineResponse2008 > ConnectorsIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20016</returns>
+        public ApiResponse< InlineResponse20016 > ConnectorsIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling ConnectorApi->ConnectorsIdGet");
+            
+    
+            var path_ = "/connectors/{id}";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            Object postBody = null;
+
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
+                "application/json"
+            };
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            pathParams.Add("format", "json");
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            
+            
+            
+            
+
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
+
+            int statusCode = (int) response.StatusCode;
+    
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling ConnectorsIdGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling ConnectorsIdGet: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return new ApiResponse<InlineResponse20016>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20016) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20016)));
+            
+        }
+    
+        /// <summary>
+        /// Get connector info for user Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.
+        /// </summary>
+        /// <param name="id">id of Connector</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse20016</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20016> ConnectorsIdGetAsync (int? id, string accessToken = null)
+        {
+             ApiResponse<InlineResponse20016> response = await ConnectorsIdGetAsyncWithHttpInfo(id, accessToken);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Get connector info for user Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.
+        /// </summary>
+        /// <param name="id">id of Connector</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse20016)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20016>> ConnectorsIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling ConnectorsIdGet");
             
@@ -755,94 +879,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            
-            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
-            
-            
-            
-            
-
-            
-            // authentication (quantimodo_oauth2) required
-            
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-            
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
-
-            int statusCode = (int) response.StatusCode;
-    
-            if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling ConnectorsIdGet: " + response.Content, response.Content);
-            else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling ConnectorsIdGet: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return new ApiResponse<InlineResponse2008>(statusCode,
-                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse2008) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2008)));
-            
-        }
-    
-        /// <summary>
-        /// Get connector info for user Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.
-        /// </summary>
-        /// <param name="id">id of Connector</param>
-        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse2008</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2008> ConnectorsIdGetAsync (int? id, string accessToken = null)
-        {
-             ApiResponse<InlineResponse2008> response = await ConnectorsIdGetAsyncWithHttpInfo(id, accessToken);
-             return response.Data;
-
-        }
-
-        /// <summary>
-        /// Get connector info for user Returns information about the connector such as the connector id, whether or not is connected for this user (i.e. we have a token or credentials), and its update history for the user.
-        /// </summary>
-        /// <param name="id">id of Connector</param>
-        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse2008)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2008>> ConnectorsIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling ConnectorsIdGet");
-            
-    
-            var path_ = "/connectors/{id}";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
 
             // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            String[] httpHeaderAccepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -866,7 +917,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -875,9 +928,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling ConnectorsIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse2008>(statusCode,
+            return new ApiResponse<InlineResponse20016>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse2008) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2008)));
+                (InlineResponse20016) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20016)));
             
         }
         
@@ -905,7 +958,8 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling ConnectorsIdPut");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling ConnectorApi->ConnectorsIdPut");
             
     
             var path_ = "/connectors/{id}";
@@ -915,15 +969,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -934,10 +994,15 @@ namespace IO.Swagger.Api
             
             
             
-            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            
+            if (body.GetType() != typeof(byte[]))
+            {
+                postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                postBody = body; // byte array
+            }
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -948,7 +1013,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.PUT, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -994,18 +1061,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1030,7 +1103,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1067,7 +1142,8 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling ConnectorsIdDelete");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling ConnectorApi->ConnectorsIdDelete");
             
     
             var path_ = "/connectors/{id}";
@@ -1077,15 +1153,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1098,7 +1180,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1109,7 +1190,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1153,18 +1236,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1188,7 +1277,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  

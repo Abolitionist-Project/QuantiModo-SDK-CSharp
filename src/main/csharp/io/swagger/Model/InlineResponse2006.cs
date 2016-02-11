@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class InlineResponse2006 :  IEquatable<InlineResponse2006>
+    public partial class InlineResponse2006 :  IEquatable<InlineResponse2006>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2006" /> class.
@@ -29,7 +30,7 @@ namespace IO.Swagger.Model
         /// Gets or Sets Data
         /// </summary>
         [DataMember(Name="data", EmitDefaultValue=false)]
-        public Connection Data { get; set; }
+        public List<TrackingReminder> Data { get; set; }
   
         
         /// <summary>
@@ -78,7 +79,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if InlineResponse2006 instances are equal
         /// </summary>
-        /// <param name="obj">Instance of InlineResponse2006 to be compared</param>
+        /// <param name="other">Instance of InlineResponse2006 to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(InlineResponse2006 other)
         {
@@ -90,7 +91,7 @@ namespace IO.Swagger.Model
                 (
                     this.Data == other.Data ||
                     this.Data != null &&
-                    this.Data.Equals(other.Data)
+                    this.Data.SequenceEqual(other.Data)
                 ) && 
                 (
                     this.Success == other.Success ||
@@ -112,10 +113,10 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Data != null)
-                    hash = hash * 57 + this.Data.GetHashCode();
+                    hash = hash * 59 + this.Data.GetHashCode();
                 
                 if (this.Success != null)
-                    hash = hash * 57 + this.Success.GetHashCode();
+                    hash = hash * 59 + this.Success.GetHashCode();
                 
                 return hash;
             }

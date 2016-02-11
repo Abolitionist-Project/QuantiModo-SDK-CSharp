@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class Measurement :  IEquatable<Measurement>
+    public partial class Measurement :  IEquatable<Measurement>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Measurement" /> class.
@@ -233,7 +234,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if Measurement instances are equal
         /// </summary>
-        /// <param name="obj">Instance of Measurement to be compared</param>
+        /// <param name="other">Instance of Measurement to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(Measurement other)
         {
@@ -352,61 +353,61 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.UserId != null)
-                    hash = hash * 57 + this.UserId.GetHashCode();
+                    hash = hash * 59 + this.UserId.GetHashCode();
                 
                 if (this.ClientId != null)
-                    hash = hash * 57 + this.ClientId.GetHashCode();
+                    hash = hash * 59 + this.ClientId.GetHashCode();
                 
                 if (this.ConnectorId != null)
-                    hash = hash * 57 + this.ConnectorId.GetHashCode();
+                    hash = hash * 59 + this.ConnectorId.GetHashCode();
                 
                 if (this.VariableId != null)
-                    hash = hash * 57 + this.VariableId.GetHashCode();
+                    hash = hash * 59 + this.VariableId.GetHashCode();
                 
                 if (this.SourceId != null)
-                    hash = hash * 57 + this.SourceId.GetHashCode();
+                    hash = hash * 59 + this.SourceId.GetHashCode();
                 
                 if (this.StartTime != null)
-                    hash = hash * 57 + this.StartTime.GetHashCode();
+                    hash = hash * 59 + this.StartTime.GetHashCode();
                 
                 if (this.Value != null)
-                    hash = hash * 57 + this.Value.GetHashCode();
+                    hash = hash * 59 + this.Value.GetHashCode();
                 
                 if (this.UnitId != null)
-                    hash = hash * 57 + this.UnitId.GetHashCode();
+                    hash = hash * 59 + this.UnitId.GetHashCode();
                 
                 if (this.OriginalValue != null)
-                    hash = hash * 57 + this.OriginalValue.GetHashCode();
+                    hash = hash * 59 + this.OriginalValue.GetHashCode();
                 
                 if (this.OriginalUnitId != null)
-                    hash = hash * 57 + this.OriginalUnitId.GetHashCode();
+                    hash = hash * 59 + this.OriginalUnitId.GetHashCode();
                 
                 if (this.Duration != null)
-                    hash = hash * 57 + this.Duration.GetHashCode();
+                    hash = hash * 59 + this.Duration.GetHashCode();
                 
                 if (this.Note != null)
-                    hash = hash * 57 + this.Note.GetHashCode();
+                    hash = hash * 59 + this.Note.GetHashCode();
                 
                 if (this.Latitude != null)
-                    hash = hash * 57 + this.Latitude.GetHashCode();
+                    hash = hash * 59 + this.Latitude.GetHashCode();
                 
                 if (this.Longitude != null)
-                    hash = hash * 57 + this.Longitude.GetHashCode();
+                    hash = hash * 59 + this.Longitude.GetHashCode();
                 
                 if (this.Location != null)
-                    hash = hash * 57 + this.Location.GetHashCode();
+                    hash = hash * 59 + this.Location.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 if (this.Error != null)
-                    hash = hash * 57 + this.Error.GetHashCode();
+                    hash = hash * 59 + this.Error.GetHashCode();
                 
                 return hash;
             }

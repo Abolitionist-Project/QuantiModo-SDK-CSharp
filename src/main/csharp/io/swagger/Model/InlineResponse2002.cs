@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class InlineResponse2002 :  IEquatable<InlineResponse2002>
+    public partial class InlineResponse2002 :  IEquatable<InlineResponse2002>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse2002" /> class.
@@ -78,7 +79,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if InlineResponse2002 instances are equal
         /// </summary>
-        /// <param name="obj">Instance of InlineResponse2002 to be compared</param>
+        /// <param name="other">Instance of InlineResponse2002 to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(InlineResponse2002 other)
         {
@@ -112,10 +113,10 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Data != null)
-                    hash = hash * 57 + this.Data.GetHashCode();
+                    hash = hash * 59 + this.Data.GetHashCode();
                 
                 if (this.Success != null)
-                    hash = hash * 57 + this.Success.GetHashCode();
+                    hash = hash * 59 + this.Success.GetHashCode();
                 
                 return hash;
             }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class TrackingReminder :  IEquatable<TrackingReminder>
+    public partial class TrackingReminder :  IEquatable<TrackingReminder>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TrackingReminder" /> class.
@@ -215,7 +216,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if TrackingReminder instances are equal
         /// </summary>
-        /// <param name="obj">Instance of TrackingReminder to be compared</param>
+        /// <param name="other">Instance of TrackingReminder to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(TrackingReminder other)
         {
@@ -324,55 +325,55 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.ClientId != null)
-                    hash = hash * 57 + this.ClientId.GetHashCode();
+                    hash = hash * 59 + this.ClientId.GetHashCode();
                 
                 if (this.UserId != null)
-                    hash = hash * 57 + this.UserId.GetHashCode();
+                    hash = hash * 59 + this.UserId.GetHashCode();
                 
                 if (this.VariableId != null)
-                    hash = hash * 57 + this.VariableId.GetHashCode();
+                    hash = hash * 59 + this.VariableId.GetHashCode();
                 
                 if (this.DefaultValue != null)
-                    hash = hash * 57 + this.DefaultValue.GetHashCode();
+                    hash = hash * 59 + this.DefaultValue.GetHashCode();
                 
                 if (this.ReminderStartTime != null)
-                    hash = hash * 57 + this.ReminderStartTime.GetHashCode();
+                    hash = hash * 59 + this.ReminderStartTime.GetHashCode();
                 
                 if (this.ReminderEndTime != null)
-                    hash = hash * 57 + this.ReminderEndTime.GetHashCode();
+                    hash = hash * 59 + this.ReminderEndTime.GetHashCode();
                 
                 if (this.ReminderSound != null)
-                    hash = hash * 57 + this.ReminderSound.GetHashCode();
+                    hash = hash * 59 + this.ReminderSound.GetHashCode();
                 
                 if (this.ReminderFrequency != null)
-                    hash = hash * 57 + this.ReminderFrequency.GetHashCode();
+                    hash = hash * 59 + this.ReminderFrequency.GetHashCode();
                 
                 if (this.PopUp != null)
-                    hash = hash * 57 + this.PopUp.GetHashCode();
+                    hash = hash * 59 + this.PopUp.GetHashCode();
                 
                 if (this.Sms != null)
-                    hash = hash * 57 + this.Sms.GetHashCode();
+                    hash = hash * 59 + this.Sms.GetHashCode();
                 
                 if (this.Email != null)
-                    hash = hash * 57 + this.Email.GetHashCode();
+                    hash = hash * 59 + this.Email.GetHashCode();
                 
                 if (this.NotificationBar != null)
-                    hash = hash * 57 + this.NotificationBar.GetHashCode();
+                    hash = hash * 59 + this.NotificationBar.GetHashCode();
                 
                 if (this.LastReminded != null)
-                    hash = hash * 57 + this.LastReminded.GetHashCode();
+                    hash = hash * 59 + this.LastReminded.GetHashCode();
                 
                 if (this.LastTracked != null)
-                    hash = hash * 57 + this.LastTracked.GetHashCode();
+                    hash = hash * 59 + this.LastTracked.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 return hash;
             }

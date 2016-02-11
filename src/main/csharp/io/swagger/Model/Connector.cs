@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class Connector :  IEquatable<Connector>
+    public partial class Connector :  IEquatable<Connector>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Connector" /> class.
@@ -161,7 +162,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if Connector instances are equal
         /// </summary>
-        /// <param name="obj">Instance of Connector to be compared</param>
+        /// <param name="other">Instance of Connector to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(Connector other)
         {
@@ -240,37 +241,37 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.Name != null)
-                    hash = hash * 57 + this.Name.GetHashCode();
+                    hash = hash * 59 + this.Name.GetHashCode();
                 
                 if (this.DisplayName != null)
-                    hash = hash * 57 + this.DisplayName.GetHashCode();
+                    hash = hash * 59 + this.DisplayName.GetHashCode();
                 
                 if (this.Image != null)
-                    hash = hash * 57 + this.Image.GetHashCode();
+                    hash = hash * 59 + this.Image.GetHashCode();
                 
                 if (this.GetItUrl != null)
-                    hash = hash * 57 + this.GetItUrl.GetHashCode();
+                    hash = hash * 59 + this.GetItUrl.GetHashCode();
                 
                 if (this.ShortDescription != null)
-                    hash = hash * 57 + this.ShortDescription.GetHashCode();
+                    hash = hash * 59 + this.ShortDescription.GetHashCode();
                 
                 if (this.LongDescription != null)
-                    hash = hash * 57 + this.LongDescription.GetHashCode();
+                    hash = hash * 59 + this.LongDescription.GetHashCode();
                 
                 if (this.Enabled != null)
-                    hash = hash * 57 + this.Enabled.GetHashCode();
+                    hash = hash * 59 + this.Enabled.GetHashCode();
                 
                 if (this.Oauth != null)
-                    hash = hash * 57 + this.Oauth.GetHashCode();
+                    hash = hash * 59 + this.Oauth.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 return hash;
             }

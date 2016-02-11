@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class AggregatedCorrelation :  IEquatable<AggregatedCorrelation>
+    public partial class AggregatedCorrelation :  IEquatable<AggregatedCorrelation>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AggregatedCorrelation" /> class.
@@ -305,7 +306,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if AggregatedCorrelation instances are equal
         /// </summary>
-        /// <param name="obj">Instance of AggregatedCorrelation to be compared</param>
+        /// <param name="other">Instance of AggregatedCorrelation to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(AggregatedCorrelation other)
         {
@@ -464,85 +465,85 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.Correlation != null)
-                    hash = hash * 57 + this.Correlation.GetHashCode();
+                    hash = hash * 59 + this.Correlation.GetHashCode();
                 
                 if (this.CauseId != null)
-                    hash = hash * 57 + this.CauseId.GetHashCode();
+                    hash = hash * 59 + this.CauseId.GetHashCode();
                 
                 if (this.EffectId != null)
-                    hash = hash * 57 + this.EffectId.GetHashCode();
+                    hash = hash * 59 + this.EffectId.GetHashCode();
                 
                 if (this.OnsetDelay != null)
-                    hash = hash * 57 + this.OnsetDelay.GetHashCode();
+                    hash = hash * 59 + this.OnsetDelay.GetHashCode();
                 
                 if (this.DurationOfAction != null)
-                    hash = hash * 57 + this.DurationOfAction.GetHashCode();
+                    hash = hash * 59 + this.DurationOfAction.GetHashCode();
                 
                 if (this.NumberOfPairs != null)
-                    hash = hash * 57 + this.NumberOfPairs.GetHashCode();
+                    hash = hash * 59 + this.NumberOfPairs.GetHashCode();
                 
                 if (this.ValuePredictingHighOutcome != null)
-                    hash = hash * 57 + this.ValuePredictingHighOutcome.GetHashCode();
+                    hash = hash * 59 + this.ValuePredictingHighOutcome.GetHashCode();
                 
                 if (this.ValuePredictingLowOutcome != null)
-                    hash = hash * 57 + this.ValuePredictingLowOutcome.GetHashCode();
+                    hash = hash * 59 + this.ValuePredictingLowOutcome.GetHashCode();
                 
                 if (this.OptimalPearsonProduct != null)
-                    hash = hash * 57 + this.OptimalPearsonProduct.GetHashCode();
+                    hash = hash * 59 + this.OptimalPearsonProduct.GetHashCode();
                 
                 if (this.Vote != null)
-                    hash = hash * 57 + this.Vote.GetHashCode();
+                    hash = hash * 59 + this.Vote.GetHashCode();
                 
                 if (this.NumberOfUsers != null)
-                    hash = hash * 57 + this.NumberOfUsers.GetHashCode();
+                    hash = hash * 59 + this.NumberOfUsers.GetHashCode();
                 
                 if (this.NumberOfCorrelations != null)
-                    hash = hash * 57 + this.NumberOfCorrelations.GetHashCode();
+                    hash = hash * 59 + this.NumberOfCorrelations.GetHashCode();
                 
                 if (this.StatisticalSignificance != null)
-                    hash = hash * 57 + this.StatisticalSignificance.GetHashCode();
+                    hash = hash * 59 + this.StatisticalSignificance.GetHashCode();
                 
                 if (this.CauseUnit != null)
-                    hash = hash * 57 + this.CauseUnit.GetHashCode();
+                    hash = hash * 59 + this.CauseUnit.GetHashCode();
                 
                 if (this.CauseUnitId != null)
-                    hash = hash * 57 + this.CauseUnitId.GetHashCode();
+                    hash = hash * 59 + this.CauseUnitId.GetHashCode();
                 
                 if (this.CauseChanges != null)
-                    hash = hash * 57 + this.CauseChanges.GetHashCode();
+                    hash = hash * 59 + this.CauseChanges.GetHashCode();
                 
                 if (this.EffectChanges != null)
-                    hash = hash * 57 + this.EffectChanges.GetHashCode();
+                    hash = hash * 59 + this.EffectChanges.GetHashCode();
                 
                 if (this.AggregateQmScore != null)
-                    hash = hash * 57 + this.AggregateQmScore.GetHashCode();
+                    hash = hash * 59 + this.AggregateQmScore.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 if (this.Status != null)
-                    hash = hash * 57 + this.Status.GetHashCode();
+                    hash = hash * 59 + this.Status.GetHashCode();
                 
                 if (this.ErrorMessage != null)
-                    hash = hash * 57 + this.ErrorMessage.GetHashCode();
+                    hash = hash * 59 + this.ErrorMessage.GetHashCode();
                 
                 if (this.LastSuccessfulUpdateTime != null)
-                    hash = hash * 57 + this.LastSuccessfulUpdateTime.GetHashCode();
+                    hash = hash * 59 + this.LastSuccessfulUpdateTime.GetHashCode();
                 
                 if (this.ReversePearsonCorrelationCoefficient != null)
-                    hash = hash * 57 + this.ReversePearsonCorrelationCoefficient.GetHashCode();
+                    hash = hash * 59 + this.ReversePearsonCorrelationCoefficient.GetHashCode();
                 
                 if (this.PredictivePearsonCorrelationCoefficient != null)
-                    hash = hash * 57 + this.PredictivePearsonCorrelationCoefficient.GetHashCode();
+                    hash = hash * 59 + this.PredictivePearsonCorrelationCoefficient.GetHashCode();
                 
                 if (this.DataSource != null)
-                    hash = hash * 57 + this.DataSource.GetHashCode();
+                    hash = hash * 59 + this.DataSource.GetHashCode();
                 
                 return hash;
             }

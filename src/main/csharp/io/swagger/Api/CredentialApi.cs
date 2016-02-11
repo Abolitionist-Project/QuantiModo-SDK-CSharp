@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using IO.Swagger.Client;
@@ -31,8 +32,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20011</returns>
-        InlineResponse20011 CredentialsGet (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse2004</returns>
+        InlineResponse2004 CredentialsGet (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get all Credentials
@@ -50,8 +51,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        ApiResponse<InlineResponse20011> CredentialsGetWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse2004</returns>
+        ApiResponse<InlineResponse2004> CredentialsGetWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all Credentials
@@ -69,8 +70,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20011</returns>
-        System.Threading.Tasks.Task<InlineResponse20011> CredentialsGetAsync (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse2004</returns>
+        System.Threading.Tasks.Task<InlineResponse2004> CredentialsGetAsync (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get all Credentials
@@ -88,8 +89,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20011>> CredentialsGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2004>> CredentialsGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Store Credential
@@ -99,8 +100,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Credential that should be stored</param>
-        /// <returns>InlineResponse20012</returns>
-        InlineResponse20012 CredentialsPost (string accessToken = null, Credential body = null);
+        /// <returns>InlineResponse20019</returns>
+        InlineResponse20019 CredentialsPost (string accessToken = null, Credential body = null);
   
         /// <summary>
         /// Store Credential
@@ -110,8 +111,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Credential that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        ApiResponse<InlineResponse20012> CredentialsPostWithHttpInfo (string accessToken = null, Credential body = null);
+        /// <returns>ApiResponse of InlineResponse20019</returns>
+        ApiResponse<InlineResponse20019> CredentialsPostWithHttpInfo (string accessToken = null, Credential body = null);
 
         /// <summary>
         /// Store Credential
@@ -121,8 +122,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Credential that should be stored</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        System.Threading.Tasks.Task<InlineResponse20012> CredentialsPostAsync (string accessToken = null, Credential body = null);
+        /// <returns>Task of InlineResponse20019</returns>
+        System.Threading.Tasks.Task<InlineResponse20019> CredentialsPostAsync (string accessToken = null, Credential body = null);
 
         /// <summary>
         /// Store Credential
@@ -132,8 +133,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Credential that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20012>> CredentialsPostAsyncWithHttpInfo (string accessToken = null, Credential body = null);
+        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20019>> CredentialsPostAsyncWithHttpInfo (string accessToken = null, Credential body = null);
         
         /// <summary>
         /// Get Credential
@@ -144,8 +145,8 @@ namespace IO.Swagger.Api
         /// <param name="id">connector id</param>
         /// <param name="attrKey">attrKey</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20012</returns>
-        InlineResponse20012 CredentialsIdGet (int? id, string attrKey, string accessToken = null);
+        /// <returns>InlineResponse20019</returns>
+        InlineResponse20019 CredentialsIdGet (int? id, string attrKey, string accessToken = null);
   
         /// <summary>
         /// Get Credential
@@ -156,8 +157,8 @@ namespace IO.Swagger.Api
         /// <param name="id">connector id</param>
         /// <param name="attrKey">attrKey</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        ApiResponse<InlineResponse20012> CredentialsIdGetWithHttpInfo (int? id, string attrKey, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20019</returns>
+        ApiResponse<InlineResponse20019> CredentialsIdGetWithHttpInfo (int? id, string attrKey, string accessToken = null);
 
         /// <summary>
         /// Get Credential
@@ -168,8 +169,8 @@ namespace IO.Swagger.Api
         /// <param name="id">connector id</param>
         /// <param name="attrKey">attrKey</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        System.Threading.Tasks.Task<InlineResponse20012> CredentialsIdGetAsync (int? id, string attrKey, string accessToken = null);
+        /// <returns>Task of InlineResponse20019</returns>
+        System.Threading.Tasks.Task<InlineResponse20019> CredentialsIdGetAsync (int? id, string attrKey, string accessToken = null);
 
         /// <summary>
         /// Get Credential
@@ -180,8 +181,8 @@ namespace IO.Swagger.Api
         /// <param name="id">connector id</param>
         /// <param name="attrKey">attrKey</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20012>> CredentialsIdGetAsyncWithHttpInfo (int? id, string attrKey, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20019>> CredentialsIdGetAsyncWithHttpInfo (int? id, string attrKey, string accessToken = null);
         
         /// <summary>
         /// Update Credential
@@ -374,10 +375,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20011</returns>
-        public InlineResponse20011 CredentialsGet (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse2004</returns>
+        public InlineResponse2004 CredentialsGet (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20011> response = CredentialsGetWithHttpInfo(accessToken, userId, connectorId, attrKey, attrValue, createdAt, updatedAt, limit, offset, sort);
+             ApiResponse<InlineResponse2004> response = CredentialsGetWithHttpInfo(accessToken, userId, connectorId, attrKey, attrValue, createdAt, updatedAt, limit, offset, sort);
              return response.Data;
         }
 
@@ -394,8 +395,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20011</returns>
-        public ApiResponse< InlineResponse20011 > CredentialsGetWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse2004</returns>
+        public ApiResponse< InlineResponse2004 > CredentialsGetWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -406,15 +407,129 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            pathParams.Add("format", "json");
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            if (userId != null) queryParams.Add("user_id", Configuration.ApiClient.ParameterToString(userId)); // query parameter
+            if (connectorId != null) queryParams.Add("connector_id", Configuration.ApiClient.ParameterToString(connectorId)); // query parameter
+            if (attrKey != null) queryParams.Add("attr_key", Configuration.ApiClient.ParameterToString(attrKey)); // query parameter
+            if (attrValue != null) queryParams.Add("attr_value", Configuration.ApiClient.ParameterToString(attrValue)); // query parameter
+            if (createdAt != null) queryParams.Add("created_at", Configuration.ApiClient.ParameterToString(createdAt)); // query parameter
+            if (updatedAt != null) queryParams.Add("updated_at", Configuration.ApiClient.ParameterToString(updatedAt)); // query parameter
+            if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
+            if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
+            if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
+            
+            
+            
+            
+
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
+
+            int statusCode = (int) response.StatusCode;
+    
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling CredentialsGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling CredentialsGet: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return new ApiResponse<InlineResponse2004>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse2004) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2004)));
+            
+        }
+    
+        /// <summary>
+        /// Get all Credentials Get all Credentials
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="userId">ID of user that owns this credential</param>
+        /// <param name="connectorId">The id for the connector data source from which the credential was obtained</param>
+        /// <param name="attrKey">Attribute name such as token, userid, username, or password</param>
+        /// <param name="attrValue">Encrypted value for the attribute specified</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of InlineResponse2004</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2004> CredentialsGetAsync (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        {
+             ApiResponse<InlineResponse2004> response = await CredentialsGetAsyncWithHttpInfo(accessToken, userId, connectorId, attrKey, attrValue, createdAt, updatedAt, limit, offset, sort);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Get all Credentials Get all Credentials
+        /// </summary>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <param name="userId">ID of user that owns this credential</param>
+        /// <param name="connectorId">The id for the connector data source from which the credential was obtained</param>
+        /// <param name="attrKey">Attribute name such as token, userid, username, or password</param>
+        /// <param name="attrValue">Encrypted value for the attribute specified</param>
+        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
+        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
+        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
+        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
+        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
+        /// <returns>Task of ApiResponse (InlineResponse2004)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2004>> CredentialsGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
+        {
+            
+    
+            var path_ = "/credentials";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            Object postBody = null;
+
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
+                "application/json"
+            };
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -444,110 +559,11 @@ namespace IO.Swagger.Api
                 headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
             }
             
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
-
-            int statusCode = (int) response.StatusCode;
-    
-            if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling CredentialsGet: " + response.Content, response.Content);
-            else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling CredentialsGet: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return new ApiResponse<InlineResponse20011>(statusCode,
-                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20011) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20011)));
-            
-        }
-    
-        /// <summary>
-        /// Get all Credentials Get all Credentials
-        /// </summary>
-        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="userId">ID of user that owns this credential</param>
-        /// <param name="connectorId">The id for the connector data source from which the credential was obtained</param>
-        /// <param name="attrKey">Attribute name such as token, userid, username, or password</param>
-        /// <param name="attrValue">Encrypted value for the attribute specified</param>
-        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
-        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
-        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
-        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
-        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20011</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20011> CredentialsGetAsync (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
-        {
-             ApiResponse<InlineResponse20011> response = await CredentialsGetAsyncWithHttpInfo(accessToken, userId, connectorId, attrKey, attrValue, createdAt, updatedAt, limit, offset, sort);
-             return response.Data;
-
-        }
-
-        /// <summary>
-        /// Get all Credentials Get all Credentials
-        /// </summary>
-        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <param name="userId">ID of user that owns this credential</param>
-        /// <param name="connectorId">The id for the connector data source from which the credential was obtained</param>
-        /// <param name="attrKey">Attribute name such as token, userid, username, or password</param>
-        /// <param name="attrValue">Encrypted value for the attribute specified</param>
-        /// <param name="createdAt">When the record was first created. Use ISO 8601 datetime format</param>
-        /// <param name="updatedAt">When the record was last updated. Use ISO 8601 datetime format</param>
-        /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
-        /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
-        /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20011)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20011>> CredentialsGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, int? connectorId = null, string attrKey = null, string attrValue = null, string createdAt = null, string updatedAt = null, int? limit = null, int? offset = null, string sort = null)
-        {
-            
-    
-            var path_ = "/credentials";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
-
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
-                "application/json"
-            };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            pathParams.Add("format", "json");
-            
-            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
-            if (userId != null) queryParams.Add("user_id", Configuration.ApiClient.ParameterToString(userId)); // query parameter
-            if (connectorId != null) queryParams.Add("connector_id", Configuration.ApiClient.ParameterToString(connectorId)); // query parameter
-            if (attrKey != null) queryParams.Add("attr_key", Configuration.ApiClient.ParameterToString(attrKey)); // query parameter
-            if (attrValue != null) queryParams.Add("attr_value", Configuration.ApiClient.ParameterToString(attrValue)); // query parameter
-            if (createdAt != null) queryParams.Add("created_at", Configuration.ApiClient.ParameterToString(createdAt)); // query parameter
-            if (updatedAt != null) queryParams.Add("updated_at", Configuration.ApiClient.ParameterToString(updatedAt)); // query parameter
-            if (limit != null) queryParams.Add("limit", Configuration.ApiClient.ParameterToString(limit)); // query parameter
-            if (offset != null) queryParams.Add("offset", Configuration.ApiClient.ParameterToString(offset)); // query parameter
-            if (sort != null) queryParams.Add("sort", Configuration.ApiClient.ParameterToString(sort)); // query parameter
-            
-            
-            
-            
-
-            
-            // authentication (quantimodo_oauth2) required
-            
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-            
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -556,9 +572,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling CredentialsGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20011>(statusCode,
+            return new ApiResponse<InlineResponse2004>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20011) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20011)));
+                (InlineResponse2004) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2004)));
             
         }
         
@@ -567,10 +583,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Credential that should be stored</param> 
-        /// <returns>InlineResponse20012</returns>
-        public InlineResponse20012 CredentialsPost (string accessToken = null, Credential body = null)
+        /// <returns>InlineResponse20019</returns>
+        public InlineResponse20019 CredentialsPost (string accessToken = null, Credential body = null)
         {
-             ApiResponse<InlineResponse20012> response = CredentialsPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20019> response = CredentialsPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -579,8 +595,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Credential that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        public ApiResponse< InlineResponse20012 > CredentialsPostWithHttpInfo (string accessToken = null, Credential body = null)
+        /// <returns>ApiResponse of InlineResponse20019</returns>
+        public ApiResponse< InlineResponse20019 > CredentialsPostWithHttpInfo (string accessToken = null, Credential body = null)
         {
             
     
@@ -591,15 +607,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -609,10 +631,15 @@ namespace IO.Swagger.Api
             
             
             
-            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            
+            if (body.GetType() != typeof(byte[]))
+            {
+                postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                postBody = body; // byte array
+            }
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -623,7 +650,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -632,9 +661,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling CredentialsPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20012>(statusCode,
+            return new ApiResponse<InlineResponse20019>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20012) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20012)));
+                (InlineResponse20019) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20019)));
             
         }
     
@@ -643,10 +672,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Credential that should be stored</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20012> CredentialsPostAsync (string accessToken = null, Credential body = null)
+        /// <returns>Task of InlineResponse20019</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20019> CredentialsPostAsync (string accessToken = null, Credential body = null)
         {
-             ApiResponse<InlineResponse20012> response = await CredentialsPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse20019> response = await CredentialsPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -656,8 +685,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Credential that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20012>> CredentialsPostAsyncWithHttpInfo (string accessToken = null, Credential body = null)
+        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20019>> CredentialsPostAsyncWithHttpInfo (string accessToken = null, Credential body = null)
         {
             
     
@@ -665,18 +694,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -700,7 +735,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -709,9 +746,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling CredentialsPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20012>(statusCode,
+            return new ApiResponse<InlineResponse20019>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20012) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20012)));
+                (InlineResponse20019) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20019)));
             
         }
         
@@ -721,10 +758,10 @@ namespace IO.Swagger.Api
         /// <param name="id">connector id</param> 
         /// <param name="attrKey">attrKey</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20012</returns>
-        public InlineResponse20012 CredentialsIdGet (int? id, string attrKey, string accessToken = null)
+        /// <returns>InlineResponse20019</returns>
+        public InlineResponse20019 CredentialsIdGet (int? id, string attrKey, string accessToken = null)
         {
-             ApiResponse<InlineResponse20012> response = CredentialsIdGetWithHttpInfo(id, attrKey, accessToken);
+             ApiResponse<InlineResponse20019> response = CredentialsIdGetWithHttpInfo(id, attrKey, accessToken);
              return response.Data;
         }
 
@@ -734,15 +771,17 @@ namespace IO.Swagger.Api
         /// <param name="id">connector id</param> 
         /// <param name="attrKey">attrKey</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20012</returns>
-        public ApiResponse< InlineResponse20012 > CredentialsIdGetWithHttpInfo (int? id, string attrKey, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20019</returns>
+        public ApiResponse< InlineResponse20019 > CredentialsIdGetWithHttpInfo (int? id, string attrKey, string accessToken = null)
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling CredentialsIdGet");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling CredentialApi->CredentialsIdGet");
             
             // verify the required parameter 'attrKey' is set
-            if (attrKey == null) throw new ApiException(400, "Missing required parameter 'attrKey' when calling CredentialsIdGet");
+            if (attrKey == null)
+                throw new ApiException(400, "Missing required parameter 'attrKey' when calling CredentialApi->CredentialsIdGet");
             
     
             var path_ = "/credentials/{id}";
@@ -752,15 +791,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -774,7 +819,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -785,7 +829,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -794,9 +840,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling CredentialsIdGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20012>(statusCode,
+            return new ApiResponse<InlineResponse20019>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20012) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20012)));
+                (InlineResponse20019) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20019)));
             
         }
     
@@ -806,10 +852,10 @@ namespace IO.Swagger.Api
         /// <param name="id">connector id</param>
         /// <param name="attrKey">attrKey</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20012</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20012> CredentialsIdGetAsync (int? id, string attrKey, string accessToken = null)
+        /// <returns>Task of InlineResponse20019</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20019> CredentialsIdGetAsync (int? id, string attrKey, string accessToken = null)
         {
-             ApiResponse<InlineResponse20012> response = await CredentialsIdGetAsyncWithHttpInfo(id, attrKey, accessToken);
+             ApiResponse<InlineResponse20019> response = await CredentialsIdGetAsyncWithHttpInfo(id, attrKey, accessToken);
              return response.Data;
 
         }
@@ -820,8 +866,8 @@ namespace IO.Swagger.Api
         /// <param name="id">connector id</param>
         /// <param name="attrKey">attrKey</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20012)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20012>> CredentialsIdGetAsyncWithHttpInfo (int? id, string attrKey, string accessToken = null)
+        /// <returns>Task of ApiResponse (InlineResponse20019)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20019>> CredentialsIdGetAsyncWithHttpInfo (int? id, string attrKey, string accessToken = null)
         {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling CredentialsIdGet");
@@ -833,18 +879,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -869,7 +921,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -878,9 +932,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling CredentialsIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20012>(statusCode,
+            return new ApiResponse<InlineResponse20019>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20012) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20012)));
+                (InlineResponse20019) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20019)));
             
         }
         
@@ -910,10 +964,12 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling CredentialsIdPut");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling CredentialApi->CredentialsIdPut");
             
             // verify the required parameter 'attrKey' is set
-            if (attrKey == null) throw new ApiException(400, "Missing required parameter 'attrKey' when calling CredentialsIdPut");
+            if (attrKey == null)
+                throw new ApiException(400, "Missing required parameter 'attrKey' when calling CredentialApi->CredentialsIdPut");
             
     
             var path_ = "/credentials/{id}";
@@ -923,15 +979,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -943,10 +1005,15 @@ namespace IO.Swagger.Api
             
             
             
-            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            
+            if (body.GetType() != typeof(byte[]))
+            {
+                postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                postBody = body; // byte array
+            }
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -957,7 +1024,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.PUT, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1007,18 +1076,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1044,7 +1119,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1083,10 +1160,12 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling CredentialsIdDelete");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling CredentialApi->CredentialsIdDelete");
             
             // verify the required parameter 'attrKey' is set
-            if (attrKey == null) throw new ApiException(400, "Missing required parameter 'attrKey' when calling CredentialsIdDelete");
+            if (attrKey == null)
+                throw new ApiException(400, "Missing required parameter 'attrKey' when calling CredentialApi->CredentialsIdDelete");
             
     
             var path_ = "/credentials/{id}";
@@ -1096,15 +1175,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1118,7 +1203,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1129,7 +1213,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1177,18 +1263,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1213,7 +1305,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  

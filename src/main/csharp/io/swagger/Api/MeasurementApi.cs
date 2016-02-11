@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using RestSharp;
 using IO.Swagger.Client;
@@ -43,8 +44,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>InlineResponse20013</returns>
-        InlineResponse20013 MeasurementsGet (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>InlineResponse2005</returns>
+        InlineResponse2005 MeasurementsGet (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null);
   
         /// <summary>
         /// Get measurements for this user
@@ -74,8 +75,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        ApiResponse<InlineResponse20013> MeasurementsGetWithHttpInfo (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>ApiResponse of InlineResponse2005</returns>
+        ApiResponse<InlineResponse2005> MeasurementsGetWithHttpInfo (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get measurements for this user
@@ -105,8 +106,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20013</returns>
-        System.Threading.Tasks.Task<InlineResponse20013> MeasurementsGetAsync (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of InlineResponse2005</returns>
+        System.Threading.Tasks.Task<InlineResponse2005> MeasurementsGetAsync (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null);
 
         /// <summary>
         /// Get measurements for this user
@@ -136,8 +137,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> MeasurementsGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null);
+        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> MeasurementsGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null);
         
         /// <summary>
         /// Post a new set or update existing measurements to the database
@@ -147,8 +148,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Measurement that should be stored</param>
-        /// <returns>InlineResponse20013</returns>
-        InlineResponse20013 MeasurementsPost (string accessToken = null, MeasurementPost body = null);
+        /// <returns>InlineResponse2005</returns>
+        InlineResponse2005 MeasurementsPost (string accessToken = null, MeasurementPost body = null);
   
         /// <summary>
         /// Post a new set or update existing measurements to the database
@@ -158,8 +159,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Measurement that should be stored</param>
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        ApiResponse<InlineResponse20013> MeasurementsPostWithHttpInfo (string accessToken = null, MeasurementPost body = null);
+        /// <returns>ApiResponse of InlineResponse2005</returns>
+        ApiResponse<InlineResponse2005> MeasurementsPostWithHttpInfo (string accessToken = null, MeasurementPost body = null);
 
         /// <summary>
         /// Post a new set or update existing measurements to the database
@@ -169,8 +170,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Measurement that should be stored</param>
-        /// <returns>Task of InlineResponse20013</returns>
-        System.Threading.Tasks.Task<InlineResponse20013> MeasurementsPostAsync (string accessToken = null, MeasurementPost body = null);
+        /// <returns>Task of InlineResponse2005</returns>
+        System.Threading.Tasks.Task<InlineResponse2005> MeasurementsPostAsync (string accessToken = null, MeasurementPost body = null);
 
         /// <summary>
         /// Post a new set or update existing measurements to the database
@@ -180,8 +181,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Measurement that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> MeasurementsPostAsyncWithHttpInfo (string accessToken = null, MeasurementPost body = null);
+        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> MeasurementsPostAsyncWithHttpInfo (string accessToken = null, MeasurementPost body = null);
         
         /// <summary>
         /// Get Measurements CSV
@@ -271,8 +272,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Measurement</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>InlineResponse20014</returns>
-        InlineResponse20014 MeasurementsIdGet (int? id, string accessToken = null);
+        /// <returns>InlineResponse20020</returns>
+        InlineResponse20020 MeasurementsIdGet (int? id, string accessToken = null);
   
         /// <summary>
         /// Get Measurement
@@ -282,8 +283,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Measurement</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>ApiResponse of InlineResponse20014</returns>
-        ApiResponse<InlineResponse20014> MeasurementsIdGetWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>ApiResponse of InlineResponse20020</returns>
+        ApiResponse<InlineResponse20020> MeasurementsIdGetWithHttpInfo (int? id, string accessToken = null);
 
         /// <summary>
         /// Get Measurement
@@ -293,8 +294,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Measurement</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20014</returns>
-        System.Threading.Tasks.Task<InlineResponse20014> MeasurementsIdGetAsync (int? id, string accessToken = null);
+        /// <returns>Task of InlineResponse20020</returns>
+        System.Threading.Tasks.Task<InlineResponse20020> MeasurementsIdGetAsync (int? id, string accessToken = null);
 
         /// <summary>
         /// Get Measurement
@@ -304,8 +305,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <param name="id">id of Measurement</param>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse20014>> MeasurementsIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
+        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse20020>> MeasurementsIdGetAsyncWithHttpInfo (int? id, string accessToken = null);
         
         /// <summary>
         /// Update Measurement
@@ -502,10 +503,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>InlineResponse20013</returns>
-        public InlineResponse20013 MeasurementsGet (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>InlineResponse2005</returns>
+        public InlineResponse2005 MeasurementsGet (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20013> response = MeasurementsGetWithHttpInfo(accessToken, userId, clientId, connectorId, variableId, sourceId, startTime, value, unitId, originalValue, originalUnitId, duration, note, latitude, longitude, location, createdAt, updatedAt, error, limit, offset, sort);
+             ApiResponse<InlineResponse2005> response = MeasurementsGetWithHttpInfo(accessToken, userId, clientId, connectorId, variableId, sourceId, startTime, value, unitId, originalValue, originalUnitId, duration, note, latitude, longitude, location, createdAt, updatedAt, error, limit, offset, sort);
              return response.Data;
         }
 
@@ -534,8 +535,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param> 
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param> 
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param> 
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        public ApiResponse< InlineResponse20013 > MeasurementsGetWithHttpInfo (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>ApiResponse of InlineResponse2005</returns>
+        public ApiResponse< InlineResponse2005 > MeasurementsGetWithHttpInfo (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -546,15 +547,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -587,7 +594,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -598,7 +604,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -607,9 +615,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling MeasurementsGet: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20013>(statusCode,
+            return new ApiResponse<InlineResponse2005>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20013) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20013)));
+                (InlineResponse2005) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2005)));
             
         }
     
@@ -638,10 +646,10 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of InlineResponse20013</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20013> MeasurementsGetAsync (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of InlineResponse2005</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2005> MeasurementsGetAsync (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null)
         {
-             ApiResponse<InlineResponse20013> response = await MeasurementsGetAsyncWithHttpInfo(accessToken, userId, clientId, connectorId, variableId, sourceId, startTime, value, unitId, originalValue, originalUnitId, duration, note, latitude, longitude, location, createdAt, updatedAt, error, limit, offset, sort);
+             ApiResponse<InlineResponse2005> response = await MeasurementsGetAsyncWithHttpInfo(accessToken, userId, clientId, connectorId, variableId, sourceId, startTime, value, unitId, originalValue, originalUnitId, duration, note, latitude, longitude, location, createdAt, updatedAt, error, limit, offset, sort);
              return response.Data;
 
         }
@@ -671,8 +679,8 @@ namespace IO.Swagger.Api
         /// <param name="limit">The LIMIT is used to limit the number of results returned. So if you have 1000 results, but only want to the first 10, you would set this to 10 and offset to 0. The maximum limit is 200 records.</param>
         /// <param name="offset">OFFSET says to skip that many rows before beginning to return rows to the client. OFFSET 0 is the same as omitting the OFFSET clause. If both OFFSET and LIMIT appear, then OFFSET rows are skipped before starting to count the LIMIT rows that are returned.</param>
         /// <param name="sort">Sort by given field. If the field is prefixed with &#39;-&#39;, it will sort in descending order.</param>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> MeasurementsGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null)
+        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> MeasurementsGetAsyncWithHttpInfo (string accessToken = null, int? userId = null, string clientId = null, int? connectorId = null, int? variableId = null, int? sourceId = null, string startTime = null, double? value = null, int? unitId = null, double? originalValue = null, int? originalUnitId = null, int? duration = null, string note = null, double? latitude = null, double? longitude = null, string location = null, string createdAt = null, string updatedAt = null, string error = null, int? limit = null, int? offset = null, string sort = null)
         {
             
     
@@ -680,18 +688,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -735,7 +749,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -744,9 +760,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling MeasurementsGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20013>(statusCode,
+            return new ApiResponse<InlineResponse2005>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20013) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20013)));
+                (InlineResponse2005) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2005)));
             
         }
         
@@ -755,10 +771,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Measurement that should be stored</param> 
-        /// <returns>InlineResponse20013</returns>
-        public InlineResponse20013 MeasurementsPost (string accessToken = null, MeasurementPost body = null)
+        /// <returns>InlineResponse2005</returns>
+        public InlineResponse2005 MeasurementsPost (string accessToken = null, MeasurementPost body = null)
         {
-             ApiResponse<InlineResponse20013> response = MeasurementsPostWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse2005> response = MeasurementsPostWithHttpInfo(accessToken, body);
              return response.Data;
         }
 
@@ -767,8 +783,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
         /// <param name="body">Measurement that should be stored</param> 
-        /// <returns>ApiResponse of InlineResponse20013</returns>
-        public ApiResponse< InlineResponse20013 > MeasurementsPostWithHttpInfo (string accessToken = null, MeasurementPost body = null)
+        /// <returns>ApiResponse of InlineResponse2005</returns>
+        public ApiResponse< InlineResponse2005 > MeasurementsPostWithHttpInfo (string accessToken = null, MeasurementPost body = null)
         {
             
     
@@ -779,15 +795,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -797,10 +819,15 @@ namespace IO.Swagger.Api
             
             
             
-            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            
+            if (body.GetType() != typeof(byte[]))
+            {
+                postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                postBody = body; // byte array
+            }
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -811,7 +838,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -820,9 +849,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling MeasurementsPost: " + response.ErrorMessage, response.ErrorMessage);
     
-            return new ApiResponse<InlineResponse20013>(statusCode,
+            return new ApiResponse<InlineResponse2005>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20013) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20013)));
+                (InlineResponse2005) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2005)));
             
         }
     
@@ -831,10 +860,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Measurement that should be stored</param>
-        /// <returns>Task of InlineResponse20013</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20013> MeasurementsPostAsync (string accessToken = null, MeasurementPost body = null)
+        /// <returns>Task of InlineResponse2005</returns>
+        public async System.Threading.Tasks.Task<InlineResponse2005> MeasurementsPostAsync (string accessToken = null, MeasurementPost body = null)
         {
-             ApiResponse<InlineResponse20013> response = await MeasurementsPostAsyncWithHttpInfo(accessToken, body);
+             ApiResponse<InlineResponse2005> response = await MeasurementsPostAsyncWithHttpInfo(accessToken, body);
              return response.Data;
 
         }
@@ -844,8 +873,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="accessToken">User&#39;s OAuth2 access token</param>
         /// <param name="body">Measurement that should be stored</param>
-        /// <returns>Task of ApiResponse (InlineResponse20013)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20013>> MeasurementsPostAsyncWithHttpInfo (string accessToken = null, MeasurementPost body = null)
+        /// <returns>Task of ApiResponse (InlineResponse2005)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2005>> MeasurementsPostAsyncWithHttpInfo (string accessToken = null, MeasurementPost body = null)
         {
             
     
@@ -853,18 +882,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -888,7 +923,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -897,9 +934,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling MeasurementsPost: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20013>(statusCode,
+            return new ApiResponse<InlineResponse2005>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20013) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20013)));
+                (InlineResponse2005) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse2005)));
             
         }
         
@@ -930,15 +967,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
+
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
+                "application/json"
+            };
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
 
             // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            String[] httpHeaderAccepts = new String[] {
                 "text/csv"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -950,7 +993,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -961,7 +1003,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1001,18 +1045,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
+
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
+                "application/json"
+            };
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
 
             // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            String[] httpHeaderAccepts = new String[] {
                 "text/csv"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1035,7 +1085,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1077,15 +1129,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1097,7 +1155,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1108,7 +1165,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1148,18 +1207,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1182,7 +1247,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.POST, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.POST, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1202,10 +1269,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Measurement</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>InlineResponse20014</returns>
-        public InlineResponse20014 MeasurementsIdGet (int? id, string accessToken = null)
+        /// <returns>InlineResponse20020</returns>
+        public InlineResponse20020 MeasurementsIdGet (int? id, string accessToken = null)
         {
-             ApiResponse<InlineResponse20014> response = MeasurementsIdGetWithHttpInfo(id, accessToken);
+             ApiResponse<InlineResponse20020> response = MeasurementsIdGetWithHttpInfo(id, accessToken);
              return response.Data;
         }
 
@@ -1214,10 +1281,97 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="id">id of Measurement</param> 
         /// <param name="accessToken">User&#39;s OAuth2 access token</param> 
-        /// <returns>ApiResponse of InlineResponse20014</returns>
-        public ApiResponse< InlineResponse20014 > MeasurementsIdGetWithHttpInfo (int? id, string accessToken = null)
+        /// <returns>ApiResponse of InlineResponse20020</returns>
+        public ApiResponse< InlineResponse20020 > MeasurementsIdGetWithHttpInfo (int? id, string accessToken = null)
         {
             
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling MeasurementApi->MeasurementsIdGet");
+            
+    
+            var path_ = "/measurements/{id}";
+    
+            var pathParams = new Dictionary<String, String>();
+            var queryParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var formParams = new Dictionary<String, String>();
+            var fileParams = new Dictionary<String, FileParameter>();
+            Object postBody = null;
+
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
+                "application/json"
+            };
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            pathParams.Add("format", "json");
+            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+            
+            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
+            
+            
+            
+            
+
+            // authentication (quantimodo_oauth2) required
+            
+            // oauth required
+            if (!String.IsNullOrEmpty(Configuration.AccessToken))
+            {
+                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
+            }
+            
+    
+            // make the HTTP request
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
+
+            int statusCode = (int) response.StatusCode;
+    
+            if (statusCode >= 400)
+                throw new ApiException (statusCode, "Error calling MeasurementsIdGet: " + response.Content, response.Content);
+            else if (statusCode == 0)
+                throw new ApiException (statusCode, "Error calling MeasurementsIdGet: " + response.ErrorMessage, response.ErrorMessage);
+    
+            return new ApiResponse<InlineResponse20020>(statusCode,
+                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (InlineResponse20020) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20020)));
+            
+        }
+    
+        /// <summary>
+        /// Get Measurement Get Measurement
+        /// </summary>
+        /// <param name="id">id of Measurement</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of InlineResponse20020</returns>
+        public async System.Threading.Tasks.Task<InlineResponse20020> MeasurementsIdGetAsync (int? id, string accessToken = null)
+        {
+             ApiResponse<InlineResponse20020> response = await MeasurementsIdGetAsyncWithHttpInfo(id, accessToken);
+             return response.Data;
+
+        }
+
+        /// <summary>
+        /// Get Measurement Get Measurement
+        /// </summary>
+        /// <param name="id">id of Measurement</param>
+        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
+        /// <returns>Task of ApiResponse (InlineResponse20020)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20020>> MeasurementsIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
+        {
             // verify the required parameter 'id' is set
             if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling MeasurementsIdGet");
             
@@ -1229,94 +1383,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            pathParams.Add("format", "json");
-            if (id != null) pathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
-            
-            if (accessToken != null) queryParams.Add("access_token", Configuration.ApiClient.ParameterToString(accessToken)); // query parameter
-            
-            
-            
-            
-
-            
-            // authentication (quantimodo_oauth2) required
-            
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                headerParams["Authorization"] = "Bearer " + Configuration.AccessToken;
-            }
-            
-    
-            // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
-
-            int statusCode = (int) response.StatusCode;
-    
-            if (statusCode >= 400)
-                throw new ApiException (statusCode, "Error calling MeasurementsIdGet: " + response.Content, response.Content);
-            else if (statusCode == 0)
-                throw new ApiException (statusCode, "Error calling MeasurementsIdGet: " + response.ErrorMessage, response.ErrorMessage);
-    
-            return new ApiResponse<InlineResponse20014>(statusCode,
-                response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20014) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20014)));
-            
-        }
-    
-        /// <summary>
-        /// Get Measurement Get Measurement
-        /// </summary>
-        /// <param name="id">id of Measurement</param>
-        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of InlineResponse20014</returns>
-        public async System.Threading.Tasks.Task<InlineResponse20014> MeasurementsIdGetAsync (int? id, string accessToken = null)
-        {
-             ApiResponse<InlineResponse20014> response = await MeasurementsIdGetAsyncWithHttpInfo(id, accessToken);
-             return response.Data;
-
-        }
-
-        /// <summary>
-        /// Get Measurement Get Measurement
-        /// </summary>
-        /// <param name="id">id of Measurement</param>
-        /// <param name="accessToken">User&#39;s OAuth2 access token</param>
-        /// <returns>Task of ApiResponse (InlineResponse20014)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse20014>> MeasurementsIdGetAsyncWithHttpInfo (int? id, string accessToken = null)
-        {
-            // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling MeasurementsIdGet");
-            
-    
-            var path_ = "/measurements/{id}";
-    
-            var pathParams = new Dictionary<String, String>();
-            var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
-            var formParams = new Dictionary<String, String>();
-            var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
 
             // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            String[] httpHeaderAccepts = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1340,7 +1421,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.GET, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.GET, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1349,9 +1432,9 @@ namespace IO.Swagger.Api
             else if (statusCode == 0)
                 throw new ApiException (statusCode, "Error calling MeasurementsIdGet: " + response.ErrorMessage, response.ErrorMessage);
 
-            return new ApiResponse<InlineResponse20014>(statusCode,
+            return new ApiResponse<InlineResponse20020>(statusCode,
                 response.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (InlineResponse20014) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20014)));
+                (InlineResponse20020) Configuration.ApiClient.Deserialize(response, typeof(InlineResponse20020)));
             
         }
         
@@ -1379,7 +1462,8 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling MeasurementsIdPut");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling MeasurementApi->MeasurementsIdPut");
             
     
             var path_ = "/measurements/{id}";
@@ -1389,15 +1473,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1408,10 +1498,15 @@ namespace IO.Swagger.Api
             
             
             
-            postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            
+            if (body.GetType() != typeof(byte[]))
+            {
+                postBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                postBody = body; // byte array
+            }
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1422,7 +1517,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.PUT, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1468,18 +1565,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1504,7 +1607,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.PUT, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  
@@ -1541,7 +1646,8 @@ namespace IO.Swagger.Api
         {
             
             // verify the required parameter 'id' is set
-            if (id == null) throw new ApiException(400, "Missing required parameter 'id' when calling MeasurementsIdDelete");
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling MeasurementApi->MeasurementsIdDelete");
             
     
             var path_ = "/measurements/{id}";
@@ -1551,15 +1657,21 @@ namespace IO.Swagger.Api
             var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1572,7 +1684,6 @@ namespace IO.Swagger.Api
             
             
 
-            
             // authentication (quantimodo_oauth2) required
             
             // oauth required
@@ -1583,7 +1694,9 @@ namespace IO.Swagger.Api
             
     
             // make the HTTP request
-            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) Configuration.ApiClient.CallApi(path_, 
+                Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams,
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
     
@@ -1627,18 +1740,24 @@ namespace IO.Swagger.Api
     
             var pathParams = new Dictionary<String, String>();
             var queryParams = new Dictionary<String, String>();
-            var headerParams = new Dictionary<String, String>();
+            var headerParams = new Dictionary<String, String>(Configuration.DefaultHeader);
             var formParams = new Dictionary<String, String>();
             var fileParams = new Dictionary<String, FileParameter>();
-            String postBody = null;
+            Object postBody = null;
 
-            // to determine the Accept header
-            String[] http_header_accepts = new String[] {
+            // to determine the Content-Type header
+            String[] httpContentTypes = new String[] {
                 "application/json"
             };
-            String http_header_accept = Configuration.ApiClient.SelectHeaderAccept(http_header_accepts);
-            if (http_header_accept != null)
-                headerParams.Add("Accept", Configuration.ApiClient.SelectHeaderAccept(http_header_accepts));
+            String httpContentType = Configuration.ApiClient.SelectHeaderContentType(httpContentTypes);
+
+            // to determine the Accept header
+            String[] httpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String httpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(httpHeaderAccepts);
+            if (httpHeaderAccept != null)
+                headerParams.Add("Accept", httpHeaderAccept);
 
             // set "format" to json by default
             // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
@@ -1662,7 +1781,9 @@ namespace IO.Swagger.Api
             
 
             // make the HTTP request
-            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, pathParams);
+            IRestResponse response = (IRestResponse) await Configuration.ApiClient.CallApiAsync(path_, 
+                Method.DELETE, queryParams, postBody, headerParams, formParams, fileParams, 
+                pathParams, httpContentType);
 
             int statusCode = (int) response.StatusCode;
  

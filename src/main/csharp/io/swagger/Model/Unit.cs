@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
@@ -14,7 +15,7 @@ namespace IO.Swagger.Model
     /// 
     /// </summary>
     [DataContract]
-    public class Unit :  IEquatable<Unit>
+    public partial class Unit :  IEquatable<Unit>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Unit" /> class.
@@ -179,7 +180,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if Unit instances are equal
         /// </summary>
-        /// <param name="obj">Instance of Unit to be compared</param>
+        /// <param name="other">Instance of Unit to be compared</param>
         /// <returns>Boolean</returns>
         public bool Equals(Unit other)
         {
@@ -268,43 +269,43 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 
                 if (this.Id != null)
-                    hash = hash * 57 + this.Id.GetHashCode();
+                    hash = hash * 59 + this.Id.GetHashCode();
                 
                 if (this.ClientId != null)
-                    hash = hash * 57 + this.ClientId.GetHashCode();
+                    hash = hash * 59 + this.ClientId.GetHashCode();
                 
                 if (this.Name != null)
-                    hash = hash * 57 + this.Name.GetHashCode();
+                    hash = hash * 59 + this.Name.GetHashCode();
                 
                 if (this.AbbreviatedName != null)
-                    hash = hash * 57 + this.AbbreviatedName.GetHashCode();
+                    hash = hash * 59 + this.AbbreviatedName.GetHashCode();
                 
                 if (this.CategoryId != null)
-                    hash = hash * 57 + this.CategoryId.GetHashCode();
+                    hash = hash * 59 + this.CategoryId.GetHashCode();
                 
                 if (this.MinimumValue != null)
-                    hash = hash * 57 + this.MinimumValue.GetHashCode();
+                    hash = hash * 59 + this.MinimumValue.GetHashCode();
                 
                 if (this.MaximumValue != null)
-                    hash = hash * 57 + this.MaximumValue.GetHashCode();
+                    hash = hash * 59 + this.MaximumValue.GetHashCode();
                 
                 if (this.Updated != null)
-                    hash = hash * 57 + this.Updated.GetHashCode();
+                    hash = hash * 59 + this.Updated.GetHashCode();
                 
                 if (this.DefaultUnitId != null)
-                    hash = hash * 57 + this.DefaultUnitId.GetHashCode();
+                    hash = hash * 59 + this.DefaultUnitId.GetHashCode();
                 
                 if (this.Multiply != null)
-                    hash = hash * 57 + this.Multiply.GetHashCode();
+                    hash = hash * 59 + this.Multiply.GetHashCode();
                 
                 if (this.Add != null)
-                    hash = hash * 57 + this.Add.GetHashCode();
+                    hash = hash * 59 + this.Add.GetHashCode();
                 
                 if (this.CreatedAt != null)
-                    hash = hash * 57 + this.CreatedAt.GetHashCode();
+                    hash = hash * 59 + this.CreatedAt.GetHashCode();
                 
                 if (this.UpdatedAt != null)
-                    hash = hash * 57 + this.UpdatedAt.GetHashCode();
+                    hash = hash * 59 + this.UpdatedAt.GetHashCode();
                 
                 return hash;
             }
